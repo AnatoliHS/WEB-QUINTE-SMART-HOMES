@@ -15,7 +15,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("**/*.{png,jpg,jpeg,gif,svg}");
 
 
+  eleventyConfig.addPassthroughCopy("admin");
+
   eleventyConfig.addPlugin(sectionizePlugin);
+
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toLocaleString(DateTime.DATE_MED);
+  });
 
   eleventyConfig.addTemplateFormats("md");
   

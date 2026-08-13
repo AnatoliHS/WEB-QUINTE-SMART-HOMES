@@ -896,9 +896,9 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
             
             <!-- Embedded Interactive Search Widget -->
             <div class="hero-search-container" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.8rem 2.5rem; max-width: 850px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.06); text-align: left;">
-                <form onsubmit="event.preventDefault(); window.location.hash='#featured-properties';" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <form action="/search/" method="GET" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 280px;">
-                        <input type="text" placeholder="Search Kanata, Barrhaven, Orléans, Nepean..." style="width: 100%; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 1.05rem; font-family: inherit; outline: none; background: #f8fafc;">
+                        <input type="text" name="q" placeholder="Search Kanata, Barrhaven, Orléans, Nepean..." style="width: 100%; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 1.05rem; font-family: inherit; outline: none; background: #f8fafc;">
                     </div>
                     <button type="submit" class="btn-primary" style="background: #2370ba; color: white; border: none; padding: 1rem 2.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; white-space: nowrap; font-size: 1.05rem;">Find Properties &rarr;</button>
                 </form>
@@ -943,59 +943,6 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
         </header>
     </section>
 
-    <section id="featured-properties" class="section-padding container" aria-labelledby="properties-heading"
-        style="padding-top: 2rem;">
-        <header class="animated-header" style="text-align: center; margin-bottom: 3.5rem;">
-            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Exclusive Listings</span>
-            <h2 id="properties-heading" style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #0f172a; font-family: var(--font-heading);">
-                Featured Ottawa<br>
-                <span style="color: #94a3b8; font-weight: 700;">Properties & Listings.</span>
-            </h2>
-            <p style="max-width: 650px; margin: 0.8rem auto 0 auto; font-size: 1.15rem; color: #64748b;">Explore exclusive single-family homes, townhouses, and condos currently available in the Ottawa real estate market.</p>
-        </header>
-
-        <div class="grid-layout properties-grid">
-            <article class="card property-listing property-slide">
-                <img src="https://photos.alphotoscdn.com/file/al-photos-s3/DDF/X12869032/bc56734c-5d80-447a-8747-b9618e6b563b.webp"
-                    alt="House at 4120 Kelly Farm Drive" class="card-img" loading="lazy">
-                <div class="card-content">
-                    <h3 class="card-title">4120 Kelly Farm Drive</h3>
-                    <span class="card-meta">Ottawa South | $660,000</span>
-                    <p class="seo-text">Residential single-family house featuring 3 bedrooms, 2 bathrooms, and 1500 -
-                        2000 sqft of living space.</p>
-                </div>
-            </article>
-
-            <article class="card property-listing property-slide">
-                <img src="https://photos.alphotoscdn.com/file/al-photos-s3/DDF/X12852632/c1814bd8-c465-4141-b8f7-5592470d427a.webp"
-                    alt="House at 3244 Piché Road" class="card-img" loading="lazy">
-                <div class="card-content">
-                    <h3 class="card-title">3244 Piché Road</h3>
-                    <span class="card-meta">The Nation | $919,999</span>
-                    <p class="seo-text">Premium real estate listed in The Nation. Detached property with 3 bedrooms, 2
-                        bathrooms, and luxury finishes.</p>
-                </div>
-            </article>
-
-            <article class="card property-listing property-slide">
-                <img src="https://photos.alphotoscdn.com/file/al-photos-s3/DDF/X12846960/a4c4b72f-de60-41b2-a343-85e712a82699.webp"
-                    alt="House at 340 Stoneway Drive" class="card-img" loading="lazy">
-                <div class="card-content">
-                    <h3 class="card-title">340 Stoneway Drive</h3>
-                    <span class="card-meta">Nepean | $829,999</span>
-                    <p class="seo-text">Spacious 4-bedroom, 3-bathroom house offering 2000 - 2500 sqft, perfect for
-                        growing families looking to settle near top-rated schools.</p>
-                </div>
-            </article>
-        </div>
-
-        <!-- Mobile carousel nav -->
-        <div class="properties-nav" style="display: none; margin-top: 1.8rem;">
-            <button class="properties-prev" aria-label="Previous property" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8592;</button>
-            <div class="properties-dots"></div>
-            <button class="properties-next" aria-label="Next property" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8594;</button>
-        </div>
-    </section>
 
     <section id="featured-communities" class="section-padding container" aria-labelledby="communities-heading"
         style="background-color: transparent;">
@@ -1260,15 +1207,6 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
 
             function init() {
                 makeCarousel({
-                    sectionId: 'featured-properties',
-                    gridSel:   '.properties-grid',
-                    slideSel:  '.property-slide',
-                    navSel:    '.properties-nav',
-                    dotsSel:   '.properties-dots',
-                    prevSel:   '.properties-prev',
-                    nextSel:   '.properties-next'
-                });
-                makeCarousel({
                     sectionId: 'featured-communities',
                     gridSel:   null,
                     slideSel:  '.community-slide',
@@ -1310,6 +1248,52 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
             <div style="text-align: center;">
                 <img src="https://photos.alphotoscdn.com/file/al-cms/MediaLibrary/20749/457591c2-43a7-4376-8ab8-46b8b008a18a.jpg"
                     alt="Murtaza Siddiqui - RE/MAX Ottawa Realtor" class="agent-img" loading="lazy" style="border-radius: 16px; box-shadow: 0 25px 50px rgba(15,23,42,0.15); max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding container" aria-labelledby="services-heading" style="margin-bottom: 7rem; padding: 4rem 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; align-items: flex-start;">
+            <!-- Left Column: Stacked Title & Dark Pill Button -->
+            <header class="animated-header" style="text-align: left;">
+                <h2 id="services-heading" style="font-size: 3.6rem; font-weight: 800; line-height: 1.1; color: #0f172a; margin-bottom: 2rem; font-family: var(--font-heading);">
+                    Support Beyond<br>
+                    <span style="color: #94a3b8; font-weight: 700;">Buying & Selling.</span>
+                </h2>
+                <a href="#contact" class="btn-primary" style="background: #2370ba; color: #ffffff; padding: 0.95rem 2.2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem; box-shadow: 0 10px 25px rgba(15,23,42,0.15);">
+                    Discover Our Services &rarr;
+                </a>
+            </header>
+
+            <!-- Right Column: Step-by-Step Numbered Service Items -->
+            <div>
+                <span style="font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #0f172a; display: block; margin-bottom: 1.5rem;">Our Services:</span>
+
+                <div style="display: flex; flex-direction: column;">
+                    <!-- Step 01: Seller Representation & Staging -->
+                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; padding: 2rem 0;">
+                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">01</span>
+                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
+                            Seller Representation & Staging. <span style="color: #94a3b8; font-weight: 600;">Maximize your home's equity with professional staging, targeted digital MLS advertising, and precise pricing strategy.</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 02: Buyer Advisory & Relocation -->
+                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; padding: 2rem 0;">
+                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">02</span>
+                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
+                            Buyer Advisory & Relocation. <span style="color: #94a3b8; font-weight: 600;">Navigating competitive Ottawa offers, neighborhood analytics, off-market property alerts, and strategic contract negotiations.</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 03: Real Estate Investment -->
+                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 2rem 0;">
+                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">03</span>
+                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
+                            Real Estate Investment & Cap Rate Guidance. <span style="color: #94a3b8; font-weight: 600;">Identify high-yield multi-family properties and new development projects across Ottawa with detailed ROI guidance.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1467,101 +1451,6 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
         })();
     </script>
 
-    <section id="services" class="section-padding container" aria-labelledby="services-heading" style="margin-bottom: 7rem; padding: 4rem 0;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; align-items: flex-start;">
-            <!-- Left Column: Stacked Title & Dark Pill Button -->
-            <header class="animated-header" style="text-align: left;">
-                <h2 id="services-heading" style="font-size: 3.6rem; font-weight: 800; line-height: 1.1; color: #0f172a; margin-bottom: 2rem; font-family: var(--font-heading);">
-                    Support Beyond<br>
-                    <span style="color: #94a3b8; font-weight: 700;">Buying & Selling.</span>
-                </h2>
-                <a href="#contact" class="btn-primary" style="background: #2370ba; color: #ffffff; padding: 0.95rem 2.2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem; box-shadow: 0 10px 25px rgba(15,23,42,0.15);">
-                    Discover Our Services &rarr;
-                </a>
-            </header>
-
-            <!-- Right Column: Step-by-Step Numbered Service Items -->
-            <div>
-                <span style="font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #0f172a; display: block; margin-bottom: 1.5rem;">Our Services:</span>
-
-                <div style="display: flex; flex-direction: column;">
-                    <!-- Step 01: Seller Representation & Staging -->
-                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; padding: 2rem 0;">
-                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">01</span>
-                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
-                            Seller Representation & Staging. <span style="color: #94a3b8; font-weight: 600;">Maximize your home's equity with professional staging, targeted digital MLS advertising, and precise pricing strategy.</span>
-                        </div>
-                    </div>
-
-                    <!-- Step 02: Buyer Advisory & Relocation -->
-                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; padding: 2rem 0;">
-                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">02</span>
-                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
-                            Buyer Advisory & Relocation. <span style="color: #94a3b8; font-weight: 600;">Navigating competitive Ottawa offers, neighborhood analytics, off-market property alerts, and strategic contract negotiations.</span>
-                        </div>
-                    </div>
-
-                    <!-- Step 03: Real Estate Investment -->
-                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 2rem 0;">
-                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">03</span>
-                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
-                            Real Estate Investment & Cap Rate Guidance. <span style="color: #94a3b8; font-weight: 600;">Identify high-yield multi-family properties and new development projects across Ottawa with detailed ROI guidance.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" style="background: #fafaf9; padding: 7rem 5%; border-top: 1px solid #e7e7e5; border-bottom: 1px solid #e7e7e5; margin-bottom: 5rem;">
-        <div class="container">
-            <header class="animated-header" style="text-align: center; margin-bottom: 4rem;">
-                <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Market Intelligence</span>
-                <h2 id="blog-heading" style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #0f172a; font-family: var(--font-heading);">
-                    Blog & <span style="color: #94a3b8; font-weight: 700;">Resources.</span>
-                </h2>
-                <p style="max-width: 700px; margin: 0.8rem auto 0 auto; font-size: 1.15rem; color: #64748b; line-height: 1.65;">See how we’ve helped clients achieve their real estate goals, one successful transaction at a time.</p>
-            </header>
-
-            <div class="borderless-grid">
-                <!-- Article 1 -->
-                <article class="frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                    <div>
-                        <span class="frameless-badge">Q1 2026 Special Report</span>
-                        <h3 style="font-size: 1.35rem; color: #0f172a; font-weight: 700; margin-bottom: 0.8rem;">Q1 2026 Ottawa Real Estate Market Report</h3>
-                        <p style="color: #64748b; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem;">
-                            Q1 saw active inventory shifts, tech corridor demand in Kanata, and steady suburban price growth. Here’s what it means heading into spring.
-                        </p>
-                    </div>
-                    <a href="#contact" style="color: #2370ba; font-weight: 700; text-decoration: none; font-size: 0.95rem;">Read Full Report &rarr;</a>
-                </article>
-
-                <!-- Article 2 -->
-                <article class="frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                    <div>
-                        <span class="frameless-badge">Pricing Breakdown</span>
-                        <h3 style="font-size: 1.35rem; color: #0f172a; font-weight: 700; margin-bottom: 0.8rem;">What $1M Buys in Different Ottawa Neighborhoods</h3>
-                        <p style="color: #64748b; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem;">
-                            Explore a snapshot of available single-family homes, townhouses, and condos across Kanata, Barrhaven, Orléans, and Downtown Ottawa.
-                        </p>
-                    </div>
-                    <a href="#contact" style="color: #2370ba; font-weight: 700; text-decoration: none; font-size: 0.95rem;">Explore Neighborhoods &rarr;</a>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                    <div>
-                        <span class="frameless-badge">Seller Strategy</span>
-                        <h3 style="font-size: 1.35rem; color: #0f172a; font-weight: 700; margin-bottom: 0.8rem;">Maximizing Your Ottawa Home Valuation</h3>
-                        <p style="color: #64748b; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem;">
-                            Proven staging guidelines and digital MLS marketing strategies to secure top-dollar competitive offers.
-                        </p>
-                    </div>
-                    <a href="#contact" style="color: #2370ba; font-weight: 700; text-decoration: none; font-size: 0.95rem;">Request Seller Playbook &rarr;</a>
-                </article>
-            </div>
-        </div>
-    </section>
 
     <section id="faq" class="section-padding container" aria-labelledby="faq-heading" style="margin-bottom: 5rem;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3.5rem; align-items: flex-start; width: 100%;">

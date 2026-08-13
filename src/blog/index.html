@@ -1,30 +1,154 @@
 ---
 layout: default.njk
 title: Ottawa Real Estate Blog & Market Insights | Murtaza Homes
+eleventyExcludeFromCollections: true
 ---
 
-<main id="main-content" class="container section-padding">
-    <header style="margin-bottom: 3rem; text-align: center;">
-        <h1>Ottawa Real Estate Market Insights</h1>
-        <p class="seo-text" style="font-size: 1.25rem;">Expert real estate advice, market trends, and buying guides
-            authored by leading Ottawa Broker Murtaza Siddiqui.</p>
-    </header>
+<style>
+    /* Premium Blog Index Spacing & Styles */
+    .blog-header {
+        background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.7)), url('/assets/blog_header.jpg') center/cover no-repeat;
+        padding: 7rem 5% 5rem 5%;
+        color: white;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
 
-    <section aria-labelledby="latest-articles">
-        <h2 id="latest-articles" style="margin-bottom: 2rem;">Latest Articles & Answers</h2>
+    .blog-header-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-        <div class="grid-layout">
-            <article class="card">
-                <div class="card-content">
-                    <h3 class="card-title">How to Buy a House in Ottawa in 2026</h3>
-                    <p class="seo-text">Read our definitive guide to closing costs, neighborhood selection, and current
-                        market conditions. Perfect for first-time buyers in Kanata, Barrhaven, and Orleans.</p>
-                    <a href="/blog/buying-in-ottawa-2026/"
-                        style="color: #0056b3; font-weight: 600; text-decoration: none;">Read the Full Guide &rarr;</a>
-                </div>
-            </article>
+    .blog-header-badge {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #38bdf8;
+        margin-bottom: 1rem;
+    }
 
-            <!-- Future blog posts will append here -->
-        </div>
+    .blog-header-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 0 0 1.5rem 0;
+        letter-spacing: -1px;
+        font-family: var(--font-heading);
+    }
+
+    .blog-header-subtitle {
+        font-size: 1.25rem;
+        font-weight: 400;
+        opacity: 0.95;
+    }
+
+    /* Grid Layout */
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 3rem;
+        margin-bottom: 6rem;
+    }
+
+    .blog-card {
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(15, 23, 42, 0.05);
+        padding: 2.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
+        border-color: rgba(35, 112, 186, 0.1);
+    }
+
+    .blog-card-category {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #2370ba;
+        margin-bottom: 0.8rem;
+    }
+
+    .blog-card-title {
+        font-size: 1.4rem;
+        color: #0f172a;
+        font-weight: 800;
+        line-height: 1.3;
+        margin-top: 0;
+        margin-bottom: 0.8rem;
+        font-family: var(--font-heading);
+    }
+
+    .blog-card-desc {
+        color: #64748b;
+        font-size: 0.98rem;
+        line-height: 1.65;
+        margin-bottom: 1.8rem;
+    }
+
+    .blog-card-link {
+        color: #2370ba;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.25s ease;
+    }
+
+    .blog-card-link:hover {
+        color: #1d5f9e;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .blog-header {
+            padding: 5rem 5% 3.5rem 5%;
+        }
+
+        .blog-header-title {
+            font-size: 2.5rem;
+        }
+
+        .blog-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .blog-card {
+            padding: 1.8rem;
+        }
+    }
+</style>
+
+<article class="blog-header">
+    <div class="blog-header-content">
+        <span class="blog-header-badge">Market Intelligence</span>
+        <h1 class="blog-header-title">Ottawa Real Estate Blog</h1>
+        <p class="blog-header-subtitle">Expert advice, market statistics, and neighborhood guides from Broker Murtaza Siddiqui.</p>
+    </div>
+</article>
+
+<div class="container">
+    <section class="blog-grid" aria-label="Blog posts list">
+        {% for post in collections.post | reverse %}
+        <article class="blog-card">
+            <div>
+                <span class="blog-card-category">Real Estate Guide</span>
+                <h3 class="blog-card-title">{{ post.data.title }}</h3>
+                <p class="blog-card-desc">{{ post.data.description }}</p>
+            </div>
+            <a href="{{ post.url }}" class="blog-card-link">Read Full Post &rarr;</a>
+        </article>
+        {% endfor %}
     </section>
-</main>
+</div>
