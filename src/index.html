@@ -1,1163 +1,1770 @@
 ---
 layout: default.njk
-title: Home
+title: Murtaza Homes | Ottawa Real Estate Broker Murtaza Siddiqui
+description: Strategic Ottawa real estate guides, 2026 market forecasts, and neighborhood analysis for Kanata,
+
 ---
 
 <style>
-    /* --- 1. FONTS & GLOBAL RESET --- */
-    @font-face {
-        font-family: 'lequire';
-        src: url('/leq.otf') format('opentype');
-        font-weight: normal;
-        font-style: normal;
+    /* Modern, Premium, Semantic CSS */
+    html {
+        scroll-behavior: smooth;
     }
 
-    * {
-        font-weight: 400;
-    }
-
-    img {
-        border-radius: 20px;
+    section[id], header[id] {
+        scroll-margin-top: 100px;
     }
 
     body {
+        font-family: var(--font-body, 'Teodor', sans-serif);
+        color: #333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+    }
+
+    /* Typography & Flow */
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #1a1a1a;
+        margin-bottom: 0.5em;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        letter-spacing: -0.5px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Layout Utilities */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
+    }
+
+    .section-padding {
+        padding: 5rem 0;
+    }
+
+    /* Frameless Borderless Grid System */
+    .borderless-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+    }
+
+    .frameless-block {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 1rem 0;
+        transition: transform 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .frameless-block:hover {
+        transform: translateY(-3px);
+    }
+
+    .frameless-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #2370ba;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Clean Mobile-First FAQ Component Styling */
+    .faq-accordion-item {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        border-radius: 0;
+        padding: 1.2rem 0;
+        margin-bottom: 0;
+        box-shadow: none;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+        width: 100% !important;
+        max-width: 100% !important;
         overflow-x: hidden;
     }
 
-    /* --- 2. HERO SHARED STYLES --- */
-    .sequence-container {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        height: 80vh;
-        margin: 120px 0;
+    .faq-accordion-item:first-child {
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .faq-accordion-item.active {
+        border-bottom-color: #e2e8f0;
+        box-shadow: none;
+    }
+
+    .faq-accordion-btn {
+        width: 100% !important;
         display: flex;
-        align-items: center;
-        overflow: hidden;
+        align-items: flex-start;
+        gap: 0.75rem;
+        background: transparent;
+        border: none;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+        font-family: inherit;
+        outline: none !important;
+        box-shadow: none !important;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .visual-stack {
-        position: relative;
-        width: 60%;
-        height: 100%;
-        overflow: hidden;
+    .faq-num {
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: #2370ba;
+        background: #eff6ff;
+        padding: 0.2rem 0.55rem;
+        border-radius: 6px;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
     }
 
-    .gradient-square {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 55vw;
-        height: 80vh;
-        background: linear-gradient(135deg, #b1aaf0, #b1aaf0);
-        border-radius: 0 20px 20px 0;
-        opacity: 0;
-        z-index: 1;
+    .faq-title {
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.38;
+        color: #0f172a;
+        font-family: var(--font-heading);
+        margin: 0;
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+        hyphens: auto;
     }
 
-    .sliding-image-wrap {
-        position: absolute;
-        left: 100px;
-        top: 0;
-        height: 80vh;
-        width: 100%;
-        opacity: 0;
-        z-index: 2;
-    }
-
-    .design-image {
-        width: 90%;
-        height: calc(100% - 100px);
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-        display: block;
-        margin-top: 0;
-    }
-
-    .sequence-content {
-        width: 40%;
-        padding: 0 60px;
-        z-index: 5;
-    }
-
-    /* --- 3. HERO STAGGERED ANIMATION STATES --- */
-    .anim-left {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: all 0.8s ease-out 1.0s;
-    }
-
-    .anim-top {
-        opacity: 0;
-        transform: translateY(-30px);
-        transition: all 0.8s ease-out 1.3s;
-    }
-
-    .anim-bottom {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out 1.6s;
-    }
-
-    .anim-arrow {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s ease-out 1.9s;
-    }
-
-    .animate-content-active .anim-left,
-    .animate-content-active .anim-top,
-    .animate-content-active .anim-bottom,
-    .animate-content-active .anim-arrow {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-
-    /* --- 4. TOP HERO --- */
-    .hero-top {
-        flex-direction: row-reverse;
-        margin-bottom: 50px;
-    }
-
-    .hero-top .gradient-square {
-        left: auto;
-        right: 0;
-        border-radius: 20px 0 0 20px !important;
-    }
-
-    .hero-top .sliding-image-wrap {
-        left: auto;
-        right: 100px;
-        top: 0;
-    }
-
-    .logo-text {
-        display: block;
-        font-family: 'lequire', sans-serif;
-        font-weight: 400; 
-        margin: 0 0 20px 0;
+    .faq-toggle-icon {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #94a3b8;
+        flex-shrink: 0;
         line-height: 1;
-        background: linear-gradient(to right, #191f4f 0%, #436aee 20%, #91e0fd 50%, #dbbbf6 60%, #2c3c94 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0.5px 0.5px 0 black) drop-shadow(-0.5px -0.5px 0 black);
-        font-size: clamp(50px, 6vw, 60px);
+        margin-top: 0.1rem;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .gradient-text {
-        font-size: 3rem;
-        color: #191f4f;
-        font-weight: 400; 
-        margin-bottom: 25px;
-        line-height: 1.1;
+    .faq-accordion-item.active .faq-toggle-icon {
+        color: #2370ba;
+        transform: rotate(45deg);
     }
 
-    .intro-p {
-        font-size: 20px;
-        line-height: 1.6;
-        color: #333;
-        font-weight: 400; /* 🌟 EXPLICITLY SET */
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.45s ease-in-out, opacity 0.3s ease, margin-top 0.3s ease, padding-top 0.3s ease;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 1px dashed transparent;
+    }
+
+    .faq-accordion-item.active .faq-answer {
+        max-height: 600px; /* large enough for any answer text */
+        opacity: 1;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top-color: #e2e8f0;
+    }
+
+    .faq-answer p {
+        color: #475569;
+        font-size: 1.02rem;
+        line-height: 1.65;
         margin: 0;
     }
 
-    #hero-trigger {
-        margin-top: 20px !important;
-    }
-
-    /* --- SCROLL DOWN INDICATOR --- */
-    .hero-scroll-indicator {
-        margin-top: 35px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .scroll-text {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: #191f4f;
-        font-weight: 400; 
-        opacity: 0.7;
-        margin-bottom: 10px;
-    }
-
-    .hero-arrow-flow {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 5px;
-    }
-
-    .hero-arrow-flow span {
-        font-family: 'lequire', sans-serif;
-        font-size: 1.8rem;
-        font-weight: 400; 
-        color: #436aee;
-        opacity: 0.2;
-        display: block;
-        line-height: 0.5;
-        transform: rotate(90deg);
-        animation: arrowGlowVertical 1.5s infinite;
-    }
-
-    .hero-arrow-flow span:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-
-    .hero-arrow-flow span:nth-child(3) {
-        animation-delay: 0.4s;
-    }
-
-    @keyframes arrowGlowVertical {
-        0%, 100% {
-            opacity: 0.2;
-            transform: rotate(90deg) translateY(0);
-        }
-        50% {
-            opacity: 1;
-            transform: rotate(90deg) translateY(8px);
-            color: #dbbbf6;
-        }
-    }
-
-    /* ==========================================================
-       🎯 WHO WE SERVE SECTION STYLES (GPU ACCELERATED) 🎯
-       ========================================================== */
-    .niche-container {
-        width: 90%; 
-        max-width: 1400px;
-        margin: 100px auto;
-        padding: 80px 5%; 
-        background-color: #f2f8fc; 
-        border-radius: 40px; 
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    .niche-title {
-        font-size: 4.5rem;
-        color: #191f4f;
-        font-weight: 400; 
-        margin-bottom: 10px;
-    }
-
-    .niche-subtitle {
-        font-size: 1.5rem;
-        color: #666;
-        font-weight: 400; /* 🌟 EXPLICITLY SET */
-        margin-bottom: 60px;
-    }
-
-    .niche-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-    }
-
-    .niche-card {
-        height: 450px;
-        border-radius: 24px;
-        background-size: cover;
-        background-position: center;
+    /* Hero Sections */
+    #hero-image {
         position: relative;
+        background: url('https://photos.alphotoscdn.com/file/al-cms/MediaLibrary/20749/19d43e28-643d-4919-b167-4dfff6a7c24d.png') center/cover no-repeat;
+        height: calc(100vh - 185px); /* Fallback */
+        min-height: 400px;
+        width: 100%;
         overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transform: translateY(50px);
-        opacity: 0;
-        transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease, box-shadow 0.4s ease;
     }
 
-    .n-card-content {
+    #hero-image::before {
+        content: '';
         position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 30px;
-        z-index: 20;
-        text-align: center;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+        z-index: 1;
+        pointer-events: none;
     }
 
-    .n-card-title {
-        font-size: 2.2rem;
-        color: white;
-        margin-bottom: 10px;
-        font-weight: 400; 
+    .hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        object-fit: cover;
+        pointer-events: none;
+        background-color: #000;
     }
 
-    .n-card-desc {
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.5;
-        font-weight: 400; /* 🌟 EXPLICITLY SET */
-        margin-bottom: 20px;
-    }
-
-    .n-card-link {
-        font-size: 1.1rem;
-        color: white;
-        font-weight: 400; 
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        border-bottom: 2px solid #fe97cf;
-        padding-bottom: 5px;
-    }
-
-    .niche-card.is-visible {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .niche-card:nth-child(1).is-visible { transition-delay: 0.1s; }
-    .niche-card:nth-child(2).is-visible { transition-delay: 0.3s; }
-    .niche-card:nth-child(3).is-visible { transition-delay: 0.5s; }
-
-    /* --- GLOBAL SHAPE COLORS (FIX FOR MOBILE) --- */
-    .bg-purple { background: #b1aaf0; }
-    .bg-orange { background: #f86f05; }
-    .bg-pink { background: #fe97cf; }
-
-
-    /* ==========================================================
-       🌟 DESKTOP ONLY: "ROLLING DIAMOND" ANIMATION ENGINE & HOVERS 🌟
-       ========================================================== */
-    @media (min-width: 1025px) {
-
-        .n-card-title {
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-            margin-bottom: 0;
-            transition: all 0.4s ease;
+    /* Mobile & Responsive Enhancements */
+    @media (max-width: 768px) {
+        body {
+            overflow-x: hidden;
+            max-width: 100vw;
         }
 
-        .n-card-desc,
-        .n-card-link {
-            max-height: 0;
-            opacity: 0;
-            transform: translateY(15px);
-            margin: 0;
-            overflow: hidden;
-            transition: all 0.4s ease;
+        /* Hero Video Section on Mobile */
+        #home {
+            height: 40vh !important;
+            min-height: 220px;
         }
 
-        .niche-card::before,
-        .niche-card::after {
-            position: absolute;
-            content: "";
-            width: 20%;
-            height: 20%;
-            background: linear-gradient(135deg, rgba(67, 106, 238, 0.95), rgba(177, 170, 240, 0.95));
-            transition: all 0.5s ease;
-            z-index: 10;
+        .hero-video {
+            display: block !important;
+            height: 100% !important;
+            width: 100% !important;
+            object-fit: cover !important;
         }
 
-        .niche-card::before {
-            top: 0;
-            right: 0;
-            border-radius: 0 24px 0 100%;
+        /* Hero Intro */
+        #hero-intro {
+            padding: 2.5rem 1.4rem 2rem 1.4rem !important;
         }
 
-        .niche-card::after {
-            bottom: 0;
-            left: 0;
-            border-radius: 0 100% 0 24px;
+        #hero-intro h1 {
+            font-size: 2rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 0.8rem !important;
         }
 
-        .niche-card.is-visible:hover::before,
-        .niche-card.is-visible:hover::after {
-            width: 100%;
-            height: 100%;
-            border-radius: 24px;
+        #hero-intro p.subtitle {
+            font-size: 0.98rem !important;
+            margin-bottom: 1.5rem !important;
         }
 
-        .niche-card.is-visible:hover .n-card-title {
-            text-shadow: none;
+        /* All Major Section Headings */
+        #manifesto h2,
+        #featured-properties h2,
+        #featured-communities h2,
+        #about-agent h2,
+        #services h2,
+        #testimonials h2,
+        #blog h2,
+        #faq h2,
+        #contact h2,
+        [id="services-heading"],
+        [id="faq-heading"],
+        [id="agent-heading"],
+        [id="contact-heading"] {
+            font-size: 2rem !important;
+            line-height: 1.22 !important;
+            margin-bottom: 1rem !important;
         }
 
-        .niche-card.is-visible:hover .n-card-desc {
-            max-height: 150px;
-            opacity: 1;
-            transform: translateY(0);
-            margin-top: 15px;
-            margin-bottom: 20px;
-            transition-delay: 0.1s;
+        /* Search Widget on Mobile */
+        .hero-search-container {
+            padding: 1rem 0.9rem !important;
+            border-radius: 12px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
         }
 
-        .niche-card.is-visible:hover .n-card-link {
-            max-height: 50px;
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.2s;
-        }
-
-        .niche-card.is-visible:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-            transition-delay: 0s !important;
-            transition-duration: 0.4s !important; 
-        }
-
-        .mobile-info-boxes {
-            display: none !important;
-        }
-
-        .desktop-presentations {
-            display: block;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .presentation-section {
-            position: relative;
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 80px 5%;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        .p-title {
-            width: 100%;
-            font-size: 4.5rem;
-            color: #191f4f;
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .p-content-row {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .p-desc-col {
-            width: 45%;
-            padding-right: 40px;
-            box-sizing: border-box;
-            z-index: 3;
-        }
-
-        .p-visual-col {
-            width: 50%;
-            height: 450px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .presentation-section.reverse .p-content-row {
-            flex-direction: row-reverse;
-        }
-
-        .presentation-section.reverse .p-desc-col {
-            padding-right: 0;
-            padding-left: 40px;
-        }
-
-        .p-desc {
-            font-size: 2rem;
-            line-height: 1.6;
-            color: #333;
-            font-weight: 400; /* 🌟 EXPLICITLY SET */
-            margin: 0;
-        }
-
-        .shape-diamond,
-        .shape-image {
-            position: absolute;
-            width: 450px;
-            height: 450px;
-            border-radius: 40px;
-        }
-
-        .shape-diamond { z-index: 1; }
-        .shape-image { object-fit: cover; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); z-index: 2; }
-
-        .p-title { transform: translateX(-100px); opacity: 0; }
-        .p-desc { transform: translateY(50px); opacity: 0; }
-        .p-visual-col .shape-diamond { transform: translateX(100vw) rotate(405deg); opacity: 0; }
-        .p-visual-col .shape-image { transform: translateX(100vw) rotate(360deg); opacity: 0; }
-
-        .presentation-section.reverse .p-title { text-align: right; transform: translateX(100px); }
-        .presentation-section.reverse .p-desc { text-align: right; }
-        .presentation-section.reverse .p-visual-col .shape-diamond { transform: translateX(-100vw) rotate(-315deg); }
-        .presentation-section.reverse .p-visual-col .shape-image { transform: translateX(-100vw) rotate(-360deg); }
-
-        .presentation-section.is-active .p-title { transform: translateX(0); opacity: 1; transition: all 0.6s ease-out 0s; }
-        .presentation-section.is-active .p-desc { transform: translateY(0); opacity: 1; transition: all 0.6s ease-out 0.3s; }
-        .presentation-section.is-active .p-visual-col .shape-diamond { transform: translateX(0) rotate(45deg); opacity: 1; transition: all 1.0s cubic-bezier(0.25, 1, 0.5, 1) 0.6s; }
-        .presentation-section.is-active .p-visual-col .shape-image { transform: translateX(0) rotate(0deg); opacity: 1; transition: all 1.0s cubic-bezier(0.25, 1, 0.5, 1) 1.0s; }
-    }
-
-
-    /* ==========================================================
-       🌟 MOBILE ONLY: NEW ROLLING SHAPE STACK 🌟
-       ========================================================== */
-    @media (max-width: 1024px) {
-        .niche-title {
-            font-size: 3rem;
-        }
-
-        .niche-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .niche-card {
-            height: 350px;
-        }
-
-        .niche-card:nth-child(1).is-visible,
-        .niche-card:nth-child(2).is-visible,
-        .niche-card:nth-child(3).is-visible {
-            transition-delay: 0.1s; 
-        }
-
-        .niche-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(25, 31, 79, 0.95) 0%, transparent 70%);
-            z-index: 10;
-        }
-
-        .n-card-content {
-            justify-content: flex-end;
-            padding-bottom: 40px;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .desktop-presentations { display: none !important; }
-        .hero-scroll-indicator { display: none; }
-
-        .sequence-container,
-        .sequence-container.hero-top {
+        .hero-search-container form {
             flex-direction: column !important;
-            height: auto !important;
-            margin: 40px 0 !important;
-            left: 0;
-            transform: none;
-            width: 100%;
-        }
-
-        .sequence-content {
-            order: 1;
+            gap: 0.8rem !important;
             width: 100% !important;
-            padding: 30px 20px !important;
-            text-align: center;
-            transform: none;
         }
 
-        .visual-stack {
-            order: 2;
+        .hero-search-container form div {
             width: 100% !important;
-            height: 350px !important;
+            min-width: 100% !important;
         }
 
-        .gradient-square {
-            width: 85% !important;
-            height: 350px !important;
-            left: 0 !important;
-            right: auto !important;
-            border-radius: 0 20px 20px 0 !important;
-        }
-
-        .sliding-image-wrap {
-            left: 20px !important;
-            right: auto !important;
-            height: 350px !important;
+        .hero-search-container form button {
             width: 100% !important;
-            top: 0 !important;
+            padding: 0.9rem !important;
         }
 
-        .hero-top .gradient-square { left: auto !important; right: 0 !important; border-radius: 20px 0 0 20px !important; }
-        .hero-top .sliding-image-wrap { left: auto !important; right: 20px !important; }
-
-        .design-image { width: 90vw !important; height: 320px !important; object-fit: cover; margin-top: 0 !important; }
-        .logo-text { font-size: 50px; text-align: center; }
-        #hero-trigger { margin-top: 80px !important; }
-
-        .mobile-info-boxes {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            overflow: hidden;
-            padding: 60px 0;
-            gap: 80px;
+        .hero-tab {
+            padding: 6px 10px !important;
+            font-size: 0.78rem !important;
         }
 
-        .m-presentation-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            overflow: visible;
+        /* Global container — ensure consistent horizontal padding */
+        .container {
+            padding-left: 1.2rem !important;
+            padding-right: 1.2rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
         }
 
-        .m-visual-col {
-            position: relative;
-            width: 100%;
-            height: 380px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
+        /* section-padding — keep vertical padding, add horizontal */
+        .section-padding {
+            padding: 2.5rem 1.2rem !important;
         }
 
-        .m-shape-diamond,
-        .m-shape-image {
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            border-radius: 30px;
+        /* Manifesto Section */
+        #manifesto {
+            padding: 3.5rem 1.4rem !important;
+            margin-bottom: 2.5rem !important;
         }
 
-        .m-shape-diamond { z-index: 1; }
-        .m-shape-image { object-fit: cover; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); z-index: 2; }
-
-        .m-text-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        #manifesto p {
+            font-size: 1.05rem !important;
         }
 
-        .m-title {
-            font-size: 2.8rem;
-            color: #191f4f;
-            font-weight: 400; 
-            line-height: 1.1;
-            margin: 0 0 15px 0;
+        /* Quick Facts - no negative margin pulling it over hero on mobile */
+        .premium-facts-wrapper {
+            margin-top: 0 !important;
+            padding: 1.5rem 1.2rem !important;
+            border-radius: 12px !important;
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
         }
 
-        .m-desc { 
-            font-size: 1.2rem; 
-            line-height: 1.6; 
-            color: #444; 
-            font-weight: 400; /* 🌟 EXPLICITLY SET */
-            margin: 0; 
+        #quick-facts {
+            padding: 1.5rem 1.2rem !important;
         }
 
-        .m-visual-col .m-shape-diamond { transform: translateX(-100vw) rotate(-405deg); opacity: 0; }
-        .m-visual-col .m-shape-image { transform: translateX(100vw) rotate(360deg); opacity: 0; }
-        .m-text-content { transform: translateY(60px); opacity: 0; }
+        /* Properties & Communities sections */
+        #featured-properties,
+        #featured-communities {
+            padding: 2.5rem 1.2rem !important;
+        }
 
-        .m-presentation-section.is-active .m-visual-col .m-shape-diamond { transform: translateX(0) rotate(45deg); opacity: 1; transition: all 1.0s cubic-bezier(0.25, 1, 0.5, 1) 0s; }
-        .m-presentation-section.is-active .m-visual-col .m-shape-image { transform: translateX(0) rotate(0deg); opacity: 1; transition: all 1.0s cubic-bezier(0.25, 1, 0.5, 1) 0.4s; }
-        .m-presentation-section.is-active .m-text-content { transform: translateY(0); opacity: 1; transition: all 0.8s ease-out 1.0s; }
+        #featured-properties header,
+        #featured-communities header,
+        #testimonials header,
+        #blog header {
+            margin-bottom: 2rem !important;
+        }
 
-        .animate-img-left { animation: m-slideInLeft 1s ease-out forwards 0.6s !important; }
-        .animate-img-right { animation: m-slideInRight 1s ease-out forwards 0.6s !important; }
+        #featured-properties header p,
+        #featured-communities header p,
+        #testimonials header p,
+        #blog header p {
+            font-size: 1rem !important;
+        }
 
-        @keyframes m-slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(40px); opacity: 1; } }
-        @keyframes m-slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0px); opacity: 1; } }
+        /* Force all auto-fit grids to single column on mobile */
+        .borderless-grid,
+        .grid-layout {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 1.5rem !important;
+        }
+
+        /* About Agent */
+        #about-agent {
+            padding: 3.5rem 1.4rem !important;
+            margin-bottom: 2.5rem !important;
+        }
+
+        /* About agent inner grid — override inline display:grid */
+        .about-agent-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+        }
+
+        /* Services section */
+        #services {
+            padding: 2.5rem 1.2rem !important;
+            margin-bottom: 2.5rem !important;
+        }
+
+        #services > div {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+        }
+
+        /* Services heading override */
+        #services-heading {
+            font-size: 2rem !important;
+        }
+
+        /* Services numbered items */
+        #services div[style*="font-size: 1.5rem"] {
+            font-size: 1.1rem !important;
+        }
+
+        /* Blog section */
+        #blog {
+            padding: 3.5rem 1.4rem !important;
+            margin-bottom: 2.5rem !important;
+        }
+
+        /* Testimonials section */
+        #testimonials {
+            padding: 2.5rem 1.4rem !important;
+            margin-bottom: 2.5rem !important;
+            border-radius: 12px !important;
+        }
+
+        #testimonials > .testimonials-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1.2rem !important;
+        }
+
+        .testimonial-nav {
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        /* FAQ Section */
+        #faq {
+            padding: 2.5rem 1.2rem !important;
+            margin-bottom: 2.5rem !important;
+        }
+
+        #faq > div {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+            width: 100% !important;
+        }
+
+        /* FAQ heading override */
+        #faq-heading {
+            font-size: 2rem !important;
+        }
+
+        /* FAQ right column - accordion container */
+        #faq > div > div:last-child {
+            width: 100% !important;
+            min-width: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        /* FAQ inner flex container */
+        #faq > div > div:last-child > div {
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* FAQ Cards */
+        .faq-accordion-item {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            overflow-x: hidden !important;
+            padding: 1rem 0 !important;
+        }
+
+        .faq-accordion-btn {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            flex-wrap: nowrap;
+        }
+
+        .faq-title {
+            font-size: 0.9rem !important;
+            line-height: 1.45 !important;
+            white-space: normal !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            hyphens: auto !important;
+            min-width: 0 !important;
+        }
+
+        /* Contact section */
+        #contact {
+            padding: 2.5rem 1.4rem !important;
+            border-radius: 14px !important;
+            margin-bottom: 2rem !important;
+        }
+
+        #contact > div {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 2rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Contact heading override */
+        #contact-heading {
+            font-size: 2rem !important;
+        }
+
+        #contact p.seo-text {
+            font-size: 0.98rem !important;
+        }
+
+        /* Contact form card */
+        #contact > div > div:last-child {
+            padding: 1.5rem 1.2rem !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
     }
 
-    /* --- 6. FOOTER SEQUENCE (SHARED) --- */
-    .footer-seq {
-        margin-bottom: 0px !important;
-        margin-top: 80px;
+    @media (max-width: 480px) {
+        #hero-intro h1 {
+            font-size: 1.75rem !important;
+        }
+
+        #manifesto h2,
+        [id="services-heading"],
+        [id="faq-heading"],
+        [id="agent-heading"],
+        [id="contact-heading"],
+        #featured-properties h2,
+        #featured-communities h2,
+        #testimonials h2,
+        #blog h2 {
+            font-size: 1.75rem !important;
+        }
+
+        .premium-facts-wrapper {
+            grid-template-columns: 1fr !important;
+        }
+
+        .hero-tab {
+            padding: 5px 8px !important;
+            font-size: 0.73rem !important;
+        }
     }
 
-    .footer-seq .sequence-content {
-        opacity: 0;
-        transform: translateX(50px);
-        transition: all 1s ease-out 1s;
+
+
+    #hero-text {
+        background-color: #ffffff;
+        padding: 5rem 5% 7rem 5%;
+        /* Added extra bottom padding to accommodate the floating card */
+        text-align: center;
+        border-bottom: 1px solid #eaeaea;
     }
 
-    .sequence-title {
-        font-size: 3.5rem;
-        color: #191f4f;
-        font-weight: 400; 
-        margin-bottom: 30px;
+    #hero-text h1 {
+        color: #1a1a1a;
+        font-size: 3rem;
+        max-width: 900px;
+        margin: 0 auto 1rem;
     }
 
-    .sequence-btn {
+    #hero-text p.subtitle {
+        color: #0056b3;
+        font-size: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        font-weight: 600;
+    }
+
+    #hero-text p.description {
+        color: #555;
+        font-size: 1.15rem;
+        max-width: 900px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.8;
+    }
+
+    /* Buttons */
+    .btn-primary {
         display: inline-block;
-        padding: 16px 45px;
-        background: linear-gradient(90deg, #191f4f, #436aee);
+        padding: 1rem 2.5rem;
+        background-color: #2370ba;
         color: white;
         text-decoration: none;
-        border-radius: 50px;
-        font-weight: 400; 
+        font-weight: 700;
+        border-radius: 8px;
+        font-size: 1.05rem;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .btn-primary:hover {
+        background-color: #1d5f9e;
+        transform: scale(1.03);
+        box-shadow: none !important;
+    }
+
+    /* Grid Layouts for lists/cards */
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background: rgba(35, 112, 186, 0.98);
+        color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .sequence-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(67, 106, 238, 0.4);
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
-    .animate-down { animation: slideInDown 1s ease-out forwards; }
-    .animate-up { animation: slideInUp 1s ease-out forwards; }
-    .animate-img-left { animation: slideInLeft 1s ease-out forwards 0.6s; }
-    .animate-img-right { animation: slideInRight 1s ease-out forwards 0.6s; }
-    .footer-active { opacity: 1 !important; transform: translateX(0) !important; }
-
-    @keyframes slideInDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes slideInUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(110px); opacity: 1; } }
-    @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(-30px); opacity: 1; } }
-
-    /* ==========================================================
-       🆕 RECENT WORK SECTION (VERTICAL STACK CARDS)
-       ========================================================== */
-    .recent-work-container {
+    .card-img {
         width: 100%;
-        max-width: 1400px;
-        margin: 100px auto;
-        padding: 0 5%;
-        box-sizing: border-box;
-        text-align: center;
-        position: relative;
+        height: 240px;
+        object-fit: cover;
     }
 
-    .rw-stack {
+    .card-content {
+        padding: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #ffffff;
+    }
+    
+    .card-title a {
+        color: #ffffff !important;
+    }
+
+    .card-meta {
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+    
+    .card .seo-text {
+        color: #ffffff !important;
+    }
+    
+    .card a {
+        color: #ffffff !important;
+    }
+
+    /* STAIRCASE CAROUSEL */
+    .staircase-carousel-wrapper {
+        position: relative;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: 100px;
-        margin-top: 60px;
-        padding-bottom: 60px;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px 0 100px 0;
+        overflow: hidden; 
     }
 
-    .rw-card {
+    .staircase-carousel {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
         width: 100%;
-        max-width: 900px;
-        min-height: 350px;
-        background-color: #f2f8fc;
-        border-radius: 16px;
-        padding: 50px;
-        box-sizing: border-box;
-        text-align: left;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 0.6s ease;
+        max-width: 1100px; 
     }
 
-    .rw-card.is-visible { opacity: 1; transform: translateY(0); }
-    .rw-card.is-visible:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-
-    .rw-image-box {
-        position: absolute;
-        bottom: -40px;
-        right: -40px;
-        width: 46%;
-        height: 56%;
-        border-radius: 12px;
-        background-color: #e5e7eb;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        transition: transform 0.7s ease;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: 2;
-    }
-
-    .rw-card.is-visible:hover .rw-image-box { transform: translate(-16px, -16px); }
-
-    .rw-content {
+    .staircase-track {
         position: relative;
-        z-index: 3;
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+        height: 520px; 
     }
 
-    .rw-title { font-size: 2.2rem; font-weight: 400; color: #1f2937; margin: 0 0 15px 0; }
-    .rw-desc { 
-        font-size: 1.1rem; 
-        color: #4b5563; 
-        line-height: 1.6; 
-        font-weight: 400; /* 🌟 EXPLICITLY SET */
-        margin: 0 0 30px 0; 
-    }
-
-    /* --- COMING SOON TOAST --- */
-    #coming-soon-toast {
-        position: fixed;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%) translateY(30px);
-        background: #191f4f;
-        color: white;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 400; 
-        box-shadow: 0 10px 25px rgba(25, 31, 79, 0.4);
+    .stair-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(33.333% - 20px);
+        transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease;
         opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        z-index: 9999;
+        pointer-events: none;
+        transform: translateX(100vw);
     }
 
-    #coming-soon-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; visibility: visible; }
+    .stair-visible-0 {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateX(0) translateY(100px) !important;
+        z-index: 3 !important;
+    }
 
-    /* --- TABLET & IPAD SPECIFIC FIX --- */
-    @media (min-width: 768px) and (max-width: 1024px) {
-        .rw-card {
-            padding: 40px;
-            padding-bottom: 320px; 
-        }
-        
-        .rw-content { width: 100%; }
+    .stair-visible-1 {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateX(calc(100% + 30px)) translateY(50px) !important;
+        z-index: 2 !important;
+    }
 
-        .rw-image-box {
-            width: 65%;      
-            height: 280px;   
-            bottom: -30px;
-            right: 30px;
+    .stair-visible-2 {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateX(calc(200% + 60px)) translateY(0px) !important;
+        z-index: 1 !important;
+    }
+
+    .stair-out-left {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateX(-100vw) translateY(50px) !important;
+    }
+
+    .stair-out-right {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateX(100vw) translateY(50px) !important;
+    }
+
+    .staircase-btn {
+        background: #ffffff;
+        color: #2370ba;
+        border: 2px solid #2370ba;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        flex-shrink: 0;
+    }
+
+    .staircase-btn:hover {
+        background: #2370ba;
+        color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+        .staircase-carousel-wrapper { display: block; padding: 0; overflow: visible; }
+        .staircase-track { height: auto; display: flex; flex-direction: column; gap: 30px; }
+        .stair-card { position: relative; width: 100%; transform: none !important; opacity: 1 !important; pointer-events: auto !important; transition: none !important; margin-bottom: 20px; }
+        .staircase-btn { display: none !important; }
+    }
+
+    .animated-header {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease-out;
+    }
+    
+    .animated-header.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* --- PREMIUM QUICK FACTS STYLES --- */
+    .premium-facts-wrapper {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        padding: 2.5rem 3rem;
+        margin-top: -80px;
+        /* Pulls the card up over the hero section */
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .fact-column {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .fact-icon {
+        background: #f4f7fa;
+        color: #0056b3;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .fact-content h3 {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #777;
+        margin: 0 0 0.5rem 0;
+        font-weight: 600;
+    }
+
+    .fact-content p {
+        font-size: 1.1rem;
+        color: #1a1a1a;
+        margin: 0;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    @media (min-width: 992px) {
+        .fact-column:not(:last-child) {
+            border-right: 1px solid #f0f0f0;
+            padding-right: 1.5rem;
         }
     }
 
-    /* Mobile Adjustments for Stacked Cards */
-    @media (max-width: 767px) {
-        .rw-card {
-            padding: 30px;
-            padding-bottom: 220px;
-        }
+    /* Agent About Section */
+    #about-agent {
+        background-color: #ffffff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 40px;
+    }
 
-        .rw-content { width: 100%; }
+    .agent-img {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
 
-        .rw-image-box {
-            width: 85%;
-            height: 156px;
-            bottom: -20px;
-            right: 20px;
-        }
+    .agent-text {
+        flex: 2;
+        min-width: 300px;
+    }
+
+    .seo-text {
+        font-size: 1rem;
+        color: #444;
+    }
+
+    .ai-fact-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+
+    .ai-fact-list li {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
     }
 </style>
 
-<div class="sequence-container hero-top" id="hero-trigger">
-    <div class="visual-stack">
-        <div class="gradient-square"></div>
-        <div class="sliding-image-wrap">
-            <img src="/assets/home21.png" alt="About ChasTech" class="design-image">
-        </div>
-    </div>
-    <div class="sequence-content">
-        <div class="logo anim-left">
-            <p class="logo-text"><span class="highlight-blue">Chas</span>Tech</p>
-        </div>
-        <h1 class="gradient-text anim-top">Your vision, built for the web.</h1>
-        <p class="intro-p anim-bottom">
-            Your digital presence is more than a website, it’s your first impression. At ChasTech, we transform your
-            ideas into visually striking, high-performance websites built to look great and work flawlessly on every
-            device.
-        </p>
-        <div class="hero-scroll-indicator anim-arrow">
-            <span class="scroll-text">Explore</span>
-            <div class="hero-arrow-flow"><span>&gt;</span><span>&gt;</span><span>&gt;</span></div>
-        </div>
-    </div>
-</div>
+<main id="main-content">
 
-<div class="desktop-presentations">
-    <div class="presentation-section">
-        <h1 class="p-title">Screen Optimization</h1>
-        <div class="p-content-row">
-            <div class="p-desc-col">
-                <p class="p-desc">In today’s digital world, your content must look great on every device. Screen
-                    optimization ensures responsive designs that adapt smoothly to phones, tablets, and desktops.</p>
-            </div>
-            <div class="p-visual-col">
-                <div class="shape-diamond bg-purple"></div>
-                <img src="/assets/optimize3.png" alt="Screen Optimization" class="shape-image"
-                    style="background: #f2f8fc">
-            </div>
-        </div>
-    </div>
+    <!-- Full-Width Cinematic Hero Video Section -->
+    <section id="home" style="width: 100%; height: 75vh; position: relative; overflow: hidden; background: #ffffff;">
+        <video autoplay loop muted playsinline class="hero-video" style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="/ottawa.mp4" type="video/mp4">
+        </video>
+    </section>
 
-    <div class="presentation-section reverse">
-        <h1 class="p-title">Tailored Design</h1>
-        <div class="p-content-row">
-            <div class="p-desc-col">
-                <p class="p-desc">Standing out takes more than function, it takes personality. A unique, custom design
-                    helps your project capture attention and leave a lasting impression.</p>
+    <!-- Headline Title & Property Search Section Directly Under Video -->
+    <section id="hero-intro" style="background: #ffffff; padding: 5rem 5% 4rem 5%; text-align: center;">
+        <header id="hero-text" class="animated-header" aria-label="Welcome Overview" style="max-width: 1050px; margin: 0 auto;">
+            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 1rem;">RE/MAX Hallmark Realty Group Brokerage</span>
+            <h1 style="font-size: 3.8rem; font-weight: 800; line-height: 1.12; color: #0f172a; margin-bottom: 1.5rem; font-family: var(--font-heading);">
+                Expert Broker. Real Guidance.<br>
+                <span style="color: #94a3b8; font-weight: 700;">A Clear Path to Ottawa Real Estate.</span>
+            </h1>
+            <p class="subtitle" style="font-size: 1.3rem; color: #475569; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.65;">
+                Data-driven representation for buyers, sellers, and investors across Kanata, Barrhaven, Orléans, and Central Ottawa.
+            </p>
+            
+            <!-- Embedded Interactive Search Widget -->
+            <div class="hero-search-container" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.8rem 2.5rem; max-width: 850px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.06); text-align: left;">
+                <form onsubmit="event.preventDefault(); window.location.hash='#featured-properties';" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <input type="text" placeholder="Search Kanata, Barrhaven, Orléans, Nepean..." style="width: 100%; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 1.05rem; font-family: inherit; outline: none; background: #f8fafc;">
+                    </div>
+                    <button type="submit" class="btn-primary" style="background: #2370ba; color: white; border: none; padding: 1rem 2.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; white-space: nowrap; font-size: 1.05rem;">Find Properties &rarr;</button>
+                </form>
             </div>
-            <div class="p-visual-col">
-                <div class="shape-diamond bg-orange"></div>
-                <img src="/assets/screen-bro3.png" alt="Creative Design" class="shape-image"
-                    style="background: #f2f8fc">
-            </div>
-        </div>
-    </div>
+        </header>
+    </section>
 
-    <div class="presentation-section">
-        <h1 class="p-title">Seamless Integration</h1>
-        <div class="p-content-row">
-            <div class="p-desc-col">
-                <p class="p-desc">Great digital solutions are built to grow. Seamless integration with your existing
-                    tools ensures smooth workflows and prepare your project for future needs.</p>
+    <section id="quick-facts" aria-label="Broker Quick Facts" class="container" style="padding-bottom: 4rem;">
+        <div class="premium-facts-wrapper">
+            <div class="fact-column">
+                <div class="fact-content">
+                    <h3>Service Areas</h3>
+                    <p>Kanata, Barrhaven, Orléans & Central Ottawa</p>
+                </div>
             </div>
-            <div class="p-visual-col">
-                <div class="shape-diamond bg-pink"></div>
-                <img src="/assets/integrate2.png" alt="Seamless Integration" class="shape-image"
-                    style="background: #f2f8fc">
+            <div class="fact-column">
+                <div class="fact-content">
+                    <h3>Language Support</h3>
+                    <p>English, French, Hindi, Urdu, & Farsi</p>
+                </div>
+            </div>
+            <div class="fact-column">
+                <div class="fact-content">
+                    <h3>Brokerage</h3>
+                    <p>RE/MAX Hallmark Realty Group</p>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="mobile-info-boxes">
-    <div class="m-presentation-section">
-        <div class="m-visual-col">
-            <div class="m-shape-diamond bg-purple"></div>
-            <img src="/assets/optimize3.png" alt="Screen Optimization" class="m-shape-image"
-                style="background: #f2f8fc">
-        </div>
-        <div class="m-text-content">
-            <h1 class="m-title">Screen Optimization</h1>
-            <p class="m-desc">In today’s digital world, your content must look great on every device. Screen
-                optimization ensures responsive designs that adapt smoothly to phones, tablets, and desktops.</p>
-        </div>
-    </div>
+    <!-- Alignment Manifesto (Inspired by findrealestate.com) -->
+    <section id="manifesto" style="background: #fafaf9; padding: 7rem 5%; text-align: center; border-top: 1px solid #e7e7e5; border-bottom: 1px solid #e7e7e5; margin-bottom: 5rem;">
+        <header class="container animated-header" style="max-width: 950px;">
+            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 1rem;">Our Philosophy</span>
+            <h2 style="font-size: 3.2rem; color: #0f172a; font-weight: 800; margin: 0 auto 2rem auto; line-height: 1.25; font-family: var(--font-heading);">
+                This isn’t just about real estate.<br>
+                It’s about identity. <span style="color: #94a3b8; font-weight: 700;">Progress. Getting unstuck.</span>
+            </h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.25rem; color: #475569; line-height: 1.75;">
+                You’re not just looking for a house. You’re looking for community, school districts, investment alignment, and long-term financial growth. That’s what Broker Murtaza Siddiqui helps you find.
+            </p>
+        </header>
+    </section>
 
-    <div class="m-presentation-section">
-        <div class="m-visual-col">
-            <div class="m-shape-diamond bg-orange"></div>
-            <img src="/assets/screen-bro3.png" alt="Creative Design" class="m-shape-image" style="background: #f2f8fc">
-        </div>
-        <div class="m-text-content">
-            <h1 class="m-title">Tailored Design</h1>
-            <p class="m-desc">Standing out takes more than function, it takes personality. A unique, custom design helps
-                your project capture attention and leave a lasting impression.</p>
-        </div>
-    </div>
+    <section id="featured-properties" class="section-padding container" aria-labelledby="properties-heading"
+        style="padding-top: 2rem;">
+        <header class="animated-header" style="text-align: center; margin-bottom: 3.5rem;">
+            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Exclusive Listings</span>
+            <h2 id="properties-heading" style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #0f172a; font-family: var(--font-heading);">
+                Featured Ottawa<br>
+                <span style="color: #94a3b8; font-weight: 700;">Properties & Listings.</span>
+            </h2>
+            <p style="max-width: 650px; margin: 0.8rem auto 0 auto; font-size: 1.15rem; color: #64748b;">Explore exclusive single-family homes, townhouses, and condos currently available in the Ottawa real estate market.</p>
+        </header>
 
-    <div class="m-presentation-section">
-        <div class="m-visual-col">
-            <div class="m-shape-diamond bg-pink"></div>
-            <img src="/assets/integrate2.png" alt="Seamless Integration" class="m-shape-image"
-                style="background: #f2f8fc">
-        </div>
-        <div class="m-text-content">
-            <h1 class="m-title">Seamless Integration</h1>
-            <p class="m-desc">Great digital solutions are built to grow. Seamless integration with your existing tools
-                ensures smooth workflows and prepare your project for future needs.</p>
-        </div>
-    </div>
-</div>
+        <div class="grid-layout properties-grid">
+            <article class="card property-listing property-slide">
+                <img src="https://photos.alphotoscdn.com/file/al-photos-s3/DDF/X12869032/bc56734c-5d80-447a-8747-b9618e6b563b.webp"
+                    alt="House at 4120 Kelly Farm Drive" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 class="card-title">4120 Kelly Farm Drive</h3>
+                    <span class="card-meta">Ottawa South | $660,000</span>
+                    <p class="seo-text">Residential single-family house featuring 3 bedrooms, 2 bathrooms, and 1500 -
+                        2000 sqft of living space.</p>
+                </div>
+            </article>
 
-<div class="niche-container" id="niche-trigger">
-    <h2 class="niche-title">Who We Serve</h2>
-    <p class="niche-subtitle">Digital experiences engineered for your industry's unique demands.</p>
+            <article class="card property-listing property-slide">
+                <img src="https://photos.alphotoscdn.com/file/al-photos-s3/DDF/X12852632/c1814bd8-c465-4141-b8f7-5592470d427a.webp"
+                    alt="House at 3244 Piché Road" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 class="card-title">3244 Piché Road</h3>
+                    <span class="card-meta">The Nation | $919,999</span>
+                    <p class="seo-text">Premium real estate listed in The Nation. Detached property with 3 bedrooms, 2
+                        bathrooms, and luxury finishes.</p>
+                </div>
+            </article>
 
-    <div class="niche-grid">
-        <div class="niche-card" style="background-image: url('/assets/service1.jpg');">
-            <div class="n-card-content">
-                <h3 class="n-card-title">Local Businesses</h3>
-                <p class="n-card-desc">Helping businesses increase online visibility and attract more customers.</p>
+            <article class="card property-listing property-slide">
+                <img src="https://photos.alphotoscdn.com/file/al-photos-s3/DDF/X12846960/a4c4b72f-de60-41b2-a343-85e712a82699.webp"
+                    alt="House at 340 Stoneway Drive" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 class="card-title">340 Stoneway Drive</h3>
+                    <span class="card-meta">Nepean | $829,999</span>
+                    <p class="seo-text">Spacious 4-bedroom, 3-bathroom house offering 2000 - 2500 sqft, perfect for
+                        growing families looking to settle near top-rated schools.</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Mobile carousel nav -->
+        <div class="properties-nav" style="display: none; margin-top: 1.8rem;">
+            <button class="properties-prev" aria-label="Previous property" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8592;</button>
+            <div class="properties-dots"></div>
+            <button class="properties-next" aria-label="Next property" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8594;</button>
+        </div>
+    </section>
+
+    <section id="featured-communities" class="section-padding container" aria-labelledby="communities-heading"
+        style="background-color: transparent;">
+        <header class="communities-header animated-header" style="text-align: center; margin-bottom: 3.5rem;">
+            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Ottawa Districts</span>
+            <h2 id="communities-heading" style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #0f172a; font-family: var(--font-heading);">
+                Ottawa Neighbourhoods<br>
+                <span style="color: #94a3b8; font-weight: 700;">& Communities.</span>
+            </h2>
+            <p style="max-width: 650px; margin: 0.8rem auto 0 auto; font-size: 1.15rem; color: #64748b;">Comprehensive market data and property availability across Ottawa's most sought-after districts.</p>
+        </header>
+
+        <div class="staircase-carousel-wrapper">
+            <button class="staircase-btn prev-btn" aria-label="Previous Communities">❮</button>
+            <div class="staircase-carousel">
+                <div class="staircase-track">
+                    <article class="card community-info stair-card community-slide">
+                        <img src="https://cdn-websites.agentlocator.ca/20749/Communities/5%20(3).jpg"
+                            alt="Kanata Technical Hub Real Estate" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="/communities/kanata/"
+                                    style="color: inherit; text-decoration: none;">Kanata</a></h3>
+                            <p class="seo-text">Kanata is Ottawa's premier western tech-hub, featuring high demand for
+                                family-friendly townhomes and new construction detached houses.</p>
+                        </div>
+                    </article>
+
+                    <article class="card community-info stair-card community-slide">
+                        <img src="https://cdn-websites.agentlocator.ca/20749/Communities/4%20(4).jpg"
+                            alt="Barrhaven Suburban Ottawa Real Estate" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="/communities/barrhaven/"
+                                    style="color: inherit; text-decoration: none;">Barrhaven</a></h3>
+                            <p class="seo-text">Barrhaven is a rapidly expanding suburban district in southwest Ottawa known for
+                                highly-rated public schools, retail amenities, and affordable single-family homes.</p>
+                        </div>
+                    </article>
+
+                    <article class="card community-info stair-card community-slide">
+                        <img src="https://cdn-websites.agentlocator.ca/20749/Communities/2%20(10).jpg"
+                            alt="Orleans Eastern Ottawa Community" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="/communities/orleans/"
+                                    style="color: inherit; text-decoration: none;">Orléans</a></h3>
+                            <p class="seo-text">Located in Ottawa East, Orléans offers beautiful Ottawa River waterfront
+                                properties, rapid transit access, and a strong bilingual community.</p>
+                        </div>
+                    </article>
+
+                    <article class="card community-info stair-card community-slide">
+                        <img src="https://photos.alphotoscdn.com/file/al-cms/MediaLibrary/20749/19d43e28-643d-4919-b167-4dfff6a7c24d.png"
+                            alt="Nepean Ottawa Real Estate" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="/communities/nepean/"
+                                    style="color: inherit; text-decoration: none;">Nepean</a></h3>
+                            <p class="seo-text">Nepean is a highly established western suburb featuring a mix of mid-century
+                                homes on large lots and modern infill developments.</p>
+                        </div>
+                    </article>
+
+                    <article class="card community-info stair-card community-slide">
+                        <img src="https://photos.alphotoscdn.com/file/al-photos-s3/DDF/X12869032/bc56734c-5d80-447a-8747-b9618e6b563b.webp"
+                            alt="Ottawa South Communities" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="/communities/ottawa-south/"
+                                    style="color: inherit; text-decoration: none;">Ottawa South</a></h3>
+                            <p class="seo-text">Ottawa South encompasses vibrant urban neighborhoods like The Glebe and Old
+                                Ottawa South, characterized by historic properties and walkability.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
+            <button class="staircase-btn next-btn" aria-label="Next Communities">❯</button>
         </div>
 
-        <div class="niche-card" style="background-image: url('/assets/service2.jpg');">
-            <div class="n-card-content">
-                <h3 class="n-card-title">E-Commerce Brands</h3>
-                <p class="n-card-desc">Helping retailers create modern, easy-to-use online storefronts.</p>
-            </div>
+        <!-- Mobile carousel nav -->
+        <div class="communities-nav" style="display: none; margin-top: 1.8rem;">
+            <button class="communities-prev" aria-label="Previous community" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8592;</button>
+            <div class="communities-dots"></div>
+            <button class="communities-next" aria-label="Next community" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8594;</button>
         </div>
 
-        <div class="niche-card" style="background-image: url('/assets/service3.jpg');">
-            <div class="n-card-content">
-                <h3 class="n-card-title">Creative Professionals</h3>
-                <p class="n-card-desc">Photographers, artists, and agencies needing high-end, immersive visual
-                    portfolios.</p>
-            </div>
-        </div>
-    </div>
-</div>
+        <script>
+            (function initStaircase() {
+                const init = () => {
+                    const track = document.querySelector('.staircase-track');
+                    const cards = Array.from(document.querySelectorAll('.stair-card'));
+                    const prevBtn = document.querySelector('.prev-btn');
+                    const nextBtn = document.querySelector('.next-btn');
+                    
+                    if (!track || cards.length < 5) return;
 
-<div class="recent-work-container" id="recent-work-trigger">
-    <h2 class="niche-title">Recent Work</h2>
-    <p class="niche-subtitle">A showcase of our latest custom web solutions.</p>
+                    let currentGroup = 0; 
+                    let isFirstLoad = true;
 
-    <div class="rw-stack">
-        <div class="rw-card">
-            <div class="rw-image-box" style="background-image: url('/assets/inspection.png');"></div>
-            <div class="rw-content">
-                <h2 class="rw-title">Inspection Season</h2>
-                <p class="rw-desc">
-                    Inspection Season was designed and built to position a home inspection company as
-                    a reliable, professional service provider online. The site features a clean visual
-                    style, clear service positioning, and user-friendly navigation that encourages prospective
-                    clients to get in touch.
-                </p>
-                <a href="https://inspectionseason.com/" class="sequence-btn" target="_blank">Explore</a>
-            </div>
-        </div>
+                    function updateStaircase() {
+                        cards.forEach(card => card.style.transitionDelay = '0ms');
 
-        <div class="rw-card">
-            <div class="rw-image-box" style="background-image: url('/assets/whmis.png');"></div>
-            <div class="rw-content">
-                <h2 class="rw-title">WhmisWise</h2>
-                <p class="rw-desc">
-                    WHMIS Wise is a web-based training platform developed to present workplace safety and WHMIS
-                    course content in a structured and engaging way. The project emphasized custom content layout,
-                    clear visual hierarchy, and user-friendly navigation to improve how learners interact with
-                    training material.
-                </p>
-                <a href="https://whmiswise.com/" class="sequence-btn" target="_blank">Explore</a>
-            </div>
-        </div>
+                        if (currentGroup === 0) {
+                            prevBtn.style.opacity = '0.5';
+                            prevBtn.style.pointerEvents = 'none';
+                            nextBtn.style.opacity = '1';
+                            nextBtn.style.pointerEvents = 'auto';
 
-        <div class="rw-card">
-            <div class="rw-image-box" style="background-image: url('/assets/pharm.png');"></div>
-            <div class="rw-content">
-                <h2 class="rw-title">Rideau Pharmacy</h2>
-                <p class="rw-desc">
-                    Rideau Pharmacy is a client website developed to support a local pharmacy’s digital presence
-                    and customer outreach. The project focused on a clean visual identity, well-structured page layout,
-                    and straightforward navigation to ensure visitors can quickly find key information and contact the
-                    pharmacy with ease.
-                </p>
-                <a href="#" class="sequence-btn coming-soon-btn">Explore</a>
-            </div>
-        </div>
-    </div>
-</div>
+                            if (!isFirstLoad) {
+                                cards[4].style.transitionDelay = '0ms';
+                                cards[3].style.transitionDelay = '200ms';
+                            }
+                            
+                            cards[3].className = 'card community-info stair-card stair-out-right';
+                            cards[4].className = 'card community-info stair-card stair-out-right';
 
-<div class="sequence-container footer-seq" id="footer-trigger">
-    <div class="visual-stack">
-        <div class="gradient-square"></div>
-        <div class="sliding-image-wrap">
-            <img src="/assets/contact.jpg" alt="Design Work" class="design-image">
-        </div>
-    </div>
-    <div class="sequence-content">
-        <h2 class="sequence-title">Let's get in touch.</h2>
-        <a href="/contact/" class="sequence-btn">Get Started</a>
-    </div>
-</div>
-<div id="coming-soon-toast">Coming Soon!</div>
+                            if (isFirstLoad) {
+                                cards[0].style.transitionDelay = '200ms';
+                                cards[1].style.transitionDelay = '400ms';
+                                cards[2].style.transitionDelay = '600ms';
+                                isFirstLoad = false;
+                            } else {
+                                cards[0].style.transitionDelay = '800ms';
+                                cards[1].style.transitionDelay = '1000ms';
+                                cards[2].style.transitionDelay = '1200ms';
+                            }
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const hero = document.querySelector('#hero-trigger');
+                            // Use a tiny timeout to ensure classes apply correctly after delay resets
+                            setTimeout(() => {
+                                cards[0].className = 'card community-info stair-card stair-visible-0';
+                                cards[1].className = 'card community-info stair-card stair-visible-1';
+                                cards[2].className = 'card community-info stair-card stair-visible-2';
+                            }, 50);
 
-        // 1. Hero Animation Trigger
-        setTimeout(() => {
-            if (hero) {
-                hero.querySelector('.gradient-square').classList.add('animate-down');
-                hero.querySelector('.sliding-image-wrap').classList.add('animate-img-left');
-                hero.querySelector('.sequence-content').classList.add('animate-content-active');
+                        } else {
+                            prevBtn.style.opacity = '1';
+                            prevBtn.style.pointerEvents = 'auto';
+                            nextBtn.style.opacity = '0.5';
+                            nextBtn.style.pointerEvents = 'none';
+
+                            cards[0].style.transitionDelay = '0ms';
+                            cards[1].style.transitionDelay = '200ms';
+                            cards[2].style.transitionDelay = '400ms';
+                            
+                            cards[0].className = 'card community-info stair-card stair-out-left';
+                            cards[1].className = 'card community-info stair-card stair-out-left';
+                            cards[2].className = 'card community-info stair-card stair-out-left';
+
+                            cards[3].style.transitionDelay = '800ms';
+                            cards[4].style.transitionDelay = '1000ms';
+                            
+                            setTimeout(() => {
+                                cards[3].className = 'card community-info stair-card stair-visible-0';
+                                cards[4].className = 'card community-info stair-card stair-visible-1';
+                            }, 50);
+                        }
+                    }
+
+                    nextBtn.addEventListener('click', () => {
+                        if (currentGroup === 0) {
+                            currentGroup = 1;
+                            updateStaircase();
+                        }
+                    });
+
+                    prevBtn.addEventListener('click', () => {
+                        if (currentGroup === 1) {
+                            currentGroup = 0;
+                            updateStaircase();
+                        }
+                    });
+
+                    const section = document.getElementById('featured-communities');
+                    if (section) {
+                        const sectionObserver = new IntersectionObserver((entries) => {
+                            if (entries[0].isIntersecting) {
+                                updateStaircase();
+                                sectionObserver.disconnect();
+                            }
+                        }, { threshold: 0.1 });
+                        sectionObserver.observe(section);
+                    } else {
+                        updateStaircase();
+                    }
+                };
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', init);
+                } else {
+                    init();
+                }
+            })();
+        </script>
+    </section>
+
+    <script>
+        /* ── Shared mobile carousel factory for properties & communities ── */
+        (function initMobileCarousels() {
+            function makeCarousel(cfg) {
+                var section  = document.getElementById(cfg.sectionId);
+                if (!section) return;
+                var grid     = cfg.gridSel ? section.querySelector(cfg.gridSel) : null;
+                var slides   = Array.from(section.querySelectorAll(cfg.slideSel));
+                var nav      = section.querySelector(cfg.navSel);
+                var dotsWrap = section.querySelector(cfg.dotsSel);
+                var prevBtn  = section.querySelector(cfg.prevSel);
+                var nextBtn  = section.querySelector(cfg.nextSel);
+                var current  = 0;
+                var isMobile = false;
+
+                slides.forEach(function(_, i) {
+                    var dot = document.createElement('button');
+                    dot.setAttribute('aria-label', 'Item ' + (i + 1));
+                    dot.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;transition:all 0.25s ease;background:#cbd5e1;flex-shrink:0;';
+                    dot.addEventListener('click', function() { goTo(i); });
+                    dotsWrap.appendChild(dot);
+                });
+
+                dotsWrap.style.display       = 'flex';
+                dotsWrap.style.flexDirection = 'row';
+                dotsWrap.style.alignItems    = 'center';
+                dotsWrap.style.gap           = '0.5rem';
+
+                var dots = Array.from(dotsWrap.querySelectorAll('button'));
+
+                function goTo(idx) {
+                    current = idx;
+                    slides.forEach(function(s, i) {
+                        if (isMobile) { s.style.display = i === current ? 'block' : 'none'; }
+                    });
+                    dots.forEach(function(d, i) {
+                        d.style.background   = i === current ? '#2370ba' : '#cbd5e1';
+                        d.style.width        = i === current ? '20px' : '8px';
+                        d.style.borderRadius = i === current ? '4px' : '50%';
+                    });
+                }
+
+                function enable() {
+                    isMobile = true;
+                    if (grid) grid.style.display = 'block';
+                    nav.style.display        = 'flex';
+                    nav.style.flexDirection  = 'row';
+                    nav.style.alignItems     = 'center';
+                    nav.style.justifyContent = 'center';
+                    nav.style.gap            = '1.5rem';
+                    goTo(current);
+                }
+
+                function disable() {
+                    isMobile = false;
+                    if (grid) grid.style.display = '';
+                    nav.style.display = 'none';
+                    slides.forEach(function(s) { s.style.display = ''; });
+                }
+
+                prevBtn.addEventListener('click', function() { goTo((current - 1 + slides.length) % slides.length); });
+                nextBtn.addEventListener('click', function() { goTo((current + 1) % slides.length); });
+
+                function check() {
+                    if (window.innerWidth <= 768) { if (!isMobile) enable(); }
+                    else                          { if (isMobile)  disable(); }
+                }
+                check();
+                window.addEventListener('resize', check);
             }
-        }, 300);
 
-        // 2. Footer Observer
-        const footerObs = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelector('.gradient-square').classList.add('animate-up');
-                    entry.target.querySelector('.sliding-image-wrap').classList.add('animate-img-right');
-                    entry.target.querySelector('.sequence-content').classList.add('footer-active');
-                    observer.unobserve(entry.target);
+            function init() {
+                makeCarousel({
+                    sectionId: 'featured-properties',
+                    gridSel:   '.properties-grid',
+                    slideSel:  '.property-slide',
+                    navSel:    '.properties-nav',
+                    dotsSel:   '.properties-dots',
+                    prevSel:   '.properties-prev',
+                    nextSel:   '.properties-next'
+                });
+                makeCarousel({
+                    sectionId: 'featured-communities',
+                    gridSel:   null,
+                    slideSel:  '.community-slide',
+                    navSel:    '.communities-nav',
+                    dotsSel:   '.communities-dots',
+                    prevSel:   '.communities-prev',
+                    nextSel:   '.communities-next'
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+
+    <section id="about-agent" style="background: #ffffff; color: #0f172a; padding: 7rem 5%; margin-bottom: 5rem;">
+        <div class="container about-agent-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center; max-width: 1200px;">
+            <header class="animated-header" style="text-align: left;">
+                <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Ottawa Advisory</span>
+                <h2 id="agent-heading" style="color: #0f172a; font-size: 3.2rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; font-family: var(--font-heading);">
+                    Real Estate, Rewired.
+                </h2>
+                <p style="font-size: 1.2rem; color: #475569; line-height: 1.75; margin-bottom: 1.5rem;">
+                    Murtaza Siddiqui is a licensed RE/MAX real estate broker serving the National Capital Region. With a deep understanding of local market analytics, he guides families, first-time buyers, and investors through high-value property transactions.
+                </p>
+
+                <ul class="ai-fact-list" style="color: #475569; font-size: 1.1rem; margin-bottom: 2rem; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem;">🏆 <strong>RE/MAX Honors:</strong> Platinum Award &amp; RE/MAX Hall of Fame</li>
+                    <li style="margin-bottom: 0.8rem;">🌍 <strong>Multilingual Broker:</strong> Complete representation in 5 languages.</li>
+                    <li style="margin-bottom: 0.8rem;">📊 <strong>Specialties:</strong> Residential Sales, Staging, Cap Rate Advisory.</li>
+                </ul>
+
+                <a href="#contact" class="btn-primary" style="background: #2370ba; color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1.05rem; display: inline-block; text-decoration: none;">Work With Murtaza &rarr;</a>
+            </header>
+
+            <div style="text-align: center;">
+                <img src="https://photos.alphotoscdn.com/file/al-cms/MediaLibrary/20749/457591c2-43a7-4376-8ab8-46b8b008a18a.jpg"
+                    alt="Murtaza Siddiqui - RE/MAX Ottawa Realtor" class="agent-img" loading="lazy" style="border-radius: 16px; box-shadow: 0 25px 50px rgba(15,23,42,0.15); max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section-padding container" style="margin-bottom: 5rem; background: #f8fafc; border-radius: 20px; padding: 4rem 5%;">
+        <header class="animated-header" style="text-align: center; margin-bottom: 3.5rem;">
+            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Client Experience</span>
+            <h2 style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #0f172a; font-family: var(--font-heading);">
+                Don't Take Our<br>
+                <span style="color: #94a3b8; font-weight: 700;">Word for It.</span>
+            </h2>
+            <p style="max-width: 650px; margin: 0.8rem auto 0 auto; font-size: 1.15rem; color: #64748b;">Real reviews from buyers, sellers, and investors across the Ottawa region.</p>
+        </header>
+
+        <!-- Desktop: 3-column grid | Mobile: single carousel -->
+        <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <article class="testimonial-slide frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span class="frameless-badge">Kanata Client Review</span>
+                <p style="color: #475569; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem; font-style: italic;">
+                    "Murtaza was a fantastic broker to work with. Highly dedicated, knowledgeable about Ottawa's tech corridor in Kanata, and tireless in getting us the price point we wanted. Would recommend him 100%!"
+                </p>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <span style="font-weight: 700; color: #0f172a;">— Tariq & Sarah M.</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8;">Kanata Buyers</span>
+                </div>
+            </article>
+
+            <article class="testimonial-slide frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span class="frameless-badge">Barrhaven Client Review</span>
+                <p style="color: #475569; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem; font-style: italic;">
+                    "As newcomers to Ottawa, having Murtaza guide us in Urdu and English was a true blessing. He explained the offer process clearly, negotiated firmly, and helped us land our dream home in Barrhaven."
+                </p>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <span style="font-weight: 700; color: #0f172a;">— Faisal & Ayesha K.</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8;">Barrhaven Homeowners</span>
+                </div>
+            </article>
+
+            <article class="testimonial-slide frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span class="frameless-badge">Orléans Client Review</span>
+                <p style="color: #475569; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem; font-style: italic;">
+                    "Working with Murtaza on selling our townhouse was seamless. His comparative market analysis was spot-on, staging recommendations were key, and we sold above asking within 5 days!"
+                </p>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <span style="font-weight: 700; color: #0f172a;">— David & Elena R.</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8;">Orléans Sellers</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Mobile-only carousel navigation (hidden on desktop via CSS) -->
+        <div class="testimonial-nav" style="display: none; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.8rem;">
+            <button class="testimonial-prev" aria-label="Previous review" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8592;</button>
+            <div class="testimonial-dots" style="display: flex; gap: 0.5rem; align-items: center;"></div>
+            <button class="testimonial-next" aria-label="Next review" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8594;</button>
+        </div>
+    </section>
+
+    <script>
+        (function initTestimonialCarousel() {
+            function init() {
+                var section = document.getElementById('testimonials');
+                if (!section) return;
+
+                var grid = section.querySelector('.testimonials-grid');
+                var slides = Array.from(section.querySelectorAll('.testimonial-slide'));
+                var nav = section.querySelector('.testimonial-nav');
+                var dotsContainer = section.querySelector('.testimonial-dots');
+                var prevBtn = section.querySelector('.testimonial-prev');
+                var nextBtn = section.querySelector('.testimonial-next');
+                var current = 0;
+                var isMobile = false;
+
+                // Build dots
+                slides.forEach(function(_, i) {
+                    var dot = document.createElement('button');
+                    dot.setAttribute('aria-label', 'Review ' + (i + 1));
+                    dot.style.cssText = 'width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer; transition: all 0.25s ease; background: #cbd5e1; flex-shrink: 0;';
+                    dot.addEventListener('click', function() { goTo(i); });
+                    dotsContainer.appendChild(dot);
+                });
+
+                // Force dots container to always be a horizontal row
+                dotsContainer.style.display = 'flex';
+                dotsContainer.style.flexDirection = 'row';
+                dotsContainer.style.alignItems = 'center';
+                dotsContainer.style.gap = '0.5rem';
+
+                var dots = Array.from(dotsContainer.querySelectorAll('button'));
+
+                function goTo(index) {
+                    current = index;
+                    slides.forEach(function(slide, i) {
+                        if (isMobile) {
+                            slide.style.display = i === current ? 'block' : 'none';
+                            slide.style.opacity = i === current ? '1' : '0';
+                        }
+                    });
+                    dots.forEach(function(dot, i) {
+                        dot.style.background = i === current ? '#2370ba' : '#cbd5e1';
+                        dot.style.width = i === current ? '20px' : '8px';
+                        dot.style.borderRadius = i === current ? '4px' : '50%';
+                    });
                 }
-            });
-        }, { threshold: 0.3 });
 
-        const footerTrigger = document.querySelector('#footer-trigger');
-        if (footerTrigger) footerObs.observe(footerTrigger);
-
-        // 3. Desktop Observer: Native Scroll Triggers
-        const presentationSections = document.querySelectorAll('.presentation-section');
-        const presentationObs = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active');
-                    observer.unobserve(entry.target);
+                function enableMobile() {
+                    isMobile = true;
+                    grid.style.display = 'block';
+                    nav.style.display = 'flex';
+                    nav.style.flexDirection = 'row';
+                    nav.style.alignItems = 'center';
+                    nav.style.justifyContent = 'center';
+                    nav.style.gap = '1.5rem';
+                    slides.forEach(function(slide) {
+                        slide.style.transition = 'opacity 0.3s ease';
+                    });
+                    goTo(current);
                 }
-            });
-        }, { threshold: 0.4 });
 
-        presentationSections.forEach(section => {
-            presentationObs.observe(section);
-        });
-
-        // 4. Mobile Observer: New Shape Stack Triggers
-        const mobileSections = document.querySelectorAll('.m-presentation-section');
-        const mobileObs = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active');
-                    observer.unobserve(entry.target);
+                function disableMobile() {
+                    isMobile = false;
+                    grid.style.display = '';
+                    nav.style.display = 'none';
+                    slides.forEach(function(slide) {
+                        slide.style.display = '';
+                        slide.style.opacity = '';
+                    });
                 }
-            });
-        }, { threshold: 0.3 });
 
-        mobileSections.forEach(section => {
-            mobileObs.observe(section);
-        });
+                prevBtn.addEventListener('click', function() {
+                    goTo((current - 1 + slides.length) % slides.length);
+                });
 
-        // 5. Who We Serve Observer
-        const nicheCards = document.querySelectorAll('.niche-card');
-        const nicheObs = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
+                nextBtn.addEventListener('click', function() {
+                    goTo((current + 1) % slides.length);
+                });
+
+                function checkBreakpoint() {
+                    if (window.innerWidth <= 768) {
+                        if (!isMobile) enableMobile();
+                    } else {
+                        if (isMobile) disableMobile();
+                    }
                 }
+
+                checkBreakpoint();
+                window.addEventListener('resize', checkBreakpoint);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+
+    <section id="services" class="section-padding container" aria-labelledby="services-heading" style="margin-bottom: 7rem; padding: 4rem 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; align-items: flex-start;">
+            <!-- Left Column: Stacked Title & Dark Pill Button -->
+            <header class="animated-header" style="text-align: left;">
+                <h2 id="services-heading" style="font-size: 3.6rem; font-weight: 800; line-height: 1.1; color: #0f172a; margin-bottom: 2rem; font-family: var(--font-heading);">
+                    Support Beyond<br>
+                    <span style="color: #94a3b8; font-weight: 700;">Buying & Selling.</span>
+                </h2>
+                <a href="#contact" class="btn-primary" style="background: #2370ba; color: #ffffff; padding: 0.95rem 2.2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem; box-shadow: 0 10px 25px rgba(15,23,42,0.15);">
+                    Discover Our Services &rarr;
+                </a>
+            </header>
+
+            <!-- Right Column: Step-by-Step Numbered Service Items -->
+            <div>
+                <span style="font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #0f172a; display: block; margin-bottom: 1.5rem;">Our Services:</span>
+
+                <div style="display: flex; flex-direction: column;">
+                    <!-- Step 01: Seller Representation & Staging -->
+                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; padding: 2rem 0;">
+                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">01</span>
+                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
+                            Seller Representation & Staging. <span style="color: #94a3b8; font-weight: 600;">Maximize your home's equity with professional staging, targeted digital MLS advertising, and precise pricing strategy.</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 02: Buyer Advisory & Relocation -->
+                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; padding: 2rem 0;">
+                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">02</span>
+                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
+                            Buyer Advisory & Relocation. <span style="color: #94a3b8; font-weight: 600;">Navigating competitive Ottawa offers, neighborhood analytics, off-market property alerts, and strategic contract negotiations.</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 03: Real Estate Investment -->
+                    <div style="display: flex; align-items: flex-start; gap: 1.8rem; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 2rem 0;">
+                        <span style="font-size: 1.1rem; font-weight: 700; color: #94a3b8; font-family: var(--font-heading); flex-shrink: 0; margin-top: 0.2rem;">03</span>
+                        <div style="font-size: 1.5rem; font-weight: 800; line-height: 1.35; color: #0f172a; font-family: var(--font-heading);">
+                            Real Estate Investment & Cap Rate Guidance. <span style="color: #94a3b8; font-weight: 600;">Identify high-yield multi-family properties and new development projects across Ottawa with detailed ROI guidance.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" style="background: #fafaf9; padding: 7rem 5%; border-top: 1px solid #e7e7e5; border-bottom: 1px solid #e7e7e5; margin-bottom: 5rem;">
+        <div class="container">
+            <header class="animated-header" style="text-align: center; margin-bottom: 4rem;">
+                <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Market Intelligence</span>
+                <h2 id="blog-heading" style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #0f172a; font-family: var(--font-heading);">
+                    Blog & <span style="color: #94a3b8; font-weight: 700;">Resources.</span>
+                </h2>
+                <p style="max-width: 700px; margin: 0.8rem auto 0 auto; font-size: 1.15rem; color: #64748b; line-height: 1.65;">See how we’ve helped clients achieve their real estate goals, one successful transaction at a time.</p>
+            </header>
+
+            <div class="borderless-grid">
+                <!-- Article 1 -->
+                <article class="frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    <div>
+                        <span class="frameless-badge">Q1 2026 Special Report</span>
+                        <h3 style="font-size: 1.35rem; color: #0f172a; font-weight: 700; margin-bottom: 0.8rem;">Q1 2026 Ottawa Real Estate Market Report</h3>
+                        <p style="color: #64748b; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem;">
+                            Q1 saw active inventory shifts, tech corridor demand in Kanata, and steady suburban price growth. Here’s what it means heading into spring.
+                        </p>
+                    </div>
+                    <a href="#contact" style="color: #2370ba; font-weight: 700; text-decoration: none; font-size: 0.95rem;">Read Full Report &rarr;</a>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    <div>
+                        <span class="frameless-badge">Pricing Breakdown</span>
+                        <h3 style="font-size: 1.35rem; color: #0f172a; font-weight: 700; margin-bottom: 0.8rem;">What $1M Buys in Different Ottawa Neighborhoods</h3>
+                        <p style="color: #64748b; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem;">
+                            Explore a snapshot of available single-family homes, townhouses, and condos across Kanata, Barrhaven, Orléans, and Downtown Ottawa.
+                        </p>
+                    </div>
+                    <a href="#contact" style="color: #2370ba; font-weight: 700; text-decoration: none; font-size: 0.95rem;">Explore Neighborhoods &rarr;</a>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    <div>
+                        <span class="frameless-badge">Seller Strategy</span>
+                        <h3 style="font-size: 1.35rem; color: #0f172a; font-weight: 700; margin-bottom: 0.8rem;">Maximizing Your Ottawa Home Valuation</h3>
+                        <p style="color: #64748b; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem;">
+                            Proven staging guidelines and digital MLS marketing strategies to secure top-dollar competitive offers.
+                        </p>
+                    </div>
+                    <a href="#contact" style="color: #2370ba; font-weight: 700; text-decoration: none; font-size: 0.95rem;">Request Seller Playbook &rarr;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding container" aria-labelledby="faq-heading" style="margin-bottom: 5rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3.5rem; align-items: flex-start; width: 100%;">
+            <!-- Left Column: Stacked Title & Dark Pill Button -->
+            <header class="animated-header" style="text-align: left;">
+                <h2 id="faq-heading" style="font-size: 3.4rem; font-weight: 800; line-height: 1.1; color: #0f172a; margin-bottom: 2rem; font-family: var(--font-heading);">
+                    Frequently Asked<br>
+                    <span style="color: #94a3b8; font-weight: 700;">Questions.</span>
+                </h2>
+                <a href="#contact" class="btn-primary" style="background: #2370ba; color: #ffffff; padding: 0.95rem 2.2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem; box-shadow: 0 10px 25px rgba(15,23,42,0.15);">
+                    Ask Murtaza Directly &rarr;
+                </a>
+            </header>
+
+            <!-- Right Column: Interactive Accordion FAQ List (All Closed Initially) -->
+            <div style="width: 100%; min-width: 0;">
+                <span style="font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #0f172a; display: block; margin-bottom: 1.5rem;">Knowledge & Guidance:</span>
+
+                <div style="display: flex; flex-direction: column; width: 100%;">
+                    <!-- FAQ Item 01 -->
+                    <div class="faq-accordion-item">
+                        <button class="faq-accordion-btn" aria-expanded="false">
+                            <span class="faq-num">01</span>
+                            <h3 class="faq-title">What areas of Ottawa does Murtaza Homes serve?</h3>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Broker Murtaza Siddiqui serves the entire National Capital Region. Key specialized service locations include <strong>Kanata, Barrhaven, Orléans, Nepean, Stittsville, and Central Downtown Ottawa</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 02 -->
+                    <div class="faq-accordion-item">
+                        <button class="faq-accordion-btn" aria-expanded="false">
+                            <span class="faq-num">02</span>
+                            <h3 class="faq-title">Can I receive real estate services in languages other than English?</h3>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Yes! Murtaza Siddiqui is a proud multilingual broker providing complete property sales, negotiations, and relocation assistance in <strong>English, French, Hindi, Urdu, and Farsi</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 03 -->
+                    <div class="faq-accordion-item">
+                        <button class="faq-accordion-btn" aria-expanded="false">
+                            <span class="faq-num">03</span>
+                            <h3 class="faq-title">How do I determine the actual market value of my Ottawa home?</h3>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                We generate a data-driven <strong>Comparative Market Analysis (CMA)</strong> based on hyper-local recent MLS sales, active competitor listings, and market absorption rates in your specific neighborhood.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 04 -->
+                    <div class="faq-accordion-item">
+                        <button class="faq-accordion-btn" aria-expanded="false">
+                            <span class="faq-num">04</span>
+                            <h3 class="faq-title">What RE/MAX brokerage is Murtaza affiliated with?</h3>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Murtaza Siddiqui is a licensed Broker with <strong>RE/MAX Hallmark Realty Group, Brokerage</strong>, recognized with the prestigious RE/MAX Platinum Award and RE/MAX Hall of Fame honors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 05 -->
+                    <div class="faq-accordion-item">
+                        <button class="faq-accordion-btn" aria-expanded="false">
+                            <span class="faq-num">05</span>
+                            <h3 class="faq-title">What should first-time home buyers prepare before submitting an offer?</h3>
+                            <span class="faq-toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                First-time buyers should secure a formal mortgage pre-approval, establish deposit funds, and review neighborhood comps. We guide you through every step from inspection clauses to closing day.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const faqItems = document.querySelectorAll('.faq-accordion-item');
+                faqItems.forEach(item => {
+                    const btn = item.querySelector('.faq-accordion-btn');
+                    
+                    btn.addEventListener('click', () => {
+                        const isOpen = item.classList.contains('active');
+                        
+                        faqItems.forEach(i => {
+                            i.classList.remove('active');
+                            const b = i.querySelector('.faq-accordion-btn');
+                            if (b) b.setAttribute('aria-expanded', 'false');
+                        });
+
+                        if (!isOpen) {
+                            item.classList.add('active');
+                            btn.setAttribute('aria-expanded', 'true');
+                        }
+                    });
+                });
             });
-        }, { threshold: 0.2 });
+        </script>
+    </section>
 
-        nicheCards.forEach(card => {
-            nicheObs.observe(card);
-        });
+    <section id="contact" class="section-padding container" aria-labelledby="contact-heading" style="background: #ffffff; color: #0f172a; border-radius: 20px; box-shadow: 0 20px 40px rgba(15,23,42,0.06); margin-bottom: 5rem; padding: 4.5rem 5%;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3.5rem; align-items: start;">
+            <header class="animated-header" style="text-align: left;">
+                <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #2370ba; display: block; margin-bottom: 0.4rem;">Get Started Today</span>
+                <h2 id="contact-heading" style="font-size: 3.2rem; font-weight: 800; line-height: 1.1; color: #0f172a; margin-bottom: 1rem; font-family: var(--font-heading);">
+                    Find Home.<br>
+                    <span style="color: #64748b; font-weight: 700;">We’ll Help You Get There.</span>
+                </h2>
+                <p class="seo-text" style="margin-bottom: 2rem; color: #475569; font-size: 1.05rem; line-height: 1.65;">
+                    Whether you’re looking to buy, sell, or invest in Ottawa real estate, we are here to guide you. 
+                    Fill out the form below and Broker Murtaza Siddiqui will get back to you directly.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 1.4rem; font-size: 1.05rem; color: #0f172a;">
+                    <div>
+                        <span style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; margin-bottom: 0.25rem;">Direct Phone</span>
+                        <a href="tel:6138051111" style="color: #2370ba; font-weight: 600; text-decoration: none; font-size: 1.1rem;">(613) 805-1111</a>
+                    </div>
+                    <div>
+                        <span style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; margin-bottom: 0.25rem;">Email Address</span>
+                        <a href="mailto:info@murtazahomes.com" style="color: #2370ba; font-weight: 600; text-decoration: none; font-size: 1.1rem;">info@murtazahomes.com</a>
+                    </div>
+                    <div>
+                        <span style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; margin-bottom: 0.25rem;">Brokerage Office</span>
+                        <span style="font-weight: 500;">RE/MAX Hallmark Realty Group, Ottawa, ON</span>
+                    </div>
+                    <div>
+                        <span style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; margin-bottom: 0.25rem;">Languages Spoken</span>
+                        <span style="font-weight: 500;">English, French, Hindi, Urdu, Farsi</span>
+                    </div>
+                </div>
+            </header>
 
-        // 6. Recent Work Stack Observer (Fade-in on scroll)
-        const rwCards = document.querySelectorAll('.rw-card');
-        const rwObs = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
+            <div style="background: #ffffff; padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 20px 40px rgba(15,23,42,0.05);">
+                <form action="https://formsubmit.co/13f79a244040b6f194547309b5637bd8" method="POST" style="display: flex; flex-direction: column; gap: 1.4rem;">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_subject" value="New Website Inquiry">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://murtazahomes.com/thanks">
 
-        rwCards.forEach(card => {
-            rwObs.observe(card);
-        });
+                    <div>
+                        <label for="name" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: #0f172a; font-size: 0.95rem;">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required style="width: 100%; padding: 0.9rem 1.1rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; font-family: inherit; color: #0f172a; background: #ffffff; outline: none; box-sizing: border-box;">
+                    </div>
 
-        // 7. Coming Soon Popup Logic
-        const comingSoonBtns = document.querySelectorAll('.coming-soon-btn');
-        const toast = document.getElementById('coming-soon-toast');
-        let toastTimeout;
+                    <div>
+                        <label for="email" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: #0f172a; font-size: 0.95rem;">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required style="width: 100%; padding: 0.9rem 1.1rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; font-family: inherit; color: #0f172a; background: #ffffff; outline: none; box-sizing: border-box;">
+                    </div>
 
-        comingSoonBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault(); 
+                    <div>
+                        <label for="message" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: #0f172a; font-size: 0.95rem;">Message / Inquiry</label>
+                        <textarea id="message" name="message" rows="4" placeholder="How can we help with your Ottawa real estate goals?" required style="width: 100%; padding: 0.9rem 1.1rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; font-family: inherit; color: #0f172a; background: #ffffff; outline: none; resize: vertical; box-sizing: border-box;"></textarea>
+                    </div>
 
-                toast.classList.add('show');
-                clearTimeout(toastTimeout);
+                    <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; padding: 1rem; font-size: 1.05rem; background-color: #2370ba; color: #ffffff; font-weight: 700; border-radius: 8px; margin-top: 0.5rem;">Send Message &rarr;</button>
+                </form>
+            </div>
+        </div>
 
-                toastTimeout = setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3000);
-            });
-        });
-    });
-</script>
+    <script>
+        /* ── Global Header Scroll Animation ── */
+        (function initAnimatedHeaders() {
+            function init() {
+                var headers = Array.from(document.querySelectorAll('.animated-header'));
+                if (headers.length === 0) return;
+
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.08 });
+
+                headers.forEach(function(header) {
+                    observer.observe(header);
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+
+</main>

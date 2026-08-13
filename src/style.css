@@ -1,16 +1,16 @@
-body{
-  max-width:50rem;
+body {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  max-width: 50rem;
   padding: 2rem;
   margin: auto;
 }
 
-img{
-  display:block;
+img {
+  display: block;
 }
 
-h1
-{
-  display:block;
+h1 {
+  display: block;
   margin: auto;
-  text-align: center 
+  text-align: center
 }

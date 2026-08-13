@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include "component/head.njk" %}
-    <body style="--maxw-md: 100vw; 
-        overflow-x: clip;
-        --m: auto;
-        --size: 1.2rem;
-        min-height: 100vh;
-        --ai: center;
-        --jc: center; 
-        --d: flex; 
-        --fd: column;">
-        
-      {% include "component/navbar.njk" %}
+{% include "component/head.njk" %}
 
-      {% if page.url != "/contact/" and page.url != "/faq/" and page.url != "/about/" %}
-        
-      {% endif %}
+<body
+  style="margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; background-color: #fafafa;">
+  {% include "component/navbar.njk" %}
 
-      <main style="flex-grow: 1;">
-      {{ content | safe }}
-      </main>
+  <div class="page-content" style="flex: 1;">
+    {{ content | safe }}
+  </div>
 
-      {% include "component/footer.njk" %}
-      {% include "component/scripts.njk" %}
-    </body>
-  </html>
+  {% include "component/footer.njk" %}
+  {% include "component/scripts.njk" %}
+</body>
+
 </html>

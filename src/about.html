@@ -1,363 +1,250 @@
 ---
 layout: default.njk
-title: About
+title: About Murtaza Siddiqui | Ottawa Real Estate Broker
 ---
 
+<div class="about-hero">
+    <div class="container text-center">
+        <h1 class="hero-title">About Murtaza Siddiqui</h1>
+        <p class="hero-subtitle">Dedicated to Elevating Your Ottawa Real Estate Experience</p>
+    </div>
+</div>
+
+<main id="main-content" class="container section-padding">
+    <section class="about-grid">
+        <div class="about-image-wrapper">
+            <img src="https://photos.alphotoscdn.com/file/al-cms/MediaLibrary/20749/457591c2-43a7-4376-8ab8-46b8b008a18a.jpg"
+                alt="Murtaza Siddiqui RE/MAX Broker" class="about-img">
+            <div class="experience-badge">
+                <span class="badge-title">RE/MAX</span>
+                <span class="badge-desc">Hall of Fame</span>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <h2 class="section-title">Your Trusted Partner in the National Capital Region</h2>
+
+            <p class="seo-text">Murtaza Siddiqui is a licensed RE/MAX real estate broker serving the Greater Ottawa
+                Area. With a deep understanding of local market analytics, he guides families, first-time buyers, and
+                investors through successful property transactions across Kanata, Barrhaven, Orléans, Nepean, and
+                Central Ottawa.</p>
+
+            <p class="seo-text">As a proud first-generation immigrant, Murtaza is uniquely equipped to assist Ottawa's
+                diverse communities, ensuring clear communication and strategic negotiation for every client. He firmly
+                believes that real estate is not just about properties, but about building lasting relationships and
+                helping clients achieve their long-term financial goals.</p>
+
+            <div class="expertise-list">
+                <div class="expertise-item">
+                    <div class="expert-icon">🌍</div>
+                    <div class="expert-text">
+                        <strong>Multilingual Support</strong>
+                        <span>Services in English, French, Hindi, Urdu & Farsi</span>
+                    </div>
+                </div>
+                <div class="expertise-item">
+                    <div class="expert-icon">📊</div>
+                    <div class="expert-text">
+                        <strong>Data-Driven Approach</strong>
+                        <span>Comprehensive market valuations & precise analytics</span>
+                    </div>
+                </div>
+                <div class="expertise-item">
+                    <div class="expert-icon">🏆</div>
+                    <div class="expert-text">
+                        <strong>Award Winning Broker</strong>
+                        <span>RE/MAX Platinum Award & Hall of Fame Recipient</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="/contact/" class="about-btn">Work With Murtaza</a>
+            </div>
+        </div>
+    </section>
+</main>
+
 <style>
-    /* --- 1. CORE LAYOUT & BREAKOUT --- */
-    @font-face {
-            font-family: 'lequire';
-            src: url('/leq.otf') format('opentype'); 
-            font-weight: normal;
-            font-style: normal;
+    /* Premium About Page Styles */
+    body {
+        font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+        background-color: #fafafa;
     }
 
-    /* 🌟 NEW: Global reset to 400, including strong tags so the browser doesn't force them bold */
-    *, strong, b {
-        font-weight: 400;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
     }
 
-    .sequence-container {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        height: 80vh;
-        margin: 120px 0;
-        display: flex; 
-        align-items: center;
-        overflow: hidden;
+    .section-padding {
+        padding: 5rem 0;
     }
 
-    /* Desktop top margin for the first section */
-    #about-section {
-        margin-top: 20px !important;
+    .text-center {
+        text-align: center;
     }
 
-    /* --- 2. VISUAL STACK (BOX & IMAGE) --- */
-    .visual-stack {
-        position: relative;
-        width: 60%;
-        height: 100%;
-        overflow: hidden; 
+    .about-hero {
+        background: linear-gradient(rgba(35, 112, 186, 0.4), rgba(25, 80, 134, 0.3)), url('https://cdn-websites.agentlocator.ca/20749/Communities/5%20(3).jpg') center/cover no-repeat;
+        padding: 7rem 5%;
+        color: white;
+        margin-bottom: 2rem;
     }
 
-    .gradient-square {
-        position: absolute;
-        left: 0; 
-        top: 0;
-        width: 55vw;
-        height: 80vh;
-        background: linear-gradient(135deg, #b1aaf0 , #b1aaf0);
-        border-radius: 0 20px 20px 0; 
-        opacity: 0;
-        z-index: 1;
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        letter-spacing: -1px;
     }
 
-    .sliding-image-wrap {
-        position: absolute;
-        left: 100px; 
-        top: 0;
-        height: 80vh;
-        width: 100%;
-        opacity: 0;
-        z-index: 2;
-    }
-
-    .design-image {
-        width: 90%; 
-        height: calc(100% - 100px); 
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
-        display: block;
-    }
-
-    /* --- 3. MIRROR LOGIC (SECTION 2) --- */
-    .sequence-container.mirror {
-        flex-direction: row-reverse;
-    }
-
-    .sequence-container.mirror .gradient-square {
-        left: auto;
-        right: 0;
-        border-radius: 20px 0 0 20px;
-    }
-
-    .sequence-container.mirror .sliding-image-wrap {
-        left: auto;
-        right: 100px;
-    }
-
-    /* --- 4. TEXT CONTENT --- */
-    .sequence-content {
-        width: 40%;
-        padding: 0 60px;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 1s ease-out 1.2s; 
-        z-index: 5;
-    }
-
-    .sequence-title {
-        font-size: 2.8rem;
-        font-weight: 400; /* 🌟 CHANGED FROM 800 */
-        background: linear-gradient(90deg, #191f4f, #436aee);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 20px;
-        letter-spacing: 1px;
-    }
-
-    .about-text {
+    .hero-subtitle {
         font-size: 1.25rem;
-        line-height: 1.6;
-        color: #333;
-        font-weight: 400; /* 🌟 EXPLICITLY SET */
+        font-weight: 400;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    /* --- HERO SCROLL INDICATOR STYLES --- */
-    .hero-scroll-indicator {
-        margin-top: 35px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
     }
 
-    .scroll-text {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: #191f4f;
-        font-weight: 400; /* 🌟 CHANGED FROM BOLD */
-        opacity: 0.7;
-        margin-bottom: 10px;
-    }
-
-    .hero-arrow-flow {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 5px;
-    }
-
-    .hero-arrow-flow span {
-        font-family: 'lequire', sans-serif;
-        font-size: 1.8rem;
-        font-weight: 400; /* 🌟 CHANGED FROM BOLD */
-        color: #436aee;
-        opacity: 0.2;
-        display: block;
-        line-height: 0.5;
-        transform: rotate(90deg);
-        animation: arrowGlowVertical 1.5s infinite;
-    }
-
-    .hero-arrow-flow span:nth-child(2) { animation-delay: 0.2s; }
-    .hero-arrow-flow span:nth-child(3) { animation-delay: 0.4s; }
-
-    /* Vertical Animation (Down) */
-    @keyframes arrowGlowVertical {
-        0%, 100% { opacity: 0.2; transform: rotate(90deg) translateY(0); }
-        50% { opacity: 1; transform: rotate(90deg) translateY(8px); color: #dbbbf6; }
-    }
-
-    /* --- UPDATED LIST STYLES (Matching Arrow Logic) --- */
-    .about-list {
-        padding-left: 20px;
-        list-style: none;
-    }
-
-    .about-list li {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
+    .about-image-wrapper {
         position: relative;
-        font-weight: 400; /* 🌟 EXPLICITLY SET */
     }
 
-    /* The new animated arrow bullet point */
-    .about-list li::before {
-        content: ">>>"; 
-        font-family: 'lequire', sans-serif; 
+    .about-img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        display: block;
+    }
+
+    .experience-badge {
         position: absolute;
-        left: -40px;
-        font-size: 1.5rem; 
-        font-weight: 400; /* 🌟 CHANGED FROM BOLD */
-        color: #436aee;
-        opacity: 0.4;
-        animation: arrowGlowHorizontal 2s infinite; 
+        bottom: -30px;
+        right: -30px;
+        background: #ffffff;
+        padding: 1.5rem 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-left: 5px solid #2370ba;
     }
 
-    /* Horizontal Animation (Right) */
-    @keyframes arrowGlowHorizontal {
-        0%, 100% { opacity: 0.4; transform: translateX(0); color: #436aee; }
-        50% { opacity: 1; transform: translateX(6px); color: #dbbbf6; }
+    .badge-title {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #e31837;
+        /* Consistent RE/MAX Red */
     }
 
-    /* --- 5. ANIMATIONS --- */
-    .animate-box { animation: slideInUpCustom 1s ease-out forwards; }
-    .animate-image { animation: slideInRightCustom 1s ease-out forwards 0.7s; }
-    .mirror .animate-image { animation: slideInLeftCustom 1s ease-out forwards 0.7s; }
-    .animate-content { opacity: 1 !important; transform: translateY(0) !important; }
-
-    @keyframes slideInUpCustom {from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; }}
-    @keyframes slideInRightCustom {from { transform: translateX(100%); opacity: 0; }to { transform: translateX(-30px); opacity: 1; }}
-    @keyframes slideInLeftCustom {from { transform: translateX(-100%); opacity: 0; }to { transform: translateX(100px); opacity: 1; }}
-
-    /* --- 6. MOBILE OVERRIDES --- */
-    @media (max-width: 1024px) {
-        .hero-scroll-indicator { display: none; } /* Hide on Mobile */
-
-        .sequence-container, .sequence-container.mirror {
-            flex-direction: column !important;
-            height: auto !important;
-            margin: 40px 0 !important;
-            left: 0;
-            transform: none;
-            width: 100%;
-        }
-
-        #about-section { margin-top: 80px !important; }
-
-        .visual-stack { width: 100% !important; height: 350px !important; }
-
-        .gradient-square, .sequence-container.mirror .gradient-square {
-            left: 0 !important;
-            right: auto !important;
-            width: 85% !important;
-            height: 350px !important;
-            border-radius: 0 20px 20px 0 !important;
-        }
-
-        .sliding-image-wrap, .sequence-container.mirror .sliding-image-wrap {
-            left: 20px !important;
-            right: auto !important;
-            height: 350px !important;
-            width: 100% !important;
-        }
-
-        .design-image { width: 90vw !important; height: 320px !important; object-fit: cover; }
-
-        .mirror .animate-image { animation: slideInRightCustom 1s ease-out forwards 0.7s !important; }
-
-        .sequence-content {
-            width: 100% !important;
-            padding: 30px 20px !important;
-            text-align: center;
-            transform: none;
-        }
-
-        .sequence-title { font-size: 2rem; }
-
-        .about-list  {
-            left: -30px;
-            text-align: left;
-            max-width: 80%;         
-            margin: 0 auto;         
-            padding-left: 30px;
-        }
-
-        @keyframes slideInRightCustom {from { transform: translateX(100%); opacity: 0; }to { transform: translateX(0px); opacity: 1; }}
-        @keyframes slideInLeftCustom {from { transform: translateX(-100%); opacity: 0; }to { transform: translateX(40px); opacity: 1; }}
+    .badge-desc {
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 600;
     }
 
-    #why-section { margin-bottom: 0 !important; }
+    .section-title {
+        font-size: 2.25rem;
+        color: #1a1a1a;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    .seo-text {
+        font-size: 1.15rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .expertise-list {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    .expertise-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .expert-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(35, 112, 186, 0.1);
+        color: #2370ba;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        flex-shrink: 0;
+    }
+
+    .expert-text strong {
+        display: block;
+        font-size: 1.2rem;
+        color: #1a1a1a;
+        margin-bottom: 0.25rem;
+    }
+
+    .expert-text span {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .about-btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background-color: #2370ba;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .about-btn:hover {
+        background-color: #1a5b99;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .about-image-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .experience-badge {
+            bottom: -20px;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+        }
+    }
 </style>
-
-<div class="sequence-container" id="about-section">
-    <div class="visual-stack">
-        <div class="gradient-square"></div>
-        <div class="sliding-image-wrap">
-            <img src="/assets/about.jpg" alt="About ChasTech" class="design-image">
-        </div>
-    </div>
-    <div class="sequence-content">
-        <h2 class="sequence-title">ABOUT US</h2>
-        <p class="about-text">
-            ChasTech Inc. creates digital experiences that refuse to blend in. Specializing in custom web development for the local market, we trade cookie-cutter layouts for unique, creative design. We are dedicated to building professional websites that showcase your brand’s true personality.
-        </p>
-
-        <div class="hero-scroll-indicator">
-            <span class="scroll-text">Our Process</span>
-            <div class="hero-arrow-flow">
-                <span>&gt;</span>
-                <span>&gt;</span>
-                <span>&gt;</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="sequence-container mirror" id="process-section">
-    <div class="visual-stack">
-        <div class="gradient-square"></div>
-        <div class="sliding-image-wrap">
-            <img src="/assets/design-work.jpg" alt="Our Process" class="design-image">
-        </div>
-    </div>
-    <div class="sequence-content">
-        <h2 class="sequence-title">OUR PROCESS</h2>
-        <p class="about-text">
-            We believe the best websites are built on collaboration, not templates. Our process centers on listening to your unique ideas and transforming them into a custom digital reality. We work alongside you to ensure your vision is reflected in every pixel.
-        </p>
-        <div class="hero-scroll-indicator">
-            <span class="scroll-text">Why ChasTech</span>
-            <div class="hero-arrow-flow">
-                <span>&gt;</span>
-                <span>&gt;</span>
-                <span>&gt;</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="sequence-container" id="why-section">
-    <div class="visual-stack">
-        <div class="gradient-square"></div>
-        <div class="sliding-image-wrap">
-            <img src="/assets/why3.jpg" alt="Why Choose Us" class="design-image">
-        </div>
-    </div>
-    <div class="sequence-content">
-        <h2 class="sequence-title">WHY CHOOSE US?</h2>
-        <ul class="about-list">
-            <li><strong>Custom Designs</strong> – Every site is built from the ground up to reflect your brand identity.</li>
-            <li><strong>Local & Collaborative</strong> – Based in Belleville, we offer a personal, partnership-focused experience.</li>
-            <li><strong>Performance Driven</strong> – Sites built for speed, accessibility, and growth.</li>
-        </ul>
-    </div>
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const sections = document.querySelectorAll('.sequence-container');
-
-        const observerOptions = {
-            threshold: 0.25,
-            rootMargin: "0px 0px -10% 0px"
-        };
-
-        const sequenceObs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    triggerAnimation(entry.target);
-                    sequenceObs.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        function triggerAnimation(container) {
-            container.querySelector('.gradient-square').classList.add('animate-box');
-            container.querySelector('.sliding-image-wrap').classList.add('animate-image');
-            container.querySelector('.sequence-content').classList.add('animate-content');
-        }
-
-        sections.forEach((section, index) => {
-            if (index === 0) {
-                setTimeout(() => triggerAnimation(section), 400);
-            } else {
-                sequenceObs.observe(section);
-            }
-        });
-    });
-</script>
