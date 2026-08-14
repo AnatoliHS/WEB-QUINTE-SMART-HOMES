@@ -340,10 +340,21 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
         /* Quick Facts - no negative margin pulling it over hero on mobile */
         .premium-facts-wrapper {
             margin-top: 0 !important;
-            padding: 1.5rem 1.2rem !important;
+            padding: 2rem 1.5rem !important;
             border-radius: 12px !important;
             grid-template-columns: 1fr !important;
             gap: 1.5rem !important;
+        }
+
+        .premium-facts-wrapper .fact-column {
+            padding: 0 0 1.25rem 0 !important;
+            border-right: none !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+        }
+
+        .premium-facts-wrapper .fact-column:last-child {
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
         }
 
         #quick-facts {
@@ -779,60 +790,50 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
     .premium-facts-wrapper {
         background: #ffffff;
         border-radius: 16px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        padding: 2.5rem 3rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        padding: 2.5rem 2rem;
         margin-top: -80px;
-        /* Pulls the card up over the hero section */
         position: relative;
         z-index: 10;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2.5rem;
-        border: 1px solid rgba(0, 0, 0, 0.03);
+        grid-template-columns: 1.1fr 1fr 1fr;
+        border: 1px solid #e2e8f0;
     }
 
     .fact-column {
+        padding: 0 2.5rem;
+        border-right: 1px solid #cbd5e1;
         display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: flex-start;
-        gap: 1.25rem;
+        text-align: left;
     }
 
-    .fact-icon {
-        background: #f4f7fa;
-        color: #0056b3;
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        flex-shrink: 0;
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+    .fact-column:last-child {
+        border-right: none;
+    }
+
+    .fact-column:first-child {
+        padding-left: 0;
     }
 
     .fact-content h3 {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        color: #777;
-        margin: 0 0 0.5rem 0;
-        font-weight: 600;
+        color: #94a3b8;
+        margin: 0 0 0.6rem 0;
+        font-family: var(--font-body, sans-serif);
     }
 
     .fact-content p {
-        font-size: 1.1rem;
-        color: #1a1a1a;
+        font-size: 1.15rem;
+        color: #0f172a;
         margin: 0;
-        font-weight: 500;
-        line-height: 1.4;
-    }
-
-    @media (min-width: 992px) {
-        .fact-column:not(:last-child) {
-            border-right: 1px solid #f0f0f0;
-            padding-right: 1.5rem;
-        }
+        font-weight: 700;
+        line-height: 1.5;
     }
 
     /* Agent About Section */
@@ -894,14 +895,9 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
                 Data-driven representation for buyers, sellers, and investors across Kanata, Barrhaven, Orléans, and Central Ottawa.
             </p>
             
-            <!-- Embedded Interactive Search Widget -->
-            <div class="hero-search-container" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.8rem 2.5rem; max-width: 850px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.06); text-align: left;">
-                <form action="/search/" method="GET" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 280px;">
-                        <input type="text" name="q" placeholder="Search Kanata, Barrhaven, Orléans, Nepean..." style="width: 100%; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 1.05rem; font-family: inherit; outline: none; background: #f8fafc;">
-                    </div>
-                    <button type="submit" class="btn-primary" style="background: #2370ba; color: white; border: none; padding: 1rem 2.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; white-space: nowrap; font-size: 1.05rem;">Find Properties &rarr;</button>
-                </form>
+            <!-- Standalone Find Properties Action Button -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="/search/" class="btn-primary" style="background: #2370ba; color: white; border: none; padding: 1.2rem 3rem; border-radius: 8px; font-weight: 700; cursor: pointer; white-space: nowrap; font-size: 1.15rem; text-decoration: none; display: inline-block; box-shadow: 0 10px 25px rgba(35, 112, 186, 0.25); transition: all 0.2s ease;">Find Properties &rarr;</a>
             </div>
         </header>
     </section>
@@ -930,18 +926,148 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
     </section>
 
     <!-- Alignment Manifesto (Inspired by findrealestate.com) -->
-    <section id="manifesto" style="background: #fafaf9; padding: 7rem 5%; text-align: center; border-top: 1px solid #e7e7e5; border-bottom: 1px solid #e7e7e5; margin-bottom: 5rem;">
-        <header class="container animated-header" style="max-width: 950px;">
-            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 1rem;">Our Philosophy</span>
-            <h2 style="font-size: 3.2rem; color: #0f172a; font-weight: 800; margin: 0 auto 2rem auto; line-height: 1.25; font-family: var(--font-heading);">
-                This isn’t just about real estate.<br>
-                It’s about identity. <span style="color: #94a3b8; font-weight: 700;">Progress. Getting unstuck.</span>
+    <style>
+        .manifesto-section {
+            background: #fafaf9;
+            padding: 7rem 8%;
+            border-top: 1px solid #e7e7e5;
+            border-bottom: 1px solid #e7e7e5;
+            margin-bottom: 5rem;
+        }
+        .manifesto-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 4rem;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .manifesto-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2370ba;
+            margin-top: 0.8rem;
+            margin-bottom: 0;
+            font-family: var(--font-body, sans-serif);
+        }
+        .manifesto-body {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #0f172a;
+            font-family: var(--font-heading);
+            letter-spacing: -1.5px;
+            margin: 0;
+        }
+         .manifesto-body .grey-text {
+             color: #94a3b8;
+             font-weight: 700;
+         }
+        @media (max-width: 992px) {
+            .manifesto-body {
+                font-size: 2.2rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .manifesto-section {
+                padding: 3.5rem 1.4rem !important;
+                margin-bottom: 2.5rem !important;
+            }
+            .manifesto-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .manifesto-title {
+                margin-top: 0;
+            }
+            .manifesto-body {
+                font-size: 1.8rem !important;
+                letter-spacing: -0.5px;
+            }
+        }
+    </style>
+    <section id="manifesto" class="manifesto-section">
+        <div class="manifesto-grid">
+            <!-- Left Column: Uppercase Label -->
+            <h2 class="manifesto-title">
+                Our Philosophy
             </h2>
-            <p style="max-width: 800px; margin: 0 auto; font-size: 1.25rem; color: #475569; line-height: 1.75;">
-                You’re not just looking for a house. You’re looking for community, school districts, investment alignment, and long-term financial growth. That’s what Broker Murtaza Siddiqui helps you find.
+            
+            <!-- Right Column: Massive Cohesive Paragraph -->
+            <p class="manifesto-body">
+                This isn’t just about real estate. It’s about identity. Progress. Getting unstuck. You’re not just looking for a house. 
+                <span class="grey-text">You’re looking for community, school districts, investment alignment, and long-term financial growth. That’s what Broker Murtaza Siddiqui helps you find.</span>
             </p>
-        </header>
+        </div>
     </section>
+
+    <script>
+        (function initManifestoAnimation() {
+            const run = () => {
+                const body = document.querySelector('.manifesto-body');
+                if (!body) return;
+
+                const part1Text = "This isn’t just about real estate. It’s about identity. Progress. Getting unstuck. You’re not just looking for a house. ";
+                const part2Text = "You’re looking for community, school districts, investment alignment, and long-term financial growth. That’s what Broker Murtaza Siddiqui helps you find.";
+
+                body.innerHTML = '';
+
+                const part1Container = document.createElement('span');
+                
+                const part2Container = document.createElement('span');
+                part2Container.className = 'grey-text';
+
+                body.appendChild(part1Container);
+                body.appendChild(part2Container);
+
+                const speed = 5; // ms per character reveal
+
+                function prepareText(text, container) {
+                    return text.split('').map(function(char) {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        span.style.opacity = '0';
+                        span.style.transition = 'opacity 0.15s ease-in-out';
+                        span.style.display = 'inline';
+                        container.appendChild(span);
+                        return span;
+                    });
+                }
+
+                const part1Spans = prepareText(part1Text, part1Container);
+                const part2Spans = prepareText(part2Text, part2Container);
+                const allSpans = part1Spans.concat(part2Spans);
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            observer.unobserve(entry.target);
+                            revealCharacters();
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                observer.observe(body);
+
+                function revealCharacters() {
+                    allSpans.forEach(function(span, i) {
+                        setTimeout(function() {
+                            span.style.opacity = '1';
+                        }, i * speed);
+                    });
+                }
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+        })();
+    </script>
 
 
     <section id="featured-communities" class="section-padding container" aria-labelledby="communities-heading"
