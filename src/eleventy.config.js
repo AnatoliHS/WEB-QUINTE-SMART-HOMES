@@ -16,12 +16,21 @@ module.exports = function(eleventyConfig) {
 
 
   eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.ignores.add("admin/");
 
   eleventyConfig.addPlugin(sectionizePlugin);
 
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toLocaleString(DateTime.DATE_MED);
   });
+
+  eleventyConfig.addFilter("readableDate", (value) =>
+    new Date(value).toLocaleDateString("en-CA", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  );
 
   eleventyConfig.addTemplateFormats("md");
   

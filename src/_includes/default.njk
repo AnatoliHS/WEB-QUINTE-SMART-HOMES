@@ -2,11 +2,23 @@
 <html lang="en">
 {% include "component/head.njk" %}
 
+<style>
+  .page-content {
+    flex: 1;
+    padding-top: 110px;
+  }
+  @media (max-width: 1024px) {
+    .page-content {
+      padding-top: 60px; /* fits mobile navbar height */
+    }
+  }
+</style>
+
 <body
   style="margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; background-color: #fafafa;">
   {% include "component/navbar.njk" %}
 
-  <div class="page-content" style="flex: 1;">
+  <div class="page-content">
     {{ content | safe }}
   </div>
 

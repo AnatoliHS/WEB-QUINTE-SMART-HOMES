@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "cd src && npx @11ty/eleventy --serve --output=../dist",
+        "admin": "bun x decap-server --port 8081 --cors & bun run start",
         "build": "cd src && npx @11ty/eleventy --output=../dist",
         "buildfresh": "rm -rf dist && mkdir dist && cd src && npx @11ty/eleventy --output=../dist",
         "srvsrc": "cd src && python -m http.server 8000 && cd ..",
@@ -26,6 +27,7 @@
         "@11ty/eleventy-plugin-bundle": "^1.0.4",
         "@11ty/eleventy-plugin-rss": "^1.2.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+        "decap-server": "^3.10.0",
         "luxon": "^3.7.2",
         "markdown-it-anchor": "^8.6.7"
     },

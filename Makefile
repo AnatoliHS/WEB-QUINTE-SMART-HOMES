@@ -24,6 +24,9 @@ help:
 it_run:
 	bun run start
 
+it_admin:
+	bun run admin
+
 
 this_dev_env:
 	# Install the development environment

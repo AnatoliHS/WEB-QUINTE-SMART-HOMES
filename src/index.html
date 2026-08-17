@@ -6,6 +6,21 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
 ---
 
 <style>
+    @font-face {
+        font-family: 'Teodor';
+        src: url('/teodor.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Signoy';
+        src: url('/Signoy.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
     /* Modern, Premium, Semantic CSS */
     html {
         scroll-behavior: smooth;
@@ -877,11 +892,61 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
 <main id="main-content">
 
     <!-- Full-Width Cinematic Hero Video Section -->
-    <section id="home" style="width: 100%; height: 75vh; position: relative; overflow: hidden; background: #ffffff;">
-        <video autoplay loop muted playsinline class="hero-video" style="width: 100%; height: 100%; object-fit: cover;">
+    <section id="home" style="width: 100%; height: 90vh; position: relative; overflow: hidden; background: #0b0f19;">
+        <video autoplay loop muted playsinline class="hero-video" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
             <source src="/ottawa.mp4" type="video/mp4">
         </video>
+        <!-- Text overlay container -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(15, 23, 42, 0.35); pointer-events: none; z-index: 10;">
+            <h1 class="hero-animated-title" style="font-family: 'Signoy', 'Teodor', serif; font-size: clamp(3rem, 9vw, 7.5rem); color: #ffffff; text-align: center; margin: 0; text-shadow: 0 4px 24px rgba(15, 23, 42, 0.6); font-weight: normal; letter-spacing: 1px;">
+                <!-- Characters will be dynamically injected here for typing animation -->
+            </h1>
+        </div>
     </section>
+
+    <script>
+        (function initHeroTitleAnimation() {
+            const run = () => {
+                const title = document.querySelector('.hero-animated-title');
+                if (!title) return;
+
+                const text = "Murtaza Homes";
+                title.innerHTML = '';
+
+                // Split text into characters and wrap each in a span with opacity 0
+                const spans = text.split('').map(function(char) {
+                    const span = document.createElement('span');
+                    if (char === ' ') {
+                        span.innerHTML = '&nbsp;';
+                    } else {
+                        span.textContent = char;
+                    }
+                    span.style.opacity = '0';
+                    span.style.transition = 'opacity 0.25s ease-in-out';
+                    span.style.display = 'inline-block';
+                    title.appendChild(span);
+                    return span;
+                });
+
+                const speed = 80; // ms per character reveal
+
+                // Delayed reveal
+                setTimeout(function() {
+                    spans.forEach(function(span, i) {
+                        setTimeout(function() {
+                            span.style.opacity = '1';
+                        }, i * speed);
+                    });
+                }, 400); // short initial delay
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+        })();
+    </script>
 
     <!-- Headline Title & Property Search Section Directly Under Video -->
     <section id="hero-intro" style="background: #ffffff; padding: 5rem 5% 4rem 5%; text-align: center;">
@@ -1119,7 +1184,7 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
                     </article>
 
                     <article class="card community-info stair-card community-slide">
-                        <img src="https://photos.alphotoscdn.com/file/al-cms/MediaLibrary/20749/19d43e28-643d-4919-b167-4dfff6a7c24d.png"
+                        <img src="/assets/nepean.jpg"
                             alt="Nepean Ottawa Real Estate" class="card-img" loading="lazy">
                         <div class="card-content">
                             <h3 class="card-title"><a href="/communities/nepean/"
@@ -1356,7 +1421,7 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
             <header class="animated-header" style="text-align: left;">
                 <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Ottawa Advisory</span>
                 <h2 id="agent-heading" style="color: #0f172a; font-size: 3.2rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; font-family: var(--font-heading);">
-                    Real Estate, Rewired.
+                    Real Estate, <span style="color: #94a3b8; font-weight: 700;">Rewired.</span>
                 </h2>
                 <p style="font-size: 1.2rem; color: #475569; line-height: 1.75; margin-bottom: 1.5rem;">
                     Murtaza Siddiqui is a licensed RE/MAX real estate broker serving the National Capital Region. With a deep understanding of local market analytics, he guides families, first-time buyers, and investors through high-value property transactions.
@@ -1424,7 +1489,7 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
         </div>
     </section>
 
-    <section id="testimonials" class="section-padding container" style="margin-bottom: 5rem; background: #f8fafc; border-radius: 20px; padding: 4rem 5%;">
+    <section id="testimonials" class="section-padding container" style="max-width: 1400px; margin-bottom: 5rem; background: #f8fafc; border-radius: 20px; padding: 4rem 5%;">
         <header class="animated-header" style="text-align: center; margin-bottom: 3.5rem;">
             <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #2370ba; display: block; margin-bottom: 0.8rem;">Client Experience</span>
             <h2 style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #0f172a; font-family: var(--font-heading);">
@@ -1434,148 +1499,11 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
             <p style="max-width: 650px; margin: 0.8rem auto 0 auto; font-size: 1.15rem; color: #64748b;">Real reviews from buyers, sellers, and investors across the Ottawa region.</p>
         </header>
 
-        <!-- Desktop: 3-column grid | Mobile: single carousel -->
-        <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <article class="testimonial-slide frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <span class="frameless-badge">Kanata Client Review</span>
-                <p style="color: #475569; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem; font-style: italic;">
-                    "Murtaza was a fantastic broker to work with. Highly dedicated, knowledgeable about Ottawa's tech corridor in Kanata, and tireless in getting us the price point we wanted. Would recommend him 100%!"
-                </p>
-                <div style="display: flex; align-items: center; gap: 0.8rem;">
-                    <span style="font-weight: 700; color: #0f172a;">— Tariq & Sarah M.</span>
-                    <span style="font-size: 0.8rem; color: #94a3b8;">Kanata Buyers</span>
-                </div>
-            </article>
-
-            <article class="testimonial-slide frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <span class="frameless-badge">Barrhaven Client Review</span>
-                <p style="color: #475569; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem; font-style: italic;">
-                    "As newcomers to Ottawa, having Murtaza guide us in Urdu and English was a true blessing. He explained the offer process clearly, negotiated firmly, and helped us land our dream home in Barrhaven."
-                </p>
-                <div style="display: flex; align-items: center; gap: 0.8rem;">
-                    <span style="font-weight: 700; color: #0f172a;">— Faisal & Ayesha K.</span>
-                    <span style="font-size: 0.8rem; color: #94a3b8;">Barrhaven Homeowners</span>
-                </div>
-            </article>
-
-            <article class="testimonial-slide frameless-block" style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <span class="frameless-badge">Orléans Client Review</span>
-                <p style="color: #475569; font-size: 0.98rem; line-height: 1.65; margin-bottom: 1.5rem; font-style: italic;">
-                    "Working with Murtaza on selling our townhouse was seamless. His comparative market analysis was spot-on, staging recommendations were key, and we sold above asking within 5 days!"
-                </p>
-                <div style="display: flex; align-items: center; gap: 0.8rem;">
-                    <span style="font-weight: 700; color: #0f172a;">— David & Elena R.</span>
-                    <span style="font-size: 0.8rem; color: #94a3b8;">Orléans Sellers</span>
-                </div>
-            </article>
-        </div>
-
-        <!-- Mobile-only carousel navigation (hidden on desktop via CSS) -->
-        <div class="testimonial-nav" style="display: none; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.8rem;">
-            <button class="testimonial-prev" aria-label="Previous review" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8592;</button>
-            <div class="testimonial-dots" style="display: flex; gap: 0.5rem; align-items: center;"></div>
-            <button class="testimonial-next" aria-label="Next review" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; color: #0f172a; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">&#8594;</button>
+        <!-- RateMyAgent Widget Embed -->
+        <div style="margin-top: 2rem; width: 100%;">
+            <div style="display: none;" id="rma-widget-embed"><div id="rma-widget-iframe-container"></div><div id="rma-verification"><img id="rma-verification-icon" width=24 src="https://Rate-My-Agent.com/badges/icon.svg" /><span id="rma-verification-text">Verify <a href="https://www.Rate-My-Agent.com/murtaza-siddiqui-ratings-ottawa-121993">Murtaza Siddiqui Reviews at Rate-My-Agent.com</a>.</span></div></div><script src="https://www.rate-my-agent.com/murtaza-siddiqui-ratings-ottawa-121993/reviews_widget_injection.js"></script>
         </div>
     </section>
-
-    <script>
-        (function initTestimonialCarousel() {
-            function init() {
-                var section = document.getElementById('testimonials');
-                if (!section) return;
-
-                var grid = section.querySelector('.testimonials-grid');
-                var slides = Array.from(section.querySelectorAll('.testimonial-slide'));
-                var nav = section.querySelector('.testimonial-nav');
-                var dotsContainer = section.querySelector('.testimonial-dots');
-                var prevBtn = section.querySelector('.testimonial-prev');
-                var nextBtn = section.querySelector('.testimonial-next');
-                var current = 0;
-                var isMobile = false;
-
-                // Build dots
-                slides.forEach(function(_, i) {
-                    var dot = document.createElement('button');
-                    dot.setAttribute('aria-label', 'Review ' + (i + 1));
-                    dot.style.cssText = 'width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer; transition: all 0.25s ease; background: #cbd5e1; flex-shrink: 0;';
-                    dot.addEventListener('click', function() { goTo(i); });
-                    dotsContainer.appendChild(dot);
-                });
-
-                // Force dots container to always be a horizontal row
-                dotsContainer.style.display = 'flex';
-                dotsContainer.style.flexDirection = 'row';
-                dotsContainer.style.alignItems = 'center';
-                dotsContainer.style.gap = '0.5rem';
-
-                var dots = Array.from(dotsContainer.querySelectorAll('button'));
-
-                function goTo(index) {
-                    current = index;
-                    slides.forEach(function(slide, i) {
-                        if (isMobile) {
-                            slide.style.display = i === current ? 'block' : 'none';
-                            slide.style.opacity = i === current ? '1' : '0';
-                        }
-                    });
-                    dots.forEach(function(dot, i) {
-                        dot.style.background = i === current ? '#2370ba' : '#cbd5e1';
-                        dot.style.width = i === current ? '20px' : '8px';
-                        dot.style.borderRadius = i === current ? '4px' : '50%';
-                    });
-                }
-
-                function enableMobile() {
-                    isMobile = true;
-                    grid.style.display = 'block';
-                    nav.style.display = 'flex';
-                    nav.style.flexDirection = 'row';
-                    nav.style.alignItems = 'center';
-                    nav.style.justifyContent = 'center';
-                    nav.style.gap = '1.5rem';
-                    slides.forEach(function(slide) {
-                        slide.style.transition = 'opacity 0.3s ease';
-                    });
-                    goTo(current);
-                }
-
-                function disableMobile() {
-                    isMobile = false;
-                    grid.style.display = '';
-                    nav.style.display = 'none';
-                    slides.forEach(function(slide) {
-                        slide.style.display = '';
-                        slide.style.opacity = '';
-                    });
-                }
-
-                prevBtn.addEventListener('click', function() {
-                    goTo((current - 1 + slides.length) % slides.length);
-                });
-
-                nextBtn.addEventListener('click', function() {
-                    goTo((current + 1) % slides.length);
-                });
-
-                function checkBreakpoint() {
-                    if (window.innerWidth <= 768) {
-                        if (!isMobile) enableMobile();
-                    } else {
-                        if (isMobile) disableMobile();
-                    }
-                }
-
-                checkBreakpoint();
-                window.addEventListener('resize', checkBreakpoint);
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', init);
-            } else {
-                init();
-            }
-        })();
-    </script>
 
 
     <section id="faq" class="section-padding container" aria-labelledby="faq-heading" style="margin-bottom: 5rem;">

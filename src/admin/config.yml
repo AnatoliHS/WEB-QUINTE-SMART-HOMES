@@ -1,20 +1,62 @@
 backend:
-  name: git-gateway
-  branch: develop
+  name: github
+  repo: AnatoliHS/WEB-MURTAZA
+  branch: main
+  base_url: https://web-murtaza.pages.dev
+  # Only needed if you host your own OAuth handler rather than using a
+  # provider's. Must return a GitHub token to the CMS.
+  auth_endpoint: /api/auth
 
+# Lets `npx decap-server` write to your working copy instead of GitHub,
+# so local edits never touch the live repo.
 local_backend: true
 
-media_folder: "src/assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "src/assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
 collections:
+  # ---------------------------------------------------------------
+  # Global data. Each file becomes one form. Eleventy exposes
+  # src/_data/site.yaml to templates as `site`.
+  # ---------------------------------------------------------------
+  - name: settings
+    label: "Site Settings"
+    files:
+      - file: "src/_data/site.yaml"
+        label: "Site"
+        name: site_yaml
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+
+      - file: "src/_data/navigation.yaml"
+        label: "Navigation"
+        name: navigation_yaml
+        fields:
+          # A `list` of `object` is the repeatable-row pattern. `summary`
+          # controls the collapsed label for each row.
+          - label: Main
+            name: main
+            widget: list
+            summary: "{{title}} — {{href}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Href, name: href, widget: string }
+
+  # ---------------------------------------------------------------
+  # Content. One markdown file per entry.
+  # ---------------------------------------------------------------
   - name: "blog"
     label: "Blog Posts"
     folder: "src/blog"
     create: true
     slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body Content", name: "body", widget: "markdown" }
+

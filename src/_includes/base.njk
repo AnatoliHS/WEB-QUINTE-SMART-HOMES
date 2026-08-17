@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }} — {{ site.title }}</title>
+    <meta name="description" content="{{ summary or site.description }}" />
+
+    <!-- startr.style: layout and spacing come from inline --prop attributes,
+         so there is no stylesheet of your own to write or maintain. -->
+    <link rel="stylesheet" href="https://startr.style/style.css" />
+
+    <!-- Startr Swap: same-origin links swap in place instead of reloading.
+         Delete this one line and every link navigates normally. -->
+    <script defer src="/js/startr-swap.js"></script>
+  </head>
+
+  <body style="--maxw:70ch; --m:0 auto; --p:1rem; --p-md:2rem">
+    <header style="--mb:2rem">
+      <a href="/" style="--size:1.25rem"><strong>{{ site.title }}</strong></a>
+
+      <nav style="--d:flex; --g:1rem; --mt:0.5rem">
+        {% for item in site.nav %}
+          <a href="{{ item.href }}">{{ item.title }}</a>
+        {% endfor %}
+      </nav>
+    </header>
+
+    <!-- Everything inside data-swap is what Startr Swap replaces. Anything
+         outside it — the header above, the footer below — survives untouched. -->
+    <main data-swap>
+      <h1>{{ title }}</h1>
+      {% if date %}<p><small>{{ date | readableDate }}</small></p>{% endif %}
+      {{ content | safe }}
+    </main>
+
+    <footer style="--mt:3rem; --size:0.875rem">
+      <p>{{ site.title }} — built with Eleventy, startr.style, and Startr Swap.</p>
+    </footer>
+  </body>
+</html>

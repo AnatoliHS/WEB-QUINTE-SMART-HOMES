@@ -1,0 +1,10 @@
+title: Startr Site
+description: An Eleventy starter with a CMS, wired for Cloudflare Pages.
+url: https://example.com
+author: Your Name
+
+nav:
+  - title: Home
+    href: /
+  - title: Posts
+    href: /posts/
