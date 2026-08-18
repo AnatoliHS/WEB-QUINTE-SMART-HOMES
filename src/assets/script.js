@@ -56,7 +56,8 @@ function turnOffAllTextEditable() {
   });
   isEditable = false;
   // set text of anchor #edit to "Stop Editing" to reflect state
-  document.getElementById("edit").innerText = "Edit";
+  const editBtn = document.getElementById("edit");
+  if (editBtn) editBtn.innerText = "Edit";
 }
 
 function toggleAllTextEditable() {
@@ -66,7 +67,8 @@ function toggleAllTextEditable() {
   textNodes.forEach((node) => {
     node.parentElement.contentEditable = isEditable;
   });
-  document.getElementById("edit").innerText = isEditable ? "Stop Editing" : "Edit";
+  const editBtn = document.getElementById("edit");
+  if (editBtn) editBtn.innerText = isEditable ? "Stop Editing" : "Edit";
 }
 function getTextNodes(element) {
   const textNodes = [];
@@ -131,7 +133,8 @@ function toggleDraggableElements() {
 function turnOffDraggableElements() {
   isDragMode = false;
   // set text of anchor #toggleDrag to "Drag" to reflect state
-  document.getElementById("toggleDrag").innerText = "Drag";
+  const toggleDragBtn = document.getElementById("toggleDrag");
+  if (toggleDragBtn) toggleDragBtn.innerText = "Drag";
   //remove .removeAttribute('draggable') for any elements that have it
   // select by attribute
   var elementsToToggle = document.querySelectorAll("[draggable]");
@@ -191,10 +194,12 @@ function handleMouseOut(event) {
 }
 
 var toggleDragButton = document.getElementById("toggleDrag");
-toggleDragButton.addEventListener("click", function () {
-  toggleDraggableElements();
-  toggleDragButton.textContent = isDragMode ? "Stop Drag" : "Drag";
-});
+if (toggleDragButton) {
+  toggleDragButton.addEventListener("click", function () {
+    toggleDraggableElements();
+    toggleDragButton.textContent = isDragMode ? "Stop Drag" : "Drag";
+  });
+}
 
 document.addEventListener("dragstart", handleDragStart);
 document.addEventListener("dragover", handleDragOver);
@@ -204,13 +209,15 @@ document.addEventListener("mouseout", handleMouseOut);
 
 // Add a listener for the "dblclick" event
 document.addEventListener("dblclick", function (event) {
+  var prompt = document.getElementById("prompt");
+  var promptWrapper = document.getElementById("prompt_wrapper");
+  if (!prompt || !promptWrapper) return;
+
   var target = event.target;
   var style = target.getAttribute("style");
-  var prompt = document.getElementById("prompt");
   prompt.value = style;
 
   // open prompt_wrapper
-  var promptWrapper = document.getElementById("prompt_wrapper");
   promptWrapper.style.display = "block";
 
   // focus on prompt
@@ -245,10 +252,12 @@ document.addEventListener("dblclick", function (event) {
 // We'll do it if we're on a file:// URL
 if (window.location.protocol === "file:") {
   var edit_bar = document.getElementById("edit_bar");
-  edit_bar.style.setProperty("--d", "block"); // Use setProperty to modify CSS variables
-  edit_bar.addEventListener("click", function () {
-    toggleAllTextEditable();
-  });
+  if (edit_bar) {
+    edit_bar.style.setProperty("--d", "block"); // Use setProperty to modify CSS variables
+    edit_bar.addEventListener("click", function () {
+      toggleAllTextEditable();
+    });
+  }
 }
 
 // Accessibility fixes for images and iframes (e.g. from third-party widgets)
