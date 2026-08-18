@@ -152,12 +152,11 @@
     flex-direction: column;
     background-color: #2370ba;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    /* In document flow directly below the sticky navbar — no fixed positioning */
-    position: sticky;
-    top: 0;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    z-index: 998;
+    z-index: 999;
     padding: 0 5%;
     gap: 0;
     box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
@@ -165,12 +164,28 @@
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, padding 0.3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .mobile-nav-dropdown::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .mobile-nav-dropdown::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .mobile-nav-dropdown::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
   }
 
   .mobile-nav-dropdown.active {
-    max-height: 600px;
-    overflow: visible;
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto;
     opacity: 1;
     padding: 1.4rem 5% 1.8rem 5%;
     pointer-events: auto;
@@ -300,19 +315,19 @@
     ☰
   </button>
 
-</nav>
+  <!-- Mobile Dropdown Drawer -->
+  <div class="mobile-nav-dropdown" id="mobile-dropdown">
+    <a href="/#home">Home</a>
+    <a href="/search/">Properties</a>
+    <a href="/#featured-communities">Communities</a>
+    <a href="/#services">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#about-agent">About</a>
+    <a href="/#contact" class="mobile-contact-btn">Contact Murtaza</a>
+  </div>
 
-<!-- Mobile Dropdown Drawer -->
-<div class="mobile-nav-dropdown" id="mobile-dropdown">
-  <a href="/#home">Home</a>
-  <a href="/search/">Properties</a>
-  <a href="/#featured-communities">Communities</a>
-  <a href="/#services">Services</a>
-  <a href="/blog/">Blog</a>
-  <a href="/#faq">FAQ</a>
-  <a href="/#about-agent">About</a>
-  <a href="/#contact" class="mobile-contact-btn">Contact Murtaza</a>
-</div>
+</nav>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -355,7 +370,7 @@
 
       // Close dropdown when clicking outside
       document.addEventListener('click', (e) => {
-        if (!navbar.contains(e.target) && !mobileDropdown.contains(e.target)) {
+        if (!mobileDropdown.contains(e.target) && !mobileToggle.contains(e.target)) {
           mobileDropdown.classList.remove('active');
           mobileToggle.innerHTML = '☰';
         }
