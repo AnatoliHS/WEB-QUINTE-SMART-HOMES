@@ -17,6 +17,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.ignores.add("admin/");
+  eleventyConfig.addPassthroughCopy("robots.txt");
 
   eleventyConfig.addPlugin(sectionizePlugin);
 

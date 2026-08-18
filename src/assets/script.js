@@ -250,3 +250,57 @@ if (window.location.protocol === "file:") {
     toggleAllTextEditable();
   });
 }
+
+// Accessibility fixes for images and iframes (e.g. from third-party widgets)
+(function fixAccessibility() {
+  const fixImgAndIframe = () => {
+    // 1. Fix images missing alt attributes
+    document.querySelectorAll('img:not([alt])').forEach(img => {
+      if (img.id === 'rma-verification-icon' || img.src.includes('Rate-My-Agent.com')) {
+        img.setAttribute('alt', 'Rate-My-Agent Verification Badge');
+      } else {
+        img.setAttribute('alt', '');
+      }
+    });
+
+    // 2. Fix iframes missing title attributes
+    document.querySelectorAll('iframe:not([title])').forEach(iframe => {
+      if (iframe.src.includes('rate-my-agent') || iframe.id.includes('rma')) {
+        iframe.setAttribute('title', 'Rate My Agent Customer Reviews Widget');
+      } else {
+        iframe.setAttribute('title', 'Interactive Content Feed');
+      }
+    });
+  };
+
+  // Run immediately on page load / DOMReady
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixImgAndIframe);
+  } else {
+    fixImgAndIframe();
+  }
+
+  // Observe dynamically added iframes / images (e.g. from third-party widgets)
+  try {
+    const observer = new MutationObserver(mutations => {
+      let needsFix = false;
+      for (const mutation of mutations) {
+        if (mutation.addedNodes.length) {
+          needsFix = true;
+          break;
+        }
+      }
+      if (needsFix) {
+        fixImgAndIframe();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  } catch (e) {
+    // Fallback if MutationObserver is not supported
+    window.addEventListener('load', () => {
+      setTimeout(fixImgAndIframe, 1000);
+      setTimeout(fixImgAndIframe, 3000);
+    });
+  }
+})();
+
