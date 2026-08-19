@@ -2,7 +2,17 @@
 layout: default.njk
 title: Murtaza Homes | Ottawa Real Estate Broker Murtaza Siddiqui
 description: Strategic Ottawa real estate guides, 2026 market forecasts, and neighborhood analysis for Kanata,
-
+faqSchema:
+  - question: "What areas of Ottawa does Murtaza Homes serve?"
+    answer: "Broker Murtaza Siddiqui serves the entire National Capital Region. Key specialized service locations include Kanata, Barrhaven, Orléans, Nepean, Stittsville, and Central Downtown Ottawa."
+  - question: "Can I receive real estate services in languages other than English?"
+    answer: "Yes! Murtaza Siddiqui is a proud multilingual broker providing complete property sales, negotiations, and relocation assistance in English, French, Hindi, Urdu, and Farsi."
+  - question: "How do I determine the actual market value of my Ottawa home?"
+    answer: "We generate a data-driven Comparative Market Analysis (CMA) based on recent MLS sales, active competitor listings, and market absorption rates in your specific neighborhood."
+  - question: "What RE/MAX brokerage is Murtaza affiliated with?"
+    answer: "Murtaza Siddiqui is a licensed Broker with RE/MAX Hallmark Realty Group, Brokerage, recognized with the prestigious RE/MAX Platinum Award and RE/MAX Hall of Fame honors."
+  - question: "What should first-time home buyers prepare before submitting an offer?"
+    answer: "First-time buyers should secure a formal mortgage pre-approval, establish deposit funds, and review neighborhood comps. We guide you through every step from inspection clauses to closing day."
 ---
 
 <style>
@@ -234,15 +244,15 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
         position: absolute;
         top: 50%;
         left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
+        width: 120vw;
+        height: 67.5vw;
+        min-height: 108vh;
+        min-width: 192vh;
         transform: translate(-50%, -50%);
         z-index: 0;
-        object-fit: cover;
         pointer-events: none;
         background-color: #000;
+        border: none;
     }
 
     /* Mobile & Responsive Enhancements */
@@ -260,9 +270,11 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
 
         .hero-video {
             display: block !important;
-            height: 100% !important;
-            width: 100% !important;
-            object-fit: cover !important;
+            width: 150vw !important;
+            height: 84.375vw !important;
+            min-height: 60vh !important;
+            min-width: 106.67vh !important;
+            transform: translate(-50%, -50%) !important;
         }
 
         /* Hero Intro */
@@ -898,9 +910,14 @@ description: Strategic Ottawa real estate guides, 2026 market forecasts, and nei
 
     <!-- Full-Width Cinematic Hero Video Section -->
     <section id="home" style="width: 100%; height: 90vh; position: relative; overflow: hidden; background: #0b0f19;">
-        <video autoplay loop muted playsinline class="hero-video" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
-            <source src="/ottawa.mp4" type="video/mp4">
-        </video>
+        <iframe 
+            src="https://www.youtube.com/embed/G7l7SbjWs1k?autoplay=1&mute=1&loop=1&playlist=G7l7SbjWs1k&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&cc_load_policy=0" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen
+            class="hero-video"
+            style="opacity: 0.85;">
+        </iframe>
         <!-- Text overlay container -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(15, 23, 42, 0.35); pointer-events: none; z-index: 10;">
             <h1 class="hero-animated-title" style="font-family: 'Signoy', 'Teodor', serif; font-size: clamp(3rem, 9vw, 7.5rem); color: #ffffff; text-align: center; margin: 0; text-shadow: 0 4px 24px rgba(15, 23, 42, 0.6); font-weight: normal; letter-spacing: 1px;">

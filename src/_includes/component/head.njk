@@ -26,7 +26,7 @@
     "@type": "RealEstateAgent",
     "name": "Murtaza Homes",
     "url": "https://murtazahomes.com",
-    "logo": "https://murtazahomes.com/assets/murtaza-homes.png",
+    "logo": "https://murtazahomes.com/assets/murtaza-brand.JPG",
     "image": "https://photos.alphotoscdn.com/file/al-cms/MediaLibrary/20749/457591c2-43a7-4376-8ab8-46b8b008a18a.jpg",
     "description": "Murtaza Siddiqui, Ottawa Real Estate Broker, helping you buy and sell properties across Ottawa.",
     "address": {
@@ -44,6 +44,27 @@
     "telephone": "613-805-1111"
   }
   </script>
+
+  {% if faqSchema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for item in faqSchema %}
+      {
+        "@type": "Question",
+        "name": {{ item.question | dump | safe }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ item.answer | dump | safe }}
+        }
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
