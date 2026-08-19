@@ -3,12 +3,16 @@ layout: default.njk
 title: How to Save on Mortgage Interest | Murtaza Homes
 ---
 
-<div class="buyers-hero">
-    <div class="container text-center">
-        <h1 class="hero-title">How to Save Thousands in Interest</h1>
+<article class="buyers-hero">
+    <div class="hero-content">
+        <span class="hero-badge">Buyers Resource</span>
+        <h1 class="hero-title">
+            How to<br>
+            <span style="color: #38bdf8; font-weight: 700;">Save on Interest.</span>
+        </h1>
         <p class="hero-subtitle">Simple, practical strategies to pay off your mortgage faster and save money.</p>
     </div>
-</div>
+</article>
 
 <main id="main-content" class="container section-padding">
     <article class="content-card">
@@ -130,25 +134,44 @@ title: How to Save on Mortgage Interest | Murtaza Homes
     }
 
     .buyers-hero {
-        background: linear-gradient(rgba(35, 112, 186, 0.55), rgba(25, 80, 134, 0.45)), url('https://cdn-websites.agentlocator.ca/20749/Communities/5%20(3).jpg') center/cover no-repeat;
-        padding: 7rem 5%;
+        position: relative;
+        background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.7)), url('/assets/images/calculators_hero.webp') center/cover no-repeat;
+        padding: 8rem 8% 6rem 8%;
         color: white;
-        margin-bottom: 2rem;
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #38bdf8;
+        margin-bottom: 1rem;
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3.8rem;
         font-weight: 800;
-        margin-bottom: 1rem;
-        margin-top: 0;
+        line-height: 1.15;
+        margin: 0 0 1.5rem 0;
         letter-spacing: -1px;
+        font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
         font-weight: 400;
-        opacity: 0.9;
-        max-width: 600px;
+        line-height: 1.6;
+        opacity: 0.95;
+        max-width: 700px;
         margin: 0 auto;
     }
 
@@ -303,13 +326,33 @@ title: How to Save on Mortgage Interest | Murtaza Homes
         border: 1px solid #e2e8f0;
     }
 
-    @media (max-width: 768px) {
-        .content-card {
-            padding: 1.5rem;
+    @media (max-width: 992px) {
+        .buyers-hero {
+            padding: 6rem 5% 4rem 5%;
+            margin-bottom: 2.5rem;
         }
 
         .hero-title {
-            font-size: 2.25rem;
+            font-size: 2.8rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .buyers-hero {
+            padding: 5rem 4% 3.5rem 4%;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+        }
+
+        .content-card {
+            padding: 1.5rem;
         }
 
         .strategy-item {
@@ -320,6 +363,16 @@ title: How to Save on Mortgage Interest | Murtaza Homes
         .results-grid {
             grid-template-columns: 1fr;
             gap: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
         }
     }
 </style>
