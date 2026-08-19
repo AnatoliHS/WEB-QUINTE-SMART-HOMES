@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1fr 180px 1fr;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0.5rem 5%;
     background-color: #2370ba;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
@@ -18,7 +18,7 @@
   }
 
   .re-navbar.scrolled {
-    padding: 0.75rem 5%;
+    padding: 0.35rem 5%;
     grid-template-columns: 1fr 100px 1fr;
     background-color: #2370ba;
     backdrop-filter: none;
@@ -37,28 +37,15 @@
   }
 
   .re-logo-link::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    width: 160px;
-    height: 160px;
-    background-color: #2370ba;
-    border-radius: 50%;
-    z-index: 1;
-    opacity: 1;
-    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
-    pointer-events: none;
+    display: none;
   }
 
   .re-navbar.scrolled .re-logo-link::before {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
+    display: none;
   }
 
   .re-logo-img {
-    height: 100px;
+    height: 110px;
     width: auto;
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
@@ -67,7 +54,7 @@
   }
 
   .re-navbar.scrolled .re-logo-img {
-    height: 50px;
+    height: 60px;
     transform: translateY(0);
     filter: none;
   }
@@ -123,28 +110,68 @@
     color: #1d5f9e !important;
   }
 
-  /* Clean Hamburger Menu Styles (No White Glow) */
+  /* Premium Animated Hamburger Menu Styles */
   .mobile-toggle-btn {
     display: none;
     background: transparent !important;
     border: none !important;
-    color: #ffffff !important;
-    font-size: 2.2rem;
+    width: 28px;
+    height: 20px;
+    position: relative;
     cursor: pointer;
-    padding: 0.5rem 0.6rem;
+    padding: 0 !important;
     outline: none !important;
     box-shadow: none !important;
-    line-height: 1;
     -webkit-tap-highlight-color: transparent !important;
   }
 
-  .mobile-toggle-btn:focus,
-  .mobile-toggle-btn:active,
-  .mobile-toggle-btn:hover {
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
+  .mobile-toggle-btn span {
+    display: block;
+    position: absolute;
+    height: 2.5px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 4px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-toggle-btn span:nth-child(1) {
+    top: 0px;
+  }
+
+  .mobile-toggle-btn span:nth-child(2),
+  .mobile-toggle-btn span:nth-child(3) {
+    top: 8px;
+  }
+
+  .mobile-toggle-btn span:nth-child(4) {
+    top: 16px;
+  }
+
+  /* Active state transitions */
+  .mobile-toggle-btn.active span:nth-child(1) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+    opacity: 0;
+  }
+
+  .mobile-toggle-btn.active span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .mobile-toggle-btn.active span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .mobile-toggle-btn.active span:nth-child(4) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+    opacity: 0;
   }
 
   .mobile-nav-dropdown {
@@ -230,7 +257,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 5%;
+      padding: 0.5rem 5%;
     }
 
     .re-nav-links {
@@ -252,34 +279,19 @@
 
     .re-logo-img {
       display: block !important;
-      height: 38px !important;
+      height: 55px !important;
       transform: none !important;
     }
 
     .re-navbar.scrolled .re-logo-img {
       display: block !important;
-      height: 38px !important;
+      height: 55px !important;
       transform: none !important;
       filter: none !important;
     }
 
     .re-logo-text {
-      display: block !important;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0;
-      font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-      /* Always visible on mobile — override the scrolled fade-out */
-      opacity: 1 !important;
-      max-height: 50px !important;
-      transform: translateY(0) !important;
-      pointer-events: auto !important;
-    }
-
-    .re-logo-text span {
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.7);
+      display: none !important;
     }
 
     .mobile-nav-dropdown {
@@ -301,7 +313,7 @@
 
   <a href="/#home" class="re-logo-link">
     <h1 class="re-logo-text">Murtaza <span>Homes</span></h1>
-    <img src="/assets/remax.png" alt="RE/MAX Logo" class="re-logo-img" width="200" height="200">
+    <img src="/assets/murtaza-brand.JPG" alt="Murtaza Homes Logo" class="re-logo-img" width="213" height="110">
   </a>
 
   <ul class="re-nav-links right-links" role="menubar">
@@ -312,7 +324,10 @@
   </ul>
 
   <button class="mobile-toggle-btn" aria-label="Toggle navigation menu" id="mobile-toggle">
-    ☰
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
 
   <!-- Mobile Dropdown Drawer -->
@@ -353,10 +368,10 @@
         const isOpen = mobileDropdown.classList.contains('active');
         if (isOpen) {
           mobileDropdown.classList.remove('active');
-          mobileToggle.innerHTML = '☰';
+          mobileToggle.classList.remove('active');
         } else {
           mobileDropdown.classList.add('active');
-          mobileToggle.innerHTML = '✕';
+          mobileToggle.classList.add('active');
         }
       });
 
@@ -364,7 +379,7 @@
       mobileDropdown.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           mobileDropdown.classList.remove('active');
-          mobileToggle.innerHTML = '☰';
+          mobileToggle.classList.remove('active');
         });
       });
 
@@ -372,7 +387,7 @@
       document.addEventListener('click', (e) => {
         if (!mobileDropdown.contains(e.target) && !mobileToggle.contains(e.target)) {
           mobileDropdown.classList.remove('active');
-          mobileToggle.innerHTML = '☰';
+          mobileToggle.classList.remove('active');
         }
       });
     }
