@@ -99,6 +99,86 @@
         box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
     }
 
+    .google-preferred-badge {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99999;
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      height: 48px;
+      width: 48px;
+      max-width: 48px;
+      padding: 0;
+      justify-content: center;
+      background-color: #ffffff;
+      color: #202124;
+      border: 1px solid #dadce0;
+      border-radius: 24px;
+      text-decoration: none;
+      font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+      transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  gap 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  background-color 0.2s ease,
+                  box-shadow 0.2s ease;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .google-preferred-badge .google-preferred-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      fill: #4285f4;
+      color: #4285f4;
+    }
+
+    .google-preferred-badge .google-preferred-text {
+      opacity: 0;
+      max-width: 0;
+      overflow: hidden;
+      transition: opacity 0.25s ease, max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .google-preferred-badge:hover,
+    .google-preferred-badge:focus-visible {
+      max-width: 260px;
+      width: auto;
+      padding: 0 18px 0 14px;
+      gap: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .google-preferred-badge:hover .google-preferred-text,
+    .google-preferred-badge:focus-visible .google-preferred-text {
+      opacity: 1;
+      max-width: 200px;
+    }
+
+    @media (max-width: 768px) {
+      .google-preferred-badge {
+        bottom: 16px;
+        right: 16px;
+        max-width: 280px;
+        width: auto;
+        padding: 0 16px 0 12px;
+        gap: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      }
+
+      .google-preferred-badge .google-preferred-text {
+        opacity: 1;
+        max-width: 200px;
+      }
+    }
 </style>
 
 <footer class="re-footer" aria-label="Site Footer">
@@ -167,5 +247,8 @@
 
     <div class="re-footer-bottom">
         <p>&copy; 2026 Murtaza Homes. RE/MAX Hallmark Realty Group, Brokerage. All Rights Reserved.</p>
+        <div style="margin-top: 16px;">
+            {% include "component/preferred-badge.njk" %}
+        </div>
     </div>
 </footer>
