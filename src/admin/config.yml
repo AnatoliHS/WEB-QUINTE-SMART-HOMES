@@ -1,42 +1,41 @@
 backend:
   name: github
-  repo: AnatoliHS/WEB-MURTAZA
+  repo: AnatoliHS/WEB-QUINTE-SMART-HOMES
   branch: main
-  base_url: https://web-murtaza.pages.dev
-  # Only needed if you host your own OAuth handler rather than using a
-  # provider's. Must return a GitHub token to the CMS.
-  auth_endpoint: /api/auth
 
-# Lets `npx decap-server` write to your working copy instead of GitHub,
-# so local edits never touch the live repo.
 local_backend: true
 
 media_folder: "src/assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
-  # ---------------------------------------------------------------
-  # Global data. Each file becomes one form. Eleventy exposes
-  # src/_data/site.yaml to templates as `site`.
-  # ---------------------------------------------------------------
   - name: settings
     label: "Site Settings"
     files:
       - file: "src/_data/site.yaml"
-        label: "Site"
+        label: "Global Site Info & Stats"
         name: site_yaml
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
-          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          - label: "Key Stats"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Homes Automated", name: "homes_automated", widget: "string" }
+              - { label: "Certified Electricians %", name: "electrician_certified", widget: "string" }
+              - { label: "Brand Partners", name: "brand_partners", widget: "string" }
+              - { label: "Google Rating", name: "google_rating", widget: "string" }
 
       - file: "src/_data/navigation.yaml"
-        label: "Navigation"
+        label: "Navigation Menu"
         name: navigation_yaml
         fields:
-          # A `list` of `object` is the repeatable-row pattern. `summary`
-          # controls the collapsed label for each row.
-          - label: Main
+          - label: Main Navigation
             name: main
             widget: list
             summary: "{{title}} — {{href}}"
@@ -44,11 +43,8 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Href, name: href, widget: string }
 
-  # ---------------------------------------------------------------
-  # Content. One markdown file per entry.
-  # ---------------------------------------------------------------
   - name: "blog"
-    label: "Blog Posts"
+    label: "News & Insights"
     folder: "src/blog"
     create: true
     slug: "{{slug}}"
@@ -58,5 +54,5 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body Content", name: "body", widget: "markdown" }
-

@@ -6,9 +6,9 @@ layout: default.njk
     /* Premium Blog Post Styling */
     .blog-post-header {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
         background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-        padding: 5rem 5% 4rem 5%;
+        padding: 4rem 5% 3rem 5%;
         border-bottom: 1px solid rgba(15, 23, 42, 0.05);
     }
 
@@ -18,22 +18,21 @@ layout: default.njk
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #2370ba;
+        color: var(--color-primary);
         margin-bottom: 1rem;
     }
 
     .blog-post-title {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
         font-weight: 800;
         color: #0f172a;
-        line-height: 1.15;
-        margin: 0 0 1.5rem 0;
+        line-height: 1.2;
+        margin: 0 0 1.25rem 0;
         font-family: var(--font-heading);
-        letter-spacing: -1px;
     }
 
     .blog-post-meta {
-        font-size: 1rem;
+        font-size: 0.95rem;
         color: #64748b;
         font-weight: 500;
     }
@@ -41,131 +40,72 @@ layout: default.njk
     .blog-post-container {
         max-width: 800px;
         margin: 0 auto 6rem auto;
-        padding: 0 5%;
+        padding: 0 1.5rem;
     }
 
     .blog-content {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         line-height: 1.8;
         color: #334155;
     }
 
     .blog-content h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 800;
-        color: #0f172a;
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
-        font-family: var(--font-heading);
-    }
-
-    .blog-content h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
         color: #0f172a;
         margin-top: 2.5rem;
         margin-bottom: 1rem;
         font-family: var(--font-heading);
     }
 
+    .blog-content h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-top: 2rem;
+        margin-bottom: 0.8rem;
+        font-family: var(--font-heading);
+    }
+
     .blog-content p {
-        margin-bottom: 1.8rem;
+        margin-bottom: 1.5rem;
     }
 
     .blog-content ul, .blog-content ol {
-        margin-bottom: 2rem;
-        padding-left: 2rem;
+        margin-bottom: 1.75rem;
+        padding-left: 1.75rem;
     }
 
     .blog-content li {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.6rem;
     }
 
-    .blog-content table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 2.5rem 0;
-        font-size: 1.05rem;
-        border: 1px solid #e2e8f0;
-    }
-
-    .blog-content th {
-        background-color: #f8fafc;
-        font-weight: 700;
-        color: #0f172a;
-        padding: 1rem;
-        border-bottom: 2px solid #e2e8f0;
-        text-align: left;
-    }
-
-    .blog-content td {
-        padding: 1rem;
-        border-bottom: 1px solid #e2e8f0;
-        color: #475569;
-    }
-
-    .blog-content blockquote {
-        border-left: 4px solid #2370ba;
-        padding-left: 1.5rem;
-        margin: 2rem 0;
-        font-style: italic;
-        color: #475569;
-    }
-
-    .blog-content a {
-        color: #2370ba;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.25s ease;
-    }
-
-    .blog-content a:hover {
-        color: #1d5f9e;
-        text-decoration: underline;
-    }
-
-    /* Back Button */
     .back-to-blog {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        color: #64748b;
+        color: var(--color-primary);
         text-decoration: none;
         font-weight: 600;
         margin-bottom: 2rem;
-        transition: color 0.25s ease;
     }
 
     .back-to-blog:hover {
-        color: #2370ba;
-    }
-
-    @media (max-width: 768px) {
-        .blog-post-header {
-            padding: 4rem 5% 3rem 5%;
-        }
-
-        .blog-post-title {
-            font-size: 2.2rem;
-        }
-
-        .blog-content {
-            font-size: 1.05rem;
-        }
+        text-decoration: underline;
     }
 </style>
 
 <div class="blog-post-header">
-    <div class="blog-post-category">Real Estate Guide</div>
+    <div class="blog-post-category">Smart Automation Insights</div>
     <h1 class="blog-post-title">{{ title }}</h1>
     <div class="blog-post-meta">
-        Written by <strong>Murtaza Siddiqui</strong> 
+        Published by <strong>Quinte Smart Homes Team</strong>
         {% if date %} • {{ date | postDate }}{% endif %}
     </div>
 </div>
 
 <div class="blog-post-container">
-    <a href="/blog/" class="back-to-blog">&larr; Back to Blog Index</a>
+    <a href="/blog/" class="back-to-blog">&larr; Back to News & Insights</a>
     <article class="blog-content">
         {{ content | safe }}
     </article>

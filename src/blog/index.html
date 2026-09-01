@@ -1,154 +1,27 @@
 ---
 layout: default.njk
-title: Ottawa Real Estate Blog & Market Insights | Murtaza Homes
+title: News & Insights — Smart Home Automation Guides
+description: Industry insights, smart home tips, Lutron lighting guides, and networking advice from the experts at Quinte Smart Homes.
 eleventyExcludeFromCollections: true
 ---
 
-<style>
-    /* Premium Blog Index Spacing & Styles */
-    .blog-header {
-        background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.7)), url('/assets/blog_header.jpg') center/cover no-repeat;
-        padding: 7rem 5% 5rem 5%;
-        color: white;
-        text-align: center;
-        margin-bottom: 4rem;
-    }
-
-    .blog-header-content {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .blog-header-badge {
-        display: inline-block;
-        font-size: 0.85rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #38bdf8;
-        margin-bottom: 1rem;
-    }
-
-    .blog-header-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        line-height: 1.15;
-        margin: 0 0 1.5rem 0;
-        letter-spacing: -1px;
-        font-family: var(--font-heading);
-    }
-
-    .blog-header-subtitle {
-        font-size: 1.25rem;
-        font-weight: 400;
-        opacity: 0.95;
-    }
-
-    /* Grid Layout */
-    .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        gap: 3rem;
-        margin-bottom: 6rem;
-    }
-
-    .blog-card {
-        background: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-        border: 1px solid rgba(15, 23, 42, 0.05);
-        padding: 2.2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .blog-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
-        border-color: rgba(35, 112, 186, 0.1);
-    }
-
-    .blog-card-category {
-        display: inline-block;
-        font-size: 0.75rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: #2370ba;
-        margin-bottom: 0.8rem;
-    }
-
-    .blog-card-title {
-        font-size: 1.4rem;
-        color: #0f172a;
-        font-weight: 800;
-        line-height: 1.3;
-        margin-top: 0;
-        margin-bottom: 0.8rem;
-        font-family: var(--font-heading);
-    }
-
-    .blog-card-desc {
-        color: #64748b;
-        font-size: 0.98rem;
-        line-height: 1.65;
-        margin-bottom: 1.8rem;
-    }
-
-    .blog-card-link {
-        color: #2370ba;
-        font-weight: 700;
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: color 0.25s ease;
-    }
-
-    .blog-card-link:hover {
-        color: #1d5f9e;
-        text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-        .blog-header {
-            padding: 5rem 5% 3.5rem 5%;
-        }
-
-        .blog-header-title {
-            font-size: 2.5rem;
-        }
-
-        .blog-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .blog-card {
-            padding: 1.8rem;
-        }
-    }
-</style>
-
-<article class="blog-header">
-    <div class="blog-header-content">
-        <span class="blog-header-badge">Market Intelligence</span>
-        <h1 class="blog-header-title">Ottawa Real Estate Blog</h1>
-        <p class="blog-header-subtitle">Expert advice, market statistics, and neighborhood guides from Broker Murtaza Siddiqui.</p>
+<section class="section" style="background: var(--bg-canvas);">
+  <div class="container">
+    <div class="section-header" style="text-align: left; max-width: 800px; margin-bottom: 3.5rem;">
+      <div class="section-subtitle">Articles & Resources</div>
+      <h1>Smart Home Automation News & Insights</h1>
+      <p class="section-description">Read our latest guides on pre-wiring, smart lighting design, high-performance Wi-Fi networks, and home security.</p>
     </div>
-</article>
 
-<div class="container">
-    <section class="blog-grid" aria-label="Blog posts list">
-        {% for post in collections.post | reverse %}
-        <article class="blog-card">
-            <div>
-                <span class="blog-card-category">Real Estate Guide</span>
-                <h3 class="blog-card-title">{{ post.data.title }}</h3>
-                <p class="blog-card-desc">{{ post.data.description }}</p>
-            </div>
-            <a href="{{ post.url }}" class="blog-card-link">Read Full Post &rarr;</a>
-        </article>
-        {% endfor %}
-    </section>
-</div>
+    <div class="services-grid">
+      {% for post in collections.blog | reverse %}
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-newspaper"></i></div>
+        <h3 class="service-title">{{ post.data.title }}</h3>
+        <p class="service-desc">{{ post.data.description }}</p>
+        <a href="{{ post.url }}" class="service-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

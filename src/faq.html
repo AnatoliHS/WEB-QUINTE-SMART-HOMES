@@ -1,136 +1,79 @@
 ---
-layout: default.njk
-title: Ottawa Real Estate FAQ | Murtaza Homes
-faqSchema:
-  - question: "How much does it cost to use a Realtor to buy a house in Ottawa?"
-    answer: "For buyers in Ottawa, using a Realtor is typically free. Real estate commissions are almost universally structured so that the seller covers the cost of both agents out of the final sale price. You receive elite market knowledge, negotiation leverage, and legal protection at zero direct cost to you."
-  - question: "How long does it take to buy a house in Ottawa?"
-    answer: "The timeline varies based on market conditions and your criteria. Typically, house hunting takes between 3 to 8 weeks. Once a firm offer is negotiated and accepted, the standard closing period (the time it takes to arrange financing and legal transfers) generally takes 30 to 90 days. We work entirely at your speed."
-  - question: "What are the best neighborhoods for families in Ottawa?"
-    answer: "Ottawa is known globally for its high quality of living and phenomenal suburban districts. Highly recommended areas include Kanata (perfect for tech professionals, excellent public schools, and massive green spaces), Barrhaven (rapidly expanding, incredibly affordable townhouses, and diverse community centers), and Orleans (beautiful bilingual heritage along the Ottawa river, featuring brand-new LRT transit extensions)."
-  - question: "Do I need to be pre-approved for a mortgage before house hunting?"
-    answer: "Yes, obtaining a mortgage pre-approval is the absolute first step you should take. It locks in your interest rate for 90-120 days, determines your absolute maximum budget, and shows sellers that you are a serious, qualified buyer—which is critical during intense negotiations."
+layout: default
+title: Frequently Asked Questions - Quinte Smart Homes
+description: Common questions about smart home installation timelines, Lutron keypads, Control4 integration, pricing, and master electrician safety.
 ---
 
-<style>
-    /* FAQ Semantic Styling */
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    details {
-        background: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
-        padding: 1.5rem;
-        transition: box-shadow 0.3s ease;
-    }
-
-    details[open] {
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    summary {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        cursor: pointer;
-        list-style: none;
-        /* Hide default arrow */
-        position: relative;
-        padding-right: 2rem;
-    }
-
-    summary::-webkit-details-marker {
-        display: none;
-    }
-
-    summary::after {
-        content: '+';
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        color: #0056b3;
-        transition: transform 0.3s;
-    }
-
-    details[open] summary::after {
-        content: '−';
-    }
-
-    .faq-answer {
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid #f0f0f0;
-        color: #555;
-        line-height: 1.6;
-    }
-</style>
-
-
-
-<main id="main-content" class="container section-padding">
-    <header style="text-align: center; margin-bottom: 4rem;">
-        <h1>Frequently Asked Questions</h1>
-        <p class="seo-text" style="font-size: 1.25rem; max-width: 600px; margin: 0 auto;">Everything you need to know
-            about navigating the Ottawa Real Estate market.</p>
-    </header>
-
-    <section class="faq-container" aria-label="Frequently Asked Questions">
-
-        <details>
-            <summary>How much does it cost to use a Realtor to buy a house in Ottawa?</summary>
-            <div class="faq-answer">
-                <p>For buyers in Ottawa, using a Realtor is typically <strong>free</strong>. Real estate commissions are
-                    almost universally structured so that the seller covers the cost of both agents out of the final
-                    sale price. You receive elite market knowledge, negotiation leverage, and legal protection at zero
-                    direct cost to you.</p>
-            </div>
-        </details>
-
-        <details>
-            <summary>How long does it take to buy a house in Ottawa?</summary>
-            <div class="faq-answer">
-                <p>The timeline varies based on market conditions and your criteria. Typically, house hunting takes
-                    between 3 to 8 weeks. Once a firm offer is negotiated and accepted, the standard closing period (the
-                    time it takes to arrange financing and legal transfers) generally takes 30 to 90 days. We work
-                    entirely at your speed.</p>
-            </div>
-        </details>
-
-        <details>
-            <summary>What are the best neighborhoods for families in Ottawa?</summary>
-            <div class="faq-answer">
-                <p>Ottawa is known globally for its high quality of living and phenomenal suburban districts. Highly
-                    recommended areas include:</p>
-                <ul>
-                    <li><a href="/communities/kanata/" style="color:#0056b3;"><strong>Kanata</strong></a>: Perfect for
-                        tech professionals, excellent public schools, and massive green spaces.</li>
-                    <li><a href="/communities/barrhaven/" style="color:#0056b3;"><strong>Barrhaven</strong></a>: Rapidly
-                        expanding, incredibly affordable townhouses, and diverse community centers.</li>
-                    <li><a href="/communities/orleans/" style="color:#0056b3;"><strong>Orleans</strong></a>: Beautiful
-                        bilingual heritage along the Ottawa river, featuring brand-new LRT transit extensions.</li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Do I need to be pre-approved for a mortgage before house hunting?</summary>
-            <div class="faq-answer">
-                <p>Yes, obtaining a mortgage pre-approval is the absolute first step you should take. It locks in your
-                    interest rate for 90-120 days, determines your absolute maximum budget, and shows sellers that you
-                    are a serious, qualified buyer—which is critical during intense negotiations.</p>
-            </div>
-        </details>
-
-    </section>
-
-    <div style="text-align: center; margin-top: 4rem;">
-        <p>Still have questions?</p>
-        <a href="/contact/" class="btn-primary">Ask Murtaza Directly</a>
+<section class="section" style="background: var(--bg-canvas);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-subtitle">Got Questions?</div>
+      <h1>Frequently Asked Questions</h1>
+      <p class="section-description">Everything you need to know about planning, pre-wiring, and automating your home or commercial space.</p>
     </div>
-</main>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-question">
+          Why is installation by a licensed electrician so important?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          Smart lighting controls, line-voltage keypads, motorized shade power distribution, and panel breakers involve high-voltage electricity. Our master electrician credentials (partnered with Davidson Electrical Services) ensure 100% ECRA/ESA compliance, fire safety, and code compliance on every installation.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can smart technology be installed in an existing home, or only new builds?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          We offer both retrofit and new construction options! For existing homes, wireless systems like Lutron RadioRA3 and Control4 Wi-Fi audio allow full whole-home automation without tearing open drywall.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need a strong internet connection for smart home automation?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          Yes, a solid network is vital. We install enterprise Wi-Fi 6 mesh systems (Araknis / Pakedge) and structured Cat6a cabling. For rural homes in Belleville or PEC, we also install Starlink satellite systems.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Are there monthly subscription fees?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          No! Unlike many off-the-shelf security companies, our camera systems (Hikvision ColorVu) record locally to encrypted NVR hard drives without forcing you into monthly cloud subscription plans.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What happens if my Wi-Fi goes down?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          Core lighting, keypads, and local automation controllers (like Control4 and Lutron) operate on dedicated local mesh protocols. Your light switches and door locks will continue to work normally even if internet connection drops out.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  });
+</script>

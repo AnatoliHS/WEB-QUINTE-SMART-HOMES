@@ -1,0 +1,40 @@
+main:
+  - title: Home
+    href: /
+  - title: Services
+    href: /services/
+    children:
+      - title: All Services Overview
+        href: /services/
+      - title: Smart Lighting & Shades
+        href: /services/smart-lights/
+      - title: Audio & Home Theatre
+        href: /services/home-theatre/
+      - title: Security & Access Control
+        href: /services/security/
+      - title: Networking & Starlink
+        href: /services/networking/
+      - title: Outdoor Motorized Screens
+        href: /services/outdoor/
+      - title: Commercial Solutions
+        href: /services/commercial/
+  - title: Industry Professionals
+    href: /industry-professionals/
+    children:
+      - title: Builders & Contractors Program
+        href: /industry-professionals/
+      - title: Interior Designers & Architects
+        href: /industry-professionals/
+  - title: About
+    href: /about/
+    children:
+      - title: About Our Firm
+        href: /about/
+      - title: Davidson Electrical Partnership
+        href: /about/
+      - title: FAQ
+        href: /faq/
+      - title: News & Insights
+        href: /blog/
+      - title: Contact & Consultations
+        href: /contact/

@@ -1,0 +1,90 @@
+{
+  "main": [
+    {
+      "title": "HOME",
+      "href": "/"
+    },
+    {
+      "title": "SERVICES",
+      "href": "/services/",
+      "children": [
+        {
+          "title": "Home Networking",
+          "href": "/services/networking/"
+        },
+        {
+          "title": "Starlink Installation",
+          "href": "/services/starlink/"
+        },
+        {
+          "title": "Home Security",
+          "href": "/services/home-security/"
+        },
+        {
+          "title": "Audio",
+          "href": "/services/audio/"
+        },
+        {
+          "title": "Home Theatre",
+          "href": "/services/home-theatre/"
+        },
+        {
+          "title": "Outdoor Motorized Screens",
+          "href": "/services/outdoor-screens/"
+        },
+        {
+          "title": "Smart Lights",
+          "href": "/services/smart-lights/"
+        },
+        {
+          "title": "Window Shades",
+          "href": "/services/window-shades/"
+        },
+        {
+          "title": "Pergola",
+          "href": "/services/pergola/"
+        }
+      ]
+    },
+    {
+      "title": "INDUSTRY PROFESSIONALS",
+      "href": "/industry-professionals/",
+      "children": [
+        {
+          "title": "Builders & Contractors Program",
+          "href": "/industry-professionals/"
+        },
+        {
+          "title": "Interior Designers & Architects",
+          "href": "/industry-professionals/"
+        }
+      ]
+    },
+    {
+      "title": "ABOUT",
+      "href": "/about/",
+      "children": [
+        {
+          "title": "About Our Firm",
+          "href": "/about/"
+        },
+        {
+          "title": "Davidson Electrical Partnership",
+          "href": "/about/"
+        },
+        {
+          "title": "FAQ",
+          "href": "/faq/"
+        },
+        {
+          "title": "News & Insights",
+          "href": "/blog/"
+        },
+        {
+          "title": "Contact & Consultations",
+          "href": "/contact/"
+        }
+      ]
+    }
+  ]
+}
