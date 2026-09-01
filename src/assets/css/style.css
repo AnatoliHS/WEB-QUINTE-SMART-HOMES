@@ -331,7 +331,9 @@ ul {
 
 /* Tresmares Full-Screen Hero Sections */
 .hero-tresmares,
-.hero-tresmares-business {
+.hero-tresmares-business,
+.hero-tresmares-about,
+.hero-tresmares-automation {
   position: relative;
   min-height: calc(100vh - var(--header-height));
   height: calc(100vh - var(--header-height));
@@ -354,9 +356,19 @@ ul {
   background-image: url('/assets/images/hero_business_camera.jpg');
 }
 
-/* White Veil Overlay for Both Home & Business Hero Sections */
+.hero-tresmares-about {
+  background-image: url('/assets/images/about_hero_background.jpg');
+}
+
+.hero-tresmares-automation {
+  background-image: url('/assets/images/smart_home_automation_hero.jpg');
+}
+
+/* White Veil Overlay for Home, Business, About & Automation Hero Sections */
 .hero-tresmares::before,
-.hero-tresmares-business::before {
+.hero-tresmares-business::before,
+.hero-tresmares-about::before,
+.hero-tresmares-automation::before {
   content: '';
   position: absolute;
   top: 0;
@@ -371,7 +383,9 @@ ul {
 }
 
 .hero-tresmares .container,
-.hero-tresmares-business .container {
+.hero-tresmares-business .container,
+.hero-tresmares-about .container,
+.hero-tresmares-automation .container {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -432,7 +446,7 @@ ul {
 .section-statement {
   padding: 6.5rem 0;
   text-align: center;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: none;
 }
 
 .eyebrow-label,
@@ -451,7 +465,7 @@ ul {
 }
 
 .title-accent-grey {
-  color: #737373 !important;
+  color: var(--color-accent) !important;
   font-weight: 400 !important;
 }
 
@@ -469,6 +483,19 @@ ul {
 
 .scroll-word.active {
   color: var(--text-primary);
+}
+
+/* Preserve custom accent colors (Red/Grey) in scroll reveal animations */
+.scroll-text-reveal [style*="color: var(--color-accent)"] .scroll-word,
+.scroll-text-reveal [style*="color:#e63946"] .scroll-word,
+.scroll-text-reveal [style*="color: #e63946"] .scroll-word {
+  color: rgba(230, 57, 70, 0.25);
+}
+
+.scroll-text-reveal [style*="color: var(--color-accent)"] .scroll-word.active,
+.scroll-text-reveal [style*="color:#e63946"] .scroll-word.active,
+.scroll-text-reveal [style*="color: #e63946"] .scroll-word.active {
+  color: var(--color-accent) !important;
 }
 
 /* Reusable Light Grey Dots Gradient Background */
@@ -1237,5 +1264,491 @@ ul {
   }
   .rewired-item-content {
     font-size: 1.1rem !important;
+  }
+}
+
+/* Interactive Regional Service Map & Floating Tooltip (User Requested Feature) */
+.map-interactive-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.map-svg-element {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-region-path {
+  fill: #f4f4f6;
+  stroke: #ffffff;
+  stroke-width: 3;
+  transition: fill 0.3s ease, stroke 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.map-region-path:hover,
+.map-region-path.active {
+  fill: rgba(230, 57, 70, 0.12);
+  stroke: var(--color-accent);
+  stroke-width: 3.5;
+}
+
+.map-pin-group {
+  cursor: pointer;
+}
+
+.map-pin-pulse {
+  animation: mapPulse 2s infinite ease-out;
+  transform-origin: center;
+}
+
+@keyframes mapPulse {
+  0% {
+    r: 6px;
+    opacity: 0.8;
+  }
+  100% {
+    r: 22px;
+    opacity: 0;
+  }
+}
+
+/* Floating White Tooltip Card (Matching Image 3) */
+.map-tooltip-card {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+  width: 280px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.map-tooltip-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.map-tooltip-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #111111;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+.map-tooltip-desc {
+  font-size: 0.9rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.map-tooltip-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background: rgba(230, 57, 70, 0.08);
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .map-interactive-wrapper {
+    padding: 1.5rem 1rem !important;
+  }
+  .map-tooltip-card {
+    width: 240px !important;
+    padding: 1rem !important;
+  }
+}
+
+.map-picture-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 560px;
+  background-image: url('/assets/images/service_area_map_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-sm);
+  overflow: visible;
+}
+
+/* Heavy White Radial Vignetting & Edge Blend (Matching Reference Image) */
+.map-picture-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  background: radial-gradient(ellipse at center, transparent 25%, rgba(255, 255, 255, 0.7) 55%, #ffffff 88%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Picture Map Overlay Pins & Hover Tooltip */
+.map-picture-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 20 !important;
+}
+
+.pin-pulse-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(230, 57, 70, 0.35);
+  animation: mapPulse 2s infinite ease-out;
+  pointer-events: none;
+}
+
+.pin-red-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e63946;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.map-picture-pin:hover .pin-red-dot {
+  transform: scale(1.35);
+}
+
+.pin-inner-black {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #111111;
+}
+
+.pin-label-tag {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #111111;
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border: 1px solid var(--border-subtle);
+  pointer-events: none;
+}
+
+/* Mobile Responsiveness & Horizontal Overflow Prevention (User Requested Fix) */
+html, body {
+  overflow-x: hidden;
+}
+
+#service-area-map {
+  overflow: hidden;
+}
+
+.two-col-grid,
+.about-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+@media (max-width: 850px) {
+  .two-col-grid,
+  .about-reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .map-picture-wrapper {
+    height: 380px !important;
+  }
+
+  .map-picture-wrapper::before {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+
+  .pin-label-tag {
+    font-size: 0.65rem !important;
+    padding: 1px 4px !important;
+  }
+}
+
+/* Client Reviews Slider / Carousel Component */
+.reviews-slider-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 55px;
+}
+
+.reviews-slider-track-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.reviews-slider-track {
+  display: flex;
+  gap: 1.75rem;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.review-slide-card {
+  flex: 0 0 calc((100% - 3.5rem) / 3);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  padding: 2.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  box-sizing: border-box;
+}
+
+.reviews-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.reviews-slider-arrow:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.reviews-slider-arrow.prev {
+  left: 0;
+}
+
+.reviews-slider-arrow.next {
+  right: 0;
+}
+
+.reviews-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+.review-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.review-dot.active {
+  background: var(--color-accent);
+  width: 24px;
+  border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+  .reviews-slider-container {
+    padding: 0 40px;
+  }
+
+  .review-slide-card {
+    flex: 0 0 100% !important;
+    padding: 2rem 1.5rem !important;
+  }
+
+  .reviews-slider-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Team Showcase Section (Hover Reveal Matching Reference Image) */
+.team-section {
+  padding: 6rem 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.team-card {
+  position: relative;
+  height: 520px;
+  background: #eaeaea;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Portrait Image fills full card */
+.team-portrait-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%) contrast(108%);
+  transition: transform 0.4s ease, filter 0.4s ease;
+  z-index: 1;
+}
+
+.team-card:hover .team-portrait-img {
+  transform: scale(1.03);
+}
+
+/* Hover Header Overlay - Text appears on Hover */
+.team-card-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(234, 234, 234, 0.95) 0%, rgba(234, 234, 234, 0.8) 70%, transparent 100%);
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.team-card:hover .team-card-header,
+.team-card.touch-active .team-card-header {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.team-role {
+  font-size: 0.92rem;
+  color: #555555;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.team-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+
+.team-linkedin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.team-linkedin-badge:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+.team-red-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e63946;
+  display: inline-block;
+}
+
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .team-card {
+    height: 460px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .team-card {
+    height: 440px !important;
+  }
+  /* Show text by default on small mobile for accessibility */
+  .team-card-header {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    background: linear-gradient(to bottom, rgba(234, 234, 234, 0.9) 0%, rgba(234, 234, 234, 0.6) 75%, transparent 100%) !important;
   }
 }

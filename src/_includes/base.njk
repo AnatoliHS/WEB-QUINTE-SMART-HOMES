@@ -197,13 +197,38 @@
           }
         });
 
-        // Scroll-Driven Word Writing Reveal Effect
+        // Scroll-Driven Word Writing Reveal Effect (HTML Preserving)
         const revealContainers = document.querySelectorAll('.scroll-text-reveal');
         revealContainers.forEach(container => {
-          const text = container.textContent.trim();
-          const words = text.split(/\s+/);
-          container.innerHTML = words.map(w => `<span class="scroll-word">${w}</span> `).join('');
+          function processNode(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+              const text = node.textContent;
+              if (!text.trim()) return node;
+              const words = text.split(/(\s+)/);
+              const fragment = document.createDocumentFragment();
+              words.forEach(w => {
+                if (/^\s+$/.test(w)) {
+                  fragment.appendChild(document.createTextNode(w));
+                } else if (w) {
+                  const span = document.createElement('span');
+                  span.className = 'scroll-word';
+                  span.textContent = w;
+                  fragment.appendChild(span);
+                }
+              });
+              return fragment;
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              Array.from(node.childNodes).forEach(child => {
+                const replacement = processNode(child);
+                if (replacement && replacement !== child) {
+                  node.replaceChild(replacement, child);
+                }
+              });
+              return node;
+            }
+          }
 
+          processNode(container);
           const wordSpans = container.querySelectorAll('.scroll-word');
 
           function updateWordsOnScroll() {
