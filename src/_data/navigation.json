@@ -6,7 +6,7 @@
     },
     {
       "title": "SERVICES",
-      "href": "/services/",
+      "href": "/#home-services",
       "children": [
         {
           "title": "Home Networking",

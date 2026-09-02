@@ -60,7 +60,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1,
@@ -380,6 +380,11 @@ ul {
   background: rgba(248, 247, 244, 0.82);
   pointer-events: none;
   z-index: 1;
+}
+
+/* Index Hero Specific Overlay: Lighter gradient to make hero image significantly more visible */
+.hero-tresmares::before {
+  background: linear-gradient(to right, rgba(248, 247, 244, 0.72) 0%, rgba(248, 247, 244, 0.42) 60%, rgba(248, 247, 244, 0.30) 100%);
 }
 
 .hero-tresmares .container,
@@ -1392,15 +1397,14 @@ ul {
   overflow: visible;
 }
 
-/* Heavy White Radial Vignetting & Edge Blend (Matching Reference Image) */
 .map-picture-wrapper::before {
   content: '';
   position: absolute;
-  top: -30px;
-  left: -30px;
-  right: -30px;
-  bottom: -30px;
-  background: radial-gradient(ellipse at center, transparent 25%, rgba(255, 255, 255, 0.7) 55%, #ffffff 88%);
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(ellipse at center, transparent 65%, rgba(255, 255, 255, 0.35) 85%, rgba(255, 255, 255, 0.88) 98%);
   pointer-events: none;
   z-index: 2;
 }
@@ -1470,7 +1474,7 @@ ul {
 
 /* Mobile Responsiveness & Horizontal Overflow Prevention (User Requested Fix) */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 #service-area-map {
@@ -1695,7 +1699,7 @@ html, body {
 .team-name {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #111111;
+  color: var(--color-accent);
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin-bottom: 0.85rem;
@@ -1729,12 +1733,21 @@ html, body {
   display: inline-block;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
   .team-card {
-    height: 460px !important;
+    height: 440px !important;
+  }
+  /* Position name and title at the bottom of the image on mobile */
+  .team-card-header {
+    top: auto !important;
+    bottom: 0 !important;
+    padding: 3rem 1.25rem 1.25rem 1.25rem !important;
+    background: linear-gradient(to top, rgba(248, 247, 244, 0.96) 0%, rgba(248, 247, 244, 0.85) 65%, transparent 100%) !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
 }
 
@@ -1743,12 +1756,6 @@ html, body {
     grid-template-columns: 1fr !important;
   }
   .team-card {
-    height: 440px !important;
-  }
-  /* Show text by default on small mobile for accessibility */
-  .team-card-header {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    background: linear-gradient(to bottom, rgba(234, 234, 234, 0.9) 0%, rgba(234, 234, 234, 0.6) 75%, transparent 100%) !important;
+    height: 420px !important;
   }
 }

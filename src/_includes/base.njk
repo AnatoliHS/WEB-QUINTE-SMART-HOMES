@@ -57,13 +57,17 @@
             {% for item in navigation.main %}
               {% if item.children %}
                 <div class="has-dropdown">
-                  <a href="{{ item.href }}" class="nav-link {% if page.url and page.url.startsWith(item.href) %}active{% endif %}">
+                  <a href="{{ item.href }}" class="nav-link {% if page.url and ((page.url.startsWith('/services/') and (item.title == 'SERVICES' or item.title == 'Services')) or (item.href != '/' and page.url.startsWith(item.href))) %}active{% endif %}">
                     {{ item.title }} <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
                   </a>
                   <div class="dropdown-menu">
                     {% for child in item.children %}
                       <a href="{{ child.href }}" class="dropdown-item">{{ child.title }}</a>
                     {% endfor %}
+                    {% if item.title == "SERVICES" or item.title == "Services" or item.href == "/services/" %}
+                      <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
+                      <a href="/business/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;">Switch to Business Services <i class="fa-solid fa-arrow-right"></i></a>
+                    {% endif %}
                   </div>
                 </div>
               {% else %}
