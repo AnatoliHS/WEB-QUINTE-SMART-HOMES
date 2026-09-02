@@ -5,79 +5,174 @@ description: "Advanced small business security systems with 4 HD cameras, 24/7 l
 isBusinessPage: true
 ---
 
-<!-- Business Security Hero Section -->
-<section class="section" style="background: var(--bg-canvas); padding: 5rem 0 4rem 0; border-bottom: 1px solid var(--border-subtle);">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label">Commercial Protection</span>
-        <h1 style="font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          Belleville Smart <span style="color: var(--color-accent);">Business Security</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
-          Robust and flexible small business security systems with 4 HD cameras, 24/7 live monitoring, and remote Ontario operator verification designed to protect your bottom line across Belleville, Quinte West & PEC.
-        </p>
-        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-          <a href="#security-pricing-form" class="btn btn-primary"><i class="fa-solid fa-shield-halved"></i> Request Business Security Pricing</a>
-          <a href="/contact/" class="btn btn-secondary">Contact Us</a>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Smart Business <span style="color: var(--color-accent); font-weight: 300;">Security Systems.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_business_security.jpg" alt="Belleville Small Business Security Cameras" />
+      </div>
+
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Bottom Line Protection">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: 3-Point Protection">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Remote Operator Verification">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Proven Implementations">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
         </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: Bottom Line Protection -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              Protecting Your <span style="color: var(--color-accent);">Business Bottom Line</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Robust small business security systems with 4 HD POE cameras, 24/7 live monitoring, and remote Ontario operator verification designed to protect storefronts across Belleville, Quinte West &amp; PEC.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Small businesses rich with inventory and POS operating systems are vulnerable targets. A single break-in can cost $5,000+ in stolen inventory and downtime.
+            </p>
+            <a href="#security-pricing-form" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-shield-halved"></i> Request Business Security Pricing</a>
+          </div>
+
+          <!-- TAB 2: 3-Point Protection -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Commercial 3-Point <span style="color: var(--color-accent);">Protection</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-video" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                4 HD Motion-Sensitive POE Security Cameras
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-bell" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                24/7 Continuous Surveillance &amp; Real-Time Mobile Alerts
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-user-shield" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Remote Ontario Operator Verification &amp; Police Dispatch
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-id-card" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Keycard &amp; Mobile Access Control Entry Management
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Remote Operator Verification -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Live Ontario Operator <span style="color: var(--color-accent);">Video Verification</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "When critical motion occurs after hours, live operators in Ontario assess video feeds in real time and dispatch police immediately with verified crime evidence."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Eliminates false alarm fines from municipal police departments while speeding up emergency officer dispatch response times.
+            </p>
+          </div>
+
+          <!-- TAB 4: Proven Implementations -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Proven Local Business <span style="color: var(--color-accent);">Implementations</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-store" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Once Upon a Child Belleville: Retail POS &amp; Perimeter Cameras
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-spa" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Kita Beauty Lounge: Commercial Keycard Access Control
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-campground" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Cedardale Camping Resort: Multi-Location Remote Surveillance
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Commercial Grade 4K/1080p POE Security Camera Mounting
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Concealed Cat6 Conduit Runs &amp; Master Electrician Power
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Local Encrypted Hard Drive Storage &amp; Cloud Backup Setup
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                24/7 Ontario Central Station Operator Video Verification
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; BUSINESS SECURITY</span>
+        </div>
+
       </div>
 
-      <div style="position: relative; overflow: hidden; border-radius: var(--radius-sm); box-shadow: 0 20px 40px rgba(0,0,0,0.12);">
-        <img src="/assets/images/showcase_business_security.jpg" alt="Belleville Small Business Security Cameras" style="width: 100%; height: 420px; object-fit: cover;" />
-      </div>
     </div>
   </div>
 </section>
 
-<!-- Deep-Dive Section: High Cost of Theft & Vandalism -->
-<section class="section" style="padding: 6rem 0; border-bottom: 1px solid var(--border-subtle);">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label">Small Business Security</span>
-        <h2 style="font-size: 2.6rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          High Cost of Theft & Vandalism: <span class="title-accent-grey">Protect Your Bottom Line</span>
-        </h2>
-        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          Arriving at your business to find essential equipment or inventory missing causes immediate financial strain, store closures, increased insurance premiums, and lost customer trust.
-        </p>
-        <p style="font-size: 1.1rem; color: var(--text-primary); font-weight: 700; line-height: 1.6; border-left: 3px solid var(--color-accent); padding-left: 1.25rem;">
-          Small businesses rich with valuable inventory and POS operating systems are vulnerable targets. A single security breach can cost $5,000 or more.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Commercial 3-Point Protection:</h3>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: flex-start;">
-            <i class="fa-solid fa-video" style="color: var(--color-accent); margin-top: 0.3rem; font-size: 1.25rem;"></i>
-            <div>
-              <strong style="font-size: 1.05rem; display: block; margin-bottom: 0.2rem;">1. 4 Security Cameras Professionally Installed</strong>
-              <span style="color: var(--text-secondary); font-size: 0.95rem;">High-definition, motion-sensitive cameras delivering 360-degree coverage around your critical business entry points.</span>
-            </div>
-          </li>
-
-          <li style="display: flex; gap: 1rem; align-items: flex-start;">
-            <i class="fa-solid fa-bell" style="color: var(--color-accent); margin-top: 0.3rem; font-size: 1.25rem;"></i>
-            <div>
-              <strong style="font-size: 1.05rem; display: block; margin-bottom: 0.2rem;">2. 24/7 Live Monitoring & Instant Incident Reports</strong>
-              <span style="color: var(--text-secondary); font-size: 0.95rem;">Continuous surveillance monitoring with real-time mobile alerts so your business is protected day and night.</span>
-            </div>
-          </li>
-
-          <li style="display: flex; gap: 1rem; align-items: flex-start;">
-            <i class="fa-solid fa-user-shield" style="color: var(--color-accent); margin-top: 0.3rem; font-size: 1.25rem;"></i>
-            <div>
-              <strong style="font-size: 1.05rem; display: block; margin-bottom: 0.2rem;">3. Remote Monitoring by an Operator in Ontario</strong>
-              <span style="color: var(--text-secondary); font-size: 0.95rem;">When critical motion is detected, live operators in Ontario assess footage immediately and dispatch emergency authorities if criminal activity occurs.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
 
 <!-- Proven Local Business Implementations -->
 <section class="section pastel-dots-bg" style="border-bottom: 1px solid var(--border-subtle);">

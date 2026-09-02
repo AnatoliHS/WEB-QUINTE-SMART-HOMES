@@ -4,182 +4,222 @@ title: Architectural Whole-Home Audio Systems Belleville, Quinte & PEC | Quinte 
 description: Experience cinematic sound with multi-room whole-home audio, flush in-ceiling speakers, outdoor landscape audio, and high-fidelity streaming in Belleville & Quinte.
 ---
 
-<!-- Hero Statement with Image Grid -->
-<section class="section-statement" style="text-align: left; padding: 5rem 0 3rem 0;">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label" style="text-align: left;">Cinematic Architectural Audio</span>
-        <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          Whole-Home <span style="color: var(--color-accent);">Audio Systems</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-          Experience clear cinematic sound and set the perfect mood whenever you entertain, relax in the bath, or cook in the kitchen. Quinte Smart Homes designs and installs wired and wireless multi-room audio systems controlled seamlessly via smartphone, remote, wall keypads, or touch panels.
-        </p>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Whole-Home <span style="color: var(--color-accent); font-weight: 300;">Audio Systems.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_audio.jpg" alt="Whole-Home Audio System Installation" />
       </div>
-      <div>
-        <img src="/assets/images/showcase_audio.jpg" alt="Whole-Home Audio System Installation" style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08);" />
+
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Hearing is Believing">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Audio Capabilities">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Sensory Symphony">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Placement Options">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: Hearing is Believing -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              Hearing is <span style="color: var(--color-accent);">Believing</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Whole-home audio allows you to simultaneously stream pristine sound in multiple rooms or dedicated property zones. Play upbeat music on the outdoor patio while playing relaxing jazz in the living room and podcasts in the kitchen.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Our master technicians wire multi-channel amplifiers and high-resolution digital audio matrix switches directly to centralized AV utility racks for completely invisible technology.
+            </p>
+            <a href="#audio-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-sliders"></i> Design Your Audio System</a>
+          </div>
+
+          <!-- TAB 2: Audio Capabilities -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Audio System <span style="color: var(--color-accent);">Capabilities</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-sliders" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Independent Multi-Room Volume &amp; Source Streaming
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Invisible Flush In-Ceiling &amp; Paintable Architectural Speakers
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-tree" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                All-Weather Outdoor Landscape Satellites &amp; Buried Subwoofers
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-mobile-screen-button" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Sonos, Apple AirPlay 2, &amp; Spotify Connect Control
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Sensory Symphony -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Sensory <span style="color: var(--color-accent);">Symphony</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "Redefine your favorite spaces. From Dolby Atmos cinema rooms and outdoor pool decks to invisible kitchen ceilings, we tailor speaker form-factors to match your interior design."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Engineered with digital acoustic calibration to deliver crystal-clear highs and rich, resonant bass at any listening volume.
+            </p>
+          </div>
+
+          <!-- TAB 4: Speaker Placement Options -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Speaker Placement <span style="color: var(--color-accent);">Options</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-volume-high" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Freestanding Audiophile Towers &amp; Bookshelf Setups
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-border-all" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                In-Wall Flush Architectural Speakers Painted to Match Walls
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-grip-lines" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Discreet In-Ceiling Ambient Speakers for Kitchens &amp; Bedrooms
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-sun" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Weatherproof Landscape Satellites &amp; Buried Patio Subwoofers
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Multi-Channel Matrix Amplifier &amp; Utility Rack Assembly
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                In-Ceiling &amp; In-Wall Acoustic Enclosure Mounting
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Outdoor Landscape Subwoofer Burial &amp; Direct Burial Wiring
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Sonos, AirPlay 2, &amp; Control4 Touch Panel Programming
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; ARCHITECTURAL AUDIO</span>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Hearing is Believing Overview -->
-<section class="section" style="padding: 2rem 0 5rem 0;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          Hearing is <span class="title-accent-grey">Believing</span>
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          Whole-home audio allows you to simultaneously stream pristine sound in multiple rooms or dedicated property zones. Play upbeat music on the outdoor patio while playing relaxing jazz in the living room and podcasts in the kitchen.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 700; border-left: 3px solid var(--color-accent); padding-left: 1.25rem; margin-bottom: 2rem;">
-          Our master technicians wire multi-channel amplifiers and high-resolution digital audio matrix switches directly to centralized AV utility racks for completely invisible technology.
-        </p>
-        <a href="#audio-quote" class="btn btn-primary"><i class="fa-solid fa-sliders"></i> Design Your Audio System</a>
-      </div>
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
 
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Audio System Capabilities</h3>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-sliders" style="color: var(--color-accent);"></i>
-            Independent Multi-Room Volume & Source Streaming
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--color-accent);"></i>
-            Invisible Flush In-Ceiling & Paintable Architectural Speakers
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-tree" style="color: var(--color-accent);"></i>
-            All-Weather Outdoor Landscape Satellites & Buried Subwoofers
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-mobile-screen-button" style="color: var(--color-accent);"></i>
-            Sonos, Apple AirPlay 2, & Spotify Connect Control
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Bulletproof Quality & Brand Partners (Light Grey Halftone Dots Gradient Section) -->
+<!-- Bulletproof Quality & Audio Brands (Halftone Dots Gradient Section) -->
 <section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
   <div class="container">
     <div class="rewired-grid">
       <div>
         <h2 class="rewired-left-title">
-          Pure,<br>
-          <span class="sub-title">Acoustics.</span>
+          Acoustic,<br>
+          <span class="sub-title">Excellence.</span>
         </h2>
-        <a href="#audio-quote" class="btn-pill-dark">Explore Audio Systems &rarr;</a>
+        <a href="#audio-quote" class="btn-pill-dark">Explore Audio Hardware &rarr;</a>
       </div>
 
       <div>
-        <div class="rewired-right-header">Brand Partners:</div>
+        <div class="rewired-right-header">Audio Partners &amp; Technology:</div>
         <div class="rewired-list">
           <div class="rewired-list-item">
             <span class="rewired-item-num">01</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Sonos.</span> Industry standard wireless multi-room audio amplifiers and effortless app control for streaming Apple Music, Spotify, and Tidal.
+              <span class="rewired-item-title">Sonos Architectural.</span> Seamless multi-room wireless &amp; hardwired streaming powered by Sonance-designed in-ceiling speakers.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">02</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Sonance.</span> Pioneers in architectural audio offering completely invisible in-wall speakers, discreet opening subwoofers, and outdoor array systems.
+              <span class="rewired-item-title">Sonance Landscape Series.</span> All-weather camouflaged satellites and underground subwoofers for even outdoor audio coverage.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Triad.</span> Custom-built hand-crafted architectural speakers engineered specifically for Dolby Atmos home theatres and high-end residential spaces.
+              <span class="rewired-item-title">Triad Custom Audio.</span> Hand-engineered, acoustic-enclosure in-wall speakers designed specifically for home cinema and high-fidelity music.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">04</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Sony ES.</span> Reference Elevated Standard 4K AV receivers featuring 360 Spatial Sound Mapping and multi-zone audio distribution.
-            </div>
-          </div>
-
-          <div class="rewired-list-item">
-            <span class="rewired-item-num">05</span>
-            <div class="rewired-item-content">
-              <span class="rewired-item-title">Episode Audio.</span> All-weather landscape satellite speakers and underground subwoofers built to withstand Canadian winter extremes.
-            </div>
-          </div>
-
-          <div class="rewired-list-item">
-            <span class="rewired-item-num">06</span>
-            <div class="rewired-item-content">
-              <span class="rewired-item-title">Integra.</span> Audiophile-grade multi-zone power amplifiers and network AV processors custom designed for seamless home automation integration.
+              <span class="rewired-item-title">Episode Radiance.</span> Combined 70V outdoor lighting and high-clarity sound fixtures along garden pathways and patios.
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sensory Symphony — Speaker Placement Options -->
-<section class="section">
-  <div class="container">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Sensory Symphony</span>
-      <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Where Would You Place <span class="title-accent-grey">Your Audio?</span></h2>
-      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
-        Redefine your favorite spaces. From Dolby Atmos cinema rooms and outdoor pool decks to invisible kitchen ceilings, we tailor speaker form-factors to match your interior design.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-volume-high" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Freestanding</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          High-end floor-standing towers and bookshelf speakers for dedicated listening rooms and two-channel audiophile setups.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-border-all" style="color: var(--color-accent); margin-right: 0.5rem;"></i> In the Wall</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Flush-mounted architectural wall speakers painted to match your room wall finish for powerful sound without taking up floor space.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-grip-lines" style="color: var(--color-accent); margin-right: 0.5rem;"></i> In the Ceiling</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Discreet in-ceiling speakers delivering smooth, room-filling ambient background music throughout kitchens, hallways, and bedrooms.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-tv" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Surface Mount</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Sleek architectural soundbars custom-sized to match your TV width, alongside directional wall-bracket speakers.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-sun" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Outdoor Audio</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Weatherproof landscape satellites and underground subwoofers positioned around patios, pergolas, and pool decks.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-film" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Home Theatre</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          7.1.4 Dolby Atmos immersive surround sound speaker layouts engineered for true cinema impact.
-        </p>
       </div>
     </div>
   </div>

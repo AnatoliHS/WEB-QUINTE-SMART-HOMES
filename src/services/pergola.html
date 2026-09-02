@@ -4,140 +4,222 @@ title: Custom-Made Louvoured Pergolas Belleville, Quinte & PEC | Quinte Smart Ho
 description: Canadian-made aluminum motorized louvered pergolas manufactured in Québec. 100% waterproof, wind resistant, year-round durable in Belleville & Quinte.
 ---
 
-<!-- Hero Statement with Image Grid -->
-<section class="section-statement" style="text-align: left; padding: 5rem 0 3rem 0;">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label" style="text-align: left;">Architectural Outdoor Living Structure</span>
-        <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          Custom-Made <span style="color: var(--color-accent);">Louvoured Pergolas</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-          Extend your smart home to the outdoors. Manufactured in Québec, Canada to withstand the toughest weather, our custom-made motorized aluminum pergolas add comfort, architectural style, and year-round usability across Belleville, Quinte West, Prince Edward County, and Kingston.
-        </p>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Custom-Made <span style="color: var(--color-accent); font-weight: 300;">Louvoured Pergolas.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_pergola.jpg" alt="Custom Motorized Louvoured Pergola Installation" />
       </div>
-      <div>
-        <img src="/assets/images/showcase_pergola.jpg" alt="Custom Motorized Louvoured Pergola Installation" style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08);" />
+
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Québec Craftsmanship">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: System Specs">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Year-Round Usability">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Smart Features">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: Made in Québec Canada -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              Pergolas Manufactured <span style="color: var(--color-accent);">in Québec, Canada</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Manufactured in Québec to withstand the toughest weather, our custom-made motorized aluminum pergolas add comfort, architectural style, and year-round outdoor usability across Belleville, Quinte, and Prince Edward County.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Constructed from heavy-gauge powder-coated structural aluminum, our pergolas are 100% rust-proof with internal post downspouts delivering 100% waterproof rain defense.
+            </p>
+            <a href="#pergola-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-umbrella"></i> Request Pergola Consultation</a>
+          </div>
+
+          <!-- TAB 2: System Specifications -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Pergola System <span style="color: var(--color-accent);">Specifications</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-cloud-showers-heavy" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                100% Interlocking Waterproof Louvoured Roof
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-map-location-dot" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Engineered &amp; Manufactured in Québec, Canada
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-faucet-drip" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Internal Post Downspout Rain Drainage System
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-shield" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Heavy-Duty Powder-Coated Rust-Proof Structural Aluminum
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Year-Round Usability -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              365-Day Canadian <span style="color: var(--color-accent);">Winter Rating</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "Our pergolas stay up through harsh Canadian winters. In winter, simply lock the motorized louvres in the vertical open position to prevent heavy snow accumulation."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Custom architectural powder coat finishes in Charcoal, Black, Bronze, and White resist UV fading and lake salt air.
+            </p>
+          </div>
+
+          <!-- TAB 4: Integrated Smart Features -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Integrated <span style="color: var(--color-accent);">Smart Features</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-cloud-rain" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Automatic Rain Sensors Closing Louvres Instantly
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-lightbulb" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Flush Dimmable Warm White &amp; RGBW Perimeter LED Strips
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-border-top-left" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Recessed Channels for Drop-Down MagnaTrack Bug &amp; Solar Screens
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-fire" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Infrared Radiant Patio Heater Mounting Hardware
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Concrete Footing &amp; Structural Deck Mount Engineering
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Louvre Motor Actuator &amp; Internal Downspout Fitting
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Master Electrician LED Driver &amp; High-Voltage Wiring
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Remote Control, Wall Keypad, &amp; Smart Home App Integration
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; LOUVROURED PERGOLAS</span>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Pergolas Made in Canada Overview -->
-<section class="section" style="padding: 2rem 0 5rem 0;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          Pergolas Made <span class="title-accent-grey">in Québec, Canada</span>
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          Our custom pergolas stay up 365 days a year through harsh Canadian winters. In winter, simply lock the motorized louvres in the vertical (open) position to prevent heavy snow buildup.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 700; border-left: 3px solid var(--color-accent); padding-left: 1.25rem; margin-bottom: 2rem;">
-          Constructed from heavy-gauge powder-coated structural aluminum, our pergolas are 100% rust-proof and weigh just two pounds per square foot while offering 100% waterproof rain defense when louvres are closed.
-        </p>
-        <a href="#pergola-quote" class="btn btn-primary"><i class="fa-solid fa-umbrella"></i> Request Pergola Consultation</a>
-      </div>
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
 
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">System Specifications</h3>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-cloud-showers-heavy" style="color: var(--color-accent);"></i>
-            100% Interlocking Waterproof Louvoured Roof
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-map-location-dot" style="color: var(--color-accent);"></i>
-            Engineered & Manufactured in Québec, Canada
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-faucet-drip" style="color: var(--color-accent);"></i>
-            Internal Post Downspout Rain Drainage System
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-shield" style="color: var(--color-accent);"></i>
-            Heavy-Duty Powder-Coated Rust-Proof Aluminum
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Pergola Benefits (Light Grey Halftone Dots Gradient Section) -->
+<!-- Québec Craftsmanship & Pergola Features (Halftone Dots Gradient Section) -->
 <section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
   <div class="container">
     <div class="rewired-grid">
       <div>
         <h2 class="rewired-left-title">
-          Pergola,<br>
-          <span class="sub-title">Key Benefits.</span>
+          Québec,<br>
+          <span class="sub-title">Craftsmanship.</span>
         </h2>
-        <a href="#pergola-quote" class="btn-pill-dark">Explore Louvoured Pergolas &rarr;</a>
+        <a href="#pergola-quote" class="btn-pill-dark">Explore Louvoured Systems &rarr;</a>
       </div>
 
       <div>
-        <div class="rewired-right-header">Pergola Advantages:</div>
+        <div class="rewired-right-header">Pergola Engineering Highlights:</div>
         <div class="rewired-list">
           <div class="rewired-list-item">
             <span class="rewired-item-num">01</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Year-Round Comfort.</span> Adjustable motorized louvres provide sun shade on hot days and instant rain protection during downpours, making your patio usable through every season.
+              <span class="rewired-item-title">Heavy-Gauge Extruded Aluminum.</span> Powder-coated structural frame designed to withstand harsh Canadian winter snow loads.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">02</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Modern & Durable Architecture.</span> Crafted from structural aluminum in custom architectural colors (Charcoal, Black, Bronze, White) to enhance any backyard with contemporary style.
+              <span class="rewired-item-title">Automated Rain Sensor Louvers.</span> Dual-wall motorized louvers close automatically when rain begins to fall.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Smart Automation Ready.</span> Pairs seamlessly with MagnaTrack motorized privacy screens, architectural outdoor lighting, and landscape sound systems for one-touch scene control.
+              <span class="rewired-item-title">Integrated Guttering Systems.</span> Concealed post downspouts channel water away safely off your patio deck.
+            </div>
+          </div>
+
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">04</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">Integrated LED Beam Lighting.</span> Dimmable warm white &amp; RGBW perimeter strip lighting for nighttime dining.
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Integrated Smart Features -->
-<section class="section">
-  <div class="container">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Advanced Engineering</span>
-      <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Integrated Outdoor <span class="title-accent-grey">Smart Features</span></h2>
-      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
-        Elevate your pergola experience with automated sensors, ambient LED perimeter channels, and drop-down screens.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-cloud-rain" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Rain & Wind Sensors</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Automatic weather sensors close louvres instantly when rain is detected and open during extreme wind to release uplift pressure.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-lightbulb" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Dimmable LED Strip Lighting</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Warm white or full RGBW LED strips built flush inside the perimeter roof frame for evening dining ambiance.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-border-top-left" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Motorized Side Screens</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Recessed beam channels designed for drop-down MagnaTrack bug mesh or solar privacy shades.
-        </p>
       </div>
     </div>
   </div>

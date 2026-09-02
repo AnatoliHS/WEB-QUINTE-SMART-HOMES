@@ -1,41 +1,261 @@
 ---
 layout: default
-title: Smart Home Security, IP Cameras & Access Control
+title: Smart Home Security, IP Cameras & Access Control Belleville & Quinte
 description: Enterprise-grade surveillance, 4K night-vision cameras, smart door locks, and motorized gate security installed in Quinte & Belleville.
 ---
 
-<section class="section" style="background: var(--bg-canvas);">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div class="section-header" style="text-align: left; max-width: 800px; margin-bottom: 3rem;">
-      <div class="section-subtitle">Service Detail</div>
-      <h1>Smart Security, Surveillance & Access Control</h1>
-      <p class="section-description">
-        Protect what matters most with crystal-clear 4K security cameras, smart keyless door entry, video doorbells, and automated security alerts.
-      </p>
-    </div>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Smart Security, <span style="color: var(--color-accent); font-weight: 300;">Surveillance &amp; Access.</span>
+    </h1>
 
-    <div class="hero-grid" style="margin-bottom: 4rem;">
-      <div>
-        <h3>24/7 Peace of Mind & Remote Access</h3>
-        <p style="margin-bottom: 1rem;">
-          Monitor your property anywhere in the world from your smartphone. Our security systems feature full-color night vision, AI person/vehicle detection, and encrypted local storage with no mandatory monthly cloud fees.
-        </p>
-        <p style="margin-bottom: 1.5rem;">
-          Grant entry to guests or contractors remotely via smart door locks and motorized driveway gates with live video verification.
-        </p>
-        <a href="/contact/" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Schedule Security Audit</a>
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_home_security.jpg" alt="Smart Security 4K Camera Installation" />
       </div>
 
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-        <h4 style="margin-bottom: 1rem;">Security System Highlights</h4>
-        <ul class="summary-features-list" style="margin-bottom: 0;">
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Hikvision ColorVu 4K Night Vision IP Cameras</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Smart Door Locks with Keypad & Fingerprint Entry</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Two-Way Audio Video Doorbells & Chimes</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Driveway Gate Operators & Mobile Intercoms</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Encrypted Local NVR Recording (No Forced Cloud Fees)</li>
-        </ul>
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: 24/7 Peace of Mind">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Security Highlights">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Zero Monthly Cloud Fees">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Smart Access Control">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: 24/7 Peace of Mind -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              24/7 Peace of Mind &amp; <span style="color: var(--color-accent);">Remote Access</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Protect what matters most with crystal-clear 4K security cameras, keyless smart door locks, video doorbells, and automated security alerts across Belleville, Quinte, and PEC.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Monitor your property anywhere in the world from your smartphone with full-color night vision and AI person/vehicle detection.
+            </p>
+            <a href="#security-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-shield-halved"></i> Schedule Security Audit</a>
+          </div>
+
+          <!-- TAB 2: Security Highlights -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Security System <span style="color: var(--color-accent);">Highlights</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-video" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Hikvision &amp; Clare 4K Full-Color Night-Vision IP Cameras
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-key" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Smart Door Locks with Pin-Pad &amp; Fingerprint Access
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-door-open" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Two-Way Audio Video Doorbells &amp; Touchscreen Wall Chimes
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-road-barrier" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Driveway Gate Operators &amp; Mobile Intercom Integration
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Zero Monthly Cloud Fees -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Encrypted Local NVR <span style="color: var(--color-accent);">(Zero Forced Cloud Fees)</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "Your camera footage is stored privately on a 2TB to 8TB local Network Video Recorder (NVR) inside your home — no mandatory monthly subscription fees required."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Encrypted transmission keeps your private family moments safe from external server breaches.
+            </p>
+          </div>
+
+          <!-- TAB 4: Smart Access Control -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Remote Guest Access &amp; <span style="color: var(--color-accent);">Smart Locks</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-mobile-screen" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Grant Temporary Keypad Entry Codes via Mobile App
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-clock-rotate-left" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Automatic Auto-Lock Schedules When You Leave Home
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-gate" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Automated Driveway Gate Opening via Vehicle License Plate AI
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Service:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Master Electrician Hardwired POE Camera &amp; NVR Setup
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Perimeter Blind-Spot Audit &amp; Motion Masking Calibration
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Mobile App Pairing Across All Family Devices
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                24/7 Professional Central Station Alarm Dispatch Option
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; SECURITY &amp; SURVEILLANCE</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Halftone Dots Gradient Section -->
+<section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <div class="container">
+    <div class="rewired-grid">
+      <div>
+        <h2 class="rewired-left-title">
+          Smart,<br>
+          <span class="sub-title">Protection.</span>
+        </h2>
+        <a href="#security-quote" class="btn-pill-dark">Explore Security Systems &rarr;</a>
+      </div>
+
+      <div>
+        <div class="rewired-right-header">Security System Pillars:</div>
+        <div class="rewired-list">
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">01</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">4K HDR Color Night Vision.</span> Crystal-clear camera surveillance capturing license plates and facial details around the clock.
+            </div>
+          </div>
+
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">02</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">Encrypted Local Recording.</span> 2TB+ private local NVR storage protecting your video privacy with zero forced cloud subscriptions.
+            </div>
+          </div>
+
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">03</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">Keyless Access & Gate Control.</span> Smart door locks and automated driveway gate operators controlled via one touch screen app.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Security Quote Form -->
+<section class="section" id="security-quote" style="padding: 6rem 0;">
+  <div class="container">
+    <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 4rem; align-items: center; background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 4rem; border-radius: var(--radius-sm);">
+      <div>
+        <span class="eyebrow-label">Security Audit</span>
+        <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;">Request Security <span class="title-accent-grey">Pricing</span></h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          Schedule an on-site security assessment with our licensed master electricians in Belleville, Quinte, and Prince Edward County.
+        </p>
+
+        <div style="margin-bottom: 1.5rem;">
+          <strong>Phone:</strong> <a href="tel:6137799044" style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">613-779-9044</a>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <strong>Email:</strong> <a href="mailto:info@quintesmarthomes.ca" style="color: var(--text-primary); font-weight: 700; text-decoration: underline;">info@quintesmarthomes.ca</a>
+        </div>
+      </div>
+
+      <div>
+        <form onsubmit="event.preventDefault(); alert('Thank you! Our security technician will contact you shortly to schedule your on-site security audit.');">
+          <div style="margin-bottom: 1.25rem;">
+            <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Full Name *</label>
+            <input type="text" class="form-input" required placeholder="John Smith" />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div>
+              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Phone *</label>
+              <input type="tel" class="form-input" required placeholder="613-000-0000" />
+            </div>
+            <div>
+              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Email *</label>
+              <input type="email" class="form-input" required placeholder="john@example.com" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Security Audit Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

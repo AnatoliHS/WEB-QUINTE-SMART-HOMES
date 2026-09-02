@@ -4,123 +4,222 @@ title: High-Performance Residential Home Networking Services
 description: "High-performance residential Wi-Fi 6/7 networks, whole-home audio/TV pre-wiring, boathouse/dock coverage, and smart home automation networking by Quinte Smart Homes."
 ---
 
-<!-- Tresmares Home Service Hero Section -->
-<section class="section" style="background: var(--bg-canvas); padding: 5rem 0 4rem 0; border-bottom: 1px solid var(--border-subtle);">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label">Residential Infrastructure</span>
-        <h1 style="font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          High-Performance <span style="color: var(--color-accent);">Home Networks</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
-          The backbone of your smart home. High-speed residential Wi-Fi 6/7 coverage, structured Cat6a gigabit cabling, and isolated IoT security engineered for luxury homes, cottages, and estates across Quinte & PEC.
-        </p>
-        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-          <a href="#home-audit-form" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Schedule Home Network Audit</a>
-          <a href="/contact/" class="btn btn-secondary">Contact Us</a>
-        </div>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      High-Performance <span style="color: var(--color-accent); font-weight: 300;">Home Networks.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/home_networking_real.jpg" alt="Luxury Residential Smart Home Networking Infrastructure" />
       </div>
 
-      <div style="position: relative; overflow: hidden; border-radius: var(--radius-sm); box-shadow: 0 20px 40px rgba(0,0,0,0.12);">
-        <img src="/assets/images/home_networking_real.jpg" alt="Luxury Residential Smart Home Networking Infrastructure" style="width: 100%; height: 420px; object-fit: cover;" />
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Residential Infrastructure">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Smart Home Backbone">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Wired vs Wireless">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Pre-Wiring Checklist">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: Residential Infrastructure -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              The Backbone of <span style="color: var(--color-accent);">Your Smart Home</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              High-speed residential Wi-Fi 6/7 coverage, structured Cat6a gigabit cabling, and isolated IoT security engineered for luxury homes, cottages, and estates across Quinte &amp; PEC.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Pre-wiring during builds or retrofits ensures your home handles 4K streaming, remote work videoconferencing, and smart automation with zero buffering.
+            </p>
+            <a href="#home-audit-form" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-calendar-check"></i> Schedule Home Network Audit</a>
+          </div>
+
+          <!-- TAB 2: Smart Home Backbone -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Smart Home <span style="color: var(--color-accent);">Backbone</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-wifi" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Whole-Property Wi-Fi Roaming Across Bedrooms, Patios &amp; Docks
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-sliders" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Dedicated Sub-Networks for Control4, Lutron &amp; Sonos Audio
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-shield-halved" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Isolated Family &amp; Guest IoT Security VLAN Segregation
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-server" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Clean Central Utility Room AV Racks &amp; Patch Panels
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Wired Stability vs Wireless Freedom -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Wired Stability Meets <span style="color: var(--color-accent);">Wireless Freedom</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "We run high-speed hardwired Cat6a Ethernet cables to stationary high-bandwidth devices (4K TVs, Apple TVs, security cameras, gaming consoles) so wireless channels remain 100% open for mobile devices."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Flush ceiling-mounted indoor access points and weatherproof outdoor APs deliver seamless handoffs across your entire acreage.
+            </p>
+          </div>
+
+          <!-- TAB 4: Pre-Wiring Checklist -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Residential <span style="color: var(--color-accent);">Pre-Wiring Checklist</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-ethernet" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Cat6a Gigabit Cabling for 4K Smart TVs &amp; Security Cameras
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-tv" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Structured Coaxial &amp; Fiber Pass-Through Distribution
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-satellite-dish" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Starlink Satellite Dish Exterior Conduit &amp; Cable Routing
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-volume-high" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Architectural In-Ceiling &amp; All-Weather Outdoor Audio Pre-Wiring
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Heat-Map RF Wi-Fi Coverage &amp; Dead-Spot Site Audit
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Cat6a In-Wall Wall Penetration &amp; Jack Termination
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Managed Gigabit PoE Network Switch &amp; Router Configuration
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                VLAN Firewall Security Rules &amp; Guest Network Provisioning
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; HOME NETWORKING</span>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Deep-Dive Section: Why Your Home Needs Custom Networking -->
-<section class="section pastel-dots-bg" style="border-bottom: 1px solid var(--border-subtle);">
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Wired vs Wireless Engineering (Halftone Dots Gradient Section) -->
+<section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
   <div class="container">
     <div class="rewired-grid">
       <div>
         <h2 class="rewired-left-title">
-          Custom Home,<br>
-          <span class="sub-title">Networking.</span>
+          Built Properly,<br>
+          <span class="sub-title">From Ground Up.</span>
         </h2>
-        <a href="#networking-quote" class="btn-pill-dark">Upgrade Home Network &rarr;</a>
+        <a href="#home-audit-form" class="btn-pill-dark">Book Network Audit &rarr;</a>
       </div>
 
       <div>
-        <div class="rewired-right-header">Smart Home Backbone:</div>
+        <div class="rewired-right-header">Network Engineering Highlights:</div>
         <div class="rewired-list">
           <div class="rewired-list-item">
             <span class="rewired-item-num">01</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Whole-Home & Property Coverage.</span> Unbroken Wi-Fi roaming across every bedroom, basement, patio, garage, boathouse, and outdoor pool deck with zero dropped video streams or dead spots.
+              <span class="rewired-item-title">Cat6a Hardwired Backbones.</span> Ultra-fast 10 Gbps wired connections to 4K TVs, gaming consoles, Apple TVs, and desktop computers.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">02</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Smart Automation System Integration.</span> Dedicated, low-latency sub-networks designed specifically for Control4 controllers, Lutron RadioRA3 keypads, Sonos audio, and keyless locks.
+              <span class="rewired-item-title">Ubiquiti UniFi Access Points.</span> Enterprise-grade Wi-Fi 6 &amp; Wi-Fi 7 access points ceiling-mounted for seamless roaming without dead spots.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Family & Guest IoT VLAN Security.</span> Isolated virtual networks keeping personal family laptops and financial data secure from smart appliances, visitor smartphones, and IoT gadgets.
+              <span class="rewired-item-title">Isolated Guest &amp; Smart Home VLANs.</span> Sub-divided virtual networks protecting your personal devices from smart home IoT vulnerabilities.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">04</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Clean Utility Room AV Racks.</span> Centralized utility room equipment racks organizing Cat6a Ethernet, TV distribution, and Starlink receivers for neat, invisible technology.
+              <span class="rewired-item-title">Utility Rack Cleanliness.</span> Centralized equipment racks housing patch panels, PoE switches, and battery UPS power backup.
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Home Pre-Wiring & Outdoor Network Coverage -->
-<section class="section" style="padding: 6rem 0; background: var(--bg-surface); border-bottom: 1px solid var(--border-subtle);">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label">Residential Cabling</span>
-        <h2 style="font-size: 2.6rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          Wired Stability Meets <span class="title-accent-grey">Outdoor Wireless Freedom</span>
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          We run high-speed hardwired Cat6a Ethernet cables to stationary high-bandwidth devices — like 4K Smart TVs, gaming consoles, Apple TVs, security cameras, and media servers.
-        </p>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          Then, we place discreet ceiling-mounted and weather-sealed outdoor access points so your laptops, tablets, and phones stay connected seamlessly anywhere on your property.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 700; border-left: 3px solid var(--color-accent); padding-left: 1.25rem;">
-          Pre-wiring during new home builds or renovations ensures your system is future-proof and ready for simple upgrades as family technology evolves.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-canvas); border: 1px solid var(--border-subtle); padding: 3.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Residential Pre-Wiring Includes:</h3>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Cat6a gigabit cabling for 4K TVs, cameras & gaming
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Structured cabling for Cable/Satellite TV distribution
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Starlink satellite dish roof & chimney mounting integration
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Indoor and all-weather outdoor architectural audio wiring
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Isolated guest access & IoT smart device VLAN security
-          </li>
-        </ul>
       </div>
     </div>
   </div>

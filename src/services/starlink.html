@@ -4,150 +4,203 @@ title: Certified Starlink Satellite Installation Services Belleville & Quinte
 description: Professional roof, pole, and chimney Starlink dish mounting, precision alignment, and ethernet integration for rural homes, cottages, construction sites, and businesses in Quinte & PEC.
 ---
 
-<!-- Hero Statement with Image Grid -->
-<section class="section-statement" style="text-align: left; padding: 5rem 0 3rem 0;">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label" style="text-align: left;">Rural Connectivity Solutions</span>
-        <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          Certified Starlink <span style="color: var(--color-accent);">Satellite Installation</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-          Connect to high-speed internet no matter where you are in Quinte, Belleville, Prince Edward County, or Kingston. Our certified electricians and master technicians deliver professional dish mounting, precision satellite alignment, and whole-property network integration.
-        </p>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Certified Starlink <span style="color: var(--color-accent); font-weight: 300;">Satellite Installation.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_starlink.jpg" alt="Starlink Satellite Installation" />
       </div>
-      <div>
-        <img src="/assets/images/showcase_starlink.jpg" alt="Starlink Satellite Installation" style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08);" />
+
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: High-Speed Internet">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Accessible Properties">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Line-of-Sight & Mounting">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Equipment & Orders">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: What is Starlink -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              High-Speed Satellite <span style="color: var(--color-accent);">Connectivity</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Starlink utilizes low-Earth orbit (LEO) satellites to deliver high-speed, low-latency internet (up to 250+ Mbps) to rural homes, cottages, and commercial sites across Belleville, Quinte, and Prince Edward County.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Master electricians handle physical roof mounting, weather-sealed wall penetrations, and hardwired network integration so your system operates with zero dropouts.
+            </p>
+            <a href="#starlink-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-calendar-check"></i> Schedule Installation Audit</a>
+          </div>
+
+          <!-- TAB 2: Accessible Properties -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Accessible <span style="color: var(--color-accent);">Property Types</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-house" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Residential Country Estates &amp; Farm Properties
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-water" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Waterfront Cottages &amp; Boathouses Across PEC Lakes
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-helmet-safety" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Active Construction Trailers &amp; Remote Job Sites
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-store" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Commercial Warehouses &amp; Rural Business Outlets
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Line of Sight & Mounting -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Line-of-Sight &amp; <span style="color: var(--color-accent);">Sky Clearance</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "Starlink dishes require a clear, unobstructed 100-degree view of the sky. Nearby mature trees or roof eaves blocking dish sightlines will degrade speed."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              We mount dishes on roof peaks, chimneys, or dedicated 20ft mast poles to overcome tree canopy obstacles.
+            </p>
+          </div>
+
+          <!-- TAB 4: Ordering Equipment -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Equipment &amp; <span style="color: var(--color-accent);">Client Ordering</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Clients purchase their Starlink kit directly from <strong>Starlink.com</strong>. Contact us as soon as you order so we can reserve your installation date upon equipment delivery.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem;">
+              We stock official Starlink ridge mounts, pivot mounts, and pipe adapters for immediate installation deployment.
+            </p>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Roof Eave, Chimney, or Mast Pole Hardware Mounting
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Weather-Sealed 3/4" Exterior Wall Penetration &amp; Drip Loop
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Precision Satellite Azimuth Alignment &amp; Sky Obstruction Audit
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Whole-Property Wi-Fi Mesh &amp; Ethernet Switch Integration
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; STARLINK INSTALLATION</span>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Overview Grid -->
-<section class="section" style="padding: 2rem 0 5rem 0;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
-      <div>
-        <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          What is <span class="title-accent-grey">Starlink Satellite Internet?</span>
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          Starlink utilizes low-Earth orbit (LEO) satellites to deliver high-speed, low-latency internet to locations where ground fiber or cable infrastructure is unavailable. With unlimited data and speeds up to 250+ Mbps, Starlink is the premier solution for rural living and remote business operations.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 700; border-left: 3px solid var(--color-accent); padding-left: 1.25rem; margin-bottom: 2rem;">
-          As master electricians, we handle the physical mounting, weather-sealed cable wall pass-throughs, and hardwired network integration so your system operates at peak reliability.
-        </p>
-        <a href="#starlink-quote" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Schedule Installation Audit</a>
-      </div>
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
 
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Accessible. For All Properties.</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
-          If you have a Starlink receiver dish with a clear view of the sky, our technicians can establish permanent, high-speed connectivity for:
-        </p>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-house" style="color: var(--color-accent);"></i>
-            Residential Homes & Rural Country Estates
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-water" style="color: var(--color-accent);"></i>
-            Waterfront Cottages & Boathouses across PEC & Quinte Lakes
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-helmet-safety" style="color: var(--color-accent);"></i>
-            Active Construction Sites & Remote Building Lots
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-store" style="color: var(--color-accent);"></i>
-            Commercial Warehouses, Outlets & Storefronts
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Generation 2 vs Generation 3 Dish Guide (Pastel Dots Gradient Section) -->
+<!-- Starlink Integration Features (Halftone Dots Gradient Section) -->
 <section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
   <div class="container">
     <div class="rewired-grid">
       <div>
         <h2 class="rewired-left-title">
-          Starlink Dish,<br>
-          <span class="sub-title">Generation Guide.</span>
+          High-Speed,<br>
+          <span class="sub-title">Satellite.</span>
         </h2>
-        <a href="#starlink-quote" class="btn-pill-dark">Book Installation &rarr;</a>
+        <a href="#starlink-quote" class="btn-pill-dark">Book Starlink Install &rarr;</a>
       </div>
 
       <div>
-        <div class="rewired-right-header">Hardware Specifications:</div>
+        <div class="rewired-right-header">Starlink Installation Pillars:</div>
         <div class="rewired-list">
           <div class="rewired-list-item">
             <span class="rewired-item-num">01</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Generation 3 (Standard V4 Flat).</span> Shaped like a sleek flat pizza box with a kickstand. Includes native Wi-Fi 6 router with built-in RJ45 gigabit Ethernet ports — no extra adapter required.
+              <span class="rewired-item-title">Peak Roof & Chimney Mounting.</span> Heavy-duty stainless steel mounts tested to withstand 130 km/h wind gusts and ice loads.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">02</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Generation 2 (Actuated V2 Rectangular).</span> Mounted on a motorized stem that automatically tilts and tracks satellite constellations. Requires Starlink Ethernet Adapter for hardwiring.
+              <span class="rewired-item-title">Concealed Waterproof Cable Penetration.</span> Master electricians run cabling through exterior soffits directly to interior server panels.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Master Electrician Cable Routing.</span> We drill 3/4" exterior wall penetrations, pull factory cables cleanly, and install weatherproof silicone bushings and drip loops.
+              <span class="rewired-item-title">Bypass Mode UniFi Integration.</span> Bridge Starlink router directly into high-speed Wi-Fi 6 access points for multi-story coverage.
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Essential Setup & Client Requirements Checklist -->
-<section class="section">
-  <div class="container">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Important Information</span>
-      <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Essential Setup & <span class="title-accent-grey">Client Guidelines</span></h2>
-      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
-        To ensure a seamless installation day, please review these key purchasing and site requirements.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;">
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">1. Ordering Your Starlink Equipment</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Quinte Smart Homes provides expert setup and installation, but clients must order their Starlink kit directly from <a href="http://www.starlink.com/ca/residential" target="_blank" rel="noopener" style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">Starlink.com</a> due to third-party seller restrictions. Contact us as soon as you order so we can reserve your installation date upon equipment delivery.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">2. Official Starlink Mount Selection</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          While we frequently stock popular wall and ridge mounts, we strongly recommend purchasing your mount directly when buying your Starlink kit. If you require a mount from our stock, please notify us in advance so we can verify inventory and pricing.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">3. Line-of-Sight & Roof Peak Clearance</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Starlink dishes require a clear, unobstructed view of the sky to communicate with passing satellites. Trees or nearby structures blocking the view will degrade performance. We install dishes on roof peaks, chimneys, or dedicated poles to maximize sky visibility.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">4. Professional Cable Pass-Throughs</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Starlink installations require drilling a minimum 3/4-inch exterior hole. Our licensed electricians execute clean, weather-sealed wall penetrations through wood, brick, masonry, or stucco, neatly running cables through floors and baseboards directly to your utility rack.
-        </p>
       </div>
     </div>
   </div>

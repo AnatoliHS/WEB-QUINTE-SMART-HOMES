@@ -1759,3 +1759,129 @@ html, body {
     height: 420px !important;
   }
 }
+
+/* Interactive Hero Card Tabs 1-5 */
+.hero-tab-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  color: #666666;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.hero-tab-btn:hover {
+  border-color: #111111;
+  color: #111111;
+}
+
+.hero-tab-btn.active {
+  border: 1.5px solid #111111 !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero-tab-panel {
+  animation: tabFadeIn 0.35s ease-in-out;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Image Left-to-Right Reveal Animation on Page Load */
+.hero-reveal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.hero-reveal-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 480px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--bg-canvas);
+  flex-shrink: 0;
+}
+
+.hero-reveal-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: revealLeftToRight 1.15s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  clip-path: inset(0 100% 0 0);
+  will-change: clip-path, transform;
+}
+
+@keyframes revealLeftToRight {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    transform: scale(1.02);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+.hero-reveal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1.5px solid #111111;
+  padding-top: 1.75rem;
+  height: 480px;
+  box-sizing: border-box;
+}
+
+/* Google Badge Floating Fixed Positioning */
+.google-badge-fixed-wrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 850px) {
+  .hero-reveal-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .hero-reveal-container,
+  .hero-reveal-container img {
+    height: 320px !important;
+    min-height: auto !important;
+    max-height: 320px !important;
+  }
+
+  .hero-reveal-card {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .google-badge-fixed-wrapper {
+    bottom: 12px !important;
+    right: 12px !important;
+    transform: scale(0.82);
+    transform-origin: bottom right;
+  }
+}

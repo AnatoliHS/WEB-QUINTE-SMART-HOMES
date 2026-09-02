@@ -4,147 +4,222 @@ title: Motorized Outdoor Privacy Screens Belleville, Quinte & PEC | Quinte Smart
 description: Custom motorized MagnaTrack privacy screens for porch enclosures, sunrooms, patios, and pergolas. Wind-resistant up to 120km/hr, insect-proof, and built in Canada.
 ---
 
-<!-- Hero Statement with Image Grid -->
-<section class="section-statement" style="text-align: left; padding: 5rem 0 3rem 0;">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label" style="text-align: left;">All-Weather Motorized Enclosures</span>
-        <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          Motorized Outdoor <span style="color: var(--color-accent);">Privacy Screens</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-          Transform your covered porch, sunroom, outdoor patio, or balcony into an insect-free, wind-protected sanctuary. Quinte Smart Homes professionally installs MagnaTrack motorized retractable screens — durable, stylish, and built in Canada specifically for Canadian weather across Belleville, Quinte, Prince Edward County, and Kingston.
-        </p>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Motorized Outdoor <span style="color: var(--color-accent); font-weight: 300;">Privacy Screens.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_outdoor_screens.jpg" alt="Motorized Outdoor Privacy Screen Installation" />
       </div>
-      <div>
-        <img src="/assets/images/showcase_outdoor_screens.jpg" alt="Motorized Outdoor Privacy Screen Installation" style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08);" />
+
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: MagnaTrack Innovation">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Screen Features">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Canadian Weather Rating">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Fabric Mesh Options">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: MagnaTrack Innovation -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              Engineered With <span style="color: var(--color-accent);">MagnaTrack Innovation</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Our MagnaTrack screens feature a patented self-tensioning magnetic track system that ensures screens withstand heavy Canadian wind gusts up to 120 km/h without binding or tearing.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              MagnaTrack motorized screens automatically self-correct if dislodged by extreme storms, eliminating costly repair calls and keeping your patio protected year-round.
+            </p>
+            <a href="#screens-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-wind"></i> Request Screen Consultation</a>
+          </div>
+
+          <!-- TAB 2: Screen Features -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              MagnaTrack System <span style="color: var(--color-accent);">Features</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-magnet" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Patented Magnetic Self-Tensioning Track System
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-wind" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Wind-Resistant Rating up to 120 km/h
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-bug-slash" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                100% Insect-Proof Edge Seal for Mosquitoes &amp; Blackflies
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-sun" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                95% Solar Glare &amp; UV Heat Protection
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Canadian Weather Rating -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Built in Canada for <span style="color: var(--color-accent);">Extreme Weather</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "Engineered specifically for Canadian seasonal shifts. Heavy-duty powder-coated aluminum side tracks and stainless steel fasteners resist corrosion from lake moisture and snow."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Extends your outdoor living space from early spring through late autumn, trapping warmth from infrared patio heaters.
+            </p>
+          </div>
+
+          <!-- TAB 4: Fabric Mesh Options -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Fabric Weaves &amp; <span style="color: var(--color-accent);">Mesh Types</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-eye-slash" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                High-Privacy Solar Mesh (90% to 97% Dense Block)
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-bug" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Ultra-Fine Insect Screen for Micro Mosquitoes &amp; No-See-Ums
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-snowflake" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Marine-Grade Clear Vinyl Weather Windows for 3-Season Comfort
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-palette" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Custom Powder-Coated Housing Colors (Black, Bronze, White, Sand)
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                On-Site Laser Measurement &amp; Sub-Structure Audit
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                MagnaTrack Magnetic Side Channel &amp; Cassette Mounting
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Hardwired Low-Voltage Electrical Connection by Master Electricians
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Remote Control, Wall Keypad, &amp; Smart Home App Integration
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; MOTORIZED OUTDOOR SCREENS</span>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- The MagnaTrack Advantage Overview -->
-<section class="section" style="padding: 2rem 0 5rem 0;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          Engineered With <span class="title-accent-grey">MagnaTrack Innovation</span>
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          Our MagnaTrack screens feature a patented self-tensioning magnetic track system that ensures screens withstand heavy Canadian wind gusts up to 120 km/h without binding or tearing.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 700; border-left: 3px solid var(--color-accent); padding-left: 1.25rem; margin-bottom: 2rem;">
-          Say goodbye to costly repair calls. MagnaTrack motorized screens automatically self-correct if dislodged by extreme storms, saving you time and service technician fees.
-        </p>
-        <a href="#screens-quote" class="btn btn-primary"><i class="fa-solid fa-wind"></i> Request Screen Consultation</a>
-      </div>
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
 
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">MagnaTrack System Features</h3>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-magnet" style="color: var(--color-accent);"></i>
-            Patented Magnetic Self-Tensioning Track System
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-wind" style="color: var(--color-accent);"></i>
-            Wind-Resistant Rating up to 120 km/h
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-bug-slash" style="color: var(--color-accent);"></i>
-            100% Insect-Proof Edge Seal for Mosquitoes & Blackflies
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-sun" style="color: var(--color-accent);"></i>
-            95% Solar Glare & UV Heat Protection
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Custom Screen Enclosure Applications (Light Grey Halftone Dots Gradient Section) -->
+<!-- MagnaTrack Technology Highlights (Halftone Dots Gradient Section) -->
 <section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
   <div class="container">
     <div class="rewired-grid">
       <div>
         <h2 class="rewired-left-title">
-          Tailored,<br>
-          <span class="sub-title">Applications.</span>
+          MagnaTrack,<br>
+          <span class="sub-title">Innovation.</span>
         </h2>
-        <a href="#screens-quote" class="btn-pill-dark">Explore Outdoor Screens &rarr;</a>
+        <a href="#screens-quote" class="btn-pill-dark">Explore Screen Options &rarr;</a>
       </div>
 
       <div>
-        <div class="rewired-right-header">Screen Applications:</div>
+        <div class="rewired-right-header">Patented Screen Engineering:</div>
         <div class="rewired-list">
           <div class="rewired-list-item">
             <span class="rewired-item-num">01</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Porch & Sunroom Enclosures.</span> Enclose covered back porches and sunrooms with motorized screens that roll down at the touch of a button to create a 3-season outdoor room.
+              <span class="rewired-item-title">Neodymium Magnetic Side Tracks.</span> Self-tensioning magnetic side tracks absorb high wind gusts without jamming or tearing.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">02</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Outdoor Pergolas & Cabanas.</span> Integrate motorized side screens directly into aluminum or timber pergolas for instant privacy and sun relief around poolside cabanas.
+              <span class="rewired-item-title">Insect & Mosquito Defense.</span> 100% perimeter seal keeping blackflies, mosquitoes, and wasps out of your patio space.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Patios, Decks & Balconies.</span> Block harsh western evening sun and chilly lake breezes across waterfront decks in Prince Edward County and Quinte.
+              <span class="rewired-item-title">Solar Heat & Glare Reduction.</span> Premium mesh options rejecting up to 95% of UV radiation to keep outdoor dining areas cool.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">04</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Commercial Restaurant Patios.</span> Extend your outdoor dining season for hospitality venues and wineries with heavy-duty motorized clear vinyl or bug screens.
+              <span class="rewired-item-title">Somfy & Clare Automation.</span> One-touch handheld remote control, smartphone app scheduling, and wind sensor auto-retraction.
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Screen Fabric & Motorization Options -->
-<section class="section">
-  <div class="container">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Premium Fabrics & Controls</span>
-      <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Fabric Weaves & <span class="title-accent-grey">Smart Control</span></h2>
-      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
-        Customize your screen density, powder-coated aluminum housing colors, and smart home automation controls.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-eye-slash" style="color: var(--color-accent); margin-right: 0.5rem;"></i> High-Privacy Solar Mesh</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Block daytime views into your patio while maintaining outward visibility and reducing solar heat gain.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-mosquito" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Ultra-Fine Bug Screen</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Specialized high-durability mesh keeping tiny no-see-ums, mosquitoes, and blackflies completely outside.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-snowflake" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Clear Vinyl Weather Screens</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-          Heavy-duty marine-grade clear vinyl screens that trap patio heater warmth for late autumn and early spring dining.
-        </p>
       </div>
     </div>
   </div>

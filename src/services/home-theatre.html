@@ -4,69 +4,144 @@ title: Custom 4K Home Theatre Systems Belleville, Quinte & PEC | Quinte Smart Ho
 description: Experience commercial cinema quality at home with Dolby Atmos surround sound, 4K laser projectors, motorized screens, and automated lighting in Belleville & Quinte.
 ---
 
-<!-- Hero Statement with Image Grid -->
-<section class="section-statement" style="text-align: left; padding: 5rem 0 3rem 0;">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label" style="text-align: left;">Custom Cinema Engineering</span>
-        <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          Dolby Atmos <span style="color: var(--color-accent);">Home Theatre Systems</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-          Every home deserves an extraordinary space to unwind and entertain. Quinte Smart Homes designs and installs complete home theatre solutions — outfitting luxury residences across Belleville, Quinte West, Prince Edward County, and Kingston with 4K laser projectors, motorized screens, Dolby Atmos audio, and automated lighting.
-        </p>
+    
+    <!-- Top Big Title Spanning the Layout (Matching Reference Header: Don't Take / Our Word for It) -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Dolby Atmos <span style="color: var(--color-accent); font-weight: 300;">Home Theatre Systems.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card (Responsive Height with Left-to-Right Reveal Animation) -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_home_theatre.jpg" alt="Dolby Atmos Home Theatre Installation" />
       </div>
-      <div>
-        <img src="/assets/images/showcase_home_theatre.jpg" alt="Dolby Atmos Home Theatre Installation" style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08);" />
+
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Precision Engineering">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: System Capabilities">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Entertainment Hub">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Trade Coordination">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: Brought to Life With Precision -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              Brought to Life <span style="color: var(--color-accent);">With Precision</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              We help you go beyond that DIY look to achieve a true architectural commercial cinema. One press of the <strong>"Movie Time"</strong> button lowers the motorized 4K projection screen, dims the room lights, powers on the laser projector, and sets the 7.1.4 Dolby Atmos surround sound.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              All wires, receivers, Apple TVs, and gaming consoles are completely hidden in centralized utility racks, leaving your movie room immaculately clean.
+            </p>
+            <a href="#theatre-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-film"></i> Request Cinema Design Consultation</a>
+          </div>
+
+          <!-- TAB 2: Cinema System Capabilities -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: 1.5rem; font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Cinema System <span style="color: var(--color-accent);">Capabilities</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-compact-disc" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                7.1.4 Dolby Atmos 3D Immersive Surround Sound
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-video" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                4K HDR Laser Projection &amp; Ambient Light Rejecting Screens
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-lightbulb" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Automated Smart Cinema Lighting &amp; Pathway Steplights
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Invisible Wire Concealment &amp; One-Touch Remote Automation
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: The New Life of the Party -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: 1.5rem; font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              The New Life <span style="color: var(--color-accent);">of the Party</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.1rem, 1.5vw, 1.35rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "Inviting your friends and family to watch a big movie or championship game will give them an unforgettable experience. Bringing commercial cinema quality home creates a central gathering space your family will cherish."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Engineered to perform effortlessly for live sports, gaming marathons, and cinematic premiere nights with zero latency and studio-grade acoustics.
+            </p>
+          </div>
+
+          <!-- TAB 4: Trade & Contractor Coordination -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: 1.5rem; font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Trade &amp; Contractor <span style="color: var(--color-accent);">Coordination</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.1rem, 1.5vw, 1.3rem); color: #222222; line-height: 1.6; margin-bottom: 1.25rem;">
+              "We work closely with homeowners, interior designers, and general contractors to deliver a reliable completion timetable so you can start enjoying your cinema system immediately."
+            </p>
+            <p style="font-size: 0.95rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 1rem;">
+              Our ECRA/ESA certified master electricians ensure all low-voltage and high-voltage wiring strictly satisfies Ontario Electrical Safety Code requirements.
+            </p>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: 1.5rem; font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Laser Projector Mounting &amp; Geometry Calibration
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                7.1.4 Dolby Atmos Speaker In-Wall &amp; Ceiling Wiring
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Smart Lighting Dimmer &amp; Keypad Scene Integration
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Universal Touch Remote Control Programming
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; CUSTOM CINEMA</span>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Bringing Movies To Life Overview -->
-<section class="section" style="padding: 2rem 0 5rem 0;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          Brought to Life <span class="title-accent-grey">With Precision</span>
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          We help you go beyond that DIY look to achieve a true architectural commercial cinema. One press of the <strong>"Movie Time"</strong> button on your remote, touch panel, or smartphone lowers the motorized 4K projection screen, dims the room lights, powers on the laser projector, and sets the 7.1.4 Dolby Atmos surround sound.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 700; border-left: 3px solid var(--color-accent); padding-left: 1.25rem; margin-bottom: 2rem;">
-          All wires, receivers, Apple TVs, and gaming consoles are completely hidden in centralized utility racks, leaving your movie room immaculately clean.
-        </p>
-        <a href="#theatre-quote" class="btn btn-primary"><i class="fa-solid fa-film"></i> Request Cinema Design Consultation</a>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Cinema System Capabilities</h3>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-compact-disc" style="color: var(--color-accent);"></i>
-            7.1.4 Dolby Atmos 3D Immersive Surround Sound
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-video" style="color: var(--color-accent);"></i>
-            4K HDR Laser Projection & Ambient Light Rejecting Screens
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-lightbulb" style="color: var(--color-accent);"></i>
-            Automated Smart Cinema Lighting & Pathway Steplights
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--color-accent);"></i>
-            Invisible Wire Concealment & One-Touch Remote Automation
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Bulletproof Quality & Cinema Brands (Light Grey Halftone Dots Gradient Section) -->
+<!-- Bulletproof Quality & Cinema Brands (Halftone Dots Gradient Section Re-instated) -->
 <section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
   <div class="container">
     <div class="rewired-grid">
@@ -98,7 +173,7 @@ description: Experience commercial cinema quality at home with Dolby Atmos surro
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Triad Speakers.</span> Custom hand-built in-wall & in-ceiling cinema speakers engineered specifically for Dolby Atmos surround acoustics.
+              <span class="rewired-item-title">Triad Speakers.</span> Custom hand-built in-wall &amp; in-ceiling cinema speakers engineered specifically for Dolby Atmos surround acoustics.
             </div>
           </div>
 
@@ -128,47 +203,29 @@ description: Experience commercial cinema quality at home with Dolby Atmos surro
   </div>
 </section>
 
-<!-- The New Life of the Party Section -->
-<section class="section">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label">Entertainment Hub</span>
-        <h2 style="font-size: 2.6rem; margin-bottom: 1.5rem; line-height: 1.2;">
-          The New Life <span class="title-accent-grey">of the Party</span>
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
-          Inviting your friends and family to watch a big movie or championship game will give them an unforgettable experience. Bringing commercial cinema quality home creates a central gathering space your family will cherish.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 700; border-left: 3px solid var(--color-accent); padding-left: 1.25rem;">
-          We work closely with homeowners, interior designers, and general contractors to deliver a reliable completion timetable so you can start enjoying your cinema system immediately.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">What's Included in Installation:</h3>
-        <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Laser Projector Mounting & Geometry Calibration
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            7.1.4 Dolby Atmos Speaker In-Wall & Ceiling Wiring
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Smart Lighting Dimmer & Keypad Scene Integration
-          </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem; font-weight: 600;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent);"></i>
-            Universal Touch Remote Control Programming
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
 
 <!-- Quote & Installation Booking Form -->
 <section class="section" id="theatre-quote" style="border-top: 1px solid var(--border-subtle);">

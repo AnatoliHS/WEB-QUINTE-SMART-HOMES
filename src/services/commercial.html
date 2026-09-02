@@ -1,42 +1,258 @@
 ---
 layout: default
-title: Commercial Smart Automation & Construction Site Security
+title: Commercial Smart Automation & Construction Site Security Belleville & Quinte
 description: Boardroom AV automation, commercial lighting, card access control, and solar security towers by Quinte Smart Homes.
 isBusinessPage: true
 ---
 
-<section class="section" style="background: var(--bg-canvas);">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div class="section-header" style="text-align: left; max-width: 800px; margin-bottom: 3rem;">
-      <div class="section-subtitle">Service Detail</div>
-      <h1>Commercial Smart Automation & Site Security</h1>
-      <p class="section-description">
-        Smart technology solutions designed for corporate offices, retail stores, restaurants, and active construction sites in Eastern Ontario.
-      </p>
-    </div>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Commercial Smart <span style="color: var(--color-accent); font-weight: 300;">Automation &amp; Security.</span>
+    </h1>
 
-    <div class="hero-grid" style="margin-bottom: 4rem;">
-      <div>
-        <h3>Streamline Operations & Secure Assets</h3>
-        <p style="margin-bottom: 1rem;">
-          From one-touch conference room video presentations to automated commercial lighting control that reduces electricity costs, we upgrade your business environment.
-        </p>
-        <p style="margin-bottom: 1.5rem;">
-          For general contractors and builders, we deploy mobile solar security trailers equipped with thermal 4K cameras and strobe sirens to deter job site theft.
-        </p>
-        <a href="/contact/" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Commercial Consultation</a>
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_networking.jpg" alt="Commercial Smart Automation & Video Conferencing" />
       </div>
 
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-        <h4 style="margin-bottom: 1rem;">Commercial Capabilities</h4>
-        <ul class="summary-features-list" style="margin-bottom: 0;">
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Conference Room Video Conferencing & Audio</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Keycard Access Control & Door Intercoms</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Scheduled Commercial Lighting Control</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Mobile Solar Construction Security Trailer Towers</li>
-          <li><i class="fa-solid fa-check" style="color: var(--color-primary);"></i> Energy Management & Thermostat Lockouts</li>
-        </ul>
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Commercial Operations">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Boardroom AV & Control">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Access Control & Security">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Energy Management">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: Commercial Operations -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              Streamline Operations &amp; <span style="color: var(--color-accent);">Secure Commercial Assets</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Smart technology solutions designed for corporate offices, retail stores, restaurants, and active construction sites across Belleville, Quinte, Prince Edward County, and Kingston.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              From one-touch conference room video presentations to automated commercial lighting control that reduces utility overhead, we elevate your commercial environment.
+            </p>
+            <a href="#commercial-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-briefcase"></i> Commercial Consultation</a>
+          </div>
+
+          <!-- TAB 2: Boardroom AV & Control -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Boardroom AV &amp; <span style="color: var(--color-accent);">Video Conferencing</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-display" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                One-Touch Zoom &amp; Teams Boardroom Video Presentation Systems
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-microphone-lines" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                In-Ceiling Beamforming Microphones &amp; Clean Audio Amplification
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-lightbulb" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Automated Presentation Lighting Scenes &amp; Motorized Shades
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Access Control & Security -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Commercial Access Control &amp; <span style="color: var(--color-accent);">Surveillance</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "Manage employee keycard access, track door entries, and view live 4K security feeds remotely from any smartphone or desktop console."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Includes mobile solar construction security trailers with 110dB sirens for active building job sites.
+            </p>
+          </div>
+
+          <!-- TAB 4: Energy Management -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Commercial Energy <span style="color: var(--color-accent);">Management</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-temperature-arrow-down" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Automated HVAC Thermostat Lockouts &amp; Night Setbacks
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-clock" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Astronomical Sunset/Sunrise Retail Exterior Lighting Schedules
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-bolt" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Master Electrician Sub-Panel Power Distribution &amp; Surge Protection
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Service:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Commercial Building Electrical &amp; Network Infrastructure Audit
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Master Electrician Hardwired Cable Runs &amp; Rack Installation
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Staff Training &amp; Centralized Management Touch Screen Configuration
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Ongoing SLA Maintenance &amp; 24/7 Managed Telemetry Support
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; COMMERCIAL AUTOMATION</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Halftone Dots Gradient Section -->
+<section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <div class="container">
+    <div class="rewired-grid">
+      <div>
+        <h2 class="rewired-left-title">
+          Commercial,<br>
+          <span class="sub-title">Excellence.</span>
+        </h2>
+        <a href="#commercial-quote" class="btn-pill-dark">Explore Commercial Solutions &rarr;</a>
+      </div>
+
+      <div>
+        <div class="rewired-right-header">Commercial Pillars:</div>
+        <div class="rewired-list">
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">01</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">Boardroom AV & Video Conferencing.</span> Touch-panel control for Zoom Rooms, projectors, motorized screens, and audio clarity.
+            </div>
+          </div>
+
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">02</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">Commercial Access & Security.</span> Keycard entry, 4K POE cameras, and 24/7 Ontario central monitoring dispatch.
+            </div>
+          </div>
+
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">03</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">Construction Site Solar Security.</span> Off-grid solar towers protecting valuable machinery and copper wiring on active sites.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Commercial Quote Form -->
+<section class="section" id="commercial-quote" style="padding: 6rem 0;">
+  <div class="container">
+    <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 4rem; align-items: center; background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 4rem; border-radius: var(--radius-sm);">
+      <div>
+        <span class="eyebrow-label">Commercial Consultation</span>
+        <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;">Request Commercial <span class="title-accent-grey">Pricing</span></h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          Schedule an on-site commercial audit with our engineering team and master electricians in Belleville, Quinte, and Prince Edward County.
+        </p>
+
+        <div style="margin-bottom: 1.5rem;">
+          <strong>Phone:</strong> <a href="tel:6137799044" style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">613-779-9044</a>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <strong>Email:</strong> <a href="mailto:info@quintesmarthomes.ca" style="color: var(--text-primary); font-weight: 700; text-decoration: underline;">info@quintesmarthomes.ca</a>
+        </div>
+      </div>
+
+      <div>
+        <form onsubmit="event.preventDefault(); alert('Thank you! Our commercial division will contact you shortly to schedule your on-site consultation.');">
+          <div style="margin-bottom: 1.25rem;">
+            <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Company Name *</label>
+            <input type="text" class="form-input" required placeholder="Commercial Enterprise Inc." />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div>
+              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Phone *</label>
+              <input type="tel" class="form-input" required placeholder="613-000-0000" />
+            </div>
+            <div>
+              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Email *</label>
+              <input type="email" class="form-input" required placeholder="contact@company.com" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Commercial Quote Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

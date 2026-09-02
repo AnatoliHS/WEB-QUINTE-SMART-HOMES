@@ -4,160 +4,222 @@ title: Smart Home Security Systems Belleville, Quinte & PEC | Quinte Smart Homes
 description: Advanced smart home security systems with 4K cameras, touch panels, smart locks, intrusion sensors, and 24/7 monitoring installed by licensed electricians in Belleville & Quinte.
 ---
 
-<!-- Hero Statement with Image Grid -->
-<section class="section-statement" style="text-align: left; padding: 5rem 0 3rem 0;">
+<!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
+<section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <span class="eyebrow-label" style="text-align: left;">Residential Protection Systems</span>
-        <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1;">
-          Smart Home <span style="color: var(--color-accent);">Security Systems</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-          Protecting your family shouldn't be complicated. Quinte Smart Homes engineers complete smart home security systems featuring high-definition 4K POE cameras, touch panels, smart door locks, intrusion sensors, and 24/7 monitoring across Belleville, Quinte West, Prince Edward County, and Kingston.
-        </p>
+    
+    <!-- Top Big Title Spanning the Layout -->
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+      Smart Home <span style="color: var(--color-accent); font-weight: 300;">Security Systems.</span>
+    </h1>
+
+    <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
+    <div class="hero-reveal-grid">
+      
+      <!-- Left Column: Large Image Card -->
+      <div class="hero-reveal-container">
+        <img src="/assets/images/showcase_home_security.jpg" alt="Smart Home Security System Installation" />
       </div>
-      <div>
-        <img src="/assets/images/showcase_home_security.jpg" alt="Smart Home Security System Installation" style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08);" />
+
+      <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
+      <div class="hero-reveal-card">
+        
+        <!-- Top Row: Interactive Tabs 1-5 Left -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Complete Protection">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Hardware Suite">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: Intelligent Automation">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Security Packages">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+          </div>
+        </div>
+
+        <!-- Center Interactive Tab Content Panels -->
+        <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- TAB 1: Complete Protection -->
+          <div class="hero-tab-panel active" id="hero-tab-panel-1">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+              Complete Residential <span style="color: var(--color-accent);">Family Protection</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              Quinte Smart Homes engineers complete smart home security systems featuring high-definition 4K POE cameras, touch panels, smart door locks, intrusion sensors, and 24/7 monitoring across Belleville, Quinte West, Prince Edward County, and Kingston.
+            </p>
+            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Licensed master electricians handle clean concealed wiring, power supplies, and panel surge protection for 100% reliable 24/7 uptime.
+            </p>
+            <a href="#security-quote" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-shield-halved"></i> Request Security Assessment</a>
+          </div>
+
+          <!-- TAB 2: Hardware Suite -->
+          <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Custom Hardware <span style="color: var(--color-accent);">Suite</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-tablet-screen-button" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Wall-Mounted Touchscreen Clare Controls Panels
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-video" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                4K HDR POE Cameras with AI Night Vision &amp; Local NVR
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-key" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Keyless Biometric &amp; Pin-Pad Smart Door Locks
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-shield-cat" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Discrete Door/Window Intrusion &amp; Glass-Break Sensors
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 3: Intelligent Automation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+              Intelligent Active <span style="color: var(--color-accent);">Intruder Deterrence</span>
+            </h3>
+            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "If perimeter cameras detect nighttime activity, exterior landscape lights illuminate at 100% and interior hall lights flash to actively deter intruders before a break-in occurs."
+            </p>
+            <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
+              Pairs with motorized shade vacation simulation to create a realistic "lived-in" appearance while away.
+            </p>
+          </div>
+
+          <!-- TAB 4: Pre-Configured Packages -->
+          <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              Pre-Configured <span style="color: var(--color-accent);">Security Packages</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-house-user" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Basic Protection: Touch Panel, Entry Contacts &amp; Mobile App
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-house-lock" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Enhanced Package: 4K POE Cameras, Doorbell &amp; Smart Locks
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-shield-virus" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Premium Estate: Full Perimeter 4K NVR &amp; 24/7 Cellular Monitoring
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-faucet-drip" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Environmental Protection: Automatic Flood &amp; Water Shutoff Valves
+              </li>
+            </ul>
+          </div>
+
+          <!-- TAB 5: What's Included in Installation -->
+          <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
+            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+              What's Included <span style="color: var(--color-accent);">in Installation:</span>
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Master Electrician Hardwired POE Camera &amp; Panel Installation
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Local 2TB/4TB Encrypted Hard Drive Storage Setup
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                Mobile App Motion Alerts &amp; Live Video Feed Pairing
+              </li>
+              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
+                24/7 Professional Central Station Monitoring Dispatch Option
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Metadata Line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <span>QUINTE SMART HOMES &nbsp;/&nbsp; HOME SECURITY</span>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Overview & Capabilities Grid -->
-<section class="section" style="padding: 2rem 0 5rem 0;">
-  <div class="container">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Tailored Protection</span>
-      <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Customize Your <span class="title-accent-grey">Home Security System</span></h2>
-      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
-        Every home has unique entry points and layout challenges. We design custom security hardware suites engineered for maximum coverage and effortless control.
-      </p>
-    </div>
+<!-- Script for Interactive Hero Tab Switching -->
+<script>
+  function switchHeroTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('hero-tab-btn-' + i);
+      const panel = document.getElementById('hero-tab-panel-' + i);
+      if (btn) {
+        if (i === num) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+      if (panel) {
+        if (i === num) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
 
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;">
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <div style="width: 48px; height: 48px; background: var(--color-accent-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-accent); font-size: 1.25rem; margin-bottom: 1.5rem;">
-          <i class="fa-solid fa-tablet-screen-button"></i>
-        </div>
-        <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Touchscreen Control Panels</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Wall-mounted Clare Controls touch panels provide intuitive one-touch arming/disarming, camera viewing, and complete smart home scene control right by your entrance.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <div style="width: 48px; height: 48px; background: var(--color-accent-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-accent); font-size: 1.25rem; margin-bottom: 1.5rem;">
-          <i class="fa-solid fa-video"></i>
-        </div>
-        <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">4K POE Cameras & Video Doorbells</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Crystal-clear 4K HDR cameras with color night-vision, AI human detection, and video doorbells recording directly to zero-monthly-fee local NVR storage.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <div style="width: 48px; height: 48px; background: var(--color-accent-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-accent); font-size: 1.25rem; margin-bottom: 1.5rem;">
-          <i class="fa-solid fa-key"></i>
-        </div>
-        <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Smart Locks & Access Control</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Keyless pin-pad and biometric smart locks allow temporary access codes for housekeepers or visitors, locking automatically when you leave.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <div style="width: 48px; height: 48px; background: var(--color-accent-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-accent); font-size: 1.25rem; margin-bottom: 1.5rem;">
-          <i class="fa-solid fa-shield-cat"></i>
-        </div>
-        <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Intrusion & Environmental Sensors</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Discrete window/door contacts, glass-break detectors, motion sensors, and water leak detectors immediately alert your mobile app to prevent property damage.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Choose Your Security Package (Light Grey Halftone Dots Gradient Section) -->
+<!-- Security System Pillars (Halftone Dots Gradient Section) -->
 <section class="section pastel-dots-bg" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
   <div class="container">
     <div class="rewired-grid">
       <div>
         <h2 class="rewired-left-title">
-          Choose Your,<br>
-          <span class="sub-title">Security Package.</span>
+          Intelligent,<br>
+          <span class="sub-title">Protection.</span>
         </h2>
-        <a href="#security-quote" class="btn-pill-dark">Get Started &rarr;</a>
+        <a href="#security-quote" class="btn-pill-dark">Explore Security Systems &rarr;</a>
       </div>
 
       <div>
-        <div class="rewired-right-header">Pre-Configured Packages:</div>
+        <div class="rewired-right-header">Security Architecture Pillars:</div>
         <div class="rewired-list">
           <div class="rewired-list-item">
             <span class="rewired-item-num">01</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Basic Package (Essential Protection).</span> Includes 1 Touchscreen Control Panel, 2 Door/Window Intrusion Contacts, 1 Motion Sensor, and ClareOne Mobile App Remote Access.
+              <span class="rewired-item-title">4K Color Night-Vision Cameras.</span> Hikvision ColorVu sensor technology capturing full-color 4K video 24/7 without harsh blinding floodlights.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">02</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Enhanced Package (Most Popular).</span> Features 1 Touchscreen Panel, 2 Outdoor 4K POE Cameras, 1 Video Doorbell, 3 Perimeter Contacts, Motion Sensor, and Keyless Smart Lock.
+              <span class="rewired-item-title">Encrypted Local NVR Storage.</span> 2TB-8TB local encrypted storage keeping your private home video secure without mandatory cloud fees.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Premium Package (Estate & Luxury Protection).</span> Complete estate protection with 4 Outdoor 4K POE Cameras, 2TB Local NVR Recorder, full perimeter sensors, and 24/7 Professional Cellular Monitoring.
+              <span class="rewired-item-title">Touchscreen Keypad Access.</span> Keyless pin-pad &amp; mobile app door unlocking integrated with garage door sensors and gate operators.
+            </div>
+          </div>
+
+          <div class="rewired-list-item">
+            <span class="rewired-item-num">04</span>
+            <div class="rewired-item-content">
+              <span class="rewired-item-title">24/7 Professional Central Monitoring.</span> Instant notification dispatching local emergency responders upon intrusion detection.
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Smart Home Security Automation Integration -->
-<section class="section">
-  <div class="container">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Intelligent Defense</span>
-      <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Smart Home Security <span class="title-accent-grey">Automation</span></h2>
-      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
-        Your security system doesn't just react to break-ins — it actively deters intruders by working in sync with your lighting, shading, and power systems.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;">
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-lightbulb" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Automated Security Lighting</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          If perimeter cameras or motion sensors detect unusual night activity, exterior landscape lights illuminate at 100% brightness and interior lights flood the hallways to deter unwanted visitors.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-blinds" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Motorized Shade Occupancy Simulation</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          When away on vacation, your motorized window shades open and close on randomized schedules alongside interior lights to create a realistic "lived-in" appearance.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-tower-cell" style="color: var(--color-accent); margin-right: 0.5rem;"></i> 24/7 Cellular Backup Protection</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Even if an intruder cuts your internet lines or a storm knocks out utility power, dedicated cellular backup transmitters and battery units ensure emergency signals reach monitoring dispatchers immediately.
-        </p>
-      </div>
-
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-droplet-slash" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Environmental Water & Fire Safety</h3>
-        <p style="color: var(--text-secondary); line-height: 1.7;">
-          Wireless flood sensors near sump pumps and water heaters automatically trigger main water shut-off valves upon detecting leaks, preventing costly basement flooding.
-        </p>
       </div>
     </div>
   </div>
