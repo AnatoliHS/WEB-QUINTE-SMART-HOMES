@@ -1,332 +1,426 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title | default("Automation - Convenience at your fingertips") }} — {{ site.title }}</title>
-    <meta name="description" content="{{ description | default(site.description) }}" />
 
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title | default("Automation - Convenience at your fingertips") }} — {{ site.title }}</title>
+  <meta name="description" content="{{ description | default(site.description) }}" />
 
-    <!-- Tresmares Inspired Editorial Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://i0.wp.com/quintesmarthomes.ca/wp-content/uploads/2023/06/Quinte-Smart-Homes-House-Logo.png?fit=32%2C32&ssl=1" sizes="32x32" />
-  </head>
+  <!-- Tresmares Inspired Editorial Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <body>
-    <!-- Main Navigation Header -->
-    <header class="site-header" id="top">
-      <div class="container header-inner">
+  <!-- Favicon -->
+  <link rel="icon"
+    href="https://i0.wp.com/quintesmarthomes.ca/wp-content/uploads/2023/06/Quinte-Smart-Homes-House-Logo.png?fit=32%2C32&ssl=1"
+    sizes="32x32" />
+</head>
+
+<body>
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      {% if isBusinessPage or page.url == "/business/" %}
+      <a href="/business/" class="brand-logo">
+        <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Commercial Division Logo"
+          class="nav-logo-img" />
+      </a>
+      {% else %}
+      <a href="/" class="brand-logo">
+        <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Logo" class="nav-logo-img" />
+      </a>
+      {% endif %}
+
+      <nav class="main-nav" id="mainNav">
         {% if isBusinessPage or page.url == "/business/" %}
-          <a href="/business/" class="brand-logo">
-            <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Commercial Division Logo" class="nav-logo-img" />
+        <!-- Dedicated Business Portal Navigation Menu -->
+        <a href="/business/" class="nav-link {% if page.url == '/business/' %}active{% endif %}">HOME</a>
+
+        <div class="has-dropdown">
+          <a href="/business/#commercial-services"
+            class="nav-link {% if page.url and page.url.startsWith('/services/') %}active{% endif %}">
+            BUSINESS SERVICES <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
           </a>
+          <div class="dropdown-menu">
+            <a href="/services/business-security/" class="dropdown-item">Belleville Small Business Security</a>
+            <a href="/services/business-networking/" class="dropdown-item">High-Performance Business Networking</a>
+            <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
+            <a href="/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;"><i
+                class="fa-solid fa-arrow-left"></i> Switch to Home Services</a>
+          </div>
+        </div>
+
+        <div class="has-dropdown">
+          <a href="/industry-professionals/"
+            class="nav-link {% if page.url == '/industry-professionals/' %}active{% endif %}">
+            INDUSTRY PROFESSIONALS <i class="fa-solid fa-chevron-down"
+              style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/industry-professionals/" class="dropdown-item">Builders &amp; Contractors Program</a>
+            <a href="/industry-professionals/" class="dropdown-item">Interior Designers &amp; Architects</a>
+          </div>
+        </div>
+
+        <div class="has-dropdown">
+          <a href="/about/" class="nav-link {% if page.url and page.url.startsWith('/about/') %}active{% endif %}">
+            ABOUT <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/portfolio/" class="dropdown-item">Portfolio Showcase</a>
+            <a href="/about/" class="dropdown-item">About the Company</a>
+            <a href="/about/smart-home-automation/" class="dropdown-item">About Smart Home Automation</a>
+            <a href="/blog/" class="dropdown-item">News &amp; Insights</a>
+            <a href="/contact/" class="dropdown-item">Contact &amp; Consultations</a>
+          </div>
+        </div>
         {% else %}
-          <a href="/" class="brand-logo">
-            <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Logo" class="nav-logo-img" />
+        <!-- Standard Consumer Portal Navigation Menu -->
+        {% for item in navigation.main %}
+        {% if item.children %}
+        <div class="has-dropdown">
+          <a href="{{ item.href }}"
+            class="nav-link {% if page.url and ((page.url.startsWith('/services/') and (item.title == 'SERVICES' or item.title == 'Services')) or (item.href != '/' and page.url.startsWith(item.href))) %}active{% endif %}">
+            {{ item.title }} <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
           </a>
-        {% endif %}
-
-        <nav class="main-nav" id="mainNav">
-          {% if isBusinessPage or page.url == "/business/" %}
-            <!-- Dedicated Business Portal Navigation Menu -->
-            <a href="/business/" class="nav-link {% if page.url == '/business/' %}active{% endif %}">HOME</a>
-
-            <div class="has-dropdown">
-              <a href="/business/#commercial-services" class="nav-link {% if page.url and page.url.startsWith('/services/') %}active{% endif %}">
-                BUSINESS SERVICES <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
-              </a>
-              <div class="dropdown-menu">
-                <a href="/services/business-security/" class="dropdown-item">Belleville Small Business Security</a>
-                <a href="/services/business-networking/" class="dropdown-item">High-Performance Business Networking</a>
-                <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
-                <a href="/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;"><i class="fa-solid fa-arrow-left"></i> Switch to Home Services</a>
-              </div>
-            </div>
-
-            <div class="has-dropdown">
-              <a href="/industry-professionals/" class="nav-link {% if page.url == '/industry-professionals/' %}active{% endif %}">
-                INDUSTRY PROFESSIONALS <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
-              </a>
-              <div class="dropdown-menu">
-                <a href="/industry-professionals/" class="dropdown-item">Builders &amp; Contractors Program</a>
-                <a href="/industry-professionals/" class="dropdown-item">Interior Designers &amp; Architects</a>
-              </div>
-            </div>
-
-            <div class="has-dropdown">
-              <a href="/about/" class="nav-link {% if page.url and page.url.startsWith('/about/') %}active{% endif %}">
-                ABOUT <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
-              </a>
-              <div class="dropdown-menu">
-                <a href="/portfolio/" class="dropdown-item">Portfolio Showcase</a>
-                <a href="/about/" class="dropdown-item">About the Company</a>
-                <a href="/about/smart-home-automation/" class="dropdown-item">About Smart Home Automation</a>
-                <a href="/blog/" class="dropdown-item">News &amp; Insights</a>
-                <a href="/contact/" class="dropdown-item">Contact &amp; Consultations</a>
-              </div>
-            </div>
-          {% else %}
-            <!-- Standard Consumer Portal Navigation Menu -->
-            {% for item in navigation.main %}
-              {% if item.children %}
-                <div class="has-dropdown">
-                  <a href="{{ item.href }}" class="nav-link {% if page.url and ((page.url.startsWith('/services/') and (item.title == 'SERVICES' or item.title == 'Services')) or (item.href != '/' and page.url.startsWith(item.href))) %}active{% endif %}">
-                    {{ item.title }} <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
-                  </a>
-                  <div class="dropdown-menu">
-                    {% for child in item.children %}
-                      <a href="{{ child.href }}" class="dropdown-item">{{ child.title }}</a>
-                    {% endfor %}
-                    {% if item.title == "SERVICES" or item.title == "Services" or item.href == "/services/" %}
-                      <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
-                      <a href="/business/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;">Switch to Business Services <i class="fa-solid fa-arrow-right"></i></a>
-                    {% endif %}
-                  </div>
-                </div>
-              {% else %}
-                <a href="{{ item.href }}" class="nav-link {% if page.url == item.href %}active{% endif %}">{{ item.title }}</a>
-              {% endif %}
+          <div class="dropdown-menu">
+            {% for child in item.children %}
+            <a href="{{ child.href }}" class="dropdown-item">{{ child.title }}</a>
             {% endfor %}
-          {% endif %}
-
-          <!-- Mobile Action Links Inside Menu Drawer -->
-          <div class="mobile-actions-wrapper">
-            <a href="/contact/" class="btn btn-primary" style="width: 100%;">Book Consultation</a>
-            {% if page.url == "/business/" or isBusinessPage %}
-              <a href="/" class="link-arrow" style="margin-top: 0.75rem;">Home Portal <i class="fa-solid fa-arrow-right"></i></a>
-            {% else %}
-              <a href="/business/" class="link-arrow" style="margin-top: 0.75rem;">Business Portal <i class="fa-solid fa-arrow-right"></i></a>
+            {% if item.title == "SERVICES" or item.title == "Services" or item.href == "/services/" %}
+            <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
+            <a href="/business/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;">Switch to
+              Business Services <i class="fa-solid fa-arrow-right"></i></a>
             {% endif %}
           </div>
-        </nav>
+        </div>
+        {% else %}
+        <a href="{{ item.href }}" class="nav-link {% if page.url == item.href %}active{% endif %}">{{ item.title }}</a>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
 
-        <div class="header-actions">
-          <a href="/contact/" class="btn btn-primary desktop-only">Book Consultation</a>
+        <!-- Mobile Action Links Inside Menu Drawer -->
+        <div class="mobile-actions-wrapper">
+          <a href="/contact/" class="btn btn-primary" style="width: 100%;">Book Consultation</a>
           {% if page.url == "/business/" or isBusinessPage %}
-            <a href="/" class="link-arrow desktop-only" style="margin-left: 0.5rem;">Home Portal <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/" class="link-arrow" style="margin-top: 0.75rem;">Home Portal <i
+              class="fa-solid fa-arrow-right"></i></a>
           {% else %}
-            <a href="/business/" class="link-arrow desktop-only" style="margin-left: 0.5rem;">Business Portal <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/business/" class="link-arrow" style="margin-top: 0.75rem;">Business Portal <i
+              class="fa-solid fa-arrow-right"></i></a>
           {% endif %}
-          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
-          </button>
         </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/contact/" class="btn btn-primary desktop-only">Book Consultation</a>
+        {% if page.url == "/business/" or isBusinessPage %}
+        <a href="/" class="link-arrow desktop-only" style="margin-left: 0.5rem;">Home Portal <i
+            class="fa-solid fa-arrow-right"></i></a>
+        {% else %}
+        <a href="/business/" class="link-arrow desktop-only" style="margin-left: 0.5rem;">Business Portal <i
+            class="fa-solid fa-arrow-right"></i></a>
+        {% endif %}
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content">
-      {{ content | safe }}
-    </main>
-
-    <!-- Tresmares Inspired Footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <a href="/" class="brand-logo" style="margin-bottom: 1.25rem; display: inline-block;">
-              <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Logo" style="height: 60px; width: auto; max-width: 240px; object-fit: contain; filter: brightness(0) invert(1);" />
-            </a>
-            <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; color: #a3a3a3; max-width: 340px;">
-              Premier electrical and home technology firm. Whole-home automation, Lutron lighting, audio/visual engineering, and enterprise security installed by master electricians.
-            </p>
-          </div>
-
-          <div class="footer-col">
-            <h4>Sitemap</h4>
-            <ul class="footer-links">
-              <li><a href="/">Home</a></li>
-              <li><a href="/portfolio/">Portfolio</a></li>
-              <li><a href="/about/">About Firm</a></li>
-              <li><a href="/services/">Services Overview</a></li>
-              <li><a href="/industry-professionals/">Contractors & Designers</a></li>
-              <li><a href="/#faq">FAQ</a></li>
-              <li><a href="/blog/">News & Insights</a></li>
-              <li><a href="/contact/">Contact & Consultation</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Strategies</h4>
-            <ul class="footer-links">
-              <li><a href="/services/smart-lights/">Smart Lighting & Shades</a></li>
-              <li><a href="/services/home-theatre/">Audio & Home Theatre</a></li>
-              <li><a href="/services/security/">Security & Access Control</a></li>
-              <li><a href="/services/networking/">Networking & Starlink</a></li>
-              <li><a href="/services/outdoor/">Motorized Screens & Pergolas</a></li>
-              <li><a href="/services/commercial/">Commercial Smart Solutions</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul class="footer-links">
-              <li><i class="fa-solid fa-phone" style="color: var(--color-accent); margin-right: 0.5rem;"></i> {{ site.phone }}</li>
-              <li><i class="fa-solid fa-envelope" style="color: var(--color-accent); margin-right: 0.5rem;"></i> {{ site.email }}</li>
-              <li><i class="fa-solid fa-location-dot" style="color: var(--color-accent); margin-right: 0.5rem;"></i> {{ site.address }}</li>
-              <li><i class="fa-solid fa-certificate" style="color: var(--color-gold); margin-right: 0.5rem;"></i> Davidson Electrical Services</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>© 2026 Quinte Smart Homes Inc. All Rights Reserved.</p>
-          <div style="display: flex; gap: 1.5rem;">
-            <a href="/privacy-policy/" style="color: #a3a3a3;">Privacy Policy</a>
-            <a href="/terms/" style="color: #a3a3a3;">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Google Preferred Badge Component -->
-    <div class="google-badge-fixed-wrapper">
-      {% include "components/preferred-badge.njk" %}
     </div>
+  </header>
 
-    <!-- Scripts: Mobile Hamburger, Word Writing Reveal & Stat Count-Up -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Toggle
-        const toggleBtn = document.getElementById('mobileToggle');
-        const mainNav = document.getElementById('mainNav');
-        if (toggleBtn && mainNav) {
-          toggleBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('mobile-active');
+  <!-- Main Content -->
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  <!-- Tresmares Inspired Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="brand-logo" style="margin-bottom: 1.25rem; display: inline-block;">
+            <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Logo"
+              style="height: 60px; width: auto; max-width: 240px; object-fit: contain; filter: brightness(0) invert(1);" />
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; color: #a3a3a3; max-width: 340px;">
+            Premier electrical and home technology firm. Whole-home automation, Lutron lighting, audio/visual
+            engineering, and enterprise security installed by master electricians.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sitemap</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+            <li><a href="/about/">About Firm</a></li>
+            <li><a href="/services/">Services Overview</a></li>
+            <li><a href="/industry-professionals/">Contractors & Designers</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/blog/">News & Insights</a></li>
+            <li><a href="/contact/">Contact & Consultation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Strategies</h4>
+          <ul class="footer-links">
+            <li><a href="/services/smart-lights/">Smart Lighting & Shades</a></li>
+            <li><a href="/services/home-theatre/">Audio & Home Theatre</a></li>
+            <li><a href="/services/security/">Security & Access Control</a></li>
+            <li><a href="/services/networking/">Networking & Starlink</a></li>
+            <li><a href="/services/outdoor/">Motorized Screens & Pergolas</a></li>
+            <li><a href="/services/commercial/">Commercial Smart Solutions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-phone" style="color: var(--color-accent); margin-right: 0.5rem;"></i> {{
+              site.phone }}</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--color-accent); margin-right: 0.5rem;"></i> {{
+              site.email }}</li>
+            <li><i class="fa-solid fa-location-dot" style="color: var(--color-accent); margin-right: 0.5rem;"></i> {{
+              site.address }}</li>
+            <li><i class="fa-solid fa-certificate" style="color: var(--color-gold); margin-right: 0.5rem;"></i> Davidson
+              Electrical Services</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Quinte Smart Homes Inc. All Rights Reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="/privacy-policy/" style="color: #a3a3a3;">Privacy Policy</a>
+          <a href="/terms/" style="color: #a3a3a3;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google Preferred Badge Component -->
+  <div class="google-badge-fixed-wrapper">
+    {% include "components/preferred-badge.njk" %}
+  </div>
+
+  <!-- Scripts: Mobile Hamburger, Word Writing Reveal & Stat Count-Up -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Toggle with Smooth Hamburger-to-X Transition
+      const toggleBtn = document.getElementById('mobileToggle');
+      const mainNav = document.getElementById('mainNav');
+      if (toggleBtn && mainNav) {
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isActive = mainNav.classList.contains('mobile-active');
+          mainNav.classList.toggle('mobile-active');
+          toggleBtn.classList.toggle('active');
+          const icon = toggleBtn.querySelector('i');
+          if (icon) {
+            if (!isActive) {
+              icon.classList.remove('fa-bars');
+              icon.classList.add('fa-xmark');
+            } else {
+              icon.classList.remove('fa-xmark');
+              icon.classList.add('fa-bars');
+            }
+          }
+        });
+
+        // Close mobile dropdown when clicking outside or clicking any nav link
+        document.addEventListener('click', (e) => {
+          if (mainNav.classList.contains('mobile-active') && !mainNav.contains(e.target) && !toggleBtn.contains(e.target)) {
+            mainNav.classList.remove('mobile-active');
+            toggleBtn.classList.remove('active');
             const icon = toggleBtn.querySelector('i');
             if (icon) {
-              icon.classList.toggle('fa-bars');
-              icon.classList.toggle('fa-xmark');
+              icon.classList.remove('fa-xmark');
+              icon.classList.add('fa-bars');
+            }
+          }
+        });
+
+        mainNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mainNav.classList.remove('mobile-active');
+            toggleBtn.classList.remove('active');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-xmark');
+              icon.classList.add('fa-bars');
+            }
+          });
+        });
+      }
+
+      // Mobile Dropdown Accordion Toggle
+      const dropdownParents = document.querySelectorAll('.main-nav .has-dropdown');
+      dropdownParents.forEach(parent => {
+        const link = parent.querySelector('.nav-link');
+        if (link) {
+          link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 900) {
+              e.preventDefault();
+              parent.classList.toggle('dropdown-open');
+            }
+          });
+        }
+      });
+
+      // Scroll-Driven Word Writing Reveal Effect (HTML Preserving)
+      const revealContainers = document.querySelectorAll('.scroll-text-reveal');
+      revealContainers.forEach(container => {
+        function processNode(node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent;
+            if (!text.trim()) return node;
+            const words = text.split(/(\s+)/);
+            const fragment = document.createDocumentFragment();
+            words.forEach(w => {
+              if (/^\s+$/.test(w)) {
+                fragment.appendChild(document.createTextNode(w));
+              } else if (w) {
+                const span = document.createElement('span');
+                span.className = 'scroll-word';
+                span.textContent = w;
+                fragment.appendChild(span);
+              }
+            });
+            return fragment;
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            Array.from(node.childNodes).forEach(child => {
+              const replacement = processNode(child);
+              if (replacement && replacement !== child) {
+                node.replaceChild(replacement, child);
+              }
+            });
+            return node;
+          }
+        }
+
+        processNode(container);
+        const wordSpans = container.querySelectorAll('.scroll-word');
+
+        function updateWordsOnScroll() {
+          const rect = container.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+
+          const startThreshold = windowHeight * 0.85;
+          const endThreshold = windowHeight * 0.35;
+
+          let progress = (startThreshold - rect.top) / (startThreshold - endThreshold);
+          progress = Math.max(0, Math.min(1, progress));
+
+          const activeIndex = Math.floor(progress * (wordSpans.length + 1));
+
+          wordSpans.forEach((span, index) => {
+            if (index < activeIndex) {
+              span.classList.add('active');
+            } else {
+              span.classList.remove('active');
             }
           });
         }
 
-        // Mobile Dropdown Accordion Toggle
-        const dropdownParents = document.querySelectorAll('.main-nav .has-dropdown');
-        dropdownParents.forEach(parent => {
-          const link = parent.querySelector('.nav-link');
-          if (link) {
-            link.addEventListener('click', (e) => {
-              if (window.innerWidth <= 900) {
-                e.preventDefault();
-                parent.classList.toggle('dropdown-open');
-              }
-            });
-          }
-        });
+        window.addEventListener('scroll', updateWordsOnScroll, { passive: true });
+        updateWordsOnScroll();
+      });
 
-        // Scroll-Driven Word Writing Reveal Effect (HTML Preserving)
-        const revealContainers = document.querySelectorAll('.scroll-text-reveal');
-        revealContainers.forEach(container => {
-          function processNode(node) {
-            if (node.nodeType === Node.TEXT_NODE) {
-              const text = node.textContent;
-              if (!text.trim()) return node;
-              const words = text.split(/(\s+)/);
-              const fragment = document.createDocumentFragment();
-              words.forEach(w => {
-                if (/^\s+$/.test(w)) {
-                  fragment.appendChild(document.createTextNode(w));
-                } else if (w) {
-                  const span = document.createElement('span');
-                  span.className = 'scroll-word';
-                  span.textContent = w;
-                  fragment.appendChild(span);
+      // Stat Number Count-Up Animation
+      const countElements = document.querySelectorAll('.stat-count');
+      if (countElements.length > 0) {
+        const countObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = parseFloat(el.getAttribute('data-target') || '0');
+              const prefix = el.getAttribute('data-prefix') || '';
+              const suffix = el.getAttribute('data-suffix') || '';
+              const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+              const duration = 2000;
+              const startTime = performance.now();
+
+              function updateCount(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                const currentVal = easeOutProgress * target;
+
+                if (decimals > 0) {
+                  el.textContent = `${prefix}${currentVal.toFixed(decimals)}${suffix}`;
+                } else {
+                  el.textContent = `${prefix}${Math.floor(currentVal).toLocaleString()}${suffix}`;
                 }
-              });
-              return fragment;
-            } else if (node.nodeType === Node.ELEMENT_NODE) {
-              Array.from(node.childNodes).forEach(child => {
-                const replacement = processNode(child);
-                if (replacement && replacement !== child) {
-                  node.replaceChild(replacement, child);
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateCount);
+                } else {
+                  if (decimals > 0) {
+                    el.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
+                  } else {
+                    el.textContent = `${prefix}${target.toLocaleString()}${suffix}`;
+                  }
                 }
-              });
-              return node;
+              }
+
+              requestAnimationFrame(updateCount);
+              obs.unobserve(el);
             }
-          }
+          });
+        }, { threshold: 0.2 });
 
-          processNode(container);
-          const wordSpans = container.querySelectorAll('.scroll-word');
+        countElements.forEach(el => countObserver.observe(el));
+      }
 
-          function updateWordsOnScroll() {
-            const rect = container.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            const startThreshold = windowHeight * 0.85;
-            const endThreshold = windowHeight * 0.35;
-
-            let progress = (startThreshold - rect.top) / (startThreshold - endThreshold);
-            progress = Math.max(0, Math.min(1, progress));
-
-            const activeIndex = Math.floor(progress * (wordSpans.length + 1));
-
-            wordSpans.forEach((span, index) => {
-              if (index < activeIndex) {
-                span.classList.add('active');
-              } else {
-                span.classList.remove('active');
-              }
-            });
-          }
-
-          window.addEventListener('scroll', updateWordsOnScroll, { passive: true });
-          updateWordsOnScroll();
-        });
-
-        // Stat Number Count-Up Animation
-        const countElements = document.querySelectorAll('.stat-count');
-        if (countElements.length > 0) {
-          const countObserver = new IntersectionObserver((entries, obs) => {
+      // Title Color Wipe Reveal Observer (Faded to Full Color Left-to-Right)
+      const colorWipeElements = document.querySelectorAll('.title-color-wipe');
+      if (colorWipeElements.length > 0) {
+        if ('IntersectionObserver' in window) {
+          const colorWipeObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseFloat(el.getAttribute('data-target') || '0');
-                const prefix = el.getAttribute('data-prefix') || '';
-                const suffix = el.getAttribute('data-suffix') || '';
-                const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-                const duration = 2000;
-                const startTime = performance.now();
-
-                function updateCount(now) {
-                  const elapsed = now - startTime;
-                  const progress = Math.min(elapsed / duration, 1);
-                  const easeOutProgress = 1 - Math.pow(1 - progress, 3);
-                  const currentVal = easeOutProgress * target;
-
-                  if (decimals > 0) {
-                    el.textContent = `${prefix}${currentVal.toFixed(decimals)}${suffix}`;
-                  } else {
-                    el.textContent = `${prefix}${Math.floor(currentVal).toLocaleString()}${suffix}`;
-                  }
-
-                  if (progress < 1) {
-                    requestAnimationFrame(updateCount);
-                  } else {
-                    if (decimals > 0) {
-                      el.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
-                    } else {
-                      el.textContent = `${prefix}${target.toLocaleString()}${suffix}`;
-                    }
-                  }
-                }
-
-                requestAnimationFrame(updateCount);
-                obs.unobserve(el);
+                entry.target.classList.add('revealed');
+                obs.unobserve(entry.target);
               }
             });
-          }, { threshold: 0.2 });
+          }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-          countElements.forEach(el => countObserver.observe(el));
+          colorWipeElements.forEach(el => colorWipeObserver.observe(el));
+        } else {
+          colorWipeElements.forEach(el => el.classList.add('revealed'));
         }
-      });
-    </script>
-  </body>
+      }
+
+      // Rewired List Items Bottom-Up Staggered Reveal Observer
+      const rewiredItems = document.querySelectorAll('.rewired-list-item');
+      if (rewiredItems.length > 0) {
+        if ('IntersectionObserver' in window) {
+          const rewiredObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+          rewiredItems.forEach(item => rewiredObserver.observe(item));
+        } else {
+          rewiredItems.forEach(item => item.classList.add('revealed'));
+        }
+      }
+    });
+  </script>
+</body>
+
 </html>
