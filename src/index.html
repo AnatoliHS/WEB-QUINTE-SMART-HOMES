@@ -254,6 +254,86 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
   </div>
 </section>
 
+<!-- Frequently Asked Questions Section -->
+<section class="section" id="faq" style="background: var(--bg-canvas); border-top: 1px solid var(--border-subtle); padding: 6rem 0;">
+  <div class="container">
+    <div class="faq-container-narrow">
+      <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="eyebrow-label" style="text-align: center;">Got Questions?</span>
+        <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Frequently Asked <span class="title-accent-grey">Questions</span></h2>
+        <p class="section-description" style="font-size: 1.15rem; color: var(--text-secondary);">Everything you need to know about planning, pre-wiring, and automating your home or commercial space.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-question" aria-expanded="true">
+            <span class="faq-question-text">
+              <span class="faq-num">01</span>
+              Why is installation by a licensed electrician so important?
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Smart lighting controls, line-voltage keypads, motorized shade power distribution, and panel breakers involve high-voltage electricity. Our master electrician credentials (partnered with Davidson Electrical Services) ensure 100% ECRA/ESA compliance, fire safety, and code compliance on every installation.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-num">02</span>
+              Can smart technology be installed in an existing home, or only new builds?
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            We offer both retrofit and new construction options! For existing homes, wireless systems like Lutron RadioRA3 and Control4 Wi-Fi audio allow full whole-home automation without tearing open drywall.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-num">03</span>
+              Do I need a strong internet connection for smart home automation?
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Yes, a solid network is vital. We install enterprise Wi-Fi 6 mesh systems (Araknis / Pakedge) and structured Cat6a cabling. For rural homes in Belleville or PEC, we also install Starlink satellite systems.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-num">04</span>
+              Are there monthly subscription fees?
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            No! Unlike many off-the-shelf security companies, our camera systems (Hikvision ColorVu) record locally to encrypted NVR hard drives without forcing you into monthly cloud subscription plans.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-num">05</span>
+              What happens if my Wi-Fi goes down?
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Core lighting, keypads, and local automation controllers (like Control4 and Lutron) operate on dedicated local mesh protocols. Your light switches and door locks will continue to work normally even if internet connection drops out.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Consultation Contact Grid -->
 <section class="section" style="border-top: 1px solid var(--border-subtle);">
@@ -351,6 +431,17 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
 
     if (prevBtn) prevBtn.addEventListener('click', () => activateSlide(currentIndex - 1));
     if (nextBtn) nextBtn.addEventListener('click', () => activateSlide(currentIndex + 1));
+
+    // FAQ Accordion Toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          item.classList.toggle('open');
+        });
+      }
+    });
 
     // Estimator Calculation
     const chips = document.querySelectorAll('#moduleChips .chip-btn');

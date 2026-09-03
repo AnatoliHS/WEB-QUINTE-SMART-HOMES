@@ -50,8 +50,28 @@
               </div>
             </div>
 
-            <a href="/industry-professionals/" class="nav-link">INDUSTRY PROFESSIONALS</a>
-            <a href="/about/" class="nav-link">ABOUT</a>
+            <div class="has-dropdown">
+              <a href="/industry-professionals/" class="nav-link {% if page.url == '/industry-professionals/' %}active{% endif %}">
+                INDUSTRY PROFESSIONALS <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
+              </a>
+              <div class="dropdown-menu">
+                <a href="/industry-professionals/" class="dropdown-item">Builders &amp; Contractors Program</a>
+                <a href="/industry-professionals/" class="dropdown-item">Interior Designers &amp; Architects</a>
+              </div>
+            </div>
+
+            <div class="has-dropdown">
+              <a href="/about/" class="nav-link {% if page.url and page.url.startsWith('/about/') %}active{% endif %}">
+                ABOUT <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
+              </a>
+              <div class="dropdown-menu">
+                <a href="/portfolio/" class="dropdown-item">Portfolio Showcase</a>
+                <a href="/about/" class="dropdown-item">About the Company</a>
+                <a href="/about/smart-home-automation/" class="dropdown-item">About Smart Home Automation</a>
+                <a href="/blog/" class="dropdown-item">News &amp; Insights</a>
+                <a href="/contact/" class="dropdown-item">Contact &amp; Consultations</a>
+              </div>
+            </div>
           {% else %}
             <!-- Standard Consumer Portal Navigation Menu -->
             {% for item in navigation.main %}
@@ -123,10 +143,11 @@
             <h4>Sitemap</h4>
             <ul class="footer-links">
               <li><a href="/">Home</a></li>
+              <li><a href="/portfolio/">Portfolio</a></li>
               <li><a href="/about/">About Firm</a></li>
               <li><a href="/services/">Services Overview</a></li>
               <li><a href="/industry-professionals/">Contractors & Designers</a></li>
-              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/#faq">FAQ</a></li>
               <li><a href="/blog/">News & Insights</a></li>
               <li><a href="/contact/">Contact & Consultation</a></li>
             </ul>

@@ -1735,28 +1735,39 @@ html, body {
 
 @media (max-width: 850px) {
   .team-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    display: flex !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    scrollbar-width: none !important;
   }
+
+  .team-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
   .team-card {
+    flex: 0 0 78vw !important;
+    max-width: 320px !important;
     height: 440px !important;
+    scroll-snap-align: center !important;
   }
+
   /* Position name and title at the bottom of the image on mobile */
   .team-card-header {
     top: auto !important;
     bottom: 0 !important;
     padding: 3rem 1.25rem 1.25rem 1.25rem !important;
-    background: linear-gradient(to top, rgba(248, 247, 244, 0.96) 0%, rgba(248, 247, 244, 0.85) 65%, transparent 100%) !important;
+    background: linear-gradient(to top, rgba(234, 234, 234, 0.96) 0%, rgba(234, 234, 234, 0.85) 65%, transparent 100%) !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .team-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .team-card {
-    height: 420px !important;
   }
 }
 
@@ -1883,5 +1894,128 @@ html, body {
     right: 12px !important;
     transform: scale(0.82);
     transform-origin: bottom right;
+  }
+}
+
+/* ==========================================================================
+   Modern Minimalist FAQ Component (No Boxes, Clean Architectural Dividers)
+   ========================================================================== */
+.faq-container-narrow {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1.5px solid var(--text-primary);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.85rem 0;
+  transition: border-color var(--transition-fast);
+}
+
+.faq-item:hover {
+  border-bottom-color: var(--text-primary);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.faq-question-text {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.faq-num {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.faq-question:hover {
+  color: var(--color-accent);
+}
+
+.faq-question i {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.faq-question:hover i {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.faq-item.open .faq-question {
+  color: var(--color-accent);
+}
+
+.faq-item.open .faq-question i {
+  transform: rotate(180deg);
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, margin-top 0.3s ease;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #444444;
+  line-height: 1.75;
+  padding-left: 2.75rem;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .faq-item {
+    padding: 1.4rem 0;
+  }
+  .faq-answer {
+    padding-left: 0;
+  }
+  .faq-question-text {
+    gap: 0.75rem;
   }
 }
