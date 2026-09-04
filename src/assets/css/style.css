@@ -16,10 +16,11 @@
   --text-muted: #737373;
   --text-inverse: #f8f7f4;
 
-  /* Red Accent Colors */
-  --color-accent: #e31b23;
-  --color-accent-hover: #b91c1c;
-  --color-accent-light: rgba(227, 27, 35, 0.08);
+  /* Scarlet Red Accent Gradient Colors (#FF2400 -> #b31217) */
+  --color-accent: #FF2400;
+  --color-accent-hover: #b31217;
+  --color-accent-light: rgba(255, 36, 0, 0.08);
+  --color-accent-gradient: linear-gradient(135deg, #FF2400 0%, #b31217 100%);
 
   --border-subtle: rgba(24, 24, 24, 0.12);
   --border-strong: rgba(24, 24, 24, 0.25);
@@ -196,9 +197,20 @@ ul {
   transition: var(--transition-fast);
 }
 
-.nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+}
+
+@media (min-width: 901px) {
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
 .has-dropdown {
@@ -219,12 +231,6 @@ ul {
   transform: translateY(8px);
   transition: var(--transition-fast);
   z-index: 100;
-}
-
-.has-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
 }
 
 .dropdown-item {
@@ -279,15 +285,19 @@ ul {
 }
 
 .btn-primary {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, #FF2400 0%, #b31217 100%);
+  background-size: 160% 160%;
+  border: none;
   color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 36, 0, 0.35);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-hover);
+  background-position: 100% 0;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(227, 27, 35, 0.25);
+  box-shadow: 0 8px 22px rgba(179, 18, 23, 0.45);
 }
 
 .btn-secondary {
@@ -333,7 +343,10 @@ ul {
 .hero-tresmares,
 .hero-tresmares-business,
 .hero-tresmares-about,
-.hero-tresmares-automation {
+.hero-tresmares-automation,
+.hero-tresmares-contact,
+.hero-tresmares-portfolio,
+.hero-tresmares-blog {
   position: relative;
   min-height: calc(100vh - var(--header-height));
   height: calc(100vh - var(--header-height));
@@ -364,11 +377,26 @@ ul {
   background-image: url('/assets/images/smart_home_automation_hero.jpg');
 }
 
+.hero-tresmares-contact {
+  background-image: url('/assets/images/contact_hero_white_grey.jpg');
+}
+
+.hero-tresmares-portfolio {
+  background-image: url('/assets/images/portfolio_hero_white_grey.jpg');
+}
+
+.hero-tresmares-blog {
+  background-image: url('/assets/images/blog_hero_white_grey.jpg');
+}
+
 /* White Veil Overlay for Home, Business, About & Automation Hero Sections */
 .hero-tresmares::before,
 .hero-tresmares-business::before,
 .hero-tresmares-about::before,
-.hero-tresmares-automation::before {
+.hero-tresmares-automation::before,
+.hero-tresmares-contact::before,
+.hero-tresmares-portfolio::before,
+.hero-tresmares-blog::before {
   content: '';
   position: absolute;
   top: 0;
@@ -382,18 +410,66 @@ ul {
   z-index: 1;
 }
 
-/* Index Hero Specific Overlay: Lighter gradient to make hero image significantly more visible */
+/* Index, Contact & Portfolio Hero Specific Overlay: Lighter gradient to make hero image significantly more visible */
 .hero-tresmares::before {
   background: linear-gradient(to right, rgba(248, 247, 244, 0.72) 0%, rgba(248, 247, 244, 0.42) 60%, rgba(248, 247, 244, 0.30) 100%);
+}
+
+/* Blinking Camera Status LED Indicator */
+.hero-camera-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #10b981;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px #10b981, 0 0 8px rgba(16, 185, 129, 0.8);
+  animation: cameraBlink 2s infinite steps(1, start);
+}
+
+@keyframes cameraBlink {
+
+  0%,
+  49.9% {
+    opacity: 1;
+    box-shadow: 0 0 4px #10b981, 0 0 8px rgba(16, 185, 129, 0.85);
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+    box-shadow: none;
+  }
+}
+
+.hero-tresmares-contact::before,
+.hero-tresmares-portfolio::before,
+.hero-tresmares-blog::before {
+  background: linear-gradient(to right, rgba(248, 247, 244, 0.85) 0%, rgba(248, 247, 244, 0.55) 60%, rgba(248, 247, 244, 0.35) 100%);
+}
+
+.hero-tresmares-about::before {
+  background: linear-gradient(to right, rgba(248, 247, 244, 0.93) 0%, rgba(248, 247, 244, 0.82) 65%, rgba(248, 247, 244, 0.68) 100%);
 }
 
 .hero-tresmares .container,
 .hero-tresmares-business .container,
 .hero-tresmares-about .container,
-.hero-tresmares-automation .container {
+.hero-tresmares-automation .container,
+.hero-tresmares-contact .container,
+.hero-tresmares-portfolio .container,
+.hero-tresmares-blog .container {
   position: relative;
   z-index: 2;
   width: 100%;
+}
+
+.hero-tresmares-contact .container,
+.hero-tresmares-portfolio .container,
+.hero-tresmares-blog .container {
+  margin-top: -3.5rem;
 }
 
 .hero-tresmares-grid {
@@ -413,7 +489,10 @@ ul {
 
 .hero-display-title em {
   font-style: italic;
-  color: var(--color-accent);
+  background: linear-gradient(90deg, #FF2400 0%, #b31217 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #FF2400;
 }
 
 /* Hero Title Line-by-Line Bottom-Up Reveal Animation */
@@ -461,7 +540,8 @@ ul {
 }
 
 .hero-text-block {
-  border-left: 2px solid var(--color-accent);
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(to bottom, #FF2400, #b31217) 1;
   padding-left: 2rem;
   position: relative;
   overflow: hidden;
@@ -561,7 +641,7 @@ ul {
 }
 
 .title-color-wipe-red {
-  background: linear-gradient(90deg, var(--color-accent) 50%, rgba(227, 27, 35, 0.28) 50%);
+  background: linear-gradient(90deg, #FF2400 0%, #b31217 50%, rgba(255, 36, 0, 0.28) 50%, rgba(179, 18, 23, 0.28) 100%);
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
@@ -857,7 +937,7 @@ ul {
 }
 
 .btn-pill-accent {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, #FF2400 0%, #b31217 100%);
   color: #ffffff !important;
   font-family: var(--font-sans);
   font-weight: 700;
@@ -868,12 +948,13 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(227, 27, 35, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 36, 0, 0.3);
 }
 
 .btn-pill-accent:hover {
-  background: var(--color-accent-hover);
+  filter: brightness(1.1);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 36, 0, 0.4);
 }
 
 /* Slider Controls */
@@ -1047,9 +1128,20 @@ ul {
 @media (max-width: 900px) {
 
   .hero-tresmares,
-  .hero-tresmares-business {
+  .hero-tresmares-business,
+  .hero-tresmares-about,
+  .hero-tresmares-automation,
+  .hero-tresmares-contact,
+  .hero-tresmares-portfolio,
+  .hero-tresmares-blog {
     height: auto;
     min-height: 80vh;
+  }
+
+  .hero-tresmares-contact .container,
+  .hero-tresmares-portfolio .container,
+  .hero-tresmares-blog .container {
+    margin-top: 0;
   }
 
   .desktop-only {
@@ -1114,26 +1206,49 @@ ul {
   }
 
   /* Mobile Nav Links Staggered Left-to-Right Reveal */
-  .main-nav > * {
+  .main-nav>* {
     opacity: 0;
     transform: translateX(-35px);
     transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
 
-  .main-nav.mobile-active > * {
+  .main-nav.mobile-active>* {
     opacity: 1 !important;
     transform: translateX(0) !important;
   }
 
-  .main-nav.mobile-active > *:nth-child(1) { transition-delay: 0.08s; }
-  .main-nav.mobile-active > *:nth-child(2) { transition-delay: 0.15s; }
-  .main-nav.mobile-active > *:nth-child(3) { transition-delay: 0.22s; }
-  .main-nav.mobile-active > *:nth-child(4) { transition-delay: 0.29s; }
-  .main-nav.mobile-active > *:nth-child(5) { transition-delay: 0.36s; }
-  .main-nav.mobile-active > *:nth-child(6) { transition-delay: 0.43s; }
-  .main-nav.mobile-active > *:nth-child(7) { transition-delay: 0.50s; }
-  .main-nav.mobile-active > *:nth-child(8) { transition-delay: 0.57s; }
+  .main-nav.mobile-active>*:nth-child(1) {
+    transition-delay: 0.08s;
+  }
+
+  .main-nav.mobile-active>*:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .main-nav.mobile-active>*:nth-child(3) {
+    transition-delay: 0.22s;
+  }
+
+  .main-nav.mobile-active>*:nth-child(4) {
+    transition-delay: 0.29s;
+  }
+
+  .main-nav.mobile-active>*:nth-child(5) {
+    transition-delay: 0.36s;
+  }
+
+  .main-nav.mobile-active>*:nth-child(6) {
+    transition-delay: 0.43s;
+  }
+
+  .main-nav.mobile-active>*:nth-child(7) {
+    transition-delay: 0.50s;
+  }
+
+  .main-nav.mobile-active>*:nth-child(8) {
+    transition-delay: 0.57s;
+  }
 
   .main-nav .has-dropdown {
     width: 100%;
@@ -1160,6 +1275,26 @@ ul {
     visibility: visible !important;
     transform: translateY(0) !important;
     padding: 0.75rem 0 0.5rem 1rem !important;
+  }
+
+  .main-nav .has-dropdown>.nav-link {
+    transition: color 0.3s ease;
+  }
+
+  .main-nav .has-dropdown.dropdown-open>.nav-link {
+    color: var(--color-accent) !important;
+  }
+
+  .main-nav .has-dropdown.dropdown-open>.nav-link::after {
+    width: 100% !important;
+  }
+
+  .main-nav .has-dropdown:not(.dropdown-open)>.nav-link:not(.active) {
+    color: var(--text-primary) !important;
+  }
+
+  .main-nav .has-dropdown:not(.dropdown-open)>.nav-link:not(.active)::after {
+    width: 0% !important;
   }
 
   .main-nav .has-dropdown .fa-chevron-down {
@@ -1403,12 +1538,29 @@ ul {
   transform: translateY(0) !important;
 }
 
-.rewired-list-item:nth-child(1) { transition-delay: 0.1s; }
-.rewired-list-item:nth-child(2) { transition-delay: 0.25s; }
-.rewired-list-item:nth-child(3) { transition-delay: 0.4s; }
-.rewired-list-item:nth-child(4) { transition-delay: 0.55s; }
-.rewired-list-item:nth-child(5) { transition-delay: 0.7s; }
-.rewired-list-item:nth-child(6) { transition-delay: 0.85s; }
+.rewired-list-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.rewired-list-item:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.rewired-list-item:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.rewired-list-item:nth-child(4) {
+  transition-delay: 0.55s;
+}
+
+.rewired-list-item:nth-child(5) {
+  transition-delay: 0.7s;
+}
+
+.rewired-list-item:nth-child(6) {
+  transition-delay: 0.85s;
+}
 
 .rewired-item-num {
   font-size: 1rem;
@@ -2205,4 +2357,142 @@ body {
   .faq-question-text {
     gap: 0.75rem;
   }
+}
+
+/* ==========================================================================
+   BUSINESS PORTAL DYNAMIC PURPLE-TO-PINK GRADIENT DESIGN SYSTEM
+   Gradient: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%)
+   ========================================================================== */
+
+body.business-portal {
+  --color-accent: #e11a7f;
+  --color-accent-gradient: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%);
+}
+
+/* 1. Title Color Wipe Animation in Business Portal (Faded to Full Purple-Pink Gradient) */
+body.business-portal .title-color-wipe-red {
+  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 50%, rgba(74, 0, 224, 0.28) 50%, rgba(225, 26, 127, 0.28) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: background-position;
+  display: inline;
+}
+
+body.business-portal .title-color-wipe.revealed .title-color-wipe-red {
+  background-position: 0 0 !important;
+}
+
+/* 2. Text Accents & Spans inside Headings & Subtitles */
+body.business-portal span[style*="color: var(--color-accent)"],
+body.business-portal span[style*="color: #e31b23"],
+body.business-portal .hero-title-line em,
+body.business-portal .hero-display-title em {
+  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #e11a7f;
+  font-style: normal;
+}
+
+/* 3. Primary Buttons & Action Buttons in Business Portal */
+body.business-portal .btn-primary,
+body.business-portal .btn-pill-accent {
+  background: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%) !important;
+  background-size: 160% 160% !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(74, 0, 224, 0.35) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.business-portal .btn-primary:hover,
+body.business-portal .btn-pill-accent:hover {
+  background-position: 100% 0 !important;
+  box-shadow: 0 8px 25px rgba(225, 26, 127, 0.45) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 4. Eyebrow Labels, Badges & Highlights */
+body.business-portal .eyebrow-label {
+  color: #e11a7f !important;
+}
+
+/* 5. Showcase Tabs (Colored Text & Underline, No Box) */
+body.business-portal .tab-btn {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.85rem 0 !important;
+  border-radius: 0 !important;
+}
+
+body.business-portal .tab-btn:hover,
+body.business-portal .tab-btn.active,
+body.business-portal #bizShowcaseTabs .tab-btn.active {
+  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #e11a7f !important;
+  border-color: transparent !important;
+}
+
+body.business-portal .tab-btn::after {
+  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 100%) !important;
+  height: 2px !important;
+}
+
+/* 6. Icons & Checklist Bullets */
+body.business-portal .fa-circle-check,
+body.business-portal .feature-checklist i,
+body.business-portal .fa-video,
+body.business-portal .fa-bell,
+body.business-portal .fa-user-shield,
+body.business-portal .fa-id-card,
+body.business-portal .fa-store,
+body.business-portal .fa-spa,
+body.business-portal .fa-campground,
+body.business-portal .fa-shield-halved,
+body.business-portal .fa-hard-hat,
+body.business-portal .fa-briefcase,
+body.business-portal .fa-network-wired,
+body.business-portal .fa-wifi,
+body.business-portal i[style*="color: var(--color-accent)"] {
+  color: #e11a7f !important;
+}
+
+/* 7. Vertical Red Accent Border Lines */
+body.business-portal .hero-text-block,
+body.business-portal p[style*="border-left"] {
+  border-left-width: 4px !important;
+  border-left-style: solid !important;
+  border-left-color: transparent !important;
+  border-image: linear-gradient(to bottom, #4a00e0, #e11a7f) 1 !important;
+}
+
+/* 8. Link Arrows & Interactive Phone/Email Links */
+body.business-portal .link-arrow,
+body.business-portal a[style*="color: var(--color-accent)"] {
+  color: #e11a7f !important;
+  transition: color 0.3s ease;
+}
+
+body.business-portal .link-arrow:hover,
+body.business-portal a[style*="color: var(--color-accent)"]:hover {
+  color: #4a00e0 !important;
+}
+
+/* 9. Form Inputs Focus Rings */
+body.business-portal .form-input:focus,
+body.business-portal .form-select:focus {
+  border-color: #e11a7f !important;
+  box-shadow: 0 0 0 3px rgba(225, 26, 127, 0.18) !important;
+}
+
+/* 10. Nav Mobile Active Icons & Buttons in Business Portal */
+body.business-portal .mobile-toggle.active i,
+body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
+  color: #e11a7f !important;
 }

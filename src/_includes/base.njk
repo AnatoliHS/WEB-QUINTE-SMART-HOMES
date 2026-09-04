@@ -24,7 +24,7 @@
     sizes="32x32" />
 </head>
 
-<body>
+<body class="{% if isBusinessPage or page.url == '/business/' %}business-portal{% endif %}">
   <!-- Main Navigation Header -->
   <header class="site-header" id="top">
     <div class="container header-inner">
@@ -219,63 +219,84 @@
       // Mobile Toggle with Smooth Hamburger-to-X Transition
       const toggleBtn = document.getElementById('mobileToggle');
       const mainNav = document.getElementById('mainNav');
+
       if (toggleBtn && mainNav) {
+        const closeMobileNav = () => {
+          mainNav.classList.remove('mobile-active');
+          toggleBtn.classList.remove('active');
+          mainNav.querySelectorAll('.has-dropdown.dropdown-open').forEach(el => {
+            el.classList.remove('dropdown-open');
+            const l = el.querySelector('.nav-link');
+            if (l) l.blur();
+          });
+          const icon = toggleBtn.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        };
+
         toggleBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           const isActive = mainNav.classList.contains('mobile-active');
-          mainNav.classList.toggle('mobile-active');
-          toggleBtn.classList.toggle('active');
-          const icon = toggleBtn.querySelector('i');
-          if (icon) {
-            if (!isActive) {
+          if (isActive) {
+            closeMobileNav();
+          } else {
+            mainNav.classList.add('mobile-active');
+            toggleBtn.classList.add('active');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
               icon.classList.remove('fa-bars');
               icon.classList.add('fa-xmark');
-            } else {
-              icon.classList.remove('fa-xmark');
-              icon.classList.add('fa-bars');
             }
           }
         });
 
-        // Close mobile dropdown when clicking outside or clicking any nav link
+        // Close mobile nav when clicking outside
         document.addEventListener('click', (e) => {
           if (mainNav.classList.contains('mobile-active') && !mainNav.contains(e.target) && !toggleBtn.contains(e.target)) {
-            mainNav.classList.remove('mobile-active');
-            toggleBtn.classList.remove('active');
-            const icon = toggleBtn.querySelector('i');
-            if (icon) {
-              icon.classList.remove('fa-xmark');
-              icon.classList.add('fa-bars');
-            }
+            closeMobileNav();
           }
         });
 
+        // Handle link clicks inside mobile navigation
         mainNav.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mainNav.classList.remove('mobile-active');
-            toggleBtn.classList.remove('active');
-            const icon = toggleBtn.querySelector('i');
-            if (icon) {
-              icon.classList.remove('fa-xmark');
-              icon.classList.add('fa-bars');
+          let handledByTouch = false;
+
+          const handleToggle = (e) => {
+            const parentDropdown = link.closest('.has-dropdown');
+            const isParentHeaderLink = parentDropdown && parentDropdown.querySelector('.nav-link') === link;
+
+            if (window.innerWidth <= 900 && isParentHeaderLink) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              const toggleState = () => {
+                const isOpen = parentDropdown.classList.toggle('dropdown-open');
+                if (!isOpen) {
+                  link.blur();
+                }
+              };
+
+              if (e.type === 'pointerdown' || e.type === 'touchstart') {
+                handledByTouch = true;
+                toggleState();
+              } else if (e.type === 'click') {
+                if (handledByTouch) {
+                  handledByTouch = false;
+                  return;
+                }
+                toggleState();
+              }
+            } else if (e.type === 'click') {
+              closeMobileNav();
             }
-          });
+          };
+
+          link.addEventListener('pointerdown', handleToggle, { passive: false });
+          link.addEventListener('click', handleToggle);
         });
       }
-
-      // Mobile Dropdown Accordion Toggle
-      const dropdownParents = document.querySelectorAll('.main-nav .has-dropdown');
-      dropdownParents.forEach(parent => {
-        const link = parent.querySelector('.nav-link');
-        if (link) {
-          link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 900) {
-              e.preventDefault();
-              parent.classList.toggle('dropdown-open');
-            }
-          });
-        }
-      });
 
       // Scroll-Driven Word Writing Reveal Effect (HTML Preserving)
       const revealContainers = document.querySelectorAll('.scroll-text-reveal');

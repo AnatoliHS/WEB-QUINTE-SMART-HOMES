@@ -6,6 +6,7 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
 
 <!-- Tresmares Fullwidth Background Hero Section (component--herofulltext) -->
 <section class="hero-tresmares">
+  <div class="hero-camera-dot" id="heroCameraDot" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-tresmares-grid">
       <div>
@@ -21,7 +22,7 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
           Tailored whole-home automation and commercial technology systems designed and installed by certified master electricians across Eastern Ontario.
         </p>
         <div style="display: flex; gap: 1rem; align-items: center;">
-          <a href="/services/" class="link-arrow">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#home-services" class="link-arrow">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -460,5 +461,41 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
         });
       });
     }
+
+    // Dynamic Pulsating Camera LED Position Sync
+    function positionCameraDot() {
+      const hero = document.querySelector('.hero-tresmares');
+      const dot = document.getElementById('heroCameraDot');
+      if (!hero || !dot) return;
+
+      const w = hero.offsetWidth;
+      const h = hero.offsetHeight;
+      const imgAspect = 1376 / 768;
+      const heroAspect = w / h;
+
+      let imgW, imgH;
+      if (heroAspect > imgAspect) {
+        imgW = w;
+        imgH = w / imgAspect;
+      } else {
+        imgH = h;
+        imgW = h * imgAspect;
+      }
+
+      const imgLeft = (w - imgW) / 2;
+      const imgTop = (h - imgH) / 2;
+
+      // Status indicator dot position on camera in 1376x768 image (right sensor dot: x=676, y=340)
+      const dotX = imgLeft + (676 / 1376) * imgW;
+      const dotY = imgTop + (340 / 768) * imgH;
+
+      dot.style.left = dotX + 'px';
+      dot.style.top = dotY + 'px';
+    }
+
+    window.addEventListener('resize', positionCameraDot);
+    positionCameraDot();
+    setTimeout(positionCameraDot, 100);
+    setTimeout(positionCameraDot, 500);
   });
 </script>
