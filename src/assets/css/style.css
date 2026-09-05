@@ -157,12 +157,24 @@ ul {
   flex-shrink: 0;
 }
 
+.brand-logo picture {
+  display: flex;
+  align-items: center;
+}
+
 .nav-logo-img {
   height: 56px;
   width: auto;
   max-width: 220px;
   object-fit: contain;
   display: block;
+}
+
+@media (min-width: 769px) {
+  .nav-logo-img {
+    transform: scale(1.18);
+    transform-origin: left center;
+  }
 }
 
 .main-nav {
@@ -1842,6 +1854,11 @@ ul {
 }
 
 @media (max-width: 768px) {
+  body.business-portal .brand-logo picture img {
+    transform: scale(1.2);
+    transform-origin: left center;
+  }
+
   .staggered-cards-container {
     grid-template-columns: 1fr 1fr !important;
     gap: 0 !important;
@@ -1942,6 +1959,26 @@ ul {
   .hero-text-block {
     margin-top: 1rem !important;
     padding-left: 1.5rem !important;
+  }
+
+  /* Business Portal Specific Mobile Hero Spacing */
+  .hero-tresmares-business .hero-tresmares-grid {
+    gap: 1.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .hero-tresmares-business .hero-display-title {
+    font-size: clamp(3rem, 10vw, 4.5rem) !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-tresmares-business .hero-text-block {
+    margin-top: 0 !important;
+    padding-left: 1.25rem !important;
+  }
+
+  .hero-tresmares-business .hero-text-block .hero-subtitle {
+    margin-bottom: 1.25rem !important;
   }
 
   h1 {
@@ -2708,6 +2745,79 @@ body {
   right: 24px;
   z-index: 999;
   transition: all 0.3s ease;
+}
+
+.google-preferred-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  height: 48px;
+  width: 48px;
+  max-width: 48px;
+  padding: 0;
+  justify-content: center;
+  background: #FF2400;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 14px rgba(255, 36, 0, 0.35);
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              gap 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.2s ease,
+              box-shadow 0.2s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.google-preferred-badge .google-preferred-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.google-preferred-badge .google-preferred-text {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  color: #ffffff !important;
+  transition: opacity 0.25s ease, max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.google-preferred-badge:hover,
+.google-preferred-badge:focus-visible {
+  max-width: 260px;
+  width: auto;
+  padding: 0 18px 0 14px;
+  gap: 10px;
+  background: #e01f00;
+  box-shadow: 0 6px 20px rgba(255, 36, 0, 0.45);
+}
+
+.google-preferred-badge:hover .google-preferred-text,
+.google-preferred-badge:focus-visible .google-preferred-text {
+  opacity: 1;
+  max-width: 200px;
+}
+
+/* Business Portal Signature Purple-Pink Gradient Styling */
+body.business-portal .google-preferred-badge {
+  background: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 18px rgba(74, 0, 224, 0.38) !important;
+}
+
+body.business-portal .google-preferred-badge:hover,
+body.business-portal .google-preferred-badge:focus-visible {
+  background: linear-gradient(135deg, #5911ed 0%, #ee2a8d 100%) !important;
+  box-shadow: 0 6px 24px rgba(74, 0, 224, 0.55) !important;
 }
 
 @media (max-width: 850px) {

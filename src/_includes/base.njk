@@ -30,8 +30,11 @@
     <div class="container header-inner">
       {% if isBusinessPage or page.url == "/business/" %}
       <a href="/business/" class="brand-logo">
-        <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Commercial Division Logo"
-          class="nav-logo-img" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="/assets/Quinte-Smart-Homes-mobile-Logo.webp" />
+          <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Commercial Division Logo"
+            class="nav-logo-img" />
+        </picture>
       </a>
       {% else %}
       <a href="/" class="brand-logo">
@@ -50,9 +53,9 @@
             BUSINESS SERVICES <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
           </a>
           <div class="dropdown-menu mega-dropdown-menu">
-            <!-- Desktop Visual Cards Grid (Osmo Concept - 2 Core Business Services) -->
+            <!-- Desktop Visual Cards Grid (Osmo Concept - Core Business Services) -->
             <div class="mega-cards-container">
-              <div class="mega-cards-grid">
+              <div class="mega-cards-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <a href="/services/business-security/" class="mega-card-item">
                   <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_business_security.jpg');"></div>
                   <div class="mega-card-overlay"></div>
@@ -70,6 +73,15 @@
                     <span class="mega-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
                   </div>
                 </a>
+
+                <a href="/services/construction-security/" class="mega-card-item">
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_construction_security.jpg');"></div>
+                  <div class="mega-card-overlay"></div>
+                  <div class="mega-card-content">
+                    <span class="mega-card-title">Construction Site Security</span>
+                    <span class="mega-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                  </div>
+                </a>
               </div>
 
               <div class="mega-dropdown-footer">
@@ -84,6 +96,7 @@
             <div class="mobile-dropdown-list">
               <a href="/services/business-security/" class="dropdown-item">Belleville Small Business Security</a>
               <a href="/services/business-networking/" class="dropdown-item">High-Performance Business Networking</a>
+              <a href="/services/construction-security/" class="dropdown-item">Construction Site Security</a>
               <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
               <a href="/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;"><i class="fa-solid fa-arrow-left"></i> Switch to Home Services</a>
             </div>
