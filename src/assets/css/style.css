@@ -1222,6 +1222,37 @@ ul {
   margin-top: 4.5rem;
 }
 
+@keyframes staggeredColParallax {
+  from {
+    transform: translateY(130px);
+  }
+  to {
+    transform: translateY(-130px);
+  }
+}
+
+@media (min-width: 901px) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .staggered-cards-container {
+      view-timeline: --stats-scroll block;
+    }
+
+    .staggered-col-right {
+      animation: staggeredColParallax linear both;
+      animation-timeline: --stats-scroll;
+      animation-range: entry 0% exit 100%;
+      will-change: transform;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staggered-col-right {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 .tresmares-stat-box {
   background: var(--bg-canvas);
   border: 1px solid var(--border-subtle);
@@ -1800,7 +1831,9 @@ ul {
   }
 
   .staggered-col-right {
-    margin-top: 0;
+    margin-top: 2.5rem;
+    transform: none !important;
+    animation: none !important;
   }
 
   .footer-grid {
@@ -1815,7 +1848,7 @@ ul {
   }
 
   .staggered-col-right {
-    margin-top: 0 !important;
+    margin-top: 2.5rem !important;
   }
 
   .tresmares-stat-box {

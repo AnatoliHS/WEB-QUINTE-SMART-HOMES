@@ -731,6 +731,35 @@
         countElements.forEach(el => countObserver.observe(el));
       }
 
+      // Desktop Staggered Stat Box Scroll Parallax Fallback
+      if (window.innerWidth > 900 && !CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
+        const container = document.querySelector('.staggered-cards-container');
+        const rightCol = document.querySelector('.staggered-col-right');
+        if (container && rightCol) {
+          let ticking = false;
+          const updateParallax = () => {
+            if (window.innerWidth <= 900) return;
+            const rect = container.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.bottom >= 0 && rect.top <= windowHeight) {
+              const totalDist = windowHeight + rect.height;
+              const progress = (windowHeight - rect.top) / totalDist;
+              const clamped = Math.max(0, Math.min(1, progress));
+              const translateY = 130 - clamped * 260;
+              rightCol.style.transform = `translateY(${translateY}px)`;
+            }
+            ticking = false;
+          };
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              requestAnimationFrame(updateParallax);
+              ticking = true;
+            }
+          }, { passive: true });
+          updateParallax();
+        }
+      }
+
       // Title Color Wipe Reveal Observer (Faded to Full Color Left-to-Right)
       const colorWipeElements = document.querySelectorAll('.title-color-wipe');
       if (colorWipeElements.length > 0) {
