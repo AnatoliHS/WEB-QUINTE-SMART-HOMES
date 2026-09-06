@@ -627,8 +627,9 @@ ul {
   .about-mega-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem 1rem;
+    gap: 0.85rem 1.5rem;
     align-content: center;
+    padding: 0.5rem 0;
   }
 
   .pro-mega-links-single {
@@ -638,32 +639,32 @@ ul {
   .about-link-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.9rem 1.1rem;
-    border-radius: 14px;
+    gap: 1.1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
     text-decoration: none;
-    background: #f8fafc;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: background 0.2s ease, transform 0.2s ease;
   }
 
   .about-link-item:hover {
-    background: #ffffff;
-    border-color: rgba(255, 36, 0, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    background: rgba(241, 245, 249, 0.7);
+    transform: translateX(4px);
+    box-shadow: none;
   }
 
   .about-link-icon {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 12px;
     background: rgba(255, 36, 0, 0.08);
     color: var(--color-accent, #FF2400);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     flex-shrink: 0;
     transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
@@ -671,7 +672,7 @@ ul {
   .about-link-item:hover .about-link-icon {
     background: var(--color-accent, #FF2400);
     color: #ffffff;
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
 
   .about-link-text {
@@ -681,7 +682,7 @@ ul {
   }
 
   .about-link-title {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-primary, #0f172a);
     line-height: 1.3;
@@ -693,21 +694,21 @@ ul {
   }
 
   .about-link-desc {
-    font-size: 0.76rem;
+    font-size: 0.86rem;
     color: var(--text-secondary, #64748b);
-    line-height: 1.3;
-    margin-top: 0.15rem;
+    line-height: 1.35;
+    margin-top: 0.25rem;
   }
 
   .about-link-arrow {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: #cbd5e1;
     transition: color 0.2s ease, transform 0.2s ease;
   }
 
   .about-link-item:hover .about-link-arrow {
     color: var(--color-accent, #FF2400);
-    transform: translateX(3px);
+    transform: translateX(4px);
   }
 }
 
