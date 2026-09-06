@@ -3330,7 +3330,9 @@ body.business-portal .title-color-wipe.revealed .title-color-wipe-red {
 
 /* 2. Text Accents & Spans inside Headings & Subtitles */
 body.business-portal span[style*="color: var(--color-accent)"],
+body.business-portal strong[style*="color: var(--color-accent)"],
 body.business-portal span[style*="color: #e31b23"],
+body.business-portal strong[style*="color: #e31b23"],
 body.business-portal .hero-title-line em,
 body.business-portal .hero-display-title em {
   background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 100%);
@@ -3404,6 +3406,12 @@ body.business-portal .fa-network-wired,
 body.business-portal .fa-wifi,
 body.business-portal i[style*="color: var(--color-accent)"] {
   color: #e11a7f !important;
+}
+
+body.business-portal .feature-title-bullet::before,
+body.business-portal strong span[style*="width: 9px; height: 9px;"] {
+  background-color: #7c3aed !important;
+  background: #7c3aed !important;
 }
 
 /* 7. Vertical Red Accent Border Lines */
@@ -4048,4 +4056,152 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
   .designer-ideas-section .faq-question-text {
     gap: 0.75rem;
   }
+}
+
+/* Responsive 2-Column Grid: Ensure images always display ABOVE text content on mobile screens while remaining staggered on desktop */
+.grid-2col-responsive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 851px) {
+  .grid-2col-responsive.staggered-reverse > .grid-text-col {
+    order: 2;
+  }
+
+  .grid-2col-responsive.staggered-reverse > .grid-img-col {
+    order: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  .grid-2col-responsive {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .grid-2col-responsive > .grid-img-col,
+  .hero-reveal-grid > .hero-reveal-container {
+    order: -1 !important;
+    width: 100% !important;
+  }
+
+  .grid-2col-responsive > .grid-text-col,
+  .hero-reveal-grid > .hero-reveal-card {
+    order: 1 !important;
+    width: 100% !important;
+  }
+}
+
+/* Logo Grid Responsive: 3 columns on desktop, 2 columns on mobile */
+.logo-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .logo-grid-responsive {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Brand Showcase Section Responsive Rules */
+@media (max-width: 850px) {
+  .brand-header-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .brand-tiles-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.75rem 1.25rem !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-tiles-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* Single Row Logo Showcase (6 logos in 1 single horizontal row on desktop) */
+.logo-single-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.logo-single-row .logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 70px;
+}
+
+.logo-single-row .logo-item img {
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.logo-single-row .logo-item img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .logo-single-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem 1.25rem !important;
+  }
+}
+
+/* Feature Titles with Accent Red Bullet Dot */
+.feature-title-bullet {
+  color: #111111;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.35rem;
+  font-weight: 800;
+}
+
+.feature-title-bullet::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Site-wide removal of red left-side highlighted borders */
+[style*="border-left"] {
+  border-left: none !important;
+}
+
+div[style*="border-left"] {
+  border: 1px solid var(--border-subtle) !important;
+}
+
+p[style*="border-left"] {
+  border-left: none !important;
+  padding-left: 0 !important;
 }
