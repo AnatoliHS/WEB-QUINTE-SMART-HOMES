@@ -92,7 +92,6 @@ description: "Quinte Smart Homes is Belleville's premier Control4 dealer serving
   style="padding: 6rem 0; border-bottom: 1px solid var(--border-subtle); background: #ffffff;">
   <div class="container">
     <div style="text-align: center; max-width: 800px; margin: 0 auto 3.5rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Regional Coverage Map</span>
       <h2 class="title-color-wipe" style="font-size: 2.8rem; margin-bottom: 1rem;"><span class="title-color-wipe-dark">Service </span><span class="title-color-wipe-red">Area &amp; Regional Hubs</span></h2>
       <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
         At Quinte Smart Homes, we’re happy to go the distance (literally) if we’re the right fit for your project. Hover
@@ -265,7 +264,6 @@ description: "Quinte Smart Homes is Belleville's premier Control4 dealer serving
   <div class="container">
     <div class="two-col-grid" style="align-items: center;">
       <div>
-        <span class="eyebrow-label">Coverage Territory</span>
         <h2 class="title-color-wipe" style="font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2;">
           <span class="title-color-wipe-dark">Our Regional </span><span class="title-color-wipe-red">Service Area</span>
         </h2>
@@ -301,27 +299,26 @@ description: "Quinte Smart Homes is Belleville's premier Control4 dealer serving
         </div>
       </div>
 
-      <div
-        style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3rem; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+      <div class="head-office-card">
         <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Head Office Details</h3>
         <ul style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem;">
+          <li class="head-office-item">
             <i class="fa-solid fa-building" style="color: var(--color-accent); font-size: 1.2rem;"></i>
-            <strong>Location:</strong> Belleville, Ontario, Canada
+            <span><strong>Location:</strong> Belleville, Ontario, Canada</span>
           </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem;">
+          <li class="head-office-item">
             <i class="fa-solid fa-phone" style="color: var(--color-accent); font-size: 1.2rem;"></i>
-            <strong>Direct Phone:</strong> <a href="tel:6137799044"
-              style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">613-779-9044</a>
+            <span><strong>Direct Phone:</strong> <a href="tel:6137799044"
+              style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">613-779-9044</a></span>
           </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem;">
+          <li class="head-office-item">
             <i class="fa-solid fa-envelope" style="color: var(--color-accent); font-size: 1.2rem;"></i>
-            <strong>General Inquiries:</strong> <a href="mailto:info@quintesmarthomes.ca"
-              style="color: var(--text-primary); font-weight: 700; text-decoration: underline;">info@quintesmarthomes.ca</a>
+            <span><strong>General Inquiries:</strong> <a href="mailto:info@quintesmarthomes.ca"
+              style="color: var(--text-primary); font-weight: 700; text-decoration: underline;">info@quintesmarthomes.ca</a></span>
           </li>
-          <li style="display: flex; gap: 1rem; align-items: center; font-size: 1.05rem;">
+          <li class="head-office-item">
             <i class="fa-solid fa-bolt" style="color: var(--color-accent); font-size: 1.2rem;"></i>
-            <strong>Electrical Licence:</strong> ECRA/ESA Master Electrician Partner
+            <span><strong>Electrical Licence:</strong> ECRA/ESA Master Electrician Partner</span>
           </li>
         </ul>
       </div>
@@ -503,11 +500,30 @@ description: "Quinte Smart Homes is Belleville's premier Control4 dealer serving
   });
 </script>
 
-<!-- Team Showcase Section (Black & White Studio Portraits Matching Reference Image) -->
+<!-- Founder Leadership Quote Section (Matching Reference Image Layout) -->
+<section class="founder-quote-section pastel-dots-bg" id="about-founder">
+  <div class="container">
+    <div class="founder-quote-grid">
+      <div class="founder-quote-content">
+        <div class="founder-quote-text">
+          "Justin is the founder and owner of Quinte Smart Homes and a licensed master electrician with over 15 years of experience in residential, commercial and industrial systems. His work includes projects for CamTran, Hain Celestial and international systems with EMS-Tech in China and Australia. Everything at Quinte Smart Homes passes through Justin's desk."
+        </div>
+        <div class="founder-quote-author">
+          <div class="founder-quote-name">Justin Davidson</div>
+          <div class="founder-quote-role">Founder, Owner &amp; Licensed Master Electrician</div>
+        </div>
+      </div>
+      <div class="founder-quote-portrait">
+        <img src="/assets/images/justin-davidson.png" alt="Justin Davidson - Founder &amp; Owner" class="founder-quote-portrait-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Showcase Section (Studio Portraits) -->
 <section class="team-section" id="about-team">
   <div class="container">
     <div style="text-align: center; max-width: 800px; margin: 0 auto 3.5rem auto;">
-      <span class="eyebrow-label" style="text-align: center;">Our Leadership &amp; Partners</span>
       <h2 class="title-color-wipe" style="font-size: 2.8rem; margin-bottom: 1rem;"><span class="title-color-wipe-dark">Meet the </span><span class="title-color-wipe-red">Team</span></h2>
       <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
         Our certified master electricians, systems integrators, and AV specialists bring decades of hands-on expertise
@@ -517,13 +533,13 @@ description: "Quinte Smart Homes is Belleville's premier Control4 dealer serving
 
     <div class="team-grid">
 
-      <!-- Team Member 1: Justin Davidson -->
+      <!-- Team Member 1: Alex Mercer -->
       <div class="team-card">
         <div class="team-card-header">
-          <div class="team-role">Founder &amp; Lead Systems Integrator</div>
-          <div class="team-name">Justin Davidson</div>
+          <div class="team-role">Senior Field Systems Technician</div>
+          <div class="team-name">Alex Mercer</div>
         </div>
-        <img src="/assets/images/team_justin.jpg" alt="Justin Davidson - Founder &amp; Lead Systems Integrator"
+        <img src="/assets/images/team_alex.jpg" alt="Alex Mercer - Senior Field Systems Technician"
           class="team-portrait-img" />
       </div>
 
@@ -565,7 +581,6 @@ description: "Quinte Smart Homes is Belleville's premier Control4 dealer serving
   <div class="container">
     <div class="form-card-grid">
       <div>
-        <span class="eyebrow-label">Get In Touch</span>
         <h2 class="title-color-wipe" style="font-size: 2.8rem; margin-bottom: 1.5rem;"><span class="title-color-wipe-dark">Start Your </span><span class="title-color-wipe-red">Smart Project</span></h2>
         <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
           Contact our Belleville automation specialists today to schedule an initial phone consultation or on-site
