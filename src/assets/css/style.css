@@ -70,11 +70,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   color: var(--text-primary);
   line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.section-statement h1,
+.hero-display-title,
+.hero-title,
+.hero h1 {
+  font-family: var(--font-serif);
 }
 
 h1 {
@@ -1390,12 +1397,13 @@ ul {
 }
 
 .statement-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(2rem, 3.8vw, 3.4rem);
-  font-weight: 400;
+  font-weight: 700;
   max-width: 960px;
   margin: 0 auto;
-  line-height: 1.25;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
 }
 
@@ -1429,7 +1437,7 @@ ul {
   transition: background-position 2.2s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: background-position;
   display: inline;
-  font-weight: 400;
+  font-weight: inherit;
 }
 
 .title-color-wipe.revealed .title-color-wipe-dark,
@@ -2302,10 +2310,11 @@ ul {
 }
 
 .rewired-left-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(2.8rem, 4vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--color-accent);
   margin-bottom: 2rem;
 }
@@ -3322,6 +3331,7 @@ body.business-portal .title-color-wipe-red {
   transition: background-position 2.2s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: background-position;
   display: inline;
+  font-weight: inherit;
 }
 
 body.business-portal .title-color-wipe.revealed .title-color-wipe-red {
@@ -4204,4 +4214,515 @@ div[style*="border-left"] {
 p[style*="border-left"] {
   border-left: none !important;
   padding-left: 0 !important;
+}
+
+/* Nakula Dark Theme Pricing / Package Layout */
+.nakula-pricing-section {
+  background: #0d0d0d;
+  width: 100%;
+  padding: 6rem 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.nakula-pricing-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.nakula-pricing-grid {
+  display: grid;
+  grid-template-columns: 260px repeat(3, 1fr);
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.nakula-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 1.5rem 1rem;
+  margin-top: 4.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 1100px) {
+  .nakula-pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nakula-card {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nakula-pricing-section {
+    padding: 3.5rem 0;
+  }
+  .nakula-pricing-container {
+    padding: 0 1.25rem;
+  }
+  .nakula-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .nakula-card {
+    background: #141414;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    margin-top: 1rem;
+  }
+  .nakula-card:hover {
+    border-color: #333333;
+  }
+  .nakula-card-featured {
+    border-color: #2a2a2a;
+  }
+}
+
+.nakula-card-popular-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.nakula-card-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.nakula-card-popular-tag {
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-left: 0.5rem;
+}
+
+.nakula-card-subtitle {
+  font-size: 0.85rem;
+  color: #888888;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.nakula-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.nakula-card-list li {
+  display: flex;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: #d1d1d1;
+  line-height: 1.45;
+}
+
+.nakula-card-list li .plus-icon {
+  color: var(--color-accent);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.nakula-card-footer {
+  margin-top: 2.5rem;
+  border-top: 1px solid #222222;
+  padding-top: 1.35rem;
+}
+
+.nakula-card-btn {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.nakula-card-btn:hover {
+  opacity: 0.85;
+}
+
+.nakula-card-btn-solid {
+  color: #ffffff;
+  background: var(--color-accent);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+/* Pinned Sticky Scroll Specialty Section (Interactive Stat Stacking matching reference layout) */
+.specialty-sticky-section {
+  position: relative;
+  height: 320vh;
+  background: var(--bg-primary, #ffffff);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.specialty-sticky-wrapper {
+  position: sticky;
+  top: 90px;
+  height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.specialty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.specialty-left {
+  max-width: 540px;
+}
+
+.specialty-right-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-top: 2.5rem;
+  position: relative;
+}
+
+.specialty-stat-item {
+  opacity: 0;
+  transform: translateY(160px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+.specialty-stat-item.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.specialty-stat-num {
+  font-family: var(--font-sans);
+  font-size: clamp(3.2rem, 5.2vw, 5.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.specialty-stat-label {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  max-width: 440px;
+}
+
+.specialty-stat-item:nth-child(1) { transition-delay: 0.08s; }
+.specialty-stat-item:nth-child(2) { transition-delay: 0.22s; }
+.specialty-stat-item:nth-child(3) { transition-delay: 0.36s; }
+.specialty-stat-item:nth-child(4) { transition-delay: 0.50s; }
+
+@media (max-width: 992px) {
+  .specialty-sticky-section {
+    height: auto !important;
+    padding: 5rem 0;
+  }
+
+  .specialty-sticky-wrapper {
+    position: relative !important;
+    height: auto !important;
+    top: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .specialty-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .specialty-right-stage {
+    padding-left: 0;
+    padding-top: 0;
+    gap: 2.25rem;
+  }
+
+  .specialty-stat-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .specialty-stat-item.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Stacked Process / Services Section (Sticky Scroll Stacking as shown in reference image) */
+.stacked-services-section {
+  background: var(--bg-canvas, #f8f7f4);
+  padding: 4rem 0 6rem 0;
+  position: relative;
+}
+
+.stacked-services-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stacked-service-row {
+  position: sticky;
+  background: var(--bg-canvas, #f8f7f4);
+  display: grid;
+  grid-template-columns: 85px 1.2fr 1fr;
+  gap: 2rem 3.5rem;
+  padding: 3.75rem 0 4.5rem 0;
+  border-top: 1.5px solid #dcdcd5;
+  align-items: start;
+  will-change: position, transform;
+}
+
+.stacked-service-row:nth-child(1) {
+  top: 90px;
+  z-index: 1;
+}
+
+.stacked-service-row:nth-child(2) {
+  top: 150px;
+  z-index: 2;
+}
+
+.stacked-service-row:nth-child(3) {
+  top: 210px;
+  z-index: 3;
+}
+
+.stacked-service-row:last-child {
+  border-bottom: 1.5px solid #dcdcd5;
+}
+
+.stacked-service-num {
+  font-family: var(--font-sans);
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: var(--color-accent, #FF2400);
+  letter-spacing: -0.03em;
+}
+
+.stacked-service-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.stacked-service-tag {
+  font-family: var(--font-mono, SFMono-Regular, Consolas, Monaco, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666666;
+  margin-bottom: 1rem;
+}
+
+.stacked-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stacked-service-list-item {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+}
+
+.stacked-service-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #444444;
+  line-height: 1.7;
+}
+
+.stacked-service-desc p {
+  margin-bottom: 1.25rem;
+}
+
+.stacked-service-desc p:last-child {
+  margin-bottom: 0;
+}
+
+.stacked-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stacked-subgrid-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #111111;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stacked-subgrid-desc {
+  font-size: 0.88rem;
+  color: #555555;
+  line-height: 1.45;
+}
+
+@media (max-width: 991px) {
+  .stacked-services-section {
+    padding: 2rem 0 4rem 0;
+  }
+
+  .stacked-service-row {
+    position: sticky;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.5rem 0 2.25rem 0;
+  }
+
+  .stacked-service-row:nth-child(1) {
+    top: 70px;
+    z-index: 1;
+  }
+
+  .stacked-service-row:nth-child(2) {
+    top: 110px;
+    z-index: 2;
+  }
+
+  .stacked-service-row:nth-child(3) {
+    top: 150px;
+    z-index: 3;
+  }
+
+  .stacked-service-num {
+    font-size: 1.85rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .stacked-service-main-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.15;
+  }
+
+  .stacked-service-tag {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stacked-service-list {
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .stacked-service-list-item {
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  .stacked-service-list-item i {
+    font-size: 0.9rem !important;
+    margin-right: 0.5rem !important;
+  }
+
+  .stacked-service-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .stacked-service-desc p {
+    margin-bottom: 0.6rem;
+  }
+
+  .stacked-subgrid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .stacked-subgrid-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .stacked-subgrid-desc {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+}
+
+/* 3-Step Process Asymmetric Cards Grid (Featured Card 01) */
+.process-cards-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 1fr;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.process-card-featured .process-card-img-wrap {
+  height: 330px;
+}
+
+.process-card-secondary .process-card-img-wrap {
+  height: 200px;
+}
+
+@media (max-width: 991px) {
+  .process-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .process-card-featured .process-card-img-wrap,
+  .process-card-secondary .process-card-img-wrap {
+    height: 240px;
+  }
 }

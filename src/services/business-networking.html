@@ -44,7 +44,7 @@ isBusinessPage: true
             <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
               Commercial Enterprise <span style="color: var(--color-accent);">Backbone</span>
             </h3>
-            <p style="font-family: var(--font-serif); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+            <p style="font-family: var(--font-sans); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
               The backbone of modern commercial operations. Enterprise 10 Gbps multi-gigabit fiber backbones, Ubiquiti UniFi access points, isolated guest VLANs, and managed 24/7 remote network monitoring for Eastern Ontario enterprises.
             </p>
             <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
@@ -83,7 +83,7 @@ isBusinessPage: true
             <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
               Zero-Downtime Dual <span style="color: var(--color-accent);">WAN Failover</span>
             </h3>
-            <p style="font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+            <p style="font-family: var(--font-sans); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
               "If your primary fiber internet drops out, our UniFi security gateways seamlessly fail over to secondary Starlink or 5G LTE cellular connections within 3 seconds, keeping POS terminals online."
             </p>
             <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
@@ -174,49 +174,68 @@ isBusinessPage: true
   }
 </script>
 
-<!-- Detailed Technical Presentation Sections (Extracted from Official Site Architecture) -->
-<section class="section" style="padding: 5rem 0 4rem 0; background: #ffffff;">
-  <div class="container">
+<!-- Stacked Technical Presentation Sections (Matching Reference Layout) -->
+<section class="stacked-services-section" style="margin-bottom: 5rem;">
+  <div class="container stacked-services-container">
     
-    <!-- Section 1: Enterprise Network Foundation -->
-    <div class="grid-2col-responsive" style="margin-bottom: 5rem;">
-      <div class="grid-text-col">
-        <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); font-family: var(--font-sans); font-weight: 800; color: #111111; line-height: 1.18; margin-bottom: 1.25rem;">
-          The Backbone of Commercial Operations
-        </h2>
-        <p style="font-size: 1.08rem; color: #444444; line-height: 1.7; margin-bottom: 1.25rem;">
+    <!-- Row 01: The Backbone of Commercial Operations -->
+    <div class="stacked-service-row">
+      <div class="stacked-service-num">01</div>
+      <div>
+        <h2 class="stacked-service-main-title">The Backbone of Commercial Operations</h2>
+        
+        <div class="stacked-service-tag">[ ENTERPRISE NETWORK FOUNDATION ]</div>
+        
+        <div class="stacked-service-list">
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>PCI-Compliant Network Security</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Isolated VLANs for payment terminals and financial servers.</span></div></div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Dual-WAN Failover Redundancy</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Zero-downtime switching between primary Fiber and LTE/Starlink.</span></div></div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Wi-Fi 6/7 High-Density Coverage</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Seamless access point roaming across offices and warehouses.</span></div></div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Multi-Gigabit Cable Backbone</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Cat6a &amp; fiber backbone engineered for high-speed connectivity.</span></div></div>
+        </div>
+      </div>
+      
+      <div class="stacked-service-desc">
+        <p>
           Today’s commercial facilities depend on high-density connectivity. From credit card payment processing (POS) and video conferencing to 4K surveillance, everything relies on an enterprise network engineered from the ground up.
         </p>
-        <p style="font-size: 1rem; color: #555555; line-height: 1.65; margin-bottom: 1.75rem;">
+        <p>
           At Quinte Smart Homes, we design, pre-wire, and deploy robust multi-gigabit commercial networks that eliminate dead zones, protect corporate data, and keep your business running smoothly.
         </p>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem;">
-          <li style="display: flex; gap: 0.75rem; align-items: center; font-size: 0.98rem; font-weight: 700; color: #111111;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.1rem;"></i>
-            PCI-Compliant isolated VLANs for payment terminals and financial servers
-          </li>
-          <li style="display: flex; gap: 0.75rem; align-items: center; font-size: 0.98rem; font-weight: 700; color: #111111;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.1rem;"></i>
-            Zero-downtime dual-WAN failover (Primary Fiber + Secondary Starlink/LTE)
-          </li>
-          <li style="display: flex; gap: 0.75rem; align-items: center; font-size: 0.98rem; font-weight: 700; color: #111111;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.1rem;"></i>
-            Seamless Wi-Fi 6/7 roaming across offices, warehouses, and loading docks
-          </li>
-          <li style="display: flex; gap: 0.75rem; align-items: center; font-size: 0.98rem; font-weight: 700; color: #111111;">
-            <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.1rem;"></i>
-            24/7 managed remote telemetry monitoring &amp; instant outage recovery
-          </li>
-        </ul>
-      </div>
-
-      <div class="grid-img-col" style="border-radius: var(--radius-md, 16px); overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.08); border: 1px solid var(--border-subtle);">
-        <img src="/assets/images/showcase_networking.jpg" alt="Commercial Enterprise Network Server Rack Enclosure" style="width: 100%; height: auto; display: block;" />
       </div>
     </div>
 
-    <!-- Section 2: Why Custom Business Networks Matter -->
-    <div style="background: #f8f9fa; border-radius: var(--radius-lg, 24px); padding: 3.5rem; border: 1px solid var(--border-subtle); margin-bottom: 5rem;">
+    <!-- Row 02: 24/7 Managed Remote Telemetry & Outage Support -->
+    <div class="stacked-service-row">
+      <div class="stacked-service-num">02</div>
+      <div>
+        <h2 class="stacked-service-main-title">24/7 Managed Remote Telemetry &amp; Support</h2>
+        
+        <div class="stacked-service-tag">[ PROACTIVE ENTERPRISE MAINTENANCE ]</div>
+        
+        <div class="stacked-service-list">
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Automated Telemetry Monitoring</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Instant remote outage recovery and continuous performance tracking.</span></div></div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Certified Network Engineers</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Remote firewall updates, security patches, and bandwidth rules.</span></div></div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>24/7 Guaranteed Uptime</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Continuous active payment terminal and surveillance uptime.</span></div></div>
+        </div>
+      </div>
+      
+      <div class="stacked-service-desc">
+        <p>
+          Beyond hardware installation, we provide proactive remote monitoring under our maintenance service packages. Our network management center detects potential bottlenecks or power drops before they impact operations.
+        </p>
+        <p>
+          Our certified network engineers log in securely to apply security patches, adjust firewall rules, and restore failed links remotely without dispatching costly site calls.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Section 3: Why Custom Business Networks Matter -->
+<section class="section" style="padding: 5rem 0; background: #ffffff;">
+  <div class="container">
+    <div style="background: #f8f9fa; border-radius: var(--radius-lg, 24px); padding: 3.5rem; border: 1px solid var(--border-subtle);">
       <div style="max-width: 850px; margin: 0 auto; text-align: center;">
         <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1.25rem;">
           Why Do Commercial Facilities <span style="color: var(--color-accent);">Need Custom Networks?</span>
@@ -258,29 +277,8 @@ isBusinessPage: true
         </div>
       </div>
     </div>
-
-    <!-- Section 3: Proactive Managed Remote Monitoring -->
-    <div class="grid-2col-responsive staggered-reverse" style="margin-bottom: 5rem;">
-      <div class="grid-text-col">
-        <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); font-family: var(--font-sans); font-weight: 800; color: #111111; line-height: 1.18; margin-bottom: 1.25rem;">
-          24/7 Managed Remote Telemetry &amp; Outage Support
-        </h2>
-        <p style="font-size: 1.08rem; color: #444444; line-height: 1.7; margin-bottom: 1.25rem;">
-          Beyond hardware installation, we provide proactive remote monitoring under our maintenance service packages. Our network management center detects potential bottlenecks or power drops before they impact operations.
-        </p>
-        <p style="font-size: 1rem; color: #555555; line-height: 1.65; margin-bottom: 1.5rem;">
-          Our certified network engineers log in securely to apply security patches, adjust firewall rules, and restore failed links remotely without dispatching costly site calls.
-        </p>
-        <div style="padding-top: 1rem; border-top: 1px solid var(--border-subtle); margin-top: 1.5rem;">
-          <strong style="color: #111111; font-size: 0.98rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; font-weight: 800;"><span style="width: 9px; height: 9px; background-color: var(--color-accent); border-radius: 50%; display: inline-block; flex-shrink: 0;"></span>Guaranteed Operation</strong>
-          <span style="color: #555555; font-size: 0.88rem; line-height: 1.5; display: block;">Automated security gateways maintain active payment terminals and security surveillance 24/7/365.</span>
-        </div>
-      </div>
-
-      <div class="grid-img-col" style="border-radius: var(--radius-md, 16px); overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.08); border: 1px solid var(--border-subtle);">
-        <img src="/assets/images/showcase_business_security.jpg" alt="Commercial Managed Remote Monitoring" style="width: 100%; height: auto; display: block;" />
-      </div>
-    </div>
+  </div>
+</section>
 
 
   </div>

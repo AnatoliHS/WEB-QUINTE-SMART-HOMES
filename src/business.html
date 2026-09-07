@@ -34,7 +34,7 @@ isBusinessPage: true
 </section>
 
 <!-- Commercial Editorial Statement & Video Showcase (Matching Reference Layout) -->
-<section class="section-statement-layout">
+<section class="section-statement-layout" style="padding-bottom: 0.5rem;">
   <div class="container">
     <div class="statement-layout-grid">
       <div class="statement-layout-left">
@@ -51,6 +51,94 @@ isBusinessPage: true
       <video class="statement-layout-video" autoplay loop muted playsinline preload="auto">
         <source src="/assets/fly-over.mp4" type="video/mp4">
       </video>
+    </div>
+
+    <!-- Giant Editorial Running Slogan Marquee Below Video -->
+    <div class="giant-slogan-marquee" style="margin-top: 2rem; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 0.5rem 0 1rem 0; user-select: none; pointer-events: none;">
+      <div style="mask-image: none; -webkit-mask-image: none; overflow: hidden; padding: 0.25rem 0;">
+        <div class="marquee-ticker-track" style="animation-duration: 35s; gap: 3.5rem; padding: 0.25rem 0; animation-play-state: running !important;">
+          <div style="display: flex; align-items: center; gap: 3.5rem; white-space: nowrap; font-family: var(--font-sans); font-size: clamp(3.2rem, 7.5vw, 6.2rem); font-weight: 500; color: #1f292d; letter-spacing: -0.035em; line-height: 1.25;">
+            <span>empowering business through security &amp; speed</span>
+            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
+            <span>protecting your bottom line &amp; uptime</span>
+            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 3.5rem; white-space: nowrap; font-family: var(--font-sans); font-size: clamp(3.2rem, 7.5vw, 6.2rem); font-weight: 500; color: #1f292d; letter-spacing: -0.035em; line-height: 1.25;">
+            <span>empowering business through security &amp; speed</span>
+            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
+            <span>protecting your bottom line &amp; uptime</span>
+            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3-Step Commercial Onboarding Process Section (Matching Video Section Background & Reference Card Layout) -->
+<section class="section" style="padding: 4.5rem 0 5rem 0; background: var(--bg-body, #ffffff); border-bottom: 1px solid var(--border-subtle);">
+  <div class="container">
+    
+    <!-- Top Header Row -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <h2 class="title-color-wipe" style="font-family: var(--font-sans); font-size: clamp(2.4rem, 4.5vw, 4.2rem); font-weight: 900; letter-spacing: -0.02em; line-height: 0.95; text-transform: uppercase; margin: 0;">
+          <span class="title-color-wipe-dark" style="font-weight: inherit;">THE </span><span class="title-color-wipe-red" style="font-weight: inherit;">PROCESS</span>
+        </h2>
+      </div>
+
+      <div>
+        <a href="#biz-contact" style="border: 1px solid #111111; color: #ffffff !important; background: #111111; padding: 0.65rem 1.45rem; border-radius: 40px; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.08em; font-weight: 700; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='var(--color-accent, #e11a7f)'; this.style.borderColor='var(--color-accent, #e11a7f)';" onmouseout="this.style.background='#111111'; this.style.borderColor='#111111';">
+          REQUEST AUDIT <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3-Column Card Grid (Card 1 Featured & Larger) -->
+    <div class="process-cards-grid">
+      
+      <!-- Card 01 (Featured / Larger) -->
+      <div class="process-card-featured" style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 1.25rem; display: flex; flex-direction: column; height: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <div class="process-card-img-wrap" style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem;">
+          <img src="/assets/images/showcase_business_security.jpg" alt="Commercial Onsite Security Audit" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div style="padding: 0.25rem 0.5rem 0.5rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+          <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent, #e11a7f); margin-bottom: 0.45rem;">PHASE 01 — SYSTEM AUDIT</div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: #111111; margin-bottom: 0.65rem; line-height: 1.25;">On-Site Audit &amp; System Design</h3>
+          <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0; flex-grow: 1;">
+            We conduct a thorough walkthrough of your facility, auditing entry points, POS terminals, cable pathways, and Wi-Fi signal coverage to create a custom engineering blueprint.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="process-card-secondary" style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 1.25rem; display: flex; flex-direction: column; height: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <div class="process-card-img-wrap" style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem;">
+          <img src="/assets/images/showcase_networking.jpg" alt="Licensed Master Electrician Pre-Wiring &amp; Rack Setup" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div style="padding: 0.25rem 0.5rem 0.5rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+          <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent, #e11a7f); margin-bottom: 0.45rem;">PHASE 02 — INSTALLATION</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #111111; margin-bottom: 0.65rem; line-height: 1.3;">Licensed Pre-Wiring &amp; Rack Setup</h3>
+          <p style="font-size: 0.9rem; color: #555555; line-height: 1.55; margin: 0; flex-grow: 1;">
+            Our master electricians install commercial Cat6a cabling, mount 4K POE security cameras, assemble clean equipment racks, and configure isolated payment VLANs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="process-card-secondary" style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 1.25rem; display: flex; flex-direction: column; height: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <div class="process-card-img-wrap" style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem;">
+          <img src="/assets/images/showcase_construction_security.jpg" alt="24/7 Ontario Video Verification &amp; Telemetry" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div style="padding: 0.25rem 0.5rem 0.5rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+          <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent, #e11a7f); margin-bottom: 0.45rem;">PHASE 03 — MONITORING</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #111111; margin-bottom: 0.65rem; line-height: 1.3;">24/7 Verification &amp; Telemetry</h3>
+          <p style="font-size: 0.9rem; color: #555555; line-height: 1.55; margin: 0; flex-grow: 1;">
+            We pair your system with 24/7 Ontario live video operators for threat verification and enable automated telemetry monitoring for zero-downtime operations.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
