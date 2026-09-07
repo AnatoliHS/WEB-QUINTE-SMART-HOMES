@@ -698,50 +698,63 @@
         updateWordsOnScroll();
       });
 
-      // Stat Number Count-Up Animation
-      const countElements = document.querySelectorAll('.stat-count');
+      // Global Stat Number Count-Up Animation Function
+      window.animateSingleCount = function(el, durationOverride) {
+        if (!el || el.dataset.hasAnimated === 'true') return;
+        el.dataset.hasAnimated = 'true';
+
+        const target = parseFloat(el.getAttribute('data-target') || '0');
+        const prefix = el.getAttribute('data-prefix') || '';
+        const suffix = el.getAttribute('data-suffix') || '';
+        const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        const duration = durationOverride || 1800;
+        const startTime = performance.now();
+
+        function updateCount(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+          const currentVal = easeOutProgress * target;
+
+          if (decimals > 0) {
+            el.textContent = `${prefix}${currentVal.toFixed(decimals)}${suffix}`;
+          } else {
+            el.textContent = `${prefix}${Math.floor(currentVal).toLocaleString()}${suffix}`;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            if (decimals > 0) {
+              el.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
+            } else {
+              el.textContent = `${prefix}${target.toLocaleString()}${suffix}`;
+            }
+          }
+        }
+
+        requestAnimationFrame(updateCount);
+      };
+
+      const countElements = document.querySelectorAll('.stat-count:not([data-manual-count="true"])');
       if (countElements.length > 0) {
         const countObserver = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const el = entry.target;
-              const target = parseFloat(el.getAttribute('data-target') || '0');
-              const prefix = el.getAttribute('data-prefix') || '';
-              const suffix = el.getAttribute('data-suffix') || '';
-              const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-              const duration = 2000;
-              const startTime = performance.now();
-
-              function updateCount(now) {
-                const elapsed = now - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const easeOutProgress = 1 - Math.pow(1 - progress, 3);
-                const currentVal = easeOutProgress * target;
-
-                if (decimals > 0) {
-                  el.textContent = `${prefix}${currentVal.toFixed(decimals)}${suffix}`;
-                } else {
-                  el.textContent = `${prefix}${Math.floor(currentVal).toLocaleString()}${suffix}`;
-                }
-
-                if (progress < 1) {
-                  requestAnimationFrame(updateCount);
-                } else {
-                  if (decimals > 0) {
-                    el.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
-                  } else {
-                    el.textContent = `${prefix}${target.toLocaleString()}${suffix}`;
-                  }
-                }
+              if (!el.closest('.specialty-stat-item')) {
+                window.animateSingleCount(el);
+                obs.unobserve(el);
               }
-
-              requestAnimationFrame(updateCount);
-              obs.unobserve(el);
             }
           });
         }, { threshold: 0.2 });
 
-        countElements.forEach(el => countObserver.observe(el));
+        countElements.forEach(el => {
+          if (!el.closest('.specialty-stat-item')) {
+            countObserver.observe(el);
+          }
+        });
       }
 
       // Desktop Staggered Stat Box Scroll Parallax Fallback

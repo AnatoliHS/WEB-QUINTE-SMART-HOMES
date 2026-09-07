@@ -4726,3 +4726,36 @@ p[style*="border-left"] {
     height: 240px;
   }
 }
+
+/* Responsive Audit Button Placement in Process Section */
+.process-btn-desktop {
+  display: inline-flex;
+}
+
+.process-btn-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .process-section-wrap {
+    padding: 3rem 0 3.5rem 0 !important;
+  }
+  .process-header-row {
+    margin-bottom: 1.25rem !important;
+  }
+  .process-btn-desktop {
+    display: none !important;
+  }
+  .process-btn-mobile {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 2.25rem;
+    width: 100%;
+  }
+  .process-btn-mobile a {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    text-align: center;
+  }
+}

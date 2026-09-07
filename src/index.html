@@ -94,25 +94,25 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
           
           <!-- Stat 1 -->
           <div class="specialty-stat-item" data-stat-index="0">
-            <div class="specialty-stat-num stat-count" data-target="100" data-suffix=" +">0</div>
+            <div class="specialty-stat-num stat-count" data-target="100" data-suffix=" +" data-manual-count="true">0</div>
             <div class="specialty-stat-label">Happy Customers</div>
           </div>
 
           <!-- Stat 2 -->
           <div class="specialty-stat-item" data-stat-index="1">
-            <div class="specialty-stat-num stat-count" data-target="972">0</div>
+            <div class="specialty-stat-num stat-count" data-target="972" data-manual-count="true">0</div>
             <div class="specialty-stat-label">Hours Networking and Programming</div>
           </div>
 
           <!-- Stat 3 -->
           <div class="specialty-stat-item" data-stat-index="2">
-            <div class="specialty-stat-num stat-count" data-target="837">0</div>
+            <div class="specialty-stat-num stat-count" data-target="837" data-manual-count="true">0</div>
             <div class="specialty-stat-label">Consumed Cups of Coffee</div>
           </div>
 
           <!-- Stat 4 -->
           <div class="specialty-stat-item" data-stat-index="3">
-            <div class="specialty-stat-num stat-count" data-target="5032" data-suffix=" ft">0</div>
+            <div class="specialty-stat-num stat-count" data-target="5032" data-suffix=" ft" data-manual-count="true">0</div>
             <div class="specialty-stat-label">Of Installed Cables, Wires and everything in between</div>
           </div>
 
@@ -123,7 +123,7 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
   </div>
 </section>
 
-<!-- Script for Pinned Sticky Scroll & Mobile Staggered Stat Animation -->
+<!-- Script for Pinned Sticky Scroll & Stat Count-Up Animation when items enter view -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.getElementById('specialty-sticky');
@@ -132,17 +132,26 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
 
     if (!section || items.length === 0) return;
 
-    // Mobile IntersectionObserver for top-to-bottom staggered reveal
+    // Mobile IntersectionObserver to reveal & animate each stat as it scrolls into view
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting && window.innerWidth <= 992) {
-            items.forEach(item => item.classList.add('active'));
+          if (entry.isIntersecting) {
+            const item = entry.target;
+            item.classList.add('active');
+            const countEl = item.querySelector('.stat-count');
+            if (countEl && typeof window.animateSingleCount === 'function') {
+              window.animateSingleCount(countEl);
+            }
           }
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.3 });
 
-      if (stage) observer.observe(stage);
+      items.forEach(item => {
+        if (window.innerWidth <= 992) {
+          observer.observe(item);
+        }
+      });
     }
 
     function handleSpecialtyScroll() {
@@ -163,10 +172,24 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
       const thresholds = [0.08, 0.30, 0.55, 0.78];
 
       items.forEach((item, idx) => {
+        const countEl = item.querySelector('.stat-count');
         if (progress >= thresholds[idx]) {
-          item.classList.add('active');
+          if (!item.classList.contains('active')) {
+            item.classList.add('active');
+            if (countEl && typeof window.animateSingleCount === 'function') {
+              window.animateSingleCount(countEl);
+            }
+          }
         } else {
-          item.classList.remove('active');
+          if (item.classList.contains('active')) {
+            item.classList.remove('active');
+            if (countEl) {
+              const prefix = countEl.getAttribute('data-prefix') || '';
+              const suffix = countEl.getAttribute('data-suffix') || '';
+              countEl.textContent = `${prefix}0${suffix}`;
+              delete countEl.dataset.hasAnimated;
+            }
+          }
         }
       });
     }
