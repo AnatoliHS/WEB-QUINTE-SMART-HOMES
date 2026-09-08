@@ -4759,3 +4759,34 @@ p[style*="border-left"] {
     text-align: center;
   }
 }
+
+/* Standalone Home Marquee Section & Symmetrical Spacing */
+.section-statement-layout {
+  padding: 5.5rem 0 6.25rem 0 !important;
+  background: #ffffff;
+}
+
+.home-marquee-section {
+  background: #ffffff;
+  padding: 0 0 3.25rem 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.specialty-sticky-wrapper {
+  align-items: flex-start !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .section-statement-layout {
+    padding: 3.5rem 0 2rem 0 !important;
+  }
+  .home-marquee-section {
+    padding: 0 0 2rem 0;
+  }
+  .specialty-sticky-wrapper {
+    align-items: center !important;
+  }
+}

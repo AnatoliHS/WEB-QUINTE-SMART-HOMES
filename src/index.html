@@ -49,23 +49,25 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
         <source src="/assets/home-comfort.mp4" type="video/mp4">
       </video>
     </div>
+  </div>
+</section>
 
-    <!-- Giant Editorial Running Slogan Marquee Below Video -->
-    <div class="giant-slogan-marquee" style="margin-top: 2rem; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 0.5rem 0 1rem 0; user-select: none; pointer-events: none;">
-      <div style="mask-image: none; -webkit-mask-image: none; overflow: hidden; padding: 0.25rem 0;">
-        <div class="marquee-ticker-track" style="animation-duration: 40s; gap: 3.5rem; padding: 0.25rem 0; animation-play-state: running !important;">
-          <div style="display: flex; align-items: center; gap: 3.5rem; white-space: nowrap; font-family: var(--font-sans); font-size: clamp(3.2rem, 7.5vw, 6.2rem); font-weight: 500; color: #1f292d; letter-spacing: -0.035em; line-height: 1.25;">
-            <span>engineering the future of smart living</span>
-            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
-            <span>elevating daily comfort, security &amp; luxury</span>
-            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 3.5rem; white-space: nowrap; font-family: var(--font-sans); font-size: clamp(3.2rem, 7.5vw, 6.2rem); font-weight: 500; color: #1f292d; letter-spacing: -0.035em; line-height: 1.25;">
-            <span>engineering the future of smart living</span>
-            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
-            <span>elevating daily comfort, security &amp; luxury</span>
-            <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
-          </div>
+<!-- Standalone Giant Editorial Running Slogan Marquee Section -->
+<section class="home-marquee-section">
+  <div class="giant-slogan-marquee" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; user-select: none; pointer-events: none;">
+    <div style="mask-image: none; -webkit-mask-image: none; overflow: hidden; padding: 0.25rem 0;">
+      <div class="marquee-ticker-track" style="animation-duration: 40s; gap: 3.5rem; padding: 0.25rem 0; animation-play-state: running !important;">
+        <div style="display: flex; align-items: center; gap: 3.5rem; white-space: nowrap; font-family: var(--font-sans); font-size: clamp(3.2rem, 7.5vw, 6.2rem); font-weight: 500; color: #1f292d; letter-spacing: -0.035em; line-height: 1.25;">
+          <span>engineering the future of smart living</span>
+          <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
+          <span>elevating daily comfort, security &amp; luxury</span>
+          <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 3.5rem; white-space: nowrap; font-family: var(--font-sans); font-size: clamp(3.2rem, 7.5vw, 6.2rem); font-weight: 500; color: #1f292d; letter-spacing: -0.035em; line-height: 1.25;">
+          <span>engineering the future of smart living</span>
+          <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
+          <span>elevating daily comfort, security &amp; luxury</span>
+          <span style="color: var(--color-accent); font-weight: 300; font-size: 0.8em; margin: 0 0.5rem;">—</span>
         </div>
       </div>
     </div>
@@ -80,7 +82,7 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
         
         <!-- Left Narrative Column (Stays Fixed/Still during scroll stacking) -->
         <div class="specialty-left">
-          <h2 style="font-size: clamp(2.2rem, 3.8vw, 3.2rem); margin-bottom: 1.25rem; line-height: 1.15; color: var(--text-primary); font-family: var(--font-sans); font-weight: 700;">
+          <h2 style="font-size: clamp(2.2rem, 3.8vw, 3.2rem); margin-top: 0; margin-bottom: 1.25rem; line-height: 1.15; color: var(--text-primary); font-family: var(--font-sans); font-weight: 700;">
             Smart Homes <span style="color: var(--color-accent); font-weight: 700;">Is our Specialty</span>
           </h2>
           <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.75rem;">
@@ -181,15 +183,7 @@ description: Quinte Smart Homes provides whole-home automation, smart lighting, 
             }
           }
         } else {
-          if (item.classList.contains('active')) {
-            item.classList.remove('active');
-            if (countEl) {
-              const prefix = countEl.getAttribute('data-prefix') || '';
-              const suffix = countEl.getAttribute('data-suffix') || '';
-              countEl.textContent = `${prefix}0${suffix}`;
-              delete countEl.dataset.hasAnimated;
-            }
-          }
+          item.classList.remove('active');
         }
       });
     }
