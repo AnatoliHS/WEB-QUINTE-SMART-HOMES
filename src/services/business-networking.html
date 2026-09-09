@@ -8,15 +8,16 @@ isBusinessPage: true
 <!-- Hero Statement (Reference Image Layout Match with Interactive Tabs 1-5) -->
 <section class="section-statement" style="text-align: left; padding: 4rem 0 3.5rem 0;">
   <div class="container">
-    
+
     <!-- Top Big Title Spanning the Layout -->
-    <h1 style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
+    <h1
+      style="font-family: var(--font-serif); font-size: clamp(2.8rem, 5.2vw, 4.5rem); margin-bottom: 3rem; line-height: 1.1; color: var(--text-primary);">
       High-Performance <span style="color: var(--color-accent); font-weight: 300;">Business Networking.</span>
     </h1>
 
     <!-- 2-Column Grid (Responsive Left-to-Right Image & Tab Card) -->
     <div class="hero-reveal-grid">
-      
+
       <!-- Left Column: Large Image Card -->
       <div class="hero-reveal-container">
         <img src="/assets/images/showcase_networking.jpg" alt="Commercial Business Server Rack" />
@@ -24,54 +25,72 @@ isBusinessPage: true
 
       <!-- Right Column: Card Layout Matching Reference Image with Interactive Tabs -->
       <div class="hero-reveal-card">
-        
+
         <!-- Top Row: Interactive Tabs 1-5 Left -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
           <div style="display: flex; gap: 0.65rem; align-items: center;" id="heroTabNav">
-            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)" aria-label="Tab 1: Enterprise Infrastructure">1</button>
-            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)" aria-label="Tab 2: Network Infrastructure">2</button>
-            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)" aria-label="Tab 3: POS & WAN Failover">3</button>
-            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)" aria-label="Tab 4: Server Racks & Fiber">4</button>
-            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)" aria-label="Tab 5: What's Included">5</button>
+            <button class="hero-tab-btn active" id="hero-tab-btn-1" onclick="switchHeroTab(1)"
+              aria-label="Tab 1: Enterprise Infrastructure">1</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-2" onclick="switchHeroTab(2)"
+              aria-label="Tab 2: Network Infrastructure">2</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-3" onclick="switchHeroTab(3)"
+              aria-label="Tab 3: POS & WAN Failover">3</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-4" onclick="switchHeroTab(4)"
+              aria-label="Tab 4: Server Racks & Fiber">4</button>
+            <button class="hero-tab-btn" id="hero-tab-btn-5" onclick="switchHeroTab(5)"
+              aria-label="Tab 5: What's Included">5</button>
           </div>
         </div>
 
         <!-- Center Interactive Tab Content Panels -->
         <div style="margin: 1.25rem 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-          
+
           <!-- TAB 1: Enterprise Infrastructure -->
           <div class="hero-tab-panel active" id="hero-tab-panel-1">
-            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
+            <h3
+              style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.65rem;">
               Commercial Enterprise <span style="color: var(--color-accent);">Backbone</span>
             </h3>
-            <p style="font-family: var(--font-sans); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
-              The backbone of modern commercial operations. Enterprise 10 Gbps multi-gigabit fiber backbones, Ubiquiti UniFi access points, isolated guest VLANs, and managed 24/7 remote network monitoring for Eastern Ontario enterprises.
+            <p
+              style="font-family: var(--font-sans); font-size: clamp(1rem, 1.25vw, 1.18rem); color: #222222; line-height: 1.55; margin-bottom: 1rem;">
+              The backbone of modern commercial operations. Enterprise 10 Gbps multi-gigabit fiber backbones, Ubiquiti
+              UniFi access points, isolated guest VLANs, and managed 24/7 remote network monitoring for Eastern Ontario
+              enterprises.
             </p>
-            <p style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
-              Standard ISP equipment cannot support high-density commercial environments running dozens of workstations, credit card POS terminals, and 4K camera feeds.
+            <p
+              style="font-size: 0.9rem; color: #444444; font-weight: 600; border-left: 3px solid var(--color-accent); padding-left: 0.85rem; margin-bottom: 1.25rem; line-height: 1.45;">
+              Standard ISP equipment cannot support high-density commercial environments running dozens of workstations,
+              credit card POS terminals, and 4K camera feeds.
             </p>
-            <a href="#biz-network-audit" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i class="fa-solid fa-calculator"></i> Request Business Network Audit</a>
+            <a href="#biz-network-audit" class="btn btn-primary"
+              style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.35rem; font-size: 0.88rem; max-width: 100%; white-space: normal; text-align: center;"><i
+                class="fa-solid fa-calculator"></i> Request Business Network Audit</a>
           </div>
 
           <!-- TAB 2: Commercial Infrastructure Highlights -->
           <div class="hero-tab-panel" id="hero-tab-panel-2" style="display: none;">
-            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+            <h3
+              style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
               Commercial Facility <span style="color: var(--color-accent);">Wi-Fi &amp; Cabling</span>
             </h3>
             <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-building-user" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Wi-Fi 6/7 Across Offices, Warehouses &amp; Loading Docks
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-credit-card" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Credit Card POS Terminal Bandwidth Priority Queuing
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-server" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Clean 10 Gbps Equipment Rack Enclosures &amp; Patch Panels
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-network-wired" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Managed 24/7 Remote ISP Disruption Monitoring
               </li>
@@ -80,11 +99,14 @@ isBusinessPage: true
 
           <!-- TAB 3: POS & Dual WAN Failover -->
           <div class="hero-tab-panel" id="hero-tab-panel-3" style="display: none;">
-            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
+            <h3
+              style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 0.75rem;">
               Zero-Downtime Dual <span style="color: var(--color-accent);">WAN Failover</span>
             </h3>
-            <p style="font-family: var(--font-sans); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
-              "If your primary fiber internet drops out, our UniFi security gateways seamlessly fail over to secondary Starlink or 5G LTE cellular connections within 3 seconds, keeping POS terminals online."
+            <p
+              style="font-family: var(--font-sans); font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: #222222; line-height: 1.6; font-style: italic; margin-bottom: 1.25rem;">
+              "If your primary fiber internet drops out, our UniFi security gateways seamlessly fail over to secondary
+              Starlink or 5G LTE cellular connections within 3 seconds, keeping POS terminals online."
             </p>
             <p style="font-size: 0.95rem; color: #555555; line-height: 1.6;">
               Prevents store closures, lost credit card transactions, and cloud software interruptions.
@@ -93,19 +115,23 @@ isBusinessPage: true
 
           <!-- TAB 4: Server Racks & Optical Fiber -->
           <div class="hero-tab-panel" id="hero-tab-panel-4" style="display: none;">
-            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+            <h3
+              style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
               Optical Fiber &amp; <span style="color: var(--color-accent);">Cat6a Infrastructure</span>
             </h3>
             <ul style="display: flex; flex-direction: column; gap: 0.85rem;">
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-ethernet" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 10 Gbps Optical Fiber Inter-Building Server Backbones
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-shield-halved" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Isolated Guest Wi-Fi &amp; Employee Financial VLAN Segregation
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-battery-full" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Server Room Battery UPS Power Backup Protection
               </li>
@@ -114,23 +140,28 @@ isBusinessPage: true
 
           <!-- TAB 5: What's Included in Installation -->
           <div class="hero-tab-panel" id="hero-tab-panel-5" style="display: none;">
-            <h3 style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
+            <h3
+              style="font-size: clamp(1.3rem, 2vw, 1.5rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1rem;">
               What's Included <span style="color: var(--color-accent);">in Installation:</span>
             </h3>
             <ul style="display: flex; flex-direction: column; gap: 0.9rem;">
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 On-Site Heat Map Spectrum Audit &amp; Conduit Assessment
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Plenum-Rated Cat6a &amp; Fiber Optic Cable Pulling &amp; Patching
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 Ubiquiti UniFi Enterprise Gateway &amp; PoE Switch Setup
               </li>
-              <li style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
+              <li
+                style="display: flex; gap: 0.85rem; align-items: center; font-size: 1.02rem; font-weight: 600; color: #222222;">
                 <i class="fa-solid fa-circle-check" style="color: var(--color-accent); font-size: 1.15rem;"></i>
                 24/7 Managed Remote Telemetry &amp; Firmware Security Patches
               </li>
@@ -140,7 +171,8 @@ isBusinessPage: true
         </div>
 
         <!-- Bottom Metadata Line -->
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #111111; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
           <span>QUINTE SMART HOMES &nbsp;/&nbsp; BUSINESS NETWORKING</span>
         </div>
 
@@ -177,29 +209,52 @@ isBusinessPage: true
 <!-- Stacked Technical Presentation Sections (Matching Reference Layout) -->
 <section class="stacked-services-section" style="margin-bottom: 5rem;">
   <div class="container stacked-services-container">
-    
+
     <!-- Row 01: The Backbone of Commercial Operations -->
     <div class="stacked-service-row">
       <div class="stacked-service-num">01</div>
       <div>
         <h2 class="stacked-service-main-title">The Backbone of Commercial Operations</h2>
-        
+
         <div class="stacked-service-tag">[ ENTERPRISE NETWORK FOUNDATION ]</div>
-        
+
         <div class="stacked-service-list">
-          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>PCI-Compliant Network Security</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Isolated VLANs for payment terminals and financial servers.</span></div></div>
-          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Dual-WAN Failover Redundancy</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Zero-downtime switching between primary Fiber and LTE/Starlink.</span></div></div>
-          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Wi-Fi 6/7 High-Density Coverage</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Seamless access point roaming across offices and warehouses.</span></div></div>
-          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Multi-Gigabit Cable Backbone</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Cat6a &amp; fiber backbone engineered for high-speed connectivity.</span></div></div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check"
+              style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i>
+            <div><strong>PCI-Compliant Network Security</strong><span
+                style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Isolated
+                VLANs for payment terminals and financial servers.</span></div>
+          </div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check"
+              style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i>
+            <div><strong>Dual-WAN Failover Redundancy</strong><span
+                style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Zero-downtime
+                switching between primary Fiber and LTE/Starlink.</span></div>
+          </div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check"
+              style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i>
+            <div><strong>Wi-Fi 6/7 High-Density Coverage</strong><span
+                style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Seamless
+                access point roaming across offices and warehouses.</span></div>
+          </div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check"
+              style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i>
+            <div><strong>Multi-Gigabit Cable Backbone</strong><span
+                style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Cat6a
+                &amp; fiber backbone engineered for high-speed connectivity.</span></div>
+          </div>
         </div>
       </div>
-      
+
       <div class="stacked-service-desc">
         <p>
-          Today’s commercial facilities depend on high-density connectivity. From credit card payment processing (POS) and video conferencing to 4K surveillance, everything relies on an enterprise network engineered from the ground up.
+          Today’s commercial facilities depend on high-density connectivity. From credit card payment processing (POS)
+          and video conferencing to 4K surveillance, everything relies on an enterprise network engineered from the
+          ground up.
         </p>
         <p>
-          At Quinte Smart Homes, we design, pre-wire, and deploy robust multi-gigabit commercial networks that eliminate dead zones, protect corporate data, and keep your business running smoothly.
+          At Quinte Smart Homes, we design, pre-wire, and deploy robust multi-gigabit commercial networks that eliminate
+          dead zones, protect corporate data, and keep your business running smoothly.
         </p>
       </div>
     </div>
@@ -209,22 +264,39 @@ isBusinessPage: true
       <div class="stacked-service-num">02</div>
       <div>
         <h2 class="stacked-service-main-title">24/7 Managed Remote Telemetry &amp; Support</h2>
-        
+
         <div class="stacked-service-tag">[ PROACTIVE ENTERPRISE MAINTENANCE ]</div>
-        
+
         <div class="stacked-service-list">
-          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Automated Telemetry Monitoring</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Instant remote outage recovery and continuous performance tracking.</span></div></div>
-          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>Certified Network Engineers</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Remote firewall updates, security patches, and bandwidth rules.</span></div></div>
-          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i><div><strong>24/7 Guaranteed Uptime</strong><span style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Continuous active payment terminal and surveillance uptime.</span></div></div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check"
+              style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i>
+            <div><strong>Automated Telemetry Monitoring</strong><span
+                style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Instant
+                remote outage recovery and continuous performance tracking.</span></div>
+          </div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check"
+              style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i>
+            <div><strong>Certified Network Engineers</strong><span
+                style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Remote
+                firewall updates, security patches, and bandwidth rules.</span></div>
+          </div>
+          <div class="stacked-service-list-item" style="align-items: flex-start;"><i class="fa-solid fa-circle-check"
+              style="color: var(--color-accent); margin-right: 0.65rem; margin-top: 0.25rem; flex-shrink: 0; font-size: 1.05rem;"></i>
+            <div><strong>24/7 Guaranteed Uptime</strong><span
+                style="font-size: 0.88rem; color: #555555; display: block; font-weight: 400; line-height: 1.45; margin-top: 0.15rem;">Continuous
+                active payment terminal and surveillance uptime.</span></div>
+          </div>
         </div>
       </div>
-      
+
       <div class="stacked-service-desc">
         <p>
-          Beyond hardware installation, we provide proactive remote monitoring under our maintenance service packages. Our network management center detects potential bottlenecks or power drops before they impact operations.
+          Beyond hardware installation, we provide proactive remote monitoring under our maintenance service packages.
+          Our network management center detects potential bottlenecks or power drops before they impact operations.
         </p>
         <p>
-          Our certified network engineers log in securely to apply security patches, adjust firewall rules, and restore failed links remotely without dispatching costly site calls.
+          Our certified network engineers log in securely to apply security patches, adjust firewall rules, and restore
+          failed links remotely without dispatching costly site calls.
         </p>
       </div>
     </div>
@@ -235,44 +307,56 @@ isBusinessPage: true
 <!-- Section 3: Why Custom Business Networks Matter -->
 <section class="section" style="padding: 5rem 0; background: #ffffff;">
   <div class="container">
-    <div style="background: #f8f9fa; border-radius: var(--radius-lg, 24px); padding: 3.5rem; border: 1px solid var(--border-subtle);">
+    <div
+      style="background: #f8f9fa; border-radius: var(--radius-lg, 24px); padding: 3.5rem; border: 1px solid var(--border-subtle);">
       <div style="max-width: 850px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1.25rem;">
+        <h2
+          style="font-size: clamp(2rem, 3.2vw, 2.75rem); font-family: var(--font-sans); font-weight: 800; color: #111111; margin-bottom: 1.25rem;">
           Why Do Commercial Facilities <span style="color: var(--color-accent);">Need Custom Networks?</span>
         </h2>
         <p style="font-size: 1.08rem; color: #444444; line-height: 1.7; margin-bottom: 1.5rem;">
-          No two commercial spaces are identical. Concrete walls, steel beams, metal racking, and high client density affect how Wi-Fi signals travel. Standard ISP business modems fail under heavy multi-user loads.
+          No two commercial spaces are identical. Concrete walls, steel beams, metal racking, and high client density
+          affect how Wi-Fi signals travel. Standard ISP business modems fail under heavy multi-user loads.
         </p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem;">
         <div style="background: #ffffff; padding: 2rem; border-radius: 14px; border: 1px solid var(--border-subtle);">
-          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255,36,0,0.08); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;">
+          <div
+            style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255,36,0,0.08); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;">
             <i class="fa-solid fa-credit-card"></i>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111111; margin-bottom: 0.5rem;">POS Bandwidth Priority</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111111; margin-bottom: 0.5rem;">POS Bandwidth
+            Priority</h3>
           <p style="font-size: 0.92rem; color: #555555; line-height: 1.6;">
-            Quality of Service (QoS) rules prioritizing payment terminals and financial transactions over guest streaming and staff web browsing.
+            Quality of Service (QoS) rules prioritizing payment terminals and financial transactions over guest
+            streaming and staff web browsing.
           </p>
         </div>
 
         <div style="background: #ffffff; padding: 2rem; border-radius: 14px; border: 1px solid var(--border-subtle);">
-          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255,36,0,0.08); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;">
+          <div
+            style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255,36,0,0.08); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111111; margin-bottom: 0.5rem;">Guest vs. Corporate Isolation</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111111; margin-bottom: 0.5rem;">Guest vs. Corporate
+            Isolation</h3>
           <p style="font-size: 0.92rem; color: #555555; line-height: 1.6;">
-            Isolated guest Wi-Fi networks with customizable captive portals, preventing visitor access to internal servers and cameras.
+            Isolated guest Wi-Fi networks with customizable captive portals, preventing visitor access to internal
+            servers and cameras.
           </p>
         </div>
 
         <div style="background: #ffffff; padding: 2rem; border-radius: 14px; border: 1px solid var(--border-subtle);">
-          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255,36,0,0.08); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;">
+          <div
+            style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255,36,0,0.08); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;">
             <i class="fa-solid fa-network-wired"></i>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111111; margin-bottom: 0.5rem;">10 Gbps Fiber Backbones</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #111111; margin-bottom: 0.5rem;">10 Gbps Fiber
+            Backbones</h3>
           <p style="font-size: 0.92rem; color: #555555; line-height: 1.6;">
-            Multi-gigabit optical fiber inter-building links connecting main server rooms to remote warehouse wings and outdoor loading bays.
+            Multi-gigabit optical fiber inter-building links connecting main server rooms to remote warehouse wings and
+            outdoor loading bays.
           </p>
         </div>
       </div>
@@ -281,7 +365,7 @@ isBusinessPage: true
 </section>
 
 
-  </div>
+</div>
 </section>
 
 <!-- Wired vs. Wireless Business Integration -->
@@ -293,8 +377,10 @@ isBusinessPage: true
           Built Properly,<br>
           <span class="sub-title">From Ground Up.</span>
         </h2>
-        <p style="font-size: 1.05rem; color: var(--text-secondary); margin-top: 1.25rem; line-height: 1.6; max-width: 480px;">
-          Standard ISP business routers cannot handle high device density, guest Wi-Fi, credit card payment terminals, and 4K surveillance cameras simultaneously. We engineer robust, enterprise-grade commercial networks.
+        <p
+          style="font-size: 1.05rem; color: var(--text-secondary); margin-top: 1.25rem; line-height: 1.6; max-width: 480px;">
+          Standard ISP business routers cannot handle high device density, guest Wi-Fi, credit card payment terminals,
+          and 4K surveillance cameras simultaneously. We engineer robust, enterprise-grade commercial networks.
         </p>
         <a href="#biz-network-audit" class="btn-pill-dark" style="margin-top: 1.5rem;">Book Network Audit &rarr;</a>
       </div>
@@ -305,35 +391,42 @@ isBusinessPage: true
           <div class="rewired-list-item">
             <span class="rewired-item-num">01</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">POS &amp; Financial VLAN Isolation.</span> Segregated PCI-compliant virtual networks ensuring payment terminals and sensitive financial servers remain isolated from guest Wi-Fi.
+              <span class="rewired-item-title">POS &amp; Financial VLAN Isolation.</span> Segregated PCI-compliant
+              virtual networks ensuring payment terminals and sensitive financial servers remain isolated from guest
+              Wi-Fi.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">02</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Dual ISP &amp; Cellular WAN Failover.</span> Automatic instant failover to secondary LTE/5G or Starlink connections during primary ISP outages, preventing lost credit card transactions.
+              <span class="rewired-item-title">Dual ISP &amp; Cellular WAN Failover.</span> Automatic instant failover
+              to secondary LTE/5G or Starlink connections during primary ISP outages, preventing lost credit card
+              transactions.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">03</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">Cat6a &amp; 10 Gbps Fiber Backbones.</span> High-speed plenum-rated cabling and optical fiber backbones linking offices, boardrooms, warehouses, and loading docks.
+              <span class="rewired-item-title">Cat6a &amp; 10 Gbps Fiber Backbones.</span> High-speed plenum-rated
+              cabling and optical fiber backbones linking offices, boardrooms, warehouses, and loading docks.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">04</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">High-Density Wi-Fi Roaming.</span> Enterprise Ubiquiti UniFi access points engineered for commercial building materials, high client counts, and seamless video conferencing.
+              <span class="rewired-item-title">High-Density Wi-Fi Roaming.</span> Enterprise Ubiquiti UniFi access
+              points engineered for commercial building materials, high client counts, and seamless video conferencing.
             </div>
           </div>
 
           <div class="rewired-list-item">
             <span class="rewired-item-num">05</span>
             <div class="rewired-item-content">
-              <span class="rewired-item-title">24/7 Managed Remote Telemetry.</span> Remote health monitoring and maintenance packages to resolve network bottlenecks and power outage resets proactively.
+              <span class="rewired-item-title">24/7 Managed Remote Telemetry.</span> Remote health monitoring and
+              maintenance packages to resolve network bottlenecks and power outage resets proactively.
             </div>
           </div>
         </div>
@@ -342,46 +435,72 @@ isBusinessPage: true
   </div>
 </section>
 
-<!-- Business Network Audit Form -->
-<section class="section" id="biz-network-audit" style="padding: 6rem 0;">
+<!-- Editorial Contact Section (Business Portal) -->
+<section class="section contact-editorial-section" id="biz-network-audit" style="padding-top: 6.5rem;">
   <div class="container">
-    <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 4rem; align-items: center; background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 4rem; border-radius: var(--radius-sm);">
+    <div class="contact-editorial-grid">
+
+      <!-- Left Column: Giant Stacked Display Title & Intro Text -->
       <div>
-        <h2 class="title-color-wipe" style="font-size: 2.8rem; margin-bottom: 1.5rem;"><span class="title-color-wipe-dark">Request Business </span><span class="title-color-wipe-red">Network Audit</span></h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-          Schedule an on-site commercial network audit with our master electricians and enterprise network engineers across Belleville & Quinte.
+        <h2 class="together-cta-heading" style="margin-bottom: 2rem;">
+          <span>LET'S</span>
+          <span style="color: #e11a7f;">WORK</span>
+          <span>TOGETHER</span>
+        </h2>
+        <p style="font-size: 1.15rem; color: rgba(255, 255, 255, 0.78); line-height: 1.6; max-width: 460px;">
+          Schedule an on-site commercial network audit with our master electricians and enterprise network engineers across Belleville &amp; Quinte.
         </p>
-
-        <div style="margin-bottom: 1.5rem;">
-          <strong>Phone:</strong> <a href="tel:6137799044" style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">613-779-9044</a>
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <strong>Email:</strong> <a href="mailto:info@quintesmarthomes.ca" style="color: var(--text-primary); font-weight: 700; text-decoration: underline;">info@quintesmarthomes.ca</a>
-        </div>
       </div>
 
+      <!-- Right Column: Form Card & Call Prompt -->
       <div>
-        <form onsubmit="event.preventDefault(); alert('Thank you! Our commercial network engineering division will contact you shortly.');">
-          <div style="margin-bottom: 1.25rem;">
-            <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Company Name *</label>
-            <input type="text" class="form-input" required placeholder="Acme Business Corp" />
-          </div>
+        <div class="contact-dark-card biz-dark-card">
+          <form onsubmit="event.preventDefault(); alert('Thank you! Our commercial network engineering division will contact you shortly.');">
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
-            <div>
-              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Phone *</label>
-              <input type="tel" class="form-input" required placeholder="613-000-0000" />
+            <div class="contact-form-row">
+              <div>
+                <input type="text" class="contact-dark-input" required placeholder="Company Name *" />
+              </div>
+              <div>
+                <input type="email" class="contact-dark-input" required placeholder="Email *" />
+              </div>
             </div>
-            <div>
-              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Email *</label>
-              <input type="email" class="form-input" required placeholder="contact@company.com" />
-            </div>
-          </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Business Network Audit Request</button>
-        </form>
+            <div class="contact-form-row">
+              <div>
+                <input type="tel" class="contact-dark-input" required placeholder="Phone *" />
+              </div>
+              <div>
+                <select class="contact-dark-input">
+                  <option>Structured Cat6A / Fiber Cabling</option>
+                  <option>Ubiquiti Enterprise Wi-Fi Systems</option>
+                  <option>Multi-WAN Failover &amp; Starlink Integration</option>
+                  <option>VPN &amp; Security Gateway Configuration</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <textarea class="contact-dark-input" rows="4" placeholder="Tell us about your network infrastructure or current challenges..." style="resize: vertical;"></textarea>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap;">
+              <div style="font-size: 0.78rem; color: rgba(255, 255, 255, 0.65); max-width: 240px; line-height: 1.45;">
+                By submitting you agree to our <a href="#" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Terms of Service</a> and <a href="#" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a>
+              </div>
+              <button type="submit" class="together-cta-btn biz-cta-btn" style="padding: 0.85rem 2.2rem; font-size: 0.88rem;">
+                SUBMIT INQUIRY <i class="fa-solid fa-arrow-up-right" style="margin-left: 0.4rem;"></i>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <div style="font-size: 1.05rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 2rem;">
+          Prefer to hop on a call? <a href="tel:6137799044" style="color: #e11a7f; font-weight: 700; text-decoration: underline;">Book a call</a> instead.
+        </div>
       </div>
+
     </div>
   </div>
 </section>

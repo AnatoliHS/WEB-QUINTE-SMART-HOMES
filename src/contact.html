@@ -4,85 +4,98 @@ title: Contact Quinte Smart Homes
 description: Contact Quinte Smart Homes for a free project consultation. Phone 613-779-9044, email info@quintesmarthomes.ca.
 ---
 
-<!-- Tresmares Fullwidth Background Hero Section for Contact -->
-<section class="hero-tresmares-contact">
+<!-- Editorial Contact Page Main Section -->
+<section class="section contact-editorial-section" id="contact-details" style="padding-top: 6.5rem;">
   <div class="container">
-    <div class="hero-tresmares-grid">
+    <div class="contact-editorial-grid">
+
+      <!-- Left Column: Giant Stacked Display Title & Intro Text -->
       <div>
-        <h1 class="hero-display-title">
-          <span class="hero-title-line-mask"><span class="hero-title-line">Let's Discuss</span></span>
-          <span class="hero-title-line-mask"><span class="hero-title-line"><span style="background: linear-gradient(90deg, #FF2400 0%, #b31217 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #FF2400;">Your Project.</span></span></span>
+        <h1 class="together-cta-heading" style="margin-bottom: 2rem;">
+          <span>LET'S</span>
+          <span style="color: #FF2400;">WORK</span>
+          <span>TOGETHER</span>
         </h1>
-      </div>
-
-      <div class="hero-text-block">
-        <p class="hero-subtitle">
-          Connect with our certified master electricians and system architects to plan your automation scope across Eastern Ontario.
+        <p style="font-size: 1.15rem; color: rgba(255, 255, 255, 0.78); line-height: 1.6; max-width: 460px;">
+          Have a project in mind? We'd love to hear about it. Connect with our certified master electricians and system
+          architects to plan your automation scope.
         </p>
-        <div style="display: flex; gap: 1rem; align-items: center;">
-          <a href="#contact-details" class="link-arrow">Direct Contact <i class="fa-solid fa-arrow-down"></i></a>
-        </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-scroll-label">Scroll ↓</div>
-</section>
 
-<section class="section" id="contact-details">
-  <div class="container">
-    <div class="form-card-grid">
+      <!-- Right Column: Form Card, Call Link, & Visit Us Details -->
       <div>
-        <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Contact <span class="title-accent-grey">Information</span></h3>
+        <!-- Form Card Box (Dark Card Container) -->
+        <div class="contact-dark-card">
+          <form
+            onsubmit="event.preventDefault(); alert('Thank you for contacting Quinte Smart Homes! Our team will reach out within 24 business hours.');">
 
-        <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
-          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.4rem;">Direct Line</div>
-          <a href="tel:6137799044" style="font-size: 1.5rem; font-family: var(--font-sans); font-weight: 700; color: var(--text-primary);">613-779-9044</a>
+            <div class="contact-form-row">
+              <div>
+                <input type="text" class="contact-dark-input" required placeholder="Enter your name" />
+              </div>
+              <div>
+                <input type="email" class="contact-dark-input" required placeholder="Email" />
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <textarea class="contact-dark-input" rows="4" required placeholder="Message"
+                style="resize: vertical;"></textarea>
+            </div>
+
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap;">
+              <div style="font-size: 0.78rem; color: rgba(255, 255, 255, 0.65); max-width: 240px; line-height: 1.45;">
+                By submitting you agree to our <a href="#"
+                  style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Terms of Service</a> and <a
+                  href="#" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a>
+              </div>
+              <button type="submit" class="together-cta-btn" style="padding: 0.85rem 2.2rem; font-size: 0.88rem;">
+                SUBMIT INQUIRY <i class="fa-solid fa-arrow-up-right" style="margin-left: 0.4rem;"></i>
+              </button>
+            </div>
+
+          </form>
         </div>
 
-        <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
-          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.4rem;">Electronic Mail</div>
-          <a href="mailto:info@quintesmarthomes.ca" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary);">info@quintesmarthomes.ca</a>
+        <!-- Prefer Call Prompt -->
+        <div style="font-size: 1.05rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 2rem;">
+          Prefer to hop on a call? <a href="tel:6137799044"
+            style="color: #FF2400; font-weight: 700; text-decoration: underline;">Book a call</a> instead.
         </div>
 
+        <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.12); margin: 2rem 0 2.25rem 0;" />
+
+        <!-- Visit Us Details Grid -->
         <div>
-          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.4rem;">Coverage Territory</div>
-          <p style="font-size: 1rem; color: var(--text-secondary);">Belleville, Prince Edward County, Quinte West, Trenton, Brighton, Kingston</p>
+          <h3 style="font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 1.5rem;">Visit Us</h3>
+
+          <div class="contact-info-grid">
+            <div>
+              <div
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.45); font-weight: 700; margin-bottom: 0.5rem;">
+                (ADDRESS)</div>
+              <div style="font-size: 0.98rem; color: rgba(255, 255, 255, 0.85); line-height: 1.5;">
+                Belleville, Prince Edward County,<br>
+                Quinte West &amp; Eastern Ontario
+              </div>
+            </div>
+
+            <div>
+              <div
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.45); font-weight: 700; margin-bottom: 0.5rem;">
+                (OFFICE HOURS)</div>
+              <div style="font-size: 0.98rem; color: rgba(255, 255, 255, 0.85); line-height: 1.5;">
+                Phone: <a href="tel:6137799044"
+                  style="color: #ffffff; font-weight: 600; text-decoration: underline;">613-779-9044</a><br>
+                Monday – Friday: 8:00 AM – 5:00 PM
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
 
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 3.5rem; border-radius: var(--radius-sm);">
-        <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Schedule <span class="title-accent-grey">Walkthrough</span></h3>
-        <form onsubmit="event.preventDefault(); alert('Thank you for contacting Quinte Smart Homes! Our team will reach out within 24 business hours.');">
-          <div style="margin-bottom: 1.25rem;">
-            <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Your Name *</label>
-            <input type="text" class="form-input" required placeholder="Jane Doe" />
-          </div>
-
-          <div class="form-inputs-row">
-            <div>
-              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Telephone *</label>
-              <input type="tel" class="form-input" required placeholder="613-555-0199" />
-            </div>
-            <div>
-              <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Email *</label>
-              <input type="email" class="form-input" required placeholder="jane@example.com" />
-            </div>
-          </div>
-
-          <div style="margin-bottom: 1.25rem;">
-            <label style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Strategy Interest</label>
-            <select class="form-select">
-              <option>Whole-Home Automation</option>
-              <option>Smart Lighting & Shades</option>
-              <option>Audio & Home Theatre</option>
-              <option>Security & Cameras</option>
-              <option>Networking & Starlink</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Consultation Request</button>
-        </form>
-      </div>
     </div>
   </div>
 </section>
