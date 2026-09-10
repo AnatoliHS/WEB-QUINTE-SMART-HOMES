@@ -29,16 +29,14 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       {% if isBusinessPage or page.url == "/business/" %}
-      <a href="/business/" class="brand-logo">
-        <picture>
-          <source media="(max-width: 768px)" srcset="/assets/Quinte-Smart-Homes-mobile-Logo.webp" />
-          <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Commercial Division Logo"
-            class="nav-logo-img" />
-        </picture>
+      <a href="/business/" class="brand-logo" aria-label="Quinte Smart Homes Commercial Division">
+        <img src="/assets/quinte-house-logo-mark.png" alt="Quinte Smart Homes Emblem" class="nav-logo-icon" />
+        <span class="brand-logo-text">Q<span class="accent-s">S</span>H</span>
       </a>
       {% else %}
-      <a href="/" class="brand-logo">
-        <img src="/assets/Quinte-Smart-Homes-logo.png" alt="Quinte Smart Homes Logo" class="nav-logo-img" />
+      <a href="/" class="brand-logo" aria-label="Quinte Smart Homes Home">
+        <img src="/assets/quinte-house-logo-mark.png" alt="Quinte Smart Homes Emblem" class="nav-logo-icon" />
+        <span class="brand-logo-text">Q<span class="accent-s">S</span>H</span>
       </a>
       {% endif %}
 
@@ -94,9 +92,9 @@
 
             <!-- Mobile Fallback Menu -->
             <div class="mobile-dropdown-list">
-              <a href="/services/business-security/" class="dropdown-item">Belleville Small Business Security</a>
-              <a href="/services/business-networking/" class="dropdown-item">High-Performance Business Networking</a>
-              <a href="/services/construction-security/" class="dropdown-item">Construction Site Security</a>
+              <a href="/services/business-security/" class="dropdown-item">Business Security</a>
+              <a href="/services/business-networking/" class="dropdown-item">Business Networking</a>
+              <a href="/services/construction-security/" class="dropdown-item">Construction Security</a>
               <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
               <a href="/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;"><i class="fa-solid fa-arrow-left"></i> Switch to Home Services</a>
             </div>

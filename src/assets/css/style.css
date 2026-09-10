@@ -159,28 +159,34 @@ ul {
 .brand-logo {
   display: flex;
   align-items: center;
+  gap: 0.65rem;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.brand-logo picture {
-  display: flex;
-  align-items: center;
-}
-
-.nav-logo-img {
-  height: 56px;
+.nav-logo-icon {
+  height: 42px;
   width: auto;
-  max-width: 220px;
   object-fit: contain;
   display: block;
 }
 
-@media (min-width: 769px) {
-  .nav-logo-img {
-    transform: scale(1.18);
-    transform-origin: left center;
-  }
+.brand-logo-text {
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  user-select: none;
+}
+
+.brand-logo-text .accent-s {
+  color: #FF4103;
+}
+
+body.business-portal .brand-logo-text .accent-s {
+  color: #8e2de2;
 }
 
 .main-nav {
@@ -987,14 +993,20 @@ ul {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #FF4103;
+  display: inline-block;
+  padding-right: 0.15em;
+  padding-bottom: 0.25em;
+  margin-bottom: -0.25em;
 }
 
 /* Hero Title Line-by-Line Bottom-Up Reveal Animation */
 .hero-title-line-mask {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.12em;
-  margin-bottom: -0.12em;
+  padding-bottom: 0.25em;
+  margin-bottom: -0.25em;
+  padding-right: 0.25em;
+  margin-right: -0.25em;
 }
 
 .hero-title-line {
@@ -1003,6 +1015,9 @@ ul {
   transform: translateY(115%);
   animation: heroLineReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
+  padding-right: 0.25em;
+  padding-bottom: 0.25em;
+  margin-bottom: -0.25em;
 }
 
 .hero-title-line-mask:nth-child(1) .hero-title-line {
@@ -1964,7 +1979,8 @@ ul {
   .hero-tresmares-automation,
   .hero-tresmares-contact,
   .hero-tresmares-portfolio,
-  .hero-tresmares-blog {
+  .hero-tresmares-blog,
+  .hero-tresmares-pro {
     height: auto;
     min-height: 80vh;
   }
@@ -2303,8 +2319,13 @@ ul {
   }
 
   h2,
-  .statement-title {
-    font-size: clamp(1.8rem, 6.5vw, 2.8rem) !important;
+  .statement-title,
+  .statement-layout-title,
+  .rewired-left-title,
+  .designer-ideas-heading,
+  .stacked-service-main-title,
+  .section-title {
+    font-size: clamp(2.1rem, 7.8vw, 3.2rem) !important;
     margin-bottom: 2rem !important;
   }
 
@@ -4260,7 +4281,7 @@ p[style*="border-left"] {
 
 /* Nakula Dark Theme Pricing / Package Layout */
 .nakula-pricing-section {
-  background: #0d0d0d;
+  background: #001621;
   width: 100%;
   padding: 6rem 0;
   margin: 0;
@@ -4319,10 +4340,10 @@ p[style*="border-left"] {
   }
 
   .nakula-card {
-    background: #141414;
-    border: 1px solid #242424;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.25rem;
     margin-top: 1rem;
   }
 
@@ -4781,8 +4802,8 @@ p[style*="border-left"] {
   opacity: 0;
   transform: translateY(45px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s ease;
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease;
   will-change: opacity, transform;
 }
 
