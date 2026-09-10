@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
       <div>
         <h1 class="hero-display-title">
           <span class="hero-title-line-mask"><span class="hero-title-line">Smart Automation</span></span>
-          <span class="hero-title-line-mask"><span class="hero-title-line"><span style="background: linear-gradient(90deg, #FF2400 0%, #b31217 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #FF2400; font-weight: 300;">News & Insights.</span></span></span>
+          <span class="hero-title-line-mask"><span class="hero-title-line"><span style="background: linear-gradient(90deg, #FF4103 0%, #c73200 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #FF4103; font-weight: 300;">News & Insights.</span></span></span>
         </h1>
       </div>
 
@@ -29,24 +29,40 @@ eleventyExcludeFromCollections: true
   <div class="hero-scroll-label">Scroll ↓</div>
 </section>
 
-<!-- Blog Cards Section -->
-<section class="section" id="articles" style="padding: 5rem 0 7rem 0; background: var(--bg-canvas);">
+<!-- Blog Cards Section (Off-White Canvas Theme matching reference) -->
+<section class="section" id="articles" style="padding: 4rem 0 7rem 0; background: #f5f5f7;">
   <div class="container">
     <div class="blog-grid-tresmares">
       {% for post in collections.blog | reverse %}
-      <article class="blog-card-tresmares">
-        <div>
-          <div class="blog-card-meta">
-            <span class="blog-category-badge">GUIDE &amp; INSIGHTS</span>
-            <span class="blog-date-text">{{ post.date | postDate }}</span>
+      <article class="blog-card-item">
+        <!-- Image Container with Blur & Morphing Top-Right Corner Badge -->
+        <a href="{{ post.url }}" class="blog-img-container">
+          <img src="{{ post.data.image | default('/assets/images/smart_home_automation_hero.jpg') }}" alt="{{ post.data.title }}" class="blog-img" />
+          <div class="blog-img-overlay">
+            <span class="blog-read-more-text">Read more</span>
           </div>
-          <h2 class="blog-card-title title-color-wipe">
-            <a href="{{ post.url }}"><span class="title-color-wipe-dark">{{ post.data.title }}</span></a>
+          <!-- Top-Right Morphing Corner Badge with Orange Arrow -->
+          <div class="blog-corner-badge" aria-hidden="true">
+            <div class="blog-corner-notch-left"></div>
+            <div class="blog-corner-notch-bottom"></div>
+            <span class="blog-corner-arrow">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Card Body -->
+        <div class="blog-card-body">
+          <div class="blog-meta-row">
+            <span class="blog-meta-category">{{ post.data.category | default('Blog') }}</span>
+            <span class="blog-meta-date">{{ post.date | postDate }}</span>
+          </div>
+          <h2 class="blog-card-title">
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
           </h2>
-          <p class="blog-card-desc">{{ post.data.description }}</p>
-        </div>
-        <div class="blog-card-footer">
-          <a href="{{ post.url }}" class="link-arrow">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+          {% if post.data.tag %}
+          <div class="blog-tag-pill">{{ post.data.tag }}</div>
+          {% endif %}
         </div>
       </article>
       {% endfor %}
@@ -57,52 +73,166 @@ eleventyExcludeFromCollections: true
 <style>
   .blog-grid-tresmares {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
   }
 
-  .blog-card-tresmares {
-    background: var(--bg-surface, #ffffff);
-    border: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
-    border-radius: 14px;
-    padding: 2.25rem 2rem;
+  .blog-card-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
   }
 
-  .blog-card-tresmares:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-    border-color: rgba(255, 36, 0, 0.3);
+  /* Image Wrap Container */
+  .blog-img-container {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #e4e4e7;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
   }
 
-  .blog-card-meta {
+  .blog-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Centered "Read more" Overlay */
+  .blog-img-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    border-radius: 20px;
+  }
+
+  .blog-read-more-text {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.88);
+    letter-spacing: 0.01em;
+    transform: translateY(4px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Top-Right Morphing Corner Badge */
+  .blog-corner-badge {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 48px;
+    height: 48px;
+    background: #f5f5f7;
+    border-bottom-left-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.6) translate(10px, -10px);
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Inverted concave notch curves */
+  .blog-corner-notch-left {
+    position: absolute;
+    top: 0;
+    left: -14px;
+    width: 14px;
+    height: 14px;
+    background: transparent;
+    border-top-right-radius: 14px;
+    box-shadow: 4px -4px 0 4px #f5f5f7;
+  }
+
+  .blog-corner-notch-bottom {
+    position: absolute;
+    bottom: -14px;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    background: transparent;
+    border-top-right-radius: 14px;
+    box-shadow: 4px -4px 0 4px #f5f5f7;
+  }
+
+  .blog-corner-arrow {
+    color: #FF4103;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hover Animations */
+  .blog-card-item:hover .blog-img {
+    filter: blur(7px);
+    transform: scale(1.05);
+  }
+
+  .blog-card-item:hover .blog-img-overlay {
+    opacity: 1;
+  }
+
+  .blog-card-item:hover .blog-read-more-text {
+    transform: translateY(0);
+  }
+
+  .blog-card-item:hover .blog-corner-badge {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+
+  /* Card Content Details */
+  .blog-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .blog-meta-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.25rem;
-    font-size: 0.78rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.82rem;
+    font-weight: 500;
   }
 
-  .blog-category-badge {
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-accent, #FF2400);
+  .blog-meta-category {
+    color: #a1a1aa;
+    font-weight: 500;
   }
 
-  .blog-date-text {
-    color: var(--text-muted, #71717a);
-    font-weight: 600;
+  .blog-meta-date {
+    color: #a1a1aa;
+    font-weight: 500;
   }
 
   .blog-card-title {
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-family: var(--font-sans);
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
     font-weight: 700;
-    margin-bottom: 1rem;
+    color: #111111;
+    line-height: 1.35;
+    margin: 0 0 1.25rem 0;
+    letter-spacing: -0.015em;
   }
 
   .blog-card-title a {
@@ -112,25 +242,31 @@ eleventyExcludeFromCollections: true
   }
 
   .blog-card-title a:hover {
-    color: var(--color-accent, #FF2400);
+    color: #FF4103;
   }
 
-  .blog-card-desc {
-    font-size: 0.98rem;
-    line-height: 1.65;
-    color: var(--text-secondary, #4b5563);
-    margin-bottom: 1.75rem;
+  .blog-tag-pill {
+    display: inline-block;
+    background: #ececf0;
+    color: #55555c;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.45rem 1.1rem;
+    border-radius: 20px;
+    align-self: flex-start;
   }
 
-  .blog-card-footer {
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-subtle, rgba(0,0,0,0.06));
+  @media (max-width: 991px) {
+    .blog-grid-tresmares {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     .blog-grid-tresmares {
       grid-template-columns: 1fr;
-      gap: 1.75rem;
+      gap: 2rem;
     }
   }
 </style>

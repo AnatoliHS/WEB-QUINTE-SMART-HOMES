@@ -11,16 +11,16 @@
   --bg-subtle: #f1f0eb;
   --bg-dark: #181818;
 
-  --text-primary: #181818;
+  --text-primary: #001621;
   --text-secondary: #333333;
   --text-muted: #737373;
   --text-inverse: #f8f7f4;
 
-  /* Scarlet Red Accent Gradient Colors (#FF2400 -> #b31217) */
-  --color-accent: #FF2400;
-  --color-accent-hover: #b31217;
-  --color-accent-light: rgba(255, 36, 0, 0.08);
-  --color-accent-gradient: linear-gradient(135deg, #FF2400 0%, #b31217 100%);
+  /* Vibrant Accent Gradient Colors (#FF4103 -> #c73200) */
+  --color-accent: #FF4103;
+  --color-accent-hover: #c73200;
+  --color-accent-light: rgba(255, 65, 3, 0.08);
+  --color-accent-gradient: linear-gradient(135deg, #FF4103 0%, #c73200 100%);
 
   --border-subtle: rgba(24, 24, 24, 0.12);
   --border-strong: rgba(24, 24, 24, 0.25);
@@ -78,7 +78,6 @@ h6 {
 }
 
 .section-statement h1,
-.hero-display-title,
 .hero-title,
 .hero h1 {
   font-family: var(--font-serif);
@@ -491,7 +490,7 @@ ul {
   .mega-card-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
-    border-color: rgba(255, 36, 0, 0.4);
+    border-color: rgba(255, 65, 3, 0.4);
   }
 
   .mega-card-item:hover .mega-card-bg {
@@ -503,8 +502,8 @@ ul {
   }
 
   .mega-card-item:hover .mega-card-arrow {
-    background: var(--color-accent, #FF2400);
-    border-color: var(--color-accent, #FF2400);
+    background: var(--color-accent, #FF4103);
+    border-color: var(--color-accent, #FF4103);
     color: #ffffff;
     transform: translateX(3px);
   }
@@ -529,7 +528,7 @@ ul {
   }
 
   .mega-footer-link:hover {
-    background: rgba(255, 36, 0, 0.06);
+    background: rgba(255, 65, 3, 0.06);
   }
 
   /* About Mega Dropdown Layout (Featured Spotlight Image + Structured Text Link Grid) */
@@ -628,7 +627,7 @@ ul {
 
   .about-mega-feature:hover .about-feature-link {
     gap: 0.65rem;
-    color: var(--color-accent, #FF2400);
+    color: var(--color-accent, #FF4103);
   }
 
   .about-mega-links {
@@ -666,8 +665,8 @@ ul {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(255, 36, 0, 0.08);
-    color: var(--color-accent, #FF2400);
+    background: rgba(255, 65, 3, 0.08);
+    color: var(--color-accent, #FF4103);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -677,7 +676,7 @@ ul {
   }
 
   .about-link-item:hover .about-link-icon {
-    background: var(--color-accent, #FF2400);
+    background: var(--color-accent, #FF4103);
     color: #ffffff;
     transform: scale(1.06);
   }
@@ -697,7 +696,7 @@ ul {
   }
 
   .about-link-item:hover .about-link-title {
-    color: var(--color-accent, #FF2400);
+    color: var(--color-accent, #FF4103);
   }
 
   .about-link-desc {
@@ -714,7 +713,7 @@ ul {
   }
 
   .about-link-item:hover .about-link-arrow {
-    color: var(--color-accent, #FF2400);
+    color: var(--color-accent, #FF4103);
     transform: translateX(4px);
   }
 }
@@ -767,11 +766,11 @@ ul {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #FF2400 0%, #b31217 100%);
+  background: linear-gradient(135deg, #FF4103 0%, #c73200 100%);
   background-size: 160% 160%;
   border: none;
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(255, 36, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(255, 65, 3, 0.35);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -779,7 +778,7 @@ ul {
   background-position: 100% 0;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(179, 18, 23, 0.45);
+  box-shadow: 0 8px 22px rgba(199, 50, 0, 0.45);
 }
 
 .btn-secondary {
@@ -973,20 +972,21 @@ ul {
 }
 
 .hero-display-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.035em;
   font-size: clamp(3.5rem, 6.5vw, 6.2rem);
   line-height: 1.05;
   color: var(--text-primary);
-  font-weight: 400;
 }
 
 .hero-display-title em {
   font-style: italic;
-  background: linear-gradient(90deg, #FF2400 0%, #b31217 100%);
+  background: linear-gradient(90deg, #FF4103 0%, #c73200 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #FF2400;
+  color: #FF4103;
 }
 
 /* Hero Title Line-by-Line Bottom-Up Reveal Animation */
@@ -1035,7 +1035,7 @@ ul {
 
 .hero-text-block {
   border-left: 3px solid transparent;
-  border-image: linear-gradient(to bottom, #FF2400, #b31217) 1;
+  border-image: linear-gradient(to bottom, #FF4103, #c73200) 1;
   padding-left: 2rem;
   position: relative;
   overflow: hidden;
@@ -1176,19 +1176,19 @@ ul {
   font-size: clamp(2rem, 3.6vw, 3.2rem);
   font-weight: 500;
   line-height: 1.25;
-  color: #111111;
+  color: #001621;
   letter-spacing: -0.02em;
   margin: 0;
 }
 
 /* Scroll-reveal text contrast on white background */
 .statement-layout-title .scroll-word {
-  color: rgba(24, 24, 24, 0.18);
+  color: rgba(0, 22, 33, 0.18);
   transition: color 0.35s ease, opacity 0.35s ease;
 }
 
 .statement-layout-title .scroll-word.active {
-  color: #111111;
+  color: #001621;
 }
 
 /* Video Wrapper */
@@ -1427,7 +1427,7 @@ ul {
 }
 
 .title-color-wipe-dark {
-  background: linear-gradient(90deg, #181818 50%, rgba(24, 24, 24, 0.22) 50%);
+  background: linear-gradient(90deg, #001621 50%, rgba(0, 22, 33, 0.22) 50%);
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
@@ -1439,7 +1439,7 @@ ul {
 }
 
 .title-color-wipe-red {
-  background: linear-gradient(90deg, #FF2400 0%, #b31217 50%, rgba(255, 36, 0, 0.28) 50%, rgba(179, 18, 23, 0.28) 100%);
+  background: linear-gradient(90deg, #FF4103 0%, #c73200 50%, rgba(255, 65, 3, 0.28) 50%, rgba(199, 50, 0, 0.28) 100%);
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
@@ -1463,7 +1463,7 @@ ul {
 
 .scroll-word {
   display: inline;
-  color: rgba(24, 24, 24, 0.18);
+  color: rgba(0, 22, 33, 0.18);
   transition: color 0.35s ease, opacity 0.35s ease;
   white-space: pre-wrap;
 }
@@ -1768,7 +1768,7 @@ ul {
 }
 
 .btn-pill-accent {
-  background: linear-gradient(135deg, #FF2400 0%, #b31217 100%);
+  background: linear-gradient(135deg, #FF4103 0%, #c73200 100%);
   color: #ffffff !important;
   font-family: var(--font-sans);
   font-weight: 700;
@@ -1779,13 +1779,13 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(255, 36, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 65, 3, 0.3);
 }
 
 .btn-pill-accent:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 36, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 65, 3, 0.4);
 }
 
 /* Slider Controls */
@@ -2333,7 +2333,7 @@ ul {
 
 .rewired-left-title .sub-title {
   display: block;
-  color: #8e8e93;
+  color: #001621;
   font-weight: 400;
 }
 
@@ -2619,7 +2619,7 @@ ul {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #e63946;
+  background: var(--color-accent, #FF4103);
   border: 2.5px solid #ffffff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -2950,7 +2950,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #e63946;
+  background: var(--color-accent, #FF4103);
   display: inline-block;
 }
 
@@ -3100,13 +3100,13 @@ body {
 .google-preferred-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0;
+  box-sizing: border-box;
   height: 48px;
   width: 48px;
   max-width: 48px;
   padding: 0;
   justify-content: center;
-  background: #FF2400;
+  background: #FF4103;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
@@ -3114,7 +3114,7 @@ body {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 14px;
-  box-shadow: 0 4px 14px rgba(255, 36, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(255, 65, 3, 0.35);
   transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     gap 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -3147,8 +3147,8 @@ body {
   width: auto;
   padding: 0 18px 0 14px;
   gap: 10px;
-  background: #e01f00;
-  box-shadow: 0 6px 20px rgba(255, 36, 0, 0.45);
+  background: #e03900;
+  box-shadow: 0 6px 20px rgba(255, 65, 3, 0.45);
 }
 
 .google-preferred-badge:hover .google-preferred-text,
@@ -3157,17 +3157,17 @@ body {
   max-width: 200px;
 }
 
-/* Business Portal Signature Purple-Pink Gradient Styling */
+/* Business Portal Signature Electric Purple Gradient Styling */
 body.business-portal .google-preferred-badge {
-  background: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%) !important;
+  background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%) !important;
   border-color: rgba(255, 255, 255, 0.3) !important;
   box-shadow: 0 4px 18px rgba(74, 0, 224, 0.38) !important;
 }
 
 body.business-portal .google-preferred-badge:hover,
 body.business-portal .google-preferred-badge:focus-visible {
-  background: linear-gradient(135deg, #5911ed 0%, #ee2a8d 100%) !important;
-  box-shadow: 0 6px 24px rgba(74, 0, 224, 0.55) !important;
+  background: linear-gradient(135deg, #5900ff 0%, #9f3ef3 100%) !important;
+  box-shadow: 0 6px 24px rgba(142, 45, 226, 0.55) !important;
 }
 
 @media (max-width: 850px) {
@@ -3325,18 +3325,19 @@ body.business-portal .google-preferred-badge:focus-visible {
 }
 
 /* ==========================================================================
-   BUSINESS PORTAL DYNAMIC PURPLE-TO-PINK GRADIENT DESIGN SYSTEM
-   Gradient: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%)
+   BUSINESS PORTAL DYNAMIC ELECTRIC PURPLE GRADIENT DESIGN SYSTEM
+   Gradient reserved for Hero "Business" Title & Buttons: #4a00e0 to #8e2de2
+   All other text accents use primary accent (#8e2de2)
    ========================================================================== */
 
 body.business-portal {
-  --color-accent: #e11a7f;
-  --color-accent-gradient: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%);
+  --color-accent: #8e2de2;
+  --color-accent-gradient: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%);
 }
 
-/* 1. Title Color Wipe Animation in Business Portal (Faded to Full Purple-Pink Gradient) */
+/* 1. Title Color Wipe Animation in Business Portal (Purple Wipe Reveal) */
 body.business-portal .title-color-wipe-red {
-  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 50%, rgba(74, 0, 224, 0.28) 50%, rgba(225, 26, 127, 0.28) 100%);
+  background: linear-gradient(90deg, #8e2de2 0%, #8e2de2 50%, rgba(142, 45, 226, 0.28) 50%, rgba(142, 45, 226, 0.28) 100%);
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
@@ -3352,25 +3353,35 @@ body.business-portal .title-color-wipe.revealed .title-color-wipe-red {
   background-position: 0 0 !important;
 }
 
-/* 2. Text Accents & Spans inside Headings & Subtitles */
+/* 2. Text Accents & Spans inside Headings & Subtitles (#8e2de2) */
 body.business-portal span[style*="color: var(--color-accent)"],
 body.business-portal strong[style*="color: var(--color-accent)"],
 body.business-portal span[style*="color: #e31b23"],
-body.business-portal strong[style*="color: #e31b23"],
-body.business-portal .hero-title-line em,
-body.business-portal .hero-display-title em {
-  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 100%);
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: #e11a7f;
+body.business-portal strong[style*="color: #e31b23"] {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: initial !important;
+  color: #8e2de2 !important;
   font-style: normal;
 }
 
-/* 3. Primary Buttons & Action Buttons in Business Portal */
+/* Hero Title "Business" Word - GRADIENT RETAINED */
+body.business-portal .hero-title-line em,
+body.business-portal .hero-display-title em {
+  background: linear-gradient(90deg, #4a00e0 0%, #8e2de2 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #8e2de2;
+  font-style: italic;
+  font-weight: inherit;
+}
+
+/* 3. Primary Buttons & Action Buttons in Business Portal - GRADIENT RETAINED */
 body.business-portal .btn-primary,
 body.business-portal .btn-pill-accent {
-  background: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%) !important;
+  background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%) !important;
   background-size: 160% 160% !important;
   border: none !important;
   color: #ffffff !important;
@@ -3381,16 +3392,16 @@ body.business-portal .btn-pill-accent {
 body.business-portal .btn-primary:hover,
 body.business-portal .btn-pill-accent:hover {
   background-position: 100% 0 !important;
-  box-shadow: 0 8px 25px rgba(225, 26, 127, 0.45) !important;
+  box-shadow: 0 8px 25px rgba(142, 45, 226, 0.45) !important;
   transform: translateY(-2px) !important;
 }
 
-/* 4. Eyebrow Labels, Badges & Highlights */
+/* 4. Eyebrow Labels, Badges & Highlights (#8e2de2) */
 body.business-portal .eyebrow-label {
-  color: #e11a7f !important;
+  color: #8e2de2 !important;
 }
 
-/* 5. Showcase Tabs (Colored Text & Underline, No Box) */
+/* 5. Showcase Tabs (Colored Text & Underline - #8e2de2) */
 body.business-portal .tab-btn {
   background: none !important;
   border: none !important;
@@ -3402,20 +3413,20 @@ body.business-portal .tab-btn {
 body.business-portal .tab-btn:hover,
 body.business-portal .tab-btn.active,
 body.business-portal #bizShowcaseTabs .tab-btn.active {
-  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: #e11a7f !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: initial !important;
+  color: #8e2de2 !important;
   border-color: transparent !important;
 }
 
 body.business-portal .tab-btn::after {
-  background: linear-gradient(90deg, #4a00e0 0%, #e11a7f 100%) !important;
+  background: #8e2de2 !important;
   height: 2px !important;
 }
 
-/* 6. Icons & Checklist Bullets */
+/* 6. Icons & Checklist Bullets (#8e2de2) */
 body.business-portal .fa-circle-check,
 body.business-portal .feature-checklist i,
 body.business-portal .fa-video,
@@ -3431,47 +3442,60 @@ body.business-portal .fa-briefcase,
 body.business-portal .fa-network-wired,
 body.business-portal .fa-wifi,
 body.business-portal i[style*="color: var(--color-accent)"] {
-  color: #e11a7f !important;
+  color: #8e2de2 !important;
 }
 
 body.business-portal .feature-title-bullet::before,
 body.business-portal strong span[style*="width: 9px; height: 9px;"] {
-  background-color: #7c3aed !important;
-  background: #7c3aed !important;
+  background-color: #8e2de2 !important;
+  background: #8e2de2 !important;
 }
 
-/* 7. Vertical Red Accent Border Lines */
+/* 7. Vertical Accent Border Lines (#8e2de2) */
 body.business-portal .hero-text-block,
 body.business-portal p[style*="border-left"] {
   border-left-width: 4px !important;
   border-left-style: solid !important;
-  border-left-color: transparent !important;
-  border-image: linear-gradient(to bottom, #4a00e0, #e11a7f) 1 !important;
+  border-left-color: #8e2de2 !important;
+  border-image: none !important;
 }
 
 /* 8. Link Arrows & Interactive Phone/Email Links */
-body.business-portal .link-arrow,
+body.business-portal .link-arrow {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--text-primary) !important;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+body.business-portal .link-arrow i {
+  color: var(--color-accent, #8e2de2) !important;
+}
+
+body.business-portal .link-arrow:hover {
+  color: var(--color-accent, #8e2de2) !important;
+  border-bottom-color: var(--color-accent, #8e2de2) !important;
+}
+
 body.business-portal a[style*="color: var(--color-accent)"] {
-  color: #e11a7f !important;
+  color: #8e2de2 !important;
   transition: color 0.3s ease;
 }
 
-body.business-portal .link-arrow:hover,
 body.business-portal a[style*="color: var(--color-accent)"]:hover {
-  color: #4a00e0 !important;
+  color: #a020f0 !important;
 }
 
 /* 9. Form Inputs Focus Rings */
 body.business-portal .form-input:focus,
 body.business-portal .form-select:focus {
-  border-color: #e11a7f !important;
-  box-shadow: 0 0 0 3px rgba(225, 26, 127, 0.18) !important;
+  border-color: #8e2de2 !important;
+  box-shadow: 0 0 0 3px rgba(142, 45, 226, 0.18) !important;
 }
 
 /* 10. Nav Mobile Active Icons & Buttons in Business Portal */
 body.business-portal .mobile-toggle.active i,
 body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
-  color: #e11a7f !important;
+  color: #8e2de2 !important;
 }
 
 /* Infinite Marquee Ticker Section */
@@ -3590,7 +3614,7 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
 
 .designer-ideas-heading .heading-grey,
 .designer-ideas-heading .heading-red {
-  color: var(--color-accent, #FF2400);
+  color: var(--color-accent, #FF4103);
   font-weight: 700;
 }
 
@@ -3793,7 +3817,7 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
 }
 
 .designer-card-drawer-body::-webkit-scrollbar-thumb {
-  background: var(--color-accent, #FF2400);
+  background: var(--color-accent, #FF4103);
   border-radius: 4px;
 }
 
@@ -3809,7 +3833,7 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-accent, #FF2400);
+  color: var(--color-accent, #FF4103);
 }
 
 .designer-card-drawer-close {
@@ -3876,7 +3900,7 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
 }
 
 .designer-card-scenarios-list li i {
-  color: var(--color-accent, #FF2400);
+  color: var(--color-accent, #FF4103);
   font-size: 0.75rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
@@ -3960,7 +3984,7 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
 }
 
 .designer-ideas-section .review-dot.active {
-  background: var(--color-accent, #FF2400);
+  background: var(--color-accent, #FF4103);
 }
 
 /* FAQ Accordion Styling inside Dark Section (designer-ideas-section) */
@@ -4012,13 +4036,13 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--color-accent, #FF2400);
+  color: var(--color-accent, #FF4103);
   letter-spacing: 0.05em;
   flex-shrink: 0;
 }
 
 .designer-ideas-section .faq-question:hover {
-  color: var(--color-accent, #FF2400);
+  color: var(--color-accent, #FF4103);
 }
 
 .designer-ideas-section .faq-question i {
@@ -4036,20 +4060,20 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
 }
 
 .designer-ideas-section .faq-question:hover i {
-  border-color: var(--color-accent, #FF2400);
-  color: var(--color-accent, #FF2400);
+  border-color: var(--color-accent, #FF4103);
+  color: var(--color-accent, #FF4103);
 }
 
 .designer-ideas-section .faq-item.open .faq-question,
 .designer-ideas-section .faq-item.open .faq-question-text {
-  color: var(--color-accent, #FF2400) !important;
+  color: var(--color-accent, #FF4103) !important;
 }
 
 .designer-ideas-section .faq-item.open .faq-question i {
   transform: rotate(180deg);
-  background: var(--color-accent, #FF2400);
+  background: var(--color-accent, #FF4103);
   color: #ffffff;
-  border-color: var(--color-accent, #FF2400);
+  border-color: var(--color-accent, #FF4103);
 }
 
 .designer-ideas-section .faq-answer {
@@ -4569,7 +4593,7 @@ p[style*="border-left"] {
   font-size: clamp(2.8rem, 4.5vw, 4rem);
   font-weight: 800;
   line-height: 0.95;
-  color: var(--color-accent, #FF2400);
+  color: var(--color-accent, #FF4103);
   letter-spacing: -0.03em;
 }
 
@@ -4579,7 +4603,7 @@ p[style*="border-left"] {
   font-weight: 800;
   line-height: 1.1;
   text-transform: uppercase;
-  color: #111111;
+  color: #001621;
   letter-spacing: -0.02em;
   margin-bottom: 2rem;
 }
@@ -4637,7 +4661,7 @@ p[style*="border-left"] {
 .stacked-subgrid-title {
   font-weight: 800;
   font-size: 0.95rem;
-  color: #111111;
+  color: #001621;
   margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
@@ -4751,16 +4775,58 @@ p[style*="border-left"] {
   height: 200px;
 }
 
+/* Process Cards Slide-In Reveal Animation */
+.process-card-featured,
+.process-card-secondary {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease;
+  will-change: opacity, transform;
+}
+
+@media (min-width: 992px) {
+  .process-cards-grid .process-card-featured:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+
+  .process-cards-grid .process-card-secondary:nth-child(2) {
+    transition-delay: 0.22s;
+  }
+
+  .process-cards-grid .process-card-secondary:nth-child(3) {
+    transition-delay: 0.39s;
+  }
+}
+
 @media (max-width: 991px) {
   .process-cards-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
+  .process-card-featured,
+  .process-card-secondary {
+    transition-delay: 0s !important;
+  }
+
   .process-card-featured .process-card-img-wrap,
   .process-card-secondary .process-card-img-wrap {
     height: 240px;
   }
+}
+
+.process-card-featured.revealed,
+.process-card-secondary.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-card-featured.revealed:hover,
+.process-card-secondary.revealed:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Responsive Audit Button Placement in Process Section */
@@ -4916,8 +4982,8 @@ p[style*="border-left"] {
   justify-content: center;
   padding: 1.15rem 3.2rem;
   border-radius: 9999px;
-  border: 1.5px solid #FF2400;
-  color: #FF2400;
+  border: 1.5px solid #FF4103;
+  color: #FF4103;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.95rem;
@@ -4925,18 +4991,18 @@ p[style*="border-left"] {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background: rgba(255, 36, 0, 0.08);
+  background: rgba(255, 65, 3, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(255, 36, 0, 0.22), inset 0 0 15px rgba(255, 36, 0, 0.1);
+  box-shadow: 0 0 25px rgba(255, 65, 3, 0.22), inset 0 0 15px rgba(255, 65, 3, 0.1);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .together-cta-btn:hover {
-  background: #FF2400;
+  background: #FF4103;
   color: #ffffff;
-  border-color: #FF2400;
-  box-shadow: 0 0 40px rgba(255, 36, 0, 0.65);
+  border-color: #FF4103;
+  box-shadow: 0 0 40px rgba(255, 65, 3, 0.65);
   transform: translateY(-3px);
 }
 
@@ -4970,18 +5036,18 @@ p[style*="border-left"] {
 
 .biz-together-cta .together-cta-btn,
 .together-cta-btn.biz-cta-btn {
-  border-color: #e11a7f !important;
-  color: #e11a7f !important;
-  background: rgba(225, 26, 127, 0.08) !important;
-  box-shadow: 0 0 25px rgba(225, 26, 127, 0.22), inset 0 0 15px rgba(225, 26, 127, 0.1) !important;
+  border-color: #8e2de2 !important;
+  color: #8e2de2 !important;
+  background: rgba(142, 45, 226, 0.08) !important;
+  box-shadow: 0 0 25px rgba(142, 45, 226, 0.22), inset 0 0 15px rgba(142, 45, 226, 0.1) !important;
 }
 
 .biz-together-cta .together-cta-btn:hover,
 .together-cta-btn.biz-cta-btn:hover {
-  background: linear-gradient(135deg, #4a00e0 0%, #e11a7f 100%) !important;
+  background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%) !important;
   color: #ffffff !important;
-  border-color: #e11a7f !important;
-  box-shadow: 0 0 40px rgba(225, 26, 127, 0.65) !important;
+  border-color: #8e2de2 !important;
+  box-shadow: 0 0 40px rgba(142, 45, 226, 0.65) !important;
   transform: translateY(-3px);
 }
 
@@ -5046,7 +5112,7 @@ p[style*="border-left"] {
    ========================================================================== */
 .contact-editorial-section {
   padding: 5.5rem 0 7.5rem 0;
-  background-color: #080808;
+  background-color: #001621;
   color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -5064,7 +5130,7 @@ p[style*="border-left"] {
 }
 
 .contact-dark-card {
-  background: #121212;
+  background: #001621;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   padding: 2.25rem;
@@ -5073,7 +5139,7 @@ p[style*="border-left"] {
 }
 
 .contact-dark-input {
-  background: #1a1a1a;
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
   padding: 0.95rem 1.15rem;
@@ -5086,8 +5152,8 @@ p[style*="border-left"] {
 
 .contact-dark-input:focus {
   outline: none;
-  border-color: #FF2400;
-  box-shadow: 0 0 12px rgba(255, 36, 0, 0.25);
+  border-color: #FF4103;
+  box-shadow: 0 0 12px rgba(255, 65, 3, 0.25);
 }
 
 .contact-dark-input::placeholder {
