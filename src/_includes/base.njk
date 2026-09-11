@@ -55,7 +55,8 @@
             <div class="mega-cards-container">
               <div class="mega-cards-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <a href="/services/business-security/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_business_security.jpg');"></div>
+                  <div class="mega-card-bg"
+                    style="background-image: url('/assets/images/showcase_business_security.jpg');"></div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Small Business Security</span>
@@ -64,7 +65,8 @@
                 </a>
 
                 <a href="/services/business-networking/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_networking.jpg');"></div>
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_networking.jpg');">
+                  </div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Business Networking</span>
@@ -73,7 +75,8 @@
                 </a>
 
                 <a href="/services/construction-security/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_construction_security.jpg');"></div>
+                  <div class="mega-card-bg"
+                    style="background-image: url('/assets/images/showcase_construction_security.jpg');"></div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Construction Site Security</span>
@@ -85,7 +88,8 @@
               <div class="mega-dropdown-footer">
                 <a href="/" class="mega-footer-link">
                   <span>Looking for Residential Smart Automation, Home Theatre &amp; Lighting?</span>
-                  <span style="color: var(--color-accent); font-weight: 700;"><i class="fa-solid fa-arrow-left"></i> Switch to Home Services</span>
+                  <span style="color: var(--color-accent); font-weight: 700;"><i class="fa-solid fa-arrow-left"></i>
+                    Switch to Home Services</span>
                 </a>
               </div>
             </div>
@@ -96,7 +100,8 @@
               <a href="/services/business-networking/" class="dropdown-item">Business Networking</a>
               <a href="/services/construction-security/" class="dropdown-item">Construction Security</a>
               <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
-              <a href="/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;"><i class="fa-solid fa-arrow-left"></i> Switch to Home Services</a>
+              <a href="/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;"><i
+                  class="fa-solid fa-arrow-left"></i> Switch to Home Services</a>
             </div>
           </div>
         </div>
@@ -112,13 +117,16 @@
             <div class="about-mega-container">
               <!-- Left Side: Single Featured Image Spotlight -->
               <a href="/industry-professionals/" class="about-mega-feature">
-                <div class="about-feature-bg" style="background-image: url('/assets/images/smart_home_automation_hero.jpg');"></div>
+                <div class="about-feature-bg"
+                  style="background-image: url('/assets/images/smart_home_automation_hero.jpg');"></div>
                 <div class="about-feature-overlay"></div>
                 <div class="about-feature-content">
                   <span class="about-feature-tag">Trade Partners</span>
                   <h4 class="about-feature-title">Build &amp; Design Partner Program</h4>
-                  <p class="about-feature-text">Collaborative pre-wiring, architectural lighting &amp; smart infrastructure for custom builders.</p>
-                  <span class="about-feature-link">Explore Partner Program <i class="fa-solid fa-arrow-right"></i></span>
+                  <p class="about-feature-text">Collaborative pre-wiring, architectural lighting &amp; smart
+                    infrastructure for custom builders.</p>
+                  <span class="about-feature-link">Explore Partner Program <i
+                      class="fa-solid fa-arrow-right"></i></span>
                 </div>
               </a>
 
@@ -128,7 +136,8 @@
                   <div class="about-link-icon"><i class="fa-solid fa-compass-drafting"></i></div>
                   <div class="about-link-text">
                     <span class="about-link-title">Interior Designers</span>
-                    <span class="about-link-desc">Architectural audio, hidden tech &amp; motorized shade integration</span>
+                    <span class="about-link-desc">Architectural audio, hidden tech &amp; motorized shade
+                      integration</span>
                   </div>
                   <span class="about-link-arrow"><i class="fa-solid fa-chevron-right"></i></span>
                 </a>
@@ -151,12 +160,14 @@
             <div class="about-mega-container">
               <!-- Left Side: Single Featured Image Spotlight -->
               <a href="/about/" class="about-mega-feature">
-                <div class="about-feature-bg" style="background-image: url('/assets/images/about_hero_background.jpg');"></div>
+                <div class="about-feature-bg"
+                  style="background-image: url('/assets/images/about_hero_background.jpg');"></div>
                 <div class="about-feature-overlay"></div>
                 <div class="about-feature-content">
                   <span class="about-feature-tag">Who We Are</span>
                   <h4 class="about-feature-title">Crafting Exceptional Smart Spaces</h4>
-                  <p class="about-feature-text">Licensed master electricians &amp; AV integration experts in Belleville &amp; Quinte.</p>
+                  <p class="about-feature-text">Licensed master electricians &amp; AV integration experts in Belleville
+                    &amp; Quinte.</p>
                   <span class="about-feature-link">Explore Our Story <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
               </a>
@@ -224,18 +235,22 @@
         <!-- Standard Consumer Portal Navigation Menu -->
         {% for item in navigation.main %}
         {% if item.children %}
-        <div class="has-dropdown {% if item.title == 'SERVICES' or item.title == 'Services' or item.title == 'ABOUT' or item.title == 'About' or item.title == 'INDUSTRY PROFESSIONALS' or item.title == 'Industry Professionals' or item.href == '/services/' or item.href == '/#home-services' or item.href == '/about/' or item.href == '/industry-professionals/' %}has-mega-dropdown{% endif %}">
+        <div
+          class="has-dropdown {% if item.title == 'SERVICES' or item.title == 'Services' or item.title == 'ABOUT' or item.title == 'About' or item.title == 'INDUSTRY PROFESSIONALS' or item.title == 'Industry Professionals' or item.href == '/services/' or item.href == '/#home-services' or item.href == '/about/' or item.href == '/industry-professionals/' %}has-mega-dropdown{% endif %}">
           <a href="{{ item.href }}"
             class="nav-link {% if page.url and ((page.url.startsWith('/services/') and (item.title == 'SERVICES' or item.title == 'Services')) or (item.href != '/' and page.url.startsWith(item.href))) %}active{% endif %}">
             {{ item.title }} <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; margin-left: 0.2rem;"></i>
           </a>
-          <div class="dropdown-menu {% if item.title == 'SERVICES' or item.title == 'Services' or item.title == 'ABOUT' or item.title == 'About' or item.title == 'INDUSTRY PROFESSIONALS' or item.title == 'Industry Professionals' or item.href == '/services/' or item.href == '/#home-services' or item.href == '/about/' or item.href == '/industry-professionals/' %}mega-dropdown-menu{% endif %} {% if item.title == 'INDUSTRY PROFESSIONALS' or item.title == 'Industry Professionals' or item.href == '/industry-professionals/' %}pro-mega-dropdown-menu{% endif %}">
-            {% if item.title == "SERVICES" or item.title == "Services" or item.href == "/services/" or item.href == "/#home-services" %}
+          <div
+            class="dropdown-menu {% if item.title == 'SERVICES' or item.title == 'Services' or item.title == 'ABOUT' or item.title == 'About' or item.title == 'INDUSTRY PROFESSIONALS' or item.title == 'Industry Professionals' or item.href == '/services/' or item.href == '/#home-services' or item.href == '/about/' or item.href == '/industry-professionals/' %}mega-dropdown-menu{% endif %} {% if item.title == 'INDUSTRY PROFESSIONALS' or item.title == 'Industry Professionals' or item.href == '/industry-professionals/' %}pro-mega-dropdown-menu{% endif %}">
+            {% if item.title == "SERVICES" or item.title == "Services" or item.href == "/services/" or item.href ==
+            "/#home-services" %}
             <!-- Desktop Visual Cards Grid (Osmo Concept - All 9 Services) -->
             <div class="mega-cards-container">
               <div class="mega-cards-grid">
                 <a href="/services/networking/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/home_networking_real.jpg');"></div>
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/home_networking_real.jpg');">
+                  </div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Home Networking</span>
@@ -244,7 +259,8 @@
                 </a>
 
                 <a href="/services/starlink/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_starlink.jpg');"></div>
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_starlink.jpg');">
+                  </div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Starlink Installation</span>
@@ -253,7 +269,8 @@
                 </a>
 
                 <a href="/services/home-security/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_home_security.jpg');"></div>
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_home_security.jpg');">
+                  </div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Home Security</span>
@@ -271,7 +288,8 @@
                 </a>
 
                 <a href="/services/home-theatre/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_home_theatre.jpg');"></div>
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_home_theatre.jpg');">
+                  </div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Home Theatre</span>
@@ -280,7 +298,8 @@
                 </a>
 
                 <a href="/services/outdoor-screens/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_outdoor_screens.jpg');"></div>
+                  <div class="mega-card-bg"
+                    style="background-image: url('/assets/images/showcase_outdoor_screens.jpg');"></div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Outdoor Screens</span>
@@ -289,7 +308,8 @@
                 </a>
 
                 <a href="/services/smart-lights/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_smart_lights.jpg');"></div>
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_smart_lights.jpg');">
+                  </div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Smart Lights</span>
@@ -298,7 +318,8 @@
                 </a>
 
                 <a href="/services/window-shades/" class="mega-card-item">
-                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_window_shades.jpg');"></div>
+                  <div class="mega-card-bg" style="background-image: url('/assets/images/showcase_window_shades.jpg');">
+                  </div>
                   <div class="mega-card-overlay"></div>
                   <div class="mega-card-content">
                     <span class="mega-card-title">Window Shades</span>
@@ -319,7 +340,8 @@
               <div class="mega-dropdown-footer">
                 <a href="/business/" class="mega-footer-link">
                   <span>Looking for Commercial Grade Security &amp; Enterprise Networking?</span>
-                  <span style="color: var(--color-accent); font-weight: 700;">Switch to Business Portal <i class="fa-solid fa-arrow-right"></i></span>
+                  <span style="color: var(--color-accent); font-weight: 700;">Switch to Business Portal <i
+                      class="fa-solid fa-arrow-right"></i></span>
                 </a>
               </div>
             </div>
@@ -330,19 +352,22 @@
               <a href="{{ child.href }}" class="dropdown-item">{{ child.title }}</a>
               {% endfor %}
               <div style="border-top: 1px solid var(--border-subtle); margin: 0.4rem 0;"></div>
-              <a href="/business/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;">Switch to Business Services <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/business/" class="dropdown-item" style="color: var(--color-accent); font-weight: 700;">Switch to
+                Business Services <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             {% elseif item.title == "ABOUT" or item.title == "About" or item.href == "/about/" %}
             <!-- Desktop Visual Split Mega Dropdown for ABOUT (1 Featured Image + Text Link Grid) -->
             <div class="about-mega-container">
               <!-- Left Side: Single Featured Image Spotlight -->
               <a href="/about/" class="about-mega-feature">
-                <div class="about-feature-bg" style="background-image: url('/assets/images/about_hero_background.jpg');"></div>
+                <div class="about-feature-bg"
+                  style="background-image: url('/assets/images/about_hero_background.jpg');"></div>
                 <div class="about-feature-overlay"></div>
                 <div class="about-feature-content">
                   <span class="about-feature-tag">Who We Are</span>
                   <h4 class="about-feature-title">Crafting Exceptional Smart Spaces</h4>
-                  <p class="about-feature-text">Licensed master electricians &amp; AV integration experts in Belleville &amp; Quinte.</p>
+                  <p class="about-feature-text">Licensed master electricians &amp; AV integration experts in Belleville
+                    &amp; Quinte.</p>
                   <span class="about-feature-link">Explore Our Story <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
               </a>
@@ -402,18 +427,22 @@
               <a href="{{ child.href }}" class="dropdown-item">{{ child.title }}</a>
               {% endfor %}
             </div>
-            {% elseif item.title == "INDUSTRY PROFESSIONALS" or item.title == "Industry Professionals" or item.href == "/industry-professionals/" %}
+            {% elseif item.title == "INDUSTRY PROFESSIONALS" or item.title == "Industry Professionals" or item.href ==
+            "/industry-professionals/" %}
             <!-- Desktop Visual Split Mega Dropdown for INDUSTRY PROFESSIONALS -->
             <div class="about-mega-container">
               <!-- Left Side: Single Featured Image Spotlight -->
               <a href="/industry-professionals/" class="about-mega-feature">
-                <div class="about-feature-bg" style="background-image: url('/assets/images/smart_home_automation_hero.jpg');"></div>
+                <div class="about-feature-bg"
+                  style="background-image: url('/assets/images/smart_home_automation_hero.jpg');"></div>
                 <div class="about-feature-overlay"></div>
                 <div class="about-feature-content">
                   <span class="about-feature-tag">Trade Partners</span>
                   <h4 class="about-feature-title">Build &amp; Design Partner Program</h4>
-                  <p class="about-feature-text">Collaborative pre-wiring, architectural lighting &amp; smart infrastructure for custom builders.</p>
-                  <span class="about-feature-link">Explore Partner Program <i class="fa-solid fa-arrow-right"></i></span>
+                  <p class="about-feature-text">Collaborative pre-wiring, architectural lighting &amp; smart
+                    infrastructure for custom builders.</p>
+                  <span class="about-feature-link">Explore Partner Program <i
+                      class="fa-solid fa-arrow-right"></i></span>
                 </div>
               </a>
 
@@ -423,7 +452,8 @@
                   <div class="about-link-icon"><i class="fa-solid fa-compass-drafting"></i></div>
                   <div class="about-link-text">
                     <span class="about-link-title">Interior Designers</span>
-                    <span class="about-link-desc">Architectural audio, hidden tech &amp; motorized shade integration</span>
+                    <span class="about-link-desc">Architectural audio, hidden tech &amp; motorized shade
+                      integration</span>
                   </div>
                   <span class="about-link-arrow"><i class="fa-solid fa-chevron-right"></i></span>
                 </a>
@@ -470,7 +500,10 @@
             class="fa-solid fa-arrow-right"></i></a>
         {% endif %}
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars"></i>
+          <span class="hamburger-box">
+            <span class="hamburger-line line-top"></span>
+            <span class="hamburger-line line-bottom"></span>
+          </span>
         </button>
       </div>
     </div>
@@ -568,11 +601,6 @@
             const l = el.querySelector('.nav-link');
             if (l) l.blur();
           });
-          const icon = toggleBtn.querySelector('i');
-          if (icon) {
-            icon.classList.remove('fa-xmark');
-            icon.classList.add('fa-bars');
-          }
         };
 
         toggleBtn.addEventListener('click', (e) => {
@@ -583,11 +611,6 @@
           } else {
             mainNav.classList.add('mobile-active');
             toggleBtn.classList.add('active');
-            const icon = toggleBtn.querySelector('i');
-            if (icon) {
-              icon.classList.remove('fa-bars');
-              icon.classList.add('fa-xmark');
-            }
           }
         });
 
@@ -697,7 +720,7 @@
       });
 
       // Global Stat Number Count-Up Animation Function
-      window.animateSingleCount = function(el, durationOverride) {
+      window.animateSingleCount = function (el, durationOverride) {
         if (!el || el.dataset.hasAnimated === 'true') return;
         el.dataset.hasAnimated = 'true';
 
@@ -852,6 +875,24 @@
           }
         } else {
           processCards.forEach(card => card.classList.add('revealed'));
+        }
+      }
+
+      // Brand Staggered Grid Scroll Reveal Observer
+      const brandGrid = document.querySelector('.brand-staggered-grid');
+      if (brandGrid) {
+        if ('IntersectionObserver' in window) {
+          const brandObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+          brandObserver.observe(brandGrid);
+        } else {
+          brandGrid.classList.add('revealed');
         }
       }
     });

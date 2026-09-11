@@ -2001,22 +2001,41 @@ body.business-portal .brand-logo-text .accent-s {
     justify-content: center;
     background: transparent;
     border: none;
-    font-size: 1.6rem;
-    color: var(--text-primary);
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.4rem;
+    width: 40px;
+    height: 40px;
     z-index: 1001;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .mobile-toggle i {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
-    display: inline-block;
+  .hamburger-box {
+    width: 24px;
+    height: 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .mobile-toggle.active i {
-    transform: rotate(180deg) scale(1.15);
-    color: var(--color-accent);
+  .hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary, #ffffff);
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+    transform-origin: center;
+  }
+
+  .mobile-toggle.active .line-top {
+    transform: translateY(6px) rotate(45deg);
+    background-color: var(--color-accent, #FF4103);
+  }
+
+  .mobile-toggle.active .line-bottom {
+    transform: translateY(-6px) rotate(-45deg);
+    background-color: var(--color-accent, #FF4103);
   }
 
   .main-nav {
@@ -3514,7 +3533,9 @@ body.business-portal .form-select:focus {
 }
 
 /* 10. Nav Mobile Active Icons & Buttons in Business Portal */
-body.business-portal .mobile-toggle.active i,
+body.business-portal .mobile-toggle.active .hamburger-line {
+  background-color: #8e2de2 !important;
+}
 body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
   color: #8e2de2 !important;
 }
@@ -3597,7 +3618,7 @@ body.business-portal a.dropdown-item[style*="color: var(--color-accent)"] {
 
 /* Smart Home Ideas for Interior Designers (Dark Modern Grid Layout matching reference) */
 .designer-ideas-section {
-  background-color: #0b0c0e;
+  background-color: #001621;
   color: #ffffff;
   padding: 6.5rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -5181,6 +5202,11 @@ p[style*="border-left"] {
   color: rgba(255, 255, 255, 0.45);
 }
 
+.contact-dark-input option {
+  background-color: #18181b;
+  color: #ffffff;
+}
+
 .contact-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5236,4 +5262,144 @@ p[style*="border-left"] {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
   }
+}
+
+/* Full-Width 2-Row Architectural Brand Grid (7 Columns Desktop) */
+.brand-staggered-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.1rem;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.brand-tile {
+  background: #f3f4f6;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  aspect-ratio: 1.15 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
+}
+
+.brand-tile:hover {
+  transform: translateY(-5px);
+  background: #ffffff;
+  border-color: var(--color-accent, #FF4103);
+  box-shadow: 0 10px 24px rgba(255, 65, 3, 0.16);
+}
+
+.brand-logo-img {
+  max-width: 74%;
+  max-height: 50%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+  filter: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-tile:hover .brand-logo-img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.brand-tile-empty {
+  aspect-ratio: 1.15 / 1;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .brand-staggered-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-staggered-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+    max-width: 480px;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .brand-staggered-grid .brand-tile {
+    border-radius: 14px;
+    padding: 0.75rem;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    transform: translateY(18px) scale(0.9);
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .brand-staggered-grid.revealed .brand-tile {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Randomized Pop-In Stagger Sequence on Mobile (12 Visible Logos) */
+  .brand-staggered-grid.revealed > *:nth-child(6)  { transition-delay: 0.00s; } /* Samsung */
+  .brand-staggered-grid.revealed > *:nth-child(1)  { transition-delay: 0.05s; } /* Control4 */
+  .brand-staggered-grid.revealed > *:nth-child(21) { transition-delay: 0.10s; } /* Integra */
+  .brand-staggered-grid.revealed > *:nth-child(4)  { transition-delay: 0.15s; } /* Sonos */
+  .brand-staggered-grid.revealed > *:nth-child(13) { transition-delay: 0.20s; } /* DMF Lighting */
+  .brand-staggered-grid.revealed > *:nth-child(10) { transition-delay: 0.25s; } /* Sonance */
+  .brand-staggered-grid.revealed > *:nth-child(3)  { transition-delay: 0.30s; } /* Lutron */
+  .brand-staggered-grid.revealed > *:nth-child(17) { transition-delay: 0.35s; } /* Modern Forms */
+  .brand-staggered-grid.revealed > *:nth-child(9)  { transition-delay: 0.40s; } /* Lucetta CI */
+  .brand-staggered-grid.revealed > *:nth-child(12) { transition-delay: 0.45s; } /* Mecho */
+  .brand-staggered-grid.revealed > *:nth-child(19) { transition-delay: 0.50s; } /* Episode */
+  .brand-staggered-grid.revealed > *:nth-child(15) { transition-delay: 0.55s; } /* WAC Group */
+}
+
+/* Sequential Left-to-Right 1-by-1 Stagger Animation on Desktop */
+@media (min-width: 769px) {
+  .brand-staggered-grid .brand-tile,
+  .brand-staggered-grid .brand-tile-empty {
+    opacity: 0;
+    transform: translateY(22px) scale(0.92);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .brand-staggered-grid.revealed .brand-tile,
+  .brand-staggered-grid.revealed .brand-tile-empty {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Column-by-Column Left-to-Right Wave Stagger Across 3 Rows (Columns 1 to 7) */
+  .brand-staggered-grid.revealed > *:nth-child(1)  { transition-delay: 0.00s; } /* Control4 (Col 1) */
+  .brand-staggered-grid.revealed > *:nth-child(8)  { transition-delay: 0.03s; } /* Empty 4 (Col 1) */
+  .brand-staggered-grid.revealed > *:nth-child(15) { transition-delay: 0.06s; } /* WAC Group (Col 1) */
+  .brand-staggered-grid.revealed > *:nth-child(2)  { transition-delay: 0.09s; } /* Empty 1 (Col 2) */
+  .brand-staggered-grid.revealed > *:nth-child(9)  { transition-delay: 0.12s; } /* Lucetta CI (Col 2) */
+  .brand-staggered-grid.revealed > *:nth-child(16) { transition-delay: 0.15s; } /* Empty 7 (Col 2) */
+  .brand-staggered-grid.revealed > *:nth-child(3)  { transition-delay: 0.18s; } /* Lutron (Col 3) */
+  .brand-staggered-grid.revealed > *:nth-child(10) { transition-delay: 0.21s; } /* Sonance (Col 3) */
+  .brand-staggered-grid.revealed > *:nth-child(17) { transition-delay: 0.24s; } /* Modern Forms (Col 3) */
+  .brand-staggered-grid.revealed > *:nth-child(4)  { transition-delay: 0.27s; } /* Sonos (Col 4) */
+  .brand-staggered-grid.revealed > *:nth-child(11) { transition-delay: 0.30s; } /* Empty 5 (Col 4) */
+  .brand-staggered-grid.revealed > *:nth-child(18) { transition-delay: 0.33s; } /* Empty 8 (Col 4) */
+  .brand-staggered-grid.revealed > *:nth-child(5)  { transition-delay: 0.36s; } /* Empty 2 (Col 5) */
+  .brand-staggered-grid.revealed > *:nth-child(12) { transition-delay: 0.39s; } /* Mecho (Col 5) */
+  .brand-staggered-grid.revealed > *:nth-child(19) { transition-delay: 0.42s; } /* Episode (Col 5) */
+  .brand-staggered-grid.revealed > *:nth-child(6)  { transition-delay: 0.45s; } /* Samsung (Col 6) */
+  .brand-staggered-grid.revealed > *:nth-child(13) { transition-delay: 0.48s; } /* DMF Lighting (Col 6) */
+  .brand-staggered-grid.revealed > *:nth-child(20) { transition-delay: 0.51s; } /* Empty 9 (Col 6) */
+  .brand-staggered-grid.revealed > *:nth-child(7)  { transition-delay: 0.54s; } /* Empty 3 (Col 7) */
+  .brand-staggered-grid.revealed > *:nth-child(14) { transition-delay: 0.57s; } /* Empty 6 (Col 7) */
+  .brand-staggered-grid.revealed > *:nth-child(21) { transition-delay: 0.60s; } /* Integra (Col 7) */
 }

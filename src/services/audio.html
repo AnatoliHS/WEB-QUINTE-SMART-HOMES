@@ -294,31 +294,18 @@ description: "Experience cinematic sound with multi-room whole-home audio, flush
           durability surpassing ordinary retail box store equipment.
         </p>
 
-        <div class="logo-grid-responsive"
-          style="align-items: center; justify-items: center; gap: 1.75rem 1.25rem; margin-top: 1.5rem;">
-          <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 45px;">
-            <img src="/assets/images/logo_sony.png" alt="Sony Logo"
-              style="max-height: 28px; width: auto; max-width: 85%; object-fit: contain; filter: grayscale(100%); opacity: 0.75; transition: all 0.3s ease;"
-              onmouseover="this.style.filter='none'; this.style.opacity='1';"
-              onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.75';" />
+        <div class="logo-grid-responsive" style="grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 1.5rem;">
+          <div class="brand-tile" style="aspect-ratio: auto; min-height: 64px; padding: 0.75rem;">
+            <img src="/assets/images/logo_sony.png" alt="Sony Logo" class="brand-logo-img" style="max-height: 28px;" />
           </div>
-          <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 45px;">
-            <img src="/assets/images/logo_sonos.png" alt="Sonos Logo"
-              style="max-height: 24px; width: auto; max-width: 85%; object-fit: contain; filter: grayscale(100%); opacity: 0.75; transition: all 0.3s ease;"
-              onmouseover="this.style.filter='none'; this.style.opacity='1';"
-              onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.75';" />
+          <div class="brand-tile" style="aspect-ratio: auto; min-height: 64px; padding: 0.75rem;">
+            <img src="/assets/images/logo_sonos.png" alt="Sonos Logo" class="brand-logo-img" style="max-height: 24px;" />
           </div>
-          <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 45px;">
-            <img src="/assets/images/logo_triad.png" alt="Triad Logo"
-              style="max-height: 28px; width: auto; max-width: 85%; object-fit: contain; filter: grayscale(100%); opacity: 0.75; transition: all 0.3s ease;"
-              onmouseover="this.style.filter='none'; this.style.opacity='1';"
-              onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.75';" />
+          <div class="brand-tile" style="aspect-ratio: auto; min-height: 64px; padding: 0.75rem;">
+            <img src="/assets/images/logo_triad.png" alt="Triad Logo" class="brand-logo-img" style="max-height: 28px;" />
           </div>
-          <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 45px;">
-            <img src="/assets/images/logo_sonance.png" alt="Sonance Logo"
-              style="max-height: 28px; width: auto; max-width: 85%; object-fit: contain; filter: grayscale(100%); opacity: 0.75; transition: all 0.3s ease;"
-              onmouseover="this.style.filter='none'; this.style.opacity='1';"
-              onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.75';" />
+          <div class="brand-tile" style="aspect-ratio: auto; min-height: 64px; padding: 0.75rem;">
+            <img src="/assets/images/logo_sonance.png" alt="Sonance Logo" class="brand-logo-img" style="max-height: 28px;" />
           </div>
         </div>
       </div>
@@ -467,29 +454,36 @@ description: "Experience cinematic sound with multi-room whole-home audio, flush
 
             <div class="contact-form-row">
               <div>
-                <input type="text" class="contact-dark-input" required placeholder="Enter your name *" />
+                <input type="text" class="contact-dark-input" required placeholder="Full Name *" />
               </div>
               <div>
-                <input type="email" class="contact-dark-input" required placeholder="Email *" />
+                <input type="email" class="contact-dark-input" required placeholder="Email Address *" />
               </div>
             </div>
 
             <div class="contact-form-row">
               <div>
-                <input type="tel" class="contact-dark-input" required placeholder="Telephone *" />
+                <input type="tel" class="contact-dark-input" required placeholder="Phone Number *" />
               </div>
               <div>
-                <select class="contact-dark-input">
-                  <option>Whole-Home Multi-Zone Audio</option>
-                  <option>Outdoor Landscape Audio</option>
-                  <option>Dolby Atmos Home Theatre</option>
-                  <option>Commercial Restaurant / Retail Audio</option>
-                </select>
+                <input type="text" class="contact-dark-input" required placeholder="City *" />
               </div>
             </div>
 
+            <div style="margin-bottom: 1rem;">
+              <select class="contact-dark-input" required>
+                <option value="" disabled selected>Estimated Budget *</option>
+                <option>Under $5,000</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000 – $30,000</option>
+                <option>$30,000 – $50,000</option>
+                <option>$50,000+</option>
+                <option>Flexible / Undecided</option>
+              </select>
+            </div>
+
             <div style="margin-bottom: 1.25rem;">
-              <textarea class="contact-dark-input" rows="4" placeholder="Tell us about your space or preferred audio brands..." style="resize: vertical;"></textarea>
+              <textarea class="contact-dark-input" rows="4" required placeholder="How can we help you? *" style="resize: vertical;"></textarea>
             </div>
 
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap;">

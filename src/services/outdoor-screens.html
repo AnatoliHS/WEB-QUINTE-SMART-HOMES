@@ -424,29 +424,36 @@ description: "Custom motorized MagnaTrack privacy screens for porch enclosures, 
 
               <div class="contact-form-row">
                 <div>
-                  <input type="text" class="contact-dark-input" required placeholder="Enter your name *" />
+                  <input type="text" class="contact-dark-input" required placeholder="Full Name *" />
                 </div>
                 <div>
-                  <input type="email" class="contact-dark-input" required placeholder="Email *" />
+                  <input type="email" class="contact-dark-input" required placeholder="Email Address *" />
                 </div>
               </div>
 
               <div class="contact-form-row">
                 <div>
-                  <input type="tel" class="contact-dark-input" required placeholder="Telephone *" />
+                  <input type="tel" class="contact-dark-input" required placeholder="Phone Number *" />
                 </div>
                 <div>
-                  <select class="contact-dark-input">
-                    <option>Covered Porch / Sunroom</option>
-                    <option>Outdoor Pergola / Cabana</option>
-                    <option>Deck / Balcony</option>
-                    <option>Commercial Restaurant Patio</option>
-                  </select>
+                  <input type="text" class="contact-dark-input" required placeholder="City *" />
                 </div>
               </div>
 
+              <div style="margin-bottom: 1rem;">
+                <select class="contact-dark-input" required>
+                  <option value="" disabled selected>Estimated Budget *</option>
+                  <option>Under $5,000</option>
+                  <option>$5,000 – $15,000</option>
+                  <option>$15,000 – $30,000</option>
+                  <option>$30,000 – $50,000</option>
+                  <option>$50,000+</option>
+                  <option>Flexible / Undecided</option>
+                </select>
+              </div>
+
               <div style="margin-bottom: 1.25rem;">
-                <textarea class="contact-dark-input" rows="4" placeholder="Tell us about your outdoor space or approximate dimensions..." style="resize: vertical;"></textarea>
+                <textarea class="contact-dark-input" rows="4" required placeholder="How can we help you? *" style="resize: vertical;"></textarea>
               </div>
 
               <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap;">

@@ -171,17 +171,24 @@ description: "Discover unified smart home automation in Belleville, Quinte West 
                 <input type="tel" name="phone" class="contact-dark-input" required placeholder="Phone Number *" />
               </div>
               <div>
-                <select class="contact-dark-input">
-                  <option>Whole-Home Automation</option>
-                  <option>Smart Lighting &amp; Shading</option>
-                  <option>Home Theatre &amp; Audio</option>
-                  <option>Smart Security &amp; Access</option>
-                </select>
+                <input type="text" name="city" class="contact-dark-input" required placeholder="City *" />
               </div>
             </div>
 
+            <div style="margin-bottom: 1rem;">
+              <select name="budget" class="contact-dark-input" required>
+                <option value="" disabled selected>Estimated Budget *</option>
+                <option>Under $5,000</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000 – $30,000</option>
+                <option>$30,000 – $50,000</option>
+                <option>$50,000+</option>
+                <option>Flexible / Undecided</option>
+              </select>
+            </div>
+
             <div style="margin-bottom: 1.25rem;">
-              <textarea name="notes" class="contact-dark-input" rows="4" placeholder="Tell us about your home automation goals..." style="resize: vertical;"></textarea>
+              <textarea name="notes" class="contact-dark-input" rows="4" required placeholder="How can we help you? *" style="resize: vertical;"></textarea>
             </div>
 
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap;">
